@@ -43,9 +43,9 @@ putenv('GOOGLE_APPLICATION_CREDENTIALS=' . __DIR__ . '/My Project-aeb1d8a3a4ed.j
 				$listFeed->insert([
 					'name' => "'". $keywords[0],
 					'phone' => "'". $keywords[1],
-					'surname' => "'". 'Orlov',
-					'city' => "'". 'Berlin',
-					'age' => "'". '35',
+					'surname' => "'". $keywords[2],
+					'city' => "'". $keywords[3],
+					'age' => "'". $keywords[4],
 					'date' => date_create('now')->format('Y-m-d H:i:s')
 				]);
 
