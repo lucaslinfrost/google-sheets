@@ -7,6 +7,7 @@ $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
 $bot = new LINEBotTiny($channelAccessToken, $channelSecret);
 $message = $event['message'];
+$keywords = explode(',', $message['text']['$t']);
 putenv('GOOGLE_APPLICATION_CREDENTIALS=' . __DIR__ . '/My Project-aeb1d8a3a4ed.json');
 		/*  SEND TO GOOGLE SHEETS */
 		 $client = new Google_Client;
@@ -34,7 +35,7 @@ putenv('GOOGLE_APPLICATION_CREDENTIALS=' . __DIR__ . '/My Project-aeb1d8a3a4ed.j
 
 				$listFeed = $worksheet->getListFeed();
 				$listFeed->insert([
-					'name' => "'". 'Igor',
+					'name' => "'".$keywords,
 					'phone' => "'". '2425-245-224545',
 					'surname' => "'". 'Orlov',
 					'city' => "'". 'Berlin',
