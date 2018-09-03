@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "crafty-progress-211609",
+  "private_key_id": "aeb1d8a3a4ed6e6a73dc43c5a17e23796f183d34",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDdQ+DA8sRckMZT\ncnGkCkKZkKKFhYG2DdrcIOjye4Yaw9EmQzik6/9ZZe1h6kacFyLTMEFNNA/xq6gF\nLIHdLz6+3xuLIzojYRwjg7D89UtacdwhHiDx5QvEwLcoXty/4QALMkQDnhSz9rs1\nmGcF3tm+mPQesMGV5zzmVIsICLZS13zqZOSUHln1W1zPElz3sd5Qnu3/0u19Ogb8\nCApsvxJvtr/CXLtI0I/tTVpw9FH+oh1L9WsyEKZV1TrTR7N0tEFnBwdTSY85ekbY\nSQJGVlGEr1BazoKt/sXmo7KZ2+51Kqs+F/NBLEaRNqzw71EuNz/NqupEDhUxjvlG\nY4c1HkmdAgMBAAECggEAE5qUerPnpuXi1HjizaxlCzMP2zGhdO5UUkWOLhG4p31q\n9e9lwOLx7EtGFXNKz0CTgs+XMY5nzTsut0qitOSfNA0TZSf5WjIb6p+b2kWnZ/uH\ni92eAKCRAt0qPSbuewel19gbw5BJeEpnes+mbRQ6CZOGqYNym2Px9txNtygCc2Nf\nBR5+mXhzD29kfgL/Six5pqOwin1wvRpKSb7fj/E9EL7piL2Nux/wE6hcfPtAGeqW\nobwbqpvhHuGwpJuwU+JXKyK/eXvHJMm5NAqpbw0dsSCHpiIqozPUQ/eQn+TQ1pBC\n+ixtbaVMkUFQzUpyeZadD6HdmNgr/HRa1EoQonrD9wKBgQD4YuO/BbSY+ANvi5FC\nrNzSf4W+Z1g27jvTDA8wHLRHSH1CrTYDWaG7rlutLkYHGORVTyomuHANpzXZ312w\nNbkxztAhWG16Ica9C8HTSM77wFlQXrm6H955xtrk4+jCq/OWXC4TsV7QWpcYegw1\n+kZevpFsbnflIS8Mjt+Xsdr9pwKBgQDkDCqMFfBmGzGHZsDoVR19x9MksqWOnMqa\nIgyt1eGz5bAeVGRxlU0QnvMUyYl/PsUNvkm3vCemx2iepDtFSZOa2WcroSwp4J5a\nqBhHq6dxWwry+KwmP8Kh+TbjeGIFenf6Y1yWTjBXyjb/2/5AyWtObohMRQIwp1Ga\n/g/JqSlPGwKBgQDM+baeVhQCRHF5ZMDcOBEHOStixJ/8vL7r3EDQYG+5f623D3/K\nZfZdDncjRFOP2c/cQrczOvNloP6ErJsBJmSNIPGLAxFdP3BlY8VxGd2Nzd8mvvUg\nDtqmvh630wirVgFvrORtZesroAaesWFQThgyaatSwxr4IFlWULVd1u00cwKBgC6e\n5hvZaFoXeRqrQQi+TdcnAN1hwELVfv3ftCPds9SpQkYRDq/BzA130U4QnZFr7bEP\nk9aCGsEXxyWXgZ56mjhv9Y2P142AJB94ee49A3BDIovllpwDMPEYF8aNF8zy6pA/\nu+/mcC+iYXgRK3tnMg7IvgiJmxcDPcWn5uZdNNq9AoGBAMknz7qXErBnFMAhS/GI\n4uaB3ZLoZpf7/Uu6wXYDmXyr9GdDjz3JMw9vktWwZyAZhbv50ZZNhjbClqcteCcB\nNBGpVXTS85A/PphmfBj61PQTLcPhmjioeVt+XoTgA0/W57vfJUUXpYzJmXoPHkEV\n+zjHAK1+TBBIgBrzuI4C4WMQ\n-----END PRIVATE KEY-----\n",
+  "client_email": "muscelboss@crafty-progress-211609.iam.gserviceaccount.com",
+  "client_id": "107279536686436808018",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/muscelboss%40crafty-progress-211609.iam.gserviceaccount.com"
+}
