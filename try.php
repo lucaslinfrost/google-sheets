@@ -7,11 +7,31 @@ use Google\Spreadsheet\ServiceRequestFactory;
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
+
 foreach ($client->parseEvents() as $event) {
 switch ($event['type']) {       
     case 'message':
 	$message = $event['message'];
 	$keywords = explode(' ', $message['text']);
+			$source = $event['source'];
+			if($source['type'] == "group"){		
+				
+				$groupId = $source['groupId'];
+				$userId = $source['userId'];
+				error_log("群組ID：".$groupId);
+				if($userId != null){
+								
+					$userName = $client->getGroupProfile($groupId,$userId)['displayName'];
+					error_log("訊息發送人：".$userName);
+					}
+				else{
+					error_log("訊息發送人：不明");
+				}
+				}
+			if($source['type'] == "user"){
+				$userName = $client->getProfile($source['userId'])['displayName'];
+				error_log("訊息發送人：".$userName);
+				}
 }
 }
 putenv('GOOGLE_APPLICATION_CREDENTIALS=' . __DIR__ . '/My Project-aeb1d8a3a4ed.json');
@@ -32,7 +52,7 @@ putenv('GOOGLE_APPLICATION_CREDENTIALS=' . __DIR__ . '/My Project-aeb1d8a3a4ed.j
 			   // Get our spreadsheet
 				$spreadsheet = (new Google\Spreadsheet\SpreadsheetService)
 					->getSpreadsheetFeed()
-					->getByTitle('test9999');
+					->getByTitle('record');
 
 				// Get the first worksheet (tab)
 				$worksheets = $spreadsheet->getWorksheetFeed()->getEntries();
@@ -41,12 +61,9 @@ putenv('GOOGLE_APPLICATION_CREDENTIALS=' . __DIR__ . '/My Project-aeb1d8a3a4ed.j
 
 				$listFeed = $worksheet->getListFeed();
 				$listFeed->insert([
-					'name' => "'". $keywords[0],
-					'phone' => "'". $keywords[1],
-					'surname' => "'". $keywords[2],
-					'city' => "'". $keywords[3],
-					'age' => "'". $keywords[4],
-					'date' => date_create('now')->format('Y-m-d H:i:s')
+					'Name' => "'". $userName,
+					'Message' => "'". $message['text'],
+					'Date' => date_create('now')->format('Y-m-d H:i:s')
 				]);
 
 			}catch(Exception $e){
