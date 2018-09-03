@@ -11,7 +11,7 @@ foreach ($client->parseEvents() as $event) {
 switch ($event['type']) {       
     case 'message':
 	$message = $event['message'];
-	$keywords = explode(',', $message['text']);
+	$keywords = explode(' ', $message['text']);
 }
 }
 putenv('GOOGLE_APPLICATION_CREDENTIALS=' . __DIR__ . '/My Project-aeb1d8a3a4ed.json');
@@ -41,8 +41,8 @@ putenv('GOOGLE_APPLICATION_CREDENTIALS=' . __DIR__ . '/My Project-aeb1d8a3a4ed.j
 
 				$listFeed = $worksheet->getListFeed();
 				$listFeed->insert([
-					'name' => "'". $message['text'],
-					'phone' => "'". 'Orlov',
+					'name' => "'". $keywords[0],
+					'phone' => "'". $keywords[1],
 					'surname' => "'". 'Orlov',
 					'city' => "'". 'Berlin',
 					'age' => "'". '35',
