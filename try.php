@@ -1,5 +1,6 @@
 <?php
 require  'vendor/autoload.php';
+require_once('./Boss/LINE/LINEBotTiny.php');
 date_default_timezone_set('Asia/Taipei');
 use Google\Spreadsheet\DefaultServiceRequest;
 use Google\Spreadsheet\ServiceRequestFactory;
