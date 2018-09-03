@@ -52,7 +52,7 @@ putenv('GOOGLE_APPLICATION_CREDENTIALS=' . __DIR__ . '/My Project-aeb1d8a3a4ed.j
 			   // Get our spreadsheet
 				$spreadsheet = (new Google\Spreadsheet\SpreadsheetService)
 					->getSpreadsheetFeed()
-					->getByTitle('record');
+					->getByTitle('RecordGroup');
 
 				// Get the first worksheet (tab)
 				$worksheets = $spreadsheet->getWorksheetFeed()->getEntries();
