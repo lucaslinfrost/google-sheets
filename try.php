@@ -36,8 +36,8 @@ putenv('GOOGLE_APPLICATION_CREDENTIALS=' . __DIR__ . '/My Project-aeb1d8a3a4ed.j
 
 				$listFeed = $worksheet->getListFeed();
 				$listFeed->insert([
-					'name' => "'".$keywords[0],
-					'phone' => "'".$keywords[1],
+					'name' => "'". $keywords[0],
+					'phone' => "'". $keywords[1],
 					'surname' => "'". 'Orlov',
 					'city' => "'". 'Berlin',
 					'age' => "'". '35',
