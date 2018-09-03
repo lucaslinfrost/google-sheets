@@ -34,7 +34,7 @@ putenv('GOOGLE_APPLICATION_CREDENTIALS=' . __DIR__ . '/My Project-aeb1d8a3a4ed.j
 			   // Get our spreadsheet
 				$spreadsheet = (new Google\Spreadsheet\SpreadsheetService)
 					->getSpreadsheetFeed()
-					->getByTitle('RecordGroup');
+					->getByTitle('sheet119');
 
 				// Get the first worksheet (tab)
 				$worksheets = $spreadsheet->getWorksheetFeed()->getEntries();
@@ -43,12 +43,9 @@ putenv('GOOGLE_APPLICATION_CREDENTIALS=' . __DIR__ . '/My Project-aeb1d8a3a4ed.j
 
 				$listFeed = $worksheet->getListFeed();
 				$listFeed->insert([
-					'Name' => "'". $userName,
-					'Message' => "'". $message['text'],
-					'Name2' => "'". $userName,
-					'Message1' => "'". $message['text'],
-					'Name1' => "'". $userName,
-					'Date' => date_create('now')->format('Y-m-d H:i:s')
+					'name' => "'". $userName,
+					'message' => "'". $message['text'],
+					'ate' => date_create('now')->format('Y-m-d H:i:s')
 				]);
 
 			}catch(Exception $e){
