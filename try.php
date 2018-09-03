@@ -13,25 +13,7 @@ switch ($event['type']) {
     case 'message':
 	$message = $event['message'];
 	$keywords = explode(' ', $message['text']);
-			$source = $event['source'];
-			if($source['type'] == "group"){		
-				
-				$groupId = $source['groupId'];
-				$userId = $source['userId'];
-				error_log("群組ID：".$groupId);
-				if($userId != null){
-								
-					$userName = $client->getGroupProfile($groupId,$userId)['displayName'];
-					error_log("訊息發送人：".$userName);
-					}
-				else{
-					error_log("訊息發送人：不明");
-				}
-				}
-			if($source['type'] == "user"){
-				$userName = $client->getProfile($source['userId'])['displayName'];
-				error_log("訊息發送人：".$userName);
-				}
+
 }
 }
 putenv('GOOGLE_APPLICATION_CREDENTIALS=' . __DIR__ . '/My Project-aeb1d8a3a4ed.json');
