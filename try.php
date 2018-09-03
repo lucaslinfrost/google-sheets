@@ -34,7 +34,7 @@ putenv('GOOGLE_APPLICATION_CREDENTIALS=' . __DIR__ . '/My Project-aeb1d8a3a4ed.j
 			   // Get our spreadsheet
 				$spreadsheet = (new Google\Spreadsheet\SpreadsheetService)
 					->getSpreadsheetFeed()
-					->getByTitle('sheet119');
+					->getByTitle('sheetlog');
 
 				// Get the first worksheet (tab)
 				$worksheets = $spreadsheet->getWorksheetFeed()->getEntries();
@@ -45,7 +45,7 @@ putenv('GOOGLE_APPLICATION_CREDENTIALS=' . __DIR__ . '/My Project-aeb1d8a3a4ed.j
 				$listFeed->insert([
 					'name' => "'". $userName,
 					'message' => "'". $message['text'],
-					'ate' => date_create('now')->format('Y-m-d H:i:s')
+					'date' => date_create('now')->format('Y-m-d H:i:s')
 				]);
 
 			}catch(Exception $e){
