@@ -6,6 +6,7 @@ use Google\Spreadsheet\ServiceRequestFactory;
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
 $bot = new LINEBotTiny($channelAccessToken, $channelSecret);
+$message = $event['message'];
 putenv('GOOGLE_APPLICATION_CREDENTIALS=' . __DIR__ . '/My Project-aeb1d8a3a4ed.json');
 		/*  SEND TO GOOGLE SHEETS */
 		 $client = new Google_Client;
