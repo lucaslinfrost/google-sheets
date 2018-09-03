@@ -6,11 +6,13 @@ use Google\Spreadsheet\DefaultServiceRequest;
 use Google\Spreadsheet\ServiceRequestFactory;
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
-$bot = new LINEBotTiny($channelAccessToken, $channelSecret);
+$client = new LINEBotTiny($channelAccessToken, $channelSecret);
+foreach ($client->parseEvents() as $event) {
 switch ($event['type']) {       
     case 'message':
-$message = $event['message'];
-$keywords = explode(',', $message['text']);
+	$message = $event['message'];
+	$keywords = explode(',', $message['text']);
+}
 }
 putenv('GOOGLE_APPLICATION_CREDENTIALS=' . __DIR__ . '/My Project-aeb1d8a3a4ed.json');
 		/*  SEND TO GOOGLE SHEETS */
@@ -39,7 +41,7 @@ putenv('GOOGLE_APPLICATION_CREDENTIALS=' . __DIR__ . '/My Project-aeb1d8a3a4ed.j
 
 				$listFeed = $worksheet->getListFeed();
 				$listFeed->insert([
-					'name' => "'". $message,
+					'name' => "'". $message['text'],
 					'phone' => "'". 'Orlov',
 					'surname' => "'". 'Orlov',
 					'city' => "'". 'Berlin',
