@@ -154,17 +154,17 @@ foreach ($bot->parseEvents() as $event) {
 								
 					$userName = $bot->getGroupProfile($groupId,$userId)['displayName'];
 					error_log("訊息發送人：".$userName);
-					require_once('./try.php');
+					require_once('__ROOT__./try.php');
 					}
 				else{
 					error_log("訊息發送人：不明");
-					require_once('./try.php');
+					require_once('__ROOT__./try.php');
 				}
 				}
 			if($source['type'] == "user"){
 				$userName = $bot->getProfile($source['userId'])['displayName'];
 				error_log("訊息發送人：".$userName);
-				require_once('./try.php');
+				require_once('__ROOT__./try.php');
 				}
 			
 			
