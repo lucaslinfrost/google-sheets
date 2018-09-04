@@ -172,7 +172,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
     //公告記錄
 	if(stristr($inputStr, '筆記') != false) {
 		
-		$rplyArr = explode('',$inputStr);
+		$rplyArr = explode('-',$inputStr);
     
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
 		
