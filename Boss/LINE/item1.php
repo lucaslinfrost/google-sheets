@@ -35,7 +35,7 @@ array_push($result, $candidate);
 }
 }
 // END Google Sheet Keyword Decode
-        $result1 = implode("",$result);
+
             break;
         default:
             error_log("Unsupporeted event type: " . $event['type']);
