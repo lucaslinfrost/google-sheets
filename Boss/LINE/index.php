@@ -45,15 +45,6 @@ function buildTextMessage($inputStr){
 	return $message;
 }
 
-//建立陣列文字訊息的函數
-function buildATextMessage($result){	
-	$result = array_slice($result,-1,1); 
-                    $client->replyMessage(array(
-                        'replyToken' => $event['replyToken'],
-                        'messages' => $result,
-                    ));
-}
-
 //建立圖片訊息的函數
 function buildImgMessage($inputStr){	
 	settype($inputStr, "string");
