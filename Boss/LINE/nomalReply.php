@@ -179,6 +179,16 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		
 		require_once('./currency.php');
 	}
+	else  
+    //公告記錄
+	if(stristr($inputStr, '筆記') != false) {
+		
+		$rplyArr = explode(' ',$inputStr);
+    
+		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
+		
+		require_once('../../notice.php');
+	}
     //以下是回應功能
 	//讀入文字回應變數
 	$content = file_get_contents($textReplyUrl);
