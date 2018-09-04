@@ -154,17 +154,30 @@ foreach ($bot->parseEvents() as $event) {
 								
 					$userName = $bot->getGroupProfile($groupId,$userId)['displayName'];
 					error_log("訊息發送人：".$userName);
-					require_once('../../record.php');
 					}
 				else{
 					error_log("訊息發送人：不明");
-					require_once('../../record.php');
 				}
 				}
+		    
+		        if($source['type'] == "room"){		
+				
+				$roomId = $source['roomId'];
+				$userId = $source['userId'];
+				error_log("群組ID：".$roomId);
+				if($userId != null){
+								
+					$userName = $bot->getRoomProfile($roomId,$userId)['displayName'];
+					error_log("訊息發送人：".$userName);
+					}
+				else{
+					error_log("訊息發送人：不明");
+				}
+				}
+		    
 			if($source['type'] == "user"){
 				$userName = $bot->getProfile($source['userId'])['displayName'];
 				error_log("訊息發送人：".$userName);
-				require_once('../../record.php');
 				}
 			
 			
