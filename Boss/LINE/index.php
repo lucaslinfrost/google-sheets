@@ -49,7 +49,7 @@ function buildTextMessage($inputStr){
 function buildATextMessage($inputStr){	
 	settype($inputStr, "string");
 	error_log("訊息【".$inputStr."】準備以文字訊息回傳");
-	$message = $inputStr,
+	$message = $inputStr
 	return $message;
 }
 
