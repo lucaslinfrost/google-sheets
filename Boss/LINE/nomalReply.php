@@ -77,8 +77,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		$rplyArr = explode(' ',$inputStr);
     
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
-		
 		require_once('./bot2.php');
+		return buildTextMessage(''.$store_text1.'');
 	}
 	
           
