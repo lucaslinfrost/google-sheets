@@ -46,10 +46,12 @@ function buildTextMessage($inputStr){
 }
 
 //建立陣列文字訊息的函數
-function buildATextMessage($inputStr){	
-	settype($inputStr, "string");
-	error_log("訊息【".$inputStr."】準備以文字訊息回傳");
-	$message = $inputStr;
+function buildATextMessage($result){	
+	$result = array_slice($result,-1,1); 
+                    $client->replyMessage(array(
+                        'replyToken' => $event['replyToken'],
+                        'messages' => $result,
+                    ));
 }
 
 //建立圖片訊息的函數
