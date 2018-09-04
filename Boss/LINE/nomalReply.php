@@ -88,7 +88,6 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
     
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
 		require_once('./produce2.php');
-		return buildTextMessage(''.$result.'');
 	}
 	//物品
 	if(stristr($inputStr, '掉落') != false||
@@ -99,7 +98,6 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
     
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
 		require_once('./item1.php');
-		return buildATextMessage(''.$result.'');
 	}
 	
           
