@@ -61,6 +61,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	if(stristr($inputStr, '筆記') != false) {
 		$rplyArr = explode(' ',$inputStr);
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
+		buildTextMessage(''.$userName.'，筆記已為您更新。');
 		require_once('../../notice.php');
 	}
 	
