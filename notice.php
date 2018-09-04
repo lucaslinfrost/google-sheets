@@ -12,7 +12,7 @@ switch ($event['type']) {
     case 'message':
 	$message = $event['message'];
 	$keywords = explode(' ', $message['text']);
-	$key = substr($keywords, 1, -1);
+	$key = substr($keywords, 1, -1,"utf-8");
 	$key1 = implode(" ",$key);
 }
 }
