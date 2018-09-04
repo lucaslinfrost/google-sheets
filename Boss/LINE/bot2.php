@@ -39,15 +39,8 @@ switch ($event['type']) {
         switch ($message['type']) {
             case 'text':
 
-                $client->replyMessage(array(
-                    'replyToken' => $event['replyToken'],
-                    'messages' => array(
-                        array(
-                            'type' => 'text',                                                                
-                            'text' => ''.$store_text1.'',
-                        )
-                    ),
-                ));               
+            return buildTextMessage(''.$store_text1.'');
+                
                 break;
             default:
                 error_log("Unsupporeted message type: " . $message['type']);
