@@ -32,7 +32,7 @@ switch ($event['type']) {
                     $store_text4 = $item['gsx$photo']['$t'];   
                 }
                 else
-                if (strpos($message['text'], $keyword) == false) {    
+                if (strpos($message['text'], $keyword) !== true) {    
                     $store_text = Array('沒有喵(=ↀωↀ=)','資料庫沒有你要找的資料ʅ（´◔౪◔）ʃ','我找不到(๑•́ ₃ •̀๑)','你眼睛業障重ಠ_ಠ所以看不到');
                     $store_text1 = $store_text[Dice(count($rplyArr))-1];
                 }
