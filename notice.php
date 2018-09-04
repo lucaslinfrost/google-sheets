@@ -46,16 +46,4 @@ putenv('GOOGLE_APPLICATION_CREDENTIALS=' . __DIR__ . '/My Project-aeb1d8a3a4ed.j
 			}catch(Exception $e){
 			  echo $e->getMessage() . ' ' . $e->getLine() . ' ' . $e->getFile() . ' ' . $e->getCode;
 			}
-			
-
-                $client->replyMessage(array(
-                    'replyToken' => $event['replyToken'],
-                    'messages' => array(
-                        array(
-                            'type' => 'text',
-                            'text' => $userName."，已為您更新公告。",
-                        )
-                    ),
-                ));               
-
 			/*  SEND TO GOOGLE SHEETS */
