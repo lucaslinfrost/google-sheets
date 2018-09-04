@@ -35,7 +35,6 @@ array_push($result, $candidate);
 }
 }
 // END Google Sheet Keyword Decode
-        $result = array_slice($result,-1,1);
         $result1 = implode("",$result);
             break;
         default:
