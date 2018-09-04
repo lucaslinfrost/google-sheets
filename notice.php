@@ -12,7 +12,7 @@ switch ($event['type']) {
     case 'message':
 	$message = $event['message'];
 	$keywords = explode(' ', $message['text']);
-	
+	$key = substr($keywords,1,-1,"utf-8")
 }
 }
 putenv('GOOGLE_APPLICATION_CREDENTIALS=' . __DIR__ . '/My Project-aeb1d8a3a4ed.json');
