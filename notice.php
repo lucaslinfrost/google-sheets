@@ -47,8 +47,7 @@ putenv('GOOGLE_APPLICATION_CREDENTIALS=' . __DIR__ . '/My Project-aeb1d8a3a4ed.j
 			  echo $e->getMessage() . ' ' . $e->getLine() . ' ' . $e->getFile() . ' ' . $e->getCode;
 			}
 			
-        switch ($message['type']) {
-            case 'text':
+
                 $client->replyMessage(array(
                     'replyToken' => $event['replyToken'],
                     'messages' => array(
@@ -58,9 +57,5 @@ putenv('GOOGLE_APPLICATION_CREDENTIALS=' . __DIR__ . '/My Project-aeb1d8a3a4ed.j
                         )
                     ),
                 ));               
-                break;
-            default:
-                error_log("Unsupporeted message type: " . $message['type']);
-                break;
-        }
+
 			/*  SEND TO GOOGLE SHEETS */
