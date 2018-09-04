@@ -12,8 +12,8 @@ switch ($event['type']) {
     case 'message':
 	$message = $event['message'];
 	$keywords = explode(' ', $message['text']);
-	$key = array_slice($keywords, 1, -1);
-	$key1 = implode(" ",$keywords);
+	$key = array_slice($keywords, 1, -0);
+	$key1 = implode(" ",$key);
 }
 }
 
