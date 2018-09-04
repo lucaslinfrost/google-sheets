@@ -175,8 +175,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		$rplyArr = explode('-',$inputStr);
     
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
-		return buildTextMessage(''.$userName.'，公告已為您更新。');
 		require_once('../../notice.php');
+		return buildTextMessage(''.$userName.'，公告已為您更新。');
 	}
     //以下是回應功能
 	//讀入文字回應變數
