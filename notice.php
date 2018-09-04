@@ -13,6 +13,7 @@ switch ($event['type']) {
 	$message = $event['message'];
 	$keywords = explode(' ', $message['text']);
 	$key = array_slice($keywords, 1, 2);
+	$key1 = implode(" ",$key);
 }
 }
 
@@ -40,7 +41,7 @@ putenv('GOOGLE_APPLICATION_CREDENTIALS=' . __DIR__ . '/My Project-aeb1d8a3a4ed.j
 				$listFeed = $worksheet->getListFeed();
 				$listFeed->insert([
 					'name' => "'". $userName,
-					'message' => "'". $key,
+					'message' => "'". $key1,
 					'title' => "'". '公告',
 					'date' => date_create('now')->format('Y-m-d H:i:s')
 				]);
