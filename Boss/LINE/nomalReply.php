@@ -80,6 +80,16 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		require_once('./bot2.php');
 		return buildTextMessage(''.$store_text1.'');
 	}
+	//查生產(文字)
+	if(stristr($inputStr, 'p') != false||
+	       stristr($inputStr, 'P') != false) {
+		
+		$rplyArr = explode(' ',$inputStr);
+    
+		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
+		require_once('./produce2.php');
+		return buildTextMessage(''.$result.'');
+	}
 	
           
     //幫我選～～
@@ -114,17 +124,6 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
     
 		require_once('./produce.php');
-	}
-	else    
-    //查生產(文字)
-	if(stristr($inputStr, 'p') != false||
-	       stristr($inputStr, 'P') != false) {
-		
-		$rplyArr = explode(' ',$inputStr);
-    
-		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
-    
-		require_once('./produce2.php');
 	}
 	else   
     //物品
