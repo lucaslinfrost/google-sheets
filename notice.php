@@ -13,7 +13,7 @@ switch ($event['type']) {
 	$message = $event['message'];
 	$keywords = explode(' ', $message['text']);
 	$key = array_slice($keywords, 1, -1);
-	$key1 = implode(" ",$key);
+	$key1 = implode(" ",$keywords);
 }
 }
 
