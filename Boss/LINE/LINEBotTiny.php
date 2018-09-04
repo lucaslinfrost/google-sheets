@@ -160,6 +160,24 @@ class LINEBotTiny
         return $response;
     }
 	
+	public function getRoomProfile($roomId,$userId)
+    {	$header = array(
+            'Authorization: Bearer ' . $this->channelAccessToken ."\r\n",
+        );
+
+        $context = stream_context_create(array(
+            "http" => array(
+                "method" => "GET",
+                "header" => $header,               
+            ),
+        ));
+
+		$url='https://api.line.me/v2/bot/room/'.urlencode($roomId).'/member/'.urlencode($userId);
+        $response = file_get_contents($url, false, $context);
+		$response = json_decode($response,true);
+        return $response;
+    }
+	
 	public function getGroupIDs($groupId)
     {	$header = array(
             'Authorization: Bearer ' . $this->channelAccessToken ."\r\n",
@@ -172,6 +190,23 @@ class LINEBotTiny
             ),
         ));		
 		$url='https://api.line.me/v2/bot/group/'.$groupId.'/members/ids';
+        $response = file_get_contents($url, false, $context);
+		$response = json_decode($response,true);
+        return $response;
+    }
+	
+	public function getRoomIDs($roomId)
+    {	$header = array(
+            'Authorization: Bearer ' . $this->channelAccessToken ."\r\n",
+        );
+
+        $context = stream_context_create(array(
+            "http" => array(
+                "method" => "GET",
+                "header" => $header,               
+            ),
+        ));		
+		$url='https://api.line.me/v2/bot/room/'.$roomId.'/members/ids';
         $response = file_get_contents($url, false, $context);
 		$response = json_decode($response,true);
         return $response;
