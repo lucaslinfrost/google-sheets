@@ -54,7 +54,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	//公告
 	//可以是為一個使用外聯檔案的範例
 	if(stristr($inputStr, '公告') != false) {
-		require_once('./.php');
+		require_once('./public.php');
 	}
 	
 	//更新爬蟲
