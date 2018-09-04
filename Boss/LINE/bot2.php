@@ -20,9 +20,6 @@ switch ($event['type']) {
         $json = file_get_contents($googledataspi);
         $data = json_decode($json, true);           
         $store_text=''; 
-        $key = explode(' ', $message['text']);
-	$key1 = array_slice($key, 1);
-	$key2 = implode(" ",$key1);
         // 資料起始從feed.entry          
         foreach ($data['feed']['entry'] as $item) {
             // 將keywords欄位依,切成陣列
@@ -30,14 +27,9 @@ switch ($event['type']) {
 
             // 以關鍵字比對文字內容，符合的話將店名/地址寫入
             foreach ($keywords as $keyword) {
-                if (strpos($key2, $keyword) !== false) {                      
+                if (strpos($message['text'], $keyword) !== false) {                      
                     $store_text1 = $item['gsx$title1']['$t']."".$item['gsx$name']['$t']."".$item['gsx$title2']['$t']."".$item['gsx$level']['$t']."\n".$item['gsx$special']['$t']."".$item['gsx$title3']['$t']."".$item['gsx$map']['$t']."".$item['gsx$title5']['$t']."".$item['gsx$attribute']['$t']."".$item['gsx$title6']['$t']."".$item['gsx$week']['$t']."".$item['gsx$title4']['$t']."".$item['gsx$drop1']['$t']."\n".$item['gsx$drop2']['$t']."\n".$item['gsx$drop3']['$t']."\n".$item['gsx$drop4']['$t'];
                     $store_text4 = $item['gsx$photo']['$t'];   
-                }
-                else
-                if (strpos($key2, $keyword) === false) {    
-                    $store_text = Array('沒有喵(=ↀωↀ=)','資料庫沒有你要找的資料ʅ（´◔౪◔）ʃ','我找不到(๑•́ ₃ •̀๑)','你眼睛業障重ಠ_ಠ所以看不到');
-                    $store_text1 = $store_text[Dice(count($rplyArr))-1];
                 }
             }
         }       
