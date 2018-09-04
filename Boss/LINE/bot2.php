@@ -33,19 +33,6 @@ switch ($event['type']) {
               }
             }
         }       
-
-
-
-        switch ($message['type']) {
-            case 'text':
-
-            return buildTextMessage(''.$store_text1.'');
-                
-                break;
-            default:
-                error_log("Unsupporeted message type: " . $message['type']);
-                break;
-        }
         break;
     default:
         error_log("Unsupporeted event type: " . $event['type']);
