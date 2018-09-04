@@ -50,7 +50,6 @@ function buildATextMessage($inputStr){
 	settype($inputStr, "string");
 	error_log("訊息【".$inputStr."】準備以文字訊息回傳");
 	$message = $inputStr;
-	return $message;
 }
 
 //建立圖片訊息的函數
