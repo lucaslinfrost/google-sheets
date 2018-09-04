@@ -51,21 +51,10 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	
 	
 	
-	//更新日誌與公告，使用外聯檔案
+	//公告
 	//可以是為一個使用外聯檔案的範例
 	if(stristr($inputStr, '公告') != false) {
-		
-		$file = fopen("https://tx9vs5swfgjw9nqh1z3gyw-on.drv.tw/iruna%20produce/iruna/note.txt", "r");
-		$reply = '';
-		//輸出文本中所有的行，直到文件結束為止。
-		while(! feof($file))
-		{
-			$reply =  $reply.fgets($file);
-		}
-		//當讀出文件一行後，就在後面加上 <br> 讓html知道要換行
-		fclose($file);
-		
-		return buildTextMessage($reply);
+		require_once('./.php');
 	}
 	
 	//更新爬蟲
