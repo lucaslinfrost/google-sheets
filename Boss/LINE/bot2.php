@@ -31,7 +31,8 @@ switch ($event['type']) {
                 if (strpos($code[1], $keyword) !== false) {                      
                     $store_text1 = $item['gsx$title1']['$t']."".$item['gsx$name']['$t']."".$item['gsx$title2']['$t']."".$item['gsx$level']['$t']."\n".$item['gsx$special']['$t']."".$item['gsx$title3']['$t']."".$item['gsx$map']['$t']."".$item['gsx$title5']['$t']."".$item['gsx$attribute']['$t']."".$item['gsx$title6']['$t']."".$item['gsx$week']['$t']."".$item['gsx$title4']['$t']."".$item['gsx$drop1']['$t']."\n".$item['gsx$drop2']['$t']."\n".$item['gsx$drop3']['$t']."\n".$item['gsx$drop4']['$t'];
                     $store_text4 = $item['gsx$photo']['$t']; 
-                } else {
+                }
+                if (strpos($code[1], $keyword) === false) {
                     $store_text1 = "啊?";
                 }
             }
