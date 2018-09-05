@@ -80,7 +80,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		require_once('./bot2.php');
 		if ($store_text1 !== "") {
 		return buildTextMessage(''.$store_text1.'');
-		} else {
+		}
+		if ($store_text1 = NULL) {
 		return buildTextMessage(''.$userName.'，你到底想讓我做啥?');
 		}	
 	}
