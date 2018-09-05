@@ -31,26 +31,6 @@ switch ($event['type']) {
               }
             }
         }       
-
-
-
-        switch ($message['type']) {
-            case 'text':
-
-                $client->replyMessage(array(
-                    'replyToken' => $event['replyToken'],
-                    'messages' => array(
-                        array(
-                            'type' => 'text',                                                                
-                            'text' => ''.$dataall.'',
-                        )
-                    ),
-                ));               
-                break;
-            default:
-                error_log("Unsupporeted message type: " . $message['type']);
-                break;
-        }
         break;
     default:
         error_log("Unsupporeted event type: " . $event['type']);
