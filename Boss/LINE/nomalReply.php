@@ -81,7 +81,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		if ($store_text1 !== "") {
 		return buildTextMessage(''.$store_text1.'');
 		}
-		if (empty($store_text1)) {
+		if ($store_text1 == empty) {
 		return buildTextMessage(''.$userName.'，你到底想讓我做啥?');
 		}	
 	}
