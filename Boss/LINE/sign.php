@@ -18,7 +18,8 @@ switch ($event['type']) {
 
         // 將Google表單轉成JSON資料
         $json = file_get_contents($googledataspi);
-        $data = json_decode($json, true);           
+        $data = json_decode($json, true);
+        $code = explode(' ', $message['text']);
         // 資料起始從feed.entry          
         foreach ($data['feed']['entry'] as $item) {
             // 將keywords欄位依,切成陣列
@@ -26,7 +27,7 @@ switch ($event['type']) {
 
             // 以關鍵字比對文字內容
             foreach ($keywords as $keyword) {
-                if (strpos($message['text'], $keyword) !== false) {                      
+                if (strpos($code[1], $keyword) !== false) {                      
                     $dataall = $item['gsx$data1']['$t']."\n\n".$item['gsx$data2']['$t']."\n".$item['gsx$data3']['$t']."\n\n".$item['gsx$data4']['$t']."\n".$item['gsx$data5']['$t']."\n\n".$item['gsx$data6']['$t']."\n".$item['gsx$data7']['$t']."\n\n".$item['gsx$data8']['$t']."\n".$item['gsx$data9']['$t'];
               }
             }
