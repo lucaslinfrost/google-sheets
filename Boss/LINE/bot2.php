@@ -8,7 +8,7 @@ $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
 $googledataspi = getenv('googledataspi');
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
-$code = explode(' ', $message['text']);
+
 // 取得事件(只接受文字訊息)
 foreach ($client->parseEvents() as $event) {
 switch ($event['type']) {       
@@ -20,6 +20,7 @@ switch ($event['type']) {
         $json = file_get_contents($googledataspi);
         $data = json_decode($json, true);           
         $store_text=''; 
+        $code = explode(' ', $message['text']);
         // 資料起始從feed.entry          
         foreach ($data['feed']['entry'] as $item) {
             // 將keywords欄位依,切成陣列
