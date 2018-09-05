@@ -17,11 +17,12 @@ foreach ($client->parseEvents() as $event) {
             $message = $event['message'];
             $json = file_get_contents($googledataspi2);
             $data = json_decode($json, true);
+            $code = explode(' ', $message['text']);
             $result = array();
             foreach ($data['feed']['entry'] as $item) {
                 $keywords = explode(',', $item['gsx$keyword']['$t']);
                 foreach ($keywords as $keyword) {
-                    if (strpos($message['text'], $keyword) !== false) {
+                    if (strpos($code[], $keyword) !== false) {
                     
                     $alltext = $alltext."".$item['gsx$pname']['$t']."\n\n生產等級 : ".$item['gsx$keyword']['$t']."\n其他生產要求 : ".$item['gsx$others']['$t']."\n材料1 : ".$item['gsx$item1']['$t']."\n材料2 : ".$item['gsx$item2']['$t']."\n材料3 : ".$item['gsx$item3']['$t']."\n材料4 : ".$item['gsx$item4']['$t']."\n大成功A : ".$item['gsx$sua']['$t']."\n大成功B : ".$item['gsx$sub']['$t']."\n備註 :\n".$item['gsx$remark']['$t']."\n--------  分°Д°行  --------\n";
                     
