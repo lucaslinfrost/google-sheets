@@ -78,12 +78,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
     
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
 		require_once('./bot2.php');
-		if ($store_text1="") {
-		$rplyArr=Array('你眼睛業障重ಠ_ಠ所以看不到','我找不到(๑•́ ₃ •̀๑)','資料庫沒有你要找的資料ʅ（´◔౪◔）ʃ','沒有喵(=ↀωↀ=)');
-		return buildTextMessage(''.$userName.'，'.$rplyArr[Dice(count($rplyArr))-1].'');
-		} else {
 		return buildTextMessage(''.$store_text1.'');
-		}
 	}
 	//查生產(文字)
 	if(stristr($inputStr, 'p') != false||
