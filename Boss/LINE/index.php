@@ -45,20 +45,6 @@ function buildTextMessage($inputStr){
 	return $message;
 }
 
-//建立陣列文字訊息的函數
-function buildArrayTextMessage($inputStr){
-	settype($inputStr, "string");
-	error_log("訊息【".$inputStr."】準備以文字訊息回傳");
-	$bot->replyMessage(
-	array(
-	'replyToken' => $event['replyToken'],
-	'messages' => $inputStr
-	)
-	);
-	return $message;
-}
-
-
 //建立圖片訊息的函數
 function buildImgMessage($inputStr){	
 	settype($inputStr, "string");
