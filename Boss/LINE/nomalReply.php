@@ -48,6 +48,11 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		}
 	}	
 	}
+	
+	//test
+	if(stristr($inputStr, '公告') != false) {
+	$bot->leave_room($roomId);
+	}
 
 	//公告
 	//可以是為一個使用外聯檔案的範例
