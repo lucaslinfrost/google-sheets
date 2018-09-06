@@ -50,11 +50,10 @@ function buildArrayTextMessage($inputStr){
 	error_log("訊息【".$inputStr."】準備以文字訊息回傳");
 	switch ($message['type']) {
 		case 'text':
-		require_once('./item1.php');
-		$result = array_slice($result,-1,1); 
+		$inputStr = array_slice($inputStr,-1,1); 
                     $bot->replyMessage(array(
                         'replyToken' => $event['replyToken'],
-                        'messages' => $result,
+                        'messages' => $inputStr,
                     ));
 		break;
 }
