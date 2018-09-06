@@ -51,6 +51,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	
 	//公告
 	if(stristr($inputStr, '再見') != false) {	
+	require_once('./LINEBotTiny.php');
 	$bot->leaveRoom($roomId);
 	}
 	
