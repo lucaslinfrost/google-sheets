@@ -36,18 +36,7 @@ array_push($result, $candidate);
 }
 }
 // END Google Sheet Keyword Decode
-switch ($message['type']) {
-                case 'text':
-                    $result = array_slice($result,-1,1); 
-                    $client->replyMessage(array(
-                        'replyToken' => $event['replyToken'],
-                        'messages' => $result,
-                    ));
-                    break;
-                default:
-                    error_log("Unsupporeted message type: " . $message['type']);
-                    break;
-            }
+
             break;
         default:
             error_log("Unsupporeted event type: " . $event['type']);
