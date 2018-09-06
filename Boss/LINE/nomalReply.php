@@ -49,6 +49,10 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	}	
 	}
 
+	
+	if(stristr($inputStr, '再見') != false) {
+		$bot->leaveRoom($roomId);
+	}
 
 	//公告
 	//可以是為一個使用外聯檔案的範例
