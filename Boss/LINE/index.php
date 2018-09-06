@@ -47,13 +47,10 @@ function buildTextMessage($inputStr){
 
 //建立陣列文字訊息的函數
 function buildArrayTextMessage($inputStr){
-		$inputStr = array_slice($inputStr,-1,1); 
-		$inputStr = implode(" ",$inputStr);
+		settype($inputStr, "string");
 		error_log("訊息【".$inputStr."】準備以文字訊息回傳");
-                    $bot->replyMessage(array(
-                        'replyToken' => $event['replyToken'],
-                        'messages' => $inputStr,
-                    ));
+		$inputStr = array_slice($inputStr,-1,1); 
+                $messages = $inputStr,
 	return $message;
 }
 
