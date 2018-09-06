@@ -48,13 +48,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		}
 	}	
 	}
-	
-	//公告
-	if(stristr($inputStr, '再見') != false) {	
-	require_once('./LINEBotTiny.php');
-	$bot->leaveRoom($roomId);
-	}
-	
+
 	//公告
 	//可以是為一個使用外聯檔案的範例
 	if(stristr($inputStr, '公告') != false) {
