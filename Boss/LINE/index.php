@@ -47,7 +47,6 @@ function buildTextMessage($inputStr){
 
 //建立陣列文字訊息的函數
 function buildArrayTextMessage($inputStr){	
-	settype($inputStr, "string");
 	error_log("訊息【".$inputStr."】準備以文字訊息回傳");
 	switch ($message['type']) {
 		case 'text':
