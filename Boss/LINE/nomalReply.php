@@ -50,8 +50,10 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	}
 
 	
-	if(stristr($inputStr, '再見') != false) {
-		$bot->leaveRoom($roomId);
+	if(stristr($inputStr, '再見') != false||
+	       stristr($inputStr, 'bye') != false||
+	       stristr($inputStr, 'Bye') != false) {
+	return buildTextMessage(''.$userName.'，我偏不走，怎麼樣?');
 	}
 
 	//公告
