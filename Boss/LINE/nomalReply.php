@@ -51,8 +51,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	
 	//公告
 	if(stristr($inputStr, '再見') != false) {	
-	$response = $bot->leaveRoom($roomId);
-	echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
+	$bot->leaveRoom($roomId);
 	}
 	
 	//公告
