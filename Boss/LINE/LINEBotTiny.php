@@ -219,4 +219,25 @@ class LINEBotTiny
         $signature = base64_encode($hash);
         return $signature;
     }
+	
+     /**
+     * Leaves from group.
+     *
+     * @param string $groupId Identifier of group to leave.
+     * @return Response
+     */
+    public function leaveGroup($groupId)
+    {
+        return $this->httpClient->post($this->endpointBase . '/v2/bot/group/' . urlencode($groupId) . '/leave', []);
+    }
+    /**
+     * Leaves from room.
+     *
+     * @param string $roomId Identifier of room to leave.
+     * @return Response
+     */
+    public function leaveRoom($roomId)
+    {
+        return $this->httpClient->post($this->endpointBase . '/v2/bot/room/' . urlencode($roomId) . '/leave', []);
+    }
 }
