@@ -51,6 +51,7 @@ function buildArrayTextMessage($result){
 	switch ($message['type']) {
 		case 'text':
 		$result = array_slice($result,-1,1); 
+		$result = implode("\",$result);
                     $bot->replyMessage(array(
                         'replyToken' => $event['replyToken'],
                         'messages' => $result,
