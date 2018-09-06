@@ -49,7 +49,6 @@ function buildTextMessage($inputStr){
 function buildArrayTextMessage($inputStr){	
 	settype($inputStr, "string");
 	error_log("訊息【".$inputStr."】準備以文字訊息回傳");
-	foreach ($client->parseEvents() as $event) {
 	switch ($message['type']) {
 		case 'text':
 		$inputStr = array_slice($inputStr,-1,1); 
@@ -58,7 +57,6 @@ function buildArrayTextMessage($inputStr){
                         'messages' => $inputStr,
                     ));
 		break;
-}
 }
 	return $message;
 }
