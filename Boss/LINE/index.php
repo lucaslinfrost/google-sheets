@@ -49,7 +49,11 @@ function buildTextMessage($inputStr){
 function buildArrayTextMessage($inputStr){	
 	settype($inputStr, "string");
 	error_log("訊息【".$inputStr."】準備以文字訊息回傳");
-	$message = array($inputStr);
+		$inputStr = array_slice($inputStr,-1,1); 
+                    $bot->replyMessage(array(
+                        'replyToken' => $event['replyToken'],
+                        'messages' => $inputStr,
+                    ));
 	return $message;
 }
 
