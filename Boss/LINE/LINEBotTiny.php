@@ -219,51 +219,5 @@ class LINEBotTiny
         $signature = base64_encode($hash);
         return $signature;
     }
-	
-     /**
-     * Leaves from group.
-     *
-     * @param string $groupId Identifier of group to leave.
-     * @return Response
-     */
-    public function leaveGroup($groupId)
-    {	$header = array(
-            'Authorization: Bearer ' . $this->channelAccessToken ."\r\n",
-        );
 
-        $context = stream_context_create(array(
-            "http" => array(
-                "method" => "GET",
-                "header" => $header,               
-            ),
-        ));
-
-		$url='https://api.line.me/v2/bot/group/'.urlencode($groupId).'/leave';
-        $response = file_get_contents($url, false, $context);
-		$response = json_decode($response,true);
-        return $response;
-    }
-    /**
-     * Leaves from room.
-     *
-     * @param string $roomId Identifier of room to leave.
-     * @return Response
-     */
-    public function leaveRoom($roomId)
-    {	$header = array(
-            'Authorization: Bearer ' . $this->channelAccessToken ."\r\n",
-        );
-
-        $context = stream_context_create(array(
-            "http" => array(
-                "method" => "GET",
-                "header" => $header,               
-            ),
-        ));
-
-		$url='https://api.line.me/v2/bot/room/'.urlencode($roomId).'/leave';
-        $response = file_get_contents($url, false, $context);
-		$response = json_decode($response,true);
-        return $response;
-    }
 }
