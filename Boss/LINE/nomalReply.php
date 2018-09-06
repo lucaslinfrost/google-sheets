@@ -49,7 +49,11 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	}	
 	}
 	
-	
+	//公告
+	if(stristr($inputStr, '再見') != false) {	
+	$response = $bot->leaveRoom($roomId);
+	echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
+	}
 	
 	//公告
 	//可以是為一個使用外聯檔案的範例
