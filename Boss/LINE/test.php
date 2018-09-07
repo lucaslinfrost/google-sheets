@@ -1,6 +1,5 @@
 <?php
 //掉落物品搜尋介面(文字版)
-ini_set("memory_limit","128M");
 require_once('./LINEBotTiny.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
