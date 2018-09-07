@@ -49,7 +49,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	}	
 	}
 
-	
+	//離開
 	if(stristr($inputStr, '再見') != false||
 	       stristr($inputStr, 'bye') != false||
 	       stristr($inputStr, 'Bye') != false) {
@@ -112,7 +112,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		$rplyArr = explode(' ',$inputStr);
     
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
-		require_once('./item1.php');
+		require_once('./test.php');
 	}
    	 //星座
 	if(stristr($inputStr, '星座') != false) {
