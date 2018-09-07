@@ -21,7 +21,7 @@ switch ($event['type']) {
             $keywords = explode('、', $item['gsx$key']['$t']);
             // 以關鍵字比對文字內容，符合的話將店名/地址寫入
             foreach ($keywords as $keyword) {
-                if (strlen($message['text'], $keyword) !== false) {    
+                if (strcmp($message['text'], $keyword) === 0) {    
 
 $alltext = $alltext."怪物 : ".$item['gsx$name']['$t']."\n等級 : ".$item['gsx$level']['$t']."\n地圖 :\n".$item['gsx$map']['$t']."\n掉落 :\n".$item['gsx$drop1']['$t']."\n".$item['gsx$drop2']['$t']."\n".$item['gsx$drop3']['$t']."\n".$item['gsx$drop4']['$t']."\n--------  分°Д°行  --------\n";
  
