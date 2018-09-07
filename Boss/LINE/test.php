@@ -14,7 +14,7 @@ switch ($event['type']) {
         // 將Google表單轉成JSON資料
         $json = file_get_contents($googledataspi);
         $data = json_decode($json, true); 
-        $code = explode(' ', $message['text']);
+        
         $result = array();
         // 資料起始從feed.entry          
         foreach ($data['feed']['entry'] as $item) {
@@ -22,7 +22,7 @@ switch ($event['type']) {
             $keywords = explode('、', $item['gsx$key']['$t']);
             // 以關鍵字比對文字內容，符合的話將店名/地址寫入
             foreach ($keywords as $keyword) {
-                if (preg_match("/^".$code[1]."$/", $keyword) !== false) {    
+                if (strlen($message['text'], $keyword) !== false) {    
 
 $alltext = $alltext."怪物 : ".$item['gsx$name']['$t']."\n等級 : ".$item['gsx$level']['$t']."\n地圖 :\n".$item['gsx$map']['$t']."\n掉落 :\n".$item['gsx$drop1']['$t']."\n".$item['gsx$drop2']['$t']."\n".$item['gsx$drop3']['$t']."\n".$item['gsx$drop4']['$t']."\n--------  分°Д°行  --------\n";
  
