@@ -1,10 +1,7 @@
 <?php
 //掉落物品搜尋介面(文字版)
 
-define('MAX_STR',512000);
-define('MAX_MEM',96000000);
-$string = substr($string,0,MAX_STR);
-if(memory_get_usage() < MAX_MEM)
+ini_set('memory_limit', '256M');
 
 require_once('./LINEBotTiny.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
