@@ -20,7 +20,6 @@ switch ($event['type']) {
         $json = file_get_contents($googledataspi);
         $data = json_decode($json, true);           
         $store_text1 = ""; 
-        $message['text'] = big5_gb2312($message['text']);
         $code = explode(' ', $message['text']);
         // 資料起始從feed.entry          
         foreach ($data['feed']['entry'] as $item) {
@@ -34,15 +33,7 @@ switch ($event['type']) {
                     $store_text4 = $item['gsx$photo']['$t']; 
                 }
             }
-        }   
-        
-    function big5_gb2312($in) {
-        $in = iconv('UTF-8', 'BIG5', $in);
-        $in = iconv('BIG5', 'GB2312', $in);
-        $out = iconv('GB2312', 'UTF-8', $in);
-        return $out;
-    }
-        
+        }    
         break;
     default:
         error_log("Unsupporeted event type: " . $event['type']);
