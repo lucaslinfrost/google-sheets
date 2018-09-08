@@ -34,7 +34,15 @@ switch ($event['type']) {
                     $store_text4 = $item['gsx$photo']['$t']; 
                 }
             }
-        }       
+        }   
+        
+    function big5_gb2312($in) {
+        $in = iconv('UTF-8', 'BIG5', $in);
+        $in = iconv('BIG5', 'GB2312', $in);
+        $out = iconv('GB2312', 'UTF-8', $in);
+        return $out;
+    }
+        
         break;
     default:
         error_log("Unsupporeted event type: " . $event['type']);
