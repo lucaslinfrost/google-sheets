@@ -19,7 +19,7 @@ switch ($event['type']) {
         // 將Google表單轉成JSON資料
         $json = file_get_contents($googledataspi);
         $data = json_decode($json, true);           
-        $store_text1 = "找不到"; 
+        $store_text1 = ""; 
         $code = explode(' ', $message['text']);
         // 資料起始從feed.entry          
         foreach ($data['feed']['entry'] as $item) {
