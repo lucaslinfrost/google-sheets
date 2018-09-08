@@ -3,6 +3,7 @@
 //星能力搜索介面(旋轉木馬版)
 
 require_once('./LINEBotTiny.php');
+require_once('./utf8_chinese.class.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
 $googledataspi = getenv('googledataspi3');
@@ -13,6 +14,8 @@ foreach ($client->parseEvents() as $event) {
             $message = $event['message'];
             $json = file_get_contents($googledataspi);
             $data = json_decode($json, true);
+            $c = new utf8_chinese;
+            $message['text'] = $c->gb2312_big5($message['text']);
             $result = array();
             foreach ($data['feed']['entry'] as $item) {
                 $keywords = explode(',', $item['gsx$keyword']['$t']);
