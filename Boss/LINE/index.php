@@ -398,8 +398,8 @@ function DvTest ($inputStr,$userName,$textReplyUrl,$imgsReplyUrl){
 	
 	
 	//應聲蟲功能哦
-	$input = str_replace("dvtest ","",$inputStr);
-	$finalStr = "input:\n".$input."\nstrlen:".strlen($input);
+	$input = str_replace("database ","",$inputStr);
+	$finalStr = "輸入:\n".$input."\n字串長度:".strlen($input);
 	return buildTextMessage($finalStr);
 	
 }
