@@ -15,6 +15,7 @@ switch ($event['type']) {
         $json = file_get_contents($googledataspi);
         $data = json_decode($json, true); 
         $result = array();
+        $mline = "\n--------  分°Д°行  --------\n";
         // 資料起始從feed.entry          
         foreach ($data['feed']['entry'] as $item) {
             // 將keywords欄位依,切成陣列
@@ -23,21 +24,21 @@ switch ($event['type']) {
             foreach ($keywords as $keyword) {
                 if (strcmp($message['text'], $keyword) === 0) {    
 
-$alltext = $alltext."怪物 : ".$item['gsx$name']['$t']."\n等級 : ".$item['gsx$level']['$t']."\n地圖 :\n".$item['gsx$map']['$t']."\n掉落 :\n".$item['gsx$drop1']['$t']."\n".$item['gsx$drop2']['$t']."\n".$item['gsx$drop3']['$t']."\n".$item['gsx$drop4']['$t']."\n--------  分°Д°行  --------\n";
- 
+$alltext = $alltext."怪物 : ".$item['gsx$name']['$t']."\n等級 : ".$item['gsx$level']['$t']."\n地圖 :\n".$item['gsx$map']['$t']."\n掉落 :\n".$item['gsx$drop1']['$t']."\n".$item['gsx$drop2']['$t']."\n".$item['gsx$drop3']['$t']."\n".$item['gsx$drop4']['$t'];
+
 $candidate = array(
 "type" => "text",
 "text" => $alltext,
 );
 array_push($result, $candidate);
-
+array_push($result, $mline);
 }
 }
 }
 // END Google Sheet Keyword Decode
 switch ($message['type']) {
                 case 'text':
-                    $result = array_slice($result,-1,1); 
+                    $result = array_slice($result,-2,1); 
                     $client->replyMessage(array(
                         'replyToken' => $event['replyToken'],
                         'messages' => $result,
