@@ -277,7 +277,7 @@ function parseInput ($inputStr){
 	$inputStr = strtolower($inputStr);
 
 	//preg_match ( "/A/" , B)。A是要比對的關鍵字（正則），B是被比對的字串
-	if (preg_match ("/d/i", $inputStr)){
+	if (preg_match ("/database/i", $inputStr)){
 		return DvTest ($inputStr,$userName,$textReplyUrl,$imgsReplyUrl);
 		
 	}else if(stristr($inputStr,$keyWord) != false){ //$keyWord
