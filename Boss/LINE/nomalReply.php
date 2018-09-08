@@ -19,7 +19,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	$manual = json_decode($content, true);
 	
 	//功能說明
-	if(stristr($inputStr,'說明') != false){ 
+	if(stristr($inputStr,'說明') != false||
+	       stristr($inputStr, '说明') != false) {
 	foreach($manual as $systems){
 		foreach($systems['Syskey'] as $chack){	
 			if(stristr($inputStr, $chack) != false){
@@ -64,7 +65,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	//離開
 	if(stristr($inputStr, '再見') != false||
 	       stristr($inputStr, 'bye') != false||
-	       stristr($inputStr, 'Bye') != false) {
+	       stristr($inputStr, 'Bye') != false||
+	       stristr($inputStr, '再见') != false) {
 	return buildTextMessage(''.$userName.'，我偏不走，怎麼樣?');
 	}
 
@@ -75,7 +77,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	}
 	
 	//更新筆記
-	if(stristr($inputStr, '筆記') != false) {
+	if(stristr($inputStr, '筆記') != false||
+	       stristr($inputStr, '笔记') != false) {
 		$rplyArr = explode(' ',$inputStr);
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
 		require_once('../../notice.php');
@@ -110,7 +113,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	//查生產(文字)
 	if(stristr($inputStr, 'p') != false||
 	       stristr($inputStr, 'P') != false||
-	       stristr($inputStr, '生產') != false) {
+	       stristr($inputStr, '生產') != false||
+	       stristr($inputStr, '生产') != false) {
 		
 		$rplyArr = explode(' ',$inputStr);
     
@@ -162,7 +166,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		return buildTextMessage(''.$dataall.'');
 	}
   	  //匯率
-	if(stristr($inputStr, '匯率') != false) {
+	if(stristr($inputStr, '匯率') != false||
+	       stristr($inputStr, '汇率') != false) {
 		
 		$rplyArr = explode(' ',$inputStr);
     
@@ -209,7 +214,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	else 		
 	//以下是運勢功能
 	if(stristr($inputStr, '運勢') != false||
-	       stristr($inputStr, '占卜') != false) {
+	       stristr($inputStr, '占卜') != false||
+		stristr($inputStr, '运势') != false) {
 		$rplyArr=Array('超大吉','大吉','大吉','中吉','中吉','中吉','小吉','小吉','小吉','小吉','凶','凶','凶','大凶','大凶','你還是，不要知道比較好','這應該不關我的事');
 		return buildTextMessage(''.$userName.'，你今日的運勢是【'.$rplyArr[Dice(count($rplyArr))-1].'】喔。');
 	} 
