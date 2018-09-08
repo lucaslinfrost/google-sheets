@@ -109,7 +109,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	}
 	//查生產(文字)
 	if(stristr($inputStr, 'p') != false||
-	       stristr($inputStr, 'P') != false) {
+	       stristr($inputStr, 'P') != false||
+	       stristr($inputStr, '生產') != false) {
 		
 		$rplyArr = explode(' ',$inputStr);
     
@@ -195,16 +196,6 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		}
     return buildTextMessage('我覺得'.$Answer.'吧。');
 	} 
-	else   
-    //查生產(旋轉木馬)
-	if(stristr($inputStr, '生產') != false) {
-		
-		$rplyArr = explode(' ',$inputStr);
-    
-		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
-    
-		require_once('./produce.php');
-	}
 	else  
     //星能
 	if(stristr($inputStr, '星能') != false) {
