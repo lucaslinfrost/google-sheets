@@ -27,12 +27,6 @@ switch ($event['type']) {
 
                 $alltext = $alltext."怪物 : ".$item['gsx$name']['$t']."\n等級 : ".$item['gsx$level']['$t']."\n地圖 :\n".$item['gsx$map']['$t']."\n掉落 :\n".$item['gsx$drop1']['$t']."\n".$item['gsx$drop2']['$t']."\n".$item['gsx$drop3']['$t']."\n".$item['gsx$drop4']['$t'];
                 $alltext = $alltext."".$mline;
-$candidate = array(
-"type" => "text",
-"text" => $alltext,
-);
-array_push($result, $candidate);
-array_push($result, $mline);
 }
 }
 }
