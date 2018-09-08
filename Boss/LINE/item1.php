@@ -15,7 +15,7 @@ switch ($event['type']) {
         $json = file_get_contents($googledataspi);
         $data = json_decode($json, true); 
         $code = explode(' ', $message['text']);
-        $alltext = "找不到";
+        $alltext = "";
         $mline = "\n--------  分°Д°行  --------\n";
         // 資料起始從feed.entry          
         foreach ($data['feed']['entry'] as $item) {
