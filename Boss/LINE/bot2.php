@@ -20,6 +20,7 @@ switch ($event['type']) {
         $json = file_get_contents($googledataspi);
         $data = json_decode($json, true);           
         $store_text1 = ""; 
+        $message['text'] = big5_gb2312($message['text']);
         $code = explode(' ', $message['text']);
         // 資料起始從feed.entry          
         foreach ($data['feed']['entry'] as $item) {
