@@ -17,6 +17,7 @@
 
 require_once('./LINEBotTiny.php');
 require_once('./nomalReply.php');
+require_once('./utf8_chinese.class.php');
 
 //主要的全域變數，只有簡易的API，覺得難過香菇
 //試著手動加入了getProfile的功能…不知道是否用得到
@@ -27,6 +28,8 @@ $manualUrl = getenv('MANUAL_URL');
 $textReplyUrl = getenv('TEXT_REPLY_URL');
 $imgsReplyUrl = getenv('IMGS_REPLY_URL');
 $yababangUrl = getenv('YABABANG_URL');
+$c = new utf8_chinese;
+$inputStr = $c->gb2312_big5($inputStr);
 
 $bot = new LINEBotTiny($channelAccessToken, $channelSecret);
 $userName = '你';
