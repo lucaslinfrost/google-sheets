@@ -1,6 +1,6 @@
 <?php
 
-//匯率功能介面 (文字版)
+//星座功能介面 (文字版)
 
 require_once('./LINEBotTiny.php');
 require_once('./utf8_chinese.class.php');
