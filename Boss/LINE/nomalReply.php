@@ -115,11 +115,11 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
     
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
 		require_once('./produce2.php');
-		if ($alltext !== "找不到") {
+		if ($alltext !== "") {
 		$alltext = substr($alltext, 0, -34);
 		return buildTextMessage(''.$alltext.'');
 		}
-		if ($alltext == "找不到") {
+		if ($alltext === "") {
 		$rplyArr = Array(
                  '你眼睛業障重ಠ_ಠ所以看不到',
                  '我找不到(๑•́ ₃ •̀๑)',
