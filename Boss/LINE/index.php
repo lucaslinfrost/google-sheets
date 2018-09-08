@@ -399,7 +399,7 @@ function DvTest ($inputStr,$userName,$textReplyUrl,$imgsReplyUrl){
 	
 	//應聲蟲功能哦
 	$input = str_replace("database ","",$inputStr);
-	$finalStr = "輸入:\n".$input."\n字串長度:".strlen($input);
+	$finalStr = "輸入:".$input."\n字串長度:".strlen($input);
 	return buildTextMessage($finalStr);
 	
 }
