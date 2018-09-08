@@ -56,7 +56,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
     
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
 		require_once('./test.php');
-		$alltext = substr($alltext, 0, -35);
+		$alltext = substr($alltext, 0, -31);
 		return buildTextMessage(''.$alltext.'');
 	}
 	
