@@ -18,7 +18,7 @@ foreach ($client->parseEvents() as $event) {
             $json = file_get_contents($googledataspi2);
             $data = json_decode($json, true);
             $code = explode(' ', $message['text']);
-            $alltext = "找不到";
+            $alltext = "";
             $mline = "\n--------  分°Д°行  --------\n";
             foreach ($data['feed']['entry'] as $item) {
                 $keywords = explode(',', $item['gsx$keyword']['$t']);
