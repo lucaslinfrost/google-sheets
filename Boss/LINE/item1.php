@@ -1,6 +1,7 @@
 <?php
 //掉落物品搜尋介面(文字版)
 require_once('./LINEBotTiny.php');
+require_once('./utf8_chinese.class.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
 $googledataspi = getenv('googledataspi');
@@ -14,6 +15,8 @@ switch ($event['type']) {
         // 將Google表單轉成JSON資料
         $json = file_get_contents($googledataspi);
         $data = json_decode($json, true); 
+        $c = new utf8_chinese;
+        $message['text'] = $c->gb2312_big5($message['text']);
         $code = explode(' ', $message['text']);
         $alltext = "";
         $mline = "\n--------  分°Д°行  --------\n";
