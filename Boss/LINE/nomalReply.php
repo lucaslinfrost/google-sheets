@@ -125,6 +125,18 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
     
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
 		require_once('./item1.php');
+		if ($alltext !== "找不到") {
+		$alltext = substr($alltext, 0, -34);
+		return buildTextMessage(''.$alltext.'');
+		}
+		if ($alltext == "找不到") {
+		$rplyArr = Array(
+                 '你眼睛業障重ಠ_ಠ所以看不到',
+                 '我找不到(๑•́ ₃ •̀๑)',
+                 '資料庫沒有你要找的資料ʅ（´◔౪◔）ʃ',
+                 '沒有喵(=ↀωↀ=)');
+       		return buildTextMessage(''.$userName.'，'.$rplyArr[Dice(count($rplyArr))-1].'');
+		}
 	}
    	 //星座
 	if(stristr($inputStr, '星座') != false) {
