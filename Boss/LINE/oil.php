@@ -21,7 +21,6 @@ switch ($event['type']) {
         $data = json_decode($json, true);
         $c = new utf8_chinese;
         $message['text'] = $c->gb2312_big5($message['text']);
-        $code = explode(' ', $message['text']);
         // 資料起始從feed.entry          
         foreach ($data['feed']['entry'] as $item) {
             // 將keywords欄位依,切成陣列
@@ -29,7 +28,7 @@ switch ($event['type']) {
 
             // 以關鍵字比對文字內容
             foreach ($keywords as $keyword) {
-                if (strpos($code[1], $keyword) !== false) {                      
+                if (strpos($message['text'], $keyword) !== false) {                      
                     $dataall = $item['gsx$data16']['$t'];
               }
             }
