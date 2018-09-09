@@ -50,15 +50,10 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	}	
 	}
 	
-	//測試
-	if(stristr($inputStr, 't') != false) {
-		
-		$rplyArr = explode(' ',$inputStr);
-    
-		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
-		require_once('./test.php');
-		$alltext = substr($alltext, 0, -34);
-		return buildTextMessage(''.$alltext.'');
+	//油價
+	if(stristr($inputStr, '油價') != false) {
+		require_once('./oli.php');
+		return buildTextMessage(''.$dataall.'');
 	}
 	
 
