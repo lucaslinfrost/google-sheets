@@ -52,7 +52,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	
 	//油價
 	if(stristr($inputStr, '油價') != false) {
-		require_once('./oli.php');
+		require_once('./oil.php');
 		return buildTextMessage(''.$dataall.'');
 	}
 	
