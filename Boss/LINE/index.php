@@ -286,9 +286,9 @@ function parseInput ($inputStr){
 	}else if(stristr($inputStr,$keyWord) === false || stristr($inputStr,"!p") != false){
 		return SendImg($inputStr,$imgsReplyUrl);
 
-	}else if(preg_match ("/create/i", $inputStr)){
-		return create();
-
+	}
+	if(preg_match ("/create/i", $inputStr)){
+		return create($inputStr,$userName);
 	}
 	
 	
@@ -302,7 +302,7 @@ function Dice($diceSided){
 }
 
 //創造角色
-function create(){
+function create($inputStr,$userName){
 	error_log("生成角色資料");
 	
 	$bg = '{
