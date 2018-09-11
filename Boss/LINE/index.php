@@ -286,11 +286,7 @@ function parseInput ($inputStr){
 	}else if(stristr($inputStr,$keyWord) === false || stristr($inputStr,"!p") != false){
 		return SendImg($inputStr,$imgsReplyUrl);
 
-	}
-	if(preg_match ("/創造/i", $inputStr)){
-		return create($inputStr,$userName);
-	}
-	
+	}	
 	
 	else {
 	return null;
