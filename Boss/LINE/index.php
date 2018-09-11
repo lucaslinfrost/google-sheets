@@ -287,7 +287,7 @@ function parseInput ($inputStr){
 		return SendImg($inputStr,$imgsReplyUrl);
 
 	}
-	if(preg_match ("/create/i", $inputStr)){
+	if(preg_match ("/創造/i", $inputStr)){
 		return create($inputStr,$userName);
 	}
 	
