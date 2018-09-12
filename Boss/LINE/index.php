@@ -166,11 +166,13 @@ foreach ($bot->parseEvents() as $event) {
 				$roomId = $source['roomId'];
 				$userId = $source['userId'];
 				error_log("房間ID：".$roomId);
+				$tableid = $roomId;
 				if($userId != null){
 								
 					$userName = $bot->getRoomProfile($roomId,$userId)['displayName'];
 					error_log("訊息發送人：".$userName);
 					error_log("發送人ID：".$userId);
+					require_once('../../record.php');
 					}
 				else{
 					error_log("訊息發送人：不明");
@@ -181,6 +183,8 @@ foreach ($bot->parseEvents() as $event) {
 				$userName = $bot->getProfile($source['userId'])['displayName'];
 				error_log("訊息發送人：".$userName);
 				error_log("發送人ID：".$userId);
+				$tableid = "私人";
+				require_once('../../record.php');
 				}
 			
 			
