@@ -171,7 +171,7 @@ foreach ($bot->parseEvents() as $event) {
 					$userName = $bot->getRoomProfile($roomId,$userId)['displayName'];
 					error_log("訊息發送人：".$userName);
 					error_log("發送人ID：".$userId);
-					$tableid = $roomId;
+					$tableid = "".$roomId;
 					require_once('../../record.php');
 					}
 				else{
