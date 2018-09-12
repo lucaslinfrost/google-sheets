@@ -51,10 +51,6 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	}
 	
 	
-	if(stristr($inputStr, '創造') != false) {
-		return create($inputStr,$userName);
-	}
-	
 	//油價
 	if(stristr($inputStr, '油價') != false) {
 		require_once('./oil.php');
