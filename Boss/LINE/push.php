@@ -1,6 +1,12 @@
 <?php
 // HTTPヘッダを設定
 $channelToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
+$channelSecret = getenv('LINE_CHANNEL_SECRET');
+$client = new LINEBotTiny($channelToken, $channelSecret);
+foreach ($client->parseEvents() as $event) {
+$message = $event['message'];
+$code = explode(' ', $message['text']);
+}
 
 $headers = [
 	'Authorization: Bearer ' . $channelToken,
@@ -13,7 +19,7 @@ $post = [
 	'messages' => [
 		[
 			'type' => 'text',
-			'text' => '= =',
+			'text' => ''.$code[1],
 		],
 	],
 ];
