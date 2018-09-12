@@ -84,23 +84,7 @@ function push_message($post_data){
   $result = curl_exec($ch);
   curl_close($ch);
 }
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84
-85
-86
+
 //メッセージをプッシュする
 function push_message($post_data){
   global $access_token;
