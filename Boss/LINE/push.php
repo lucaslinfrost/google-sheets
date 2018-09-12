@@ -15,9 +15,9 @@ $headers = array('Content-Type: application/json',
 
 // 送信するメッセージ作成
 $message = array('type' => 'text',
-                 'text' => "はろー");
+                 'text' => "@3@");
 
-$body = json_encode(array('to' => "<取得したgroupId>",
+$body = json_encode(array('to' => "Ra798250230190606ff20e0e68d04cbfe",
                           'messages'   => array($message)));  // 複数送る場合は、array($mesg1,$mesg2) とする。
 
 
