@@ -153,7 +153,9 @@ foreach ($bot->parseEvents() as $event) {
 				if($userId != null){
 								
 					$userName = $bot->getGroupProfile($groupId,$userId)['displayName'];
+					error_log("群組ID：".$groupId);
 					error_log("訊息發送人：".$userName);
+					error_log("發送人ID：".$userId);
 					}
 				else{
 					error_log("訊息發送人：不明");
