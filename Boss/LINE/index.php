@@ -155,6 +155,7 @@ foreach ($bot->parseEvents() as $event) {
 					$userName = $bot->getGroupProfile($groupId,$userId)['displayName'];
 					error_log("訊息發送人：".$userName);
 					error_log("發送人ID：".$userId);
+					$table = "群組 : ".$groupName;
 					$tableid = $groupId;
 					require_once('../../record.php');
 					}
@@ -173,6 +174,7 @@ foreach ($bot->parseEvents() as $event) {
 					$userName = $bot->getRoomProfile($roomId,$userId)['displayName'];
 					error_log("訊息發送人：".$userName);
 					error_log("發送人ID：".$userId);
+					$table = "房間 : ".$roomName;
 					$tableid = $roomId;
 					require_once('../../record.php');
 					}
@@ -186,6 +188,7 @@ foreach ($bot->parseEvents() as $event) {
 				$userId = $source['userId'];
 				error_log("訊息發送人：".$userName);
 				error_log("發送人ID：".$userId);
+				$table = "私人";
 				$tableid = "私人";
 				require_once('../../record.php');
 				}
