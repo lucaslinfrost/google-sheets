@@ -1,5 +1,5 @@
 <?php
-require_once('./Boss/LINE/LINEBotTiny.php');
+
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
 $bot = new LINEBotTiny($channelAccessToken, $channelSecret);
