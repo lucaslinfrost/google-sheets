@@ -84,21 +84,3 @@ function push_message($post_data){
   $result = curl_exec($ch);
   curl_close($ch);
 }
-
-//メッセージをプッシュする
-function push_message($post_data){
-  global $access_token;
- 
-  //curlを用いてメッセージを送信する
-  $ch = curl_init("https://api.line.me/v2/bot/message/push");
-  curl_setopt($ch, CURLOPT_POST, true);
-  curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-  curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data));
-  curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-    'Content-Type: application/json; charser=UTF-8',
-    'Authorization: Bearer ' . $access_token
-    ));
-  $result = curl_exec($ch);
-  curl_close($ch);
-}
