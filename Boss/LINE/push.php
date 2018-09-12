@@ -9,11 +9,11 @@ $headers = [
 
 // POSTデータを設定してJSONにエンコード
 $post = [
-	'to' => ''.$code[1],
+	'to' => 'U050cf6e710dac0fbccf92d605a991d90',
 	'messages' => [
 		[
 			'type' => 'text',
-			'text' => ''.$code[2],
+			'text' => ''.$code[1],
 		],
 	],
 ];
