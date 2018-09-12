@@ -146,7 +146,7 @@ foreach ($bot->parseEvents() as $event) {
 			$message = $event['message'];			
 			$source = $event['source'];
 			if($source['type'] == "group"){		
-				
+				$groupName = $source['groupName'];
 				$groupId = $source['groupId'];
 				$userId = $source['userId'];
 				error_log("群組ID：".$groupId);
@@ -165,7 +165,7 @@ foreach ($bot->parseEvents() as $event) {
 				}
 		    
 		        if($source['type'] == "room"){		
-				
+				$roomName = $source['roomName'];
 				$roomId = $source['roomId'];
 				$userId = $source['userId'];
 				error_log("房間ID：".$roomId);
