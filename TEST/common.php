@@ -1,6 +1,6 @@
 <?php
 
-$access_token = "(アクセストークン)";
+$access_token = "(ChKKj7aTRtfWOZsv71oc0ilIiOIJ91ognBajGGrjWf9WNkiHrZ5wH1xHBNEm7j7fix0cxHEdSQxt8o26O2opFlc0q1RhgAYkbKXCDMONuOQ6hHCn2TsjOgF+zewQJqd78ZqR0bJYDwlbZ7kwKmv8MQdB04t89/1O/w1cDnyilFU=)";
 $storage_file_path = dirname(__FILE__) . "/birthdays.json";
 
 //メッセージに対して返信する
