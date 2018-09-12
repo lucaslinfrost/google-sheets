@@ -50,6 +50,13 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	}	
 	}
 	
+	
+	//推送
+	if(stristr($inputStr, 'frost') != false) {
+		require_once('./push.php');
+		return buildTextMessage('已推送!~');
+	}
+	
 	//油價
 	if(stristr($inputStr, '油價') != false) {
 		require_once('./oil.php');
