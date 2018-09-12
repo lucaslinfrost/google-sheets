@@ -1,5 +1,5 @@
 <?php
-$access_token = '<取得したAPIキー>';
+$access_token = getenv('LINE_CHANNEL_ACCESSTOKEN');
 
 $url = 'https://api.line.me/v2/bot/message/push';
 
