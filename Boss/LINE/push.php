@@ -6,6 +6,8 @@ $client = new LINEBotTiny($channelToken, $channelSecret);
 foreach ($client->parseEvents() as $event) {
 $message = $event['message'];
 $code = explode(' ', $message['text']);
+
+	
 }
 
 $headers = [
@@ -15,11 +17,11 @@ $headers = [
 
 // POSTデータを設定してJSONにエンコード
 $post = [
-	'to' => 'U050cf6e710dac0fbccf92d605a991d90',
+	'to' => 'C61e972897c6d2880f2e7d0998a18a9e7',
 	'messages' => [
 		[
 			'type' => 'text',
-			'text' => ''.$code[1],
+			'text' => ''.$code[],
 		],
 	],
 ];
