@@ -166,12 +166,12 @@ foreach ($bot->parseEvents() as $event) {
 				$roomId = $source['roomId'];
 				$userId = $source['userId'];
 				error_log("房間ID：".$roomId);
-				$tableid = $roomId;
 				if($userId != null){
 								
 					$userName = $bot->getRoomProfile($roomId,$userId)['displayName'];
 					error_log("訊息發送人：".$userName);
 					error_log("發送人ID：".$userId);
+					$tableid = $roomId;
 					require_once('../../record.php');
 					}
 				else{
