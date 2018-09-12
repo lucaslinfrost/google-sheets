@@ -50,6 +50,10 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	}	
 	}
 	
+	//控制
+	if(stristr($inputStr, 'frost') != false) {
+		require_once('./push.php');
+	}
 	
 	//油價
 	if(stristr($inputStr, '油價') != false) {
