@@ -153,7 +153,6 @@ foreach ($bot->parseEvents() as $event) {
 				if($userId != null){
 								
 					$userName = $bot->getGroupProfile($groupId,$userId)['displayName'];
-					error_log("群組ID：".$groupId);
 					error_log("訊息發送人：".$userName);
 					error_log("發送人ID：".$userId);
 					}
@@ -166,11 +165,12 @@ foreach ($bot->parseEvents() as $event) {
 				
 				$roomId = $source['roomId'];
 				$userId = $source['userId'];
-				error_log("群組ID：".$roomId);
+				error_log("房間ID：".$roomId);
 				if($userId != null){
 								
 					$userName = $bot->getRoomProfile($roomId,$userId)['displayName'];
 					error_log("訊息發送人：".$userName);
+					error_log("發送人ID：".$userId);
 					}
 				else{
 					error_log("訊息發送人：不明");
@@ -180,6 +180,7 @@ foreach ($bot->parseEvents() as $event) {
 			if($source['type'] == "user"){
 				$userName = $bot->getProfile($source['userId'])['displayName'];
 				error_log("訊息發送人：".$userName);
+				error_log("發送人ID：".$userId);
 				}
 			
 			
