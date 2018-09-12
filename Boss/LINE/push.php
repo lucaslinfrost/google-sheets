@@ -1,33 +1,50 @@
 <?php
-$access_token = getenv('LINE_CHANNEL_ACCESSTOKEN');
+// HTTPヘッダを設定
+$channelToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
+$headers = [
+	'Authorization: Bearer ' . $channelToken,
+	'Content-Type: application/json; charset=utf-8',
+];
 
-$url = 'https://api.line.me/v2/bot/message/push';
+// POSTデータを設定してJSONにエンコード
+$post = [
+	'to' => 'Ra798250230190606ff20e0e68d04cbfe',
+	'messages' => [
+		[
+			'type' => 'text',
+			'text' => '@3@',
+		],
+	],
+];
+$post = json_encode($post);
 
-// データの受信(するものないので不要?)
-$raw = file_get_contents('php://input');
-$receive = json_decode($raw, true);
-// イベントデータのパース(不要？)
-$event = $receive['events'][0];
+// HTTPリクエストを設定
+$ch = curl_init('https://api.line.me/v2/bot/message/push');
+$options = [
+	CURLOPT_CUSTOMREQUEST => 'POST',
+	CURLOPT_HTTPHEADER => $headers,
+	CURLOPT_RETURNTRANSFER => true,
+	CURLOPT_BINARYTRANSFER => true,
+	CURLOPT_HEADER => true,
+	CURLOPT_POSTFIELDS => $post,
+];
+curl_setopt_array($ch, $options);
 
-// ヘッダーの作成
-$headers = array('Content-Type: application/json',
-                 'Authorization: Bearer ' . $access_token);
+// 実行
+$result = curl_exec($ch);
 
-// 送信するメッセージ作成
-$message = array('type' => 'text',
-                 'text' => "@3@");
+// エラーチェック
+$errno = curl_errno($ch);
+if ($errno) {
+	return;
+}
 
-$body = json_encode(array('to' => "C61e972897c6d2880f2e7d0998a18a9e7",
-                          'messages'   => array($message)));  // 複数送る場合は、array($mesg1,$mesg2) とする。
+// HTTPステータスを取得
+$info = curl_getinfo($ch);
+$httpStatus = $info['http_code'];
 
+$responseHeaderSize = $info['header_size'];
+$body = substr($result, $responseHeaderSize);
 
-// 送り出し用
-$options = array(CURLOPT_URL            => $url,
-                 CURLOPT_CUSTOMREQUEST  => 'POST',
-                 CURLOPT_RETURNTRANSFER => true,
-                 CURLOPT_HTTPHEADER     => $headers,
-                 CURLOPT_POSTFIELDS     => $body);
-$curl = curl_init();
-curl_setopt_array($curl, $options);
-curl_exec($curl);
-curl_close($curl);
+// 200 だったら OK
+echo $httpStatus . ' ' . $body;
