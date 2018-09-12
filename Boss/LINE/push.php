@@ -1,6 +1,7 @@
 <?php
 // HTTPヘッダを設定
 $channelToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
+$code = explode(' ', $message['text']);
 $headers = [
 	'Authorization: Bearer ' . $channelToken,
 	'Content-Type: application/json; charset=utf-8',
@@ -8,11 +9,11 @@ $headers = [
 
 // POSTデータを設定してJSONにエンコード
 $post = [
-	'to' => 'Ra798250230190606ff20e0e68d04cbfe',
+	'to' => ''.$code[1],
 	'messages' => [
 		[
 			'type' => 'text',
-			'text' => '@3@',
+			'text' => ''.$code[2],
 		],
 	],
 ];
