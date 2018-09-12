@@ -51,7 +51,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	}
 	
 	//控制
-	if(stristr($inputStr, 'frost') != false) {
+	if(stristr($inputStr, '龘') != false) {
 		require_once('./push.php');
 	}
 	
