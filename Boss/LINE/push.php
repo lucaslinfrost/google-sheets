@@ -17,7 +17,7 @@ $headers = array('Content-Type: application/json',
 $message = array('type' => 'text',
                  'text' => "@3@");
 
-$body = json_encode(array('to' => "Ra798250230190606ff20e0e68d04cbfe",
+$body = json_encode(array('to' => "C61e972897c6d2880f2e7d0998a18a9e7",
                           'messages'   => array($message)));  // 複数送る場合は、array($mesg1,$mesg2) とする。
 
 
