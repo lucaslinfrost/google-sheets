@@ -21,7 +21,7 @@ $post = [
 	'messages' => [
 		[
 			'type' => 'text',
-			'text' => ''.$code[],
+			'text' => ''.$code[1],
 		],
 	],
 ];
