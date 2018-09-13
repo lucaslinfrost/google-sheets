@@ -22,7 +22,16 @@ foreach ($client->parseEvents() as $event) {
                 foreach ($keywords as $keyword) {
                     if (strcmp($code[1], $keyword) === 0) {
                     
-                    $alltext = $alltext."".$item['gsx$pname']['$t']."\n\n生產等級 : ".$item['gsx$newlv']['$t']."\n其他生產要求 : ".$item['gsx$others']['$t']."\n材料1 : ".$item['gsx$item1']['$t']."\n材料2 : ".$item['gsx$item2']['$t']."\n材料3 : ".$item['gsx$item3']['$t']."\n材料4 : ".$item['gsx$item4']['$t']."\n大成功A : ".$item['gsx$sua']['$t']."\n大成功B : ".$item['gsx$sub']['$t']."\n備註 :\n".$item['gsx$remark']['$t'];
+                    $alltext = $alltext."".$item['gsx$pname']['$t']."\n
+                    生產等級 : ".$item['gsx$newlv']['$t']."
+                    其他生產要求 : ".$item['gsx$others']['$t']."
+                    材料1 : ".$item['gsx$item1']['$t']."
+                    材料2 : ".$item['gsx$item2']['$t']."
+                    材料3 : ".$item['gsx$item3']['$t']."
+                    材料4 : ".$item['gsx$item4']['$t']."
+                    大成功A : ".$item['gsx$sua']['$t']."
+                    大成功B : ".$item['gsx$sub']['$t']."
+                    備註 :\n".$item['gsx$remark']['$t'];
                     $alltext = $alltext."".$mline;
                     }
                 }
