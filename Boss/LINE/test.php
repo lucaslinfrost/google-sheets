@@ -22,53 +22,53 @@ foreach ($client->parseEvents() as $event) {
                 foreach ($keywords as $keyword) {
                     if (strcmp($code[1], $keyword) === 0) {
                         if($item['gsx$others'] == ""){
-                        $a = ""
+                        $a = "";
                         }else{
                         $a = "
                         其他生產要求 : ".$item['gsx$others']['$t'];
                         }
 
                         if($item['gsx$item2'] == ""){
-                        $b = ""
+                        $b = "";
                         }else{                        
                         $b = "
                         材料2 : ".$item['gsx$item2']['$t'];
                         }
 
-if($item['gsx$item3'] == ""){
-$c = ""
-}else{
-$c = "
-材料3 : ".$item['gsx$item3']['$t'];
-}
+                        if($item['gsx$item3'] == ""){
+                        $c = "";
+                        }else{
+                        $c = "
+                        材料3 : ".$item['gsx$item3']['$t'];
+                        }
 
-if($item['gsx$item4'] == ""){
-$d = ""
-}else{
-$d = "
-材料4 : ".$item['gsx$item4']['$t'];
-}
+                        if($item['gsx$item4'] == ""){
+                        $d = "";
+                        }else{
+                        $d = "
+                        材料4 : ".$item['gsx$item4']['$t'];
+                        }
 
-if($item['gsx$sua'] == ""){
-$e = ""
-}else{
-$e = "
-大成功A : ".$item['gsx$sua']['$t'];
-}
+                        if($item['gsx$sua'] == ""){
+                        $e = "";
+                        }else{
+                        $e = "
+                        大成功A : ".$item['gsx$sua']['$t'];
+                        }
 
-if($item['gsx$sub'] == ""){
-$f = ""
-}else{
-$f = "
-大成功B : ".$item['gsx$sub']['$t'];
-}
+                        if($item['gsx$sub'] == ""){
+                        $f = "";
+                        }else{
+                        $f = "
+                        大成功B : ".$item['gsx$sub']['$t'];
+                        }
 
-if($item['gsx$remark'] == ""){
-$g = ""
-}else{
-$g = "
-備註 :\n".$item['gsx$remark']['$t'];
-}
+                        if($item['gsx$remark'] == ""){
+                        $g = "";
+                        }else{
+                        $g = "
+                        備註 :\n".$item['gsx$remark']['$t'];
+                        }
                     
                     $alltext = $alltext."".$item['gsx$pname']['$t']."\n
                     生產等級 : ".$item['gsx$newlv']['$t']."".$a."
