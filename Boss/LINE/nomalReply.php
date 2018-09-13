@@ -20,7 +20,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	
 	//功能說明
 	if(stristr($inputStr,'說明') != false||
-	       stristr($inputStr,'说明') != false) {
+	       stristr($inputStr, '说明') != false) {
 	foreach($manual as $systems){
 		foreach($systems['Syskey'] as $chack){	
 			if(stristr($inputStr, $chack) != false){
