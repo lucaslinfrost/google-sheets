@@ -20,7 +20,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	
 	//功能說明
 	if(stristr($inputStr,'說明') != false||
-	       stristr($inputStr, '说明') != false) {
+	       stristr($inputStr,'说明') != false) {
 	foreach($manual as $systems){
 		foreach($systems['Syskey'] as $chack){	
 			if(stristr($inputStr, $chack) != false){
@@ -121,7 +121,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		$rplyArr = explode(' ',$inputStr);
     
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
-		require_once('./produce2.php');
+		require_once('./test.php');
 		if ($alltext !== "") {
 		$alltext = substr($alltext, 0, -34);
 		return buildTextMessage(''.$alltext.'');
