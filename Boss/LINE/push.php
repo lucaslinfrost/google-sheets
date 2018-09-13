@@ -5,7 +5,7 @@ $channelSecret = getenv('LINE_CHANNEL_SECRET');
 $client = new LINEBotTiny($channelToken, $channelSecret);
 foreach ($client->parseEvents() as $event) {
 $message = $event['message'];
-$code = explode(' ', $message['text']);
+$code = explode('#', $message['text']);
 
 	
 }
