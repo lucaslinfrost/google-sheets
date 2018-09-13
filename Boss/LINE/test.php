@@ -23,8 +23,7 @@ foreach ($client->parseEvents() as $event) {
                     if (strcmp($code[1], $keyword) === 0) {
 if($item['gsx$others'] == ""){
 $a = ""
-}
-else{
+} else {
 $a = "
 其他生產要求 : ".$item['gsx$others']['$t'];
 }
