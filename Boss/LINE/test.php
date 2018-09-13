@@ -63,11 +63,12 @@ $f = "
 大成功B : ".$item['gsx$sub']['$t'];
 }
 
-if($item['gsx$remark'] == null){
+if($item['gsx$remark'] === ""){
 $g = "";
 }else{
 $g = "
 備註 :\n".$item['gsx$remark']['$t'];
+error_log("G等於".$g);
 }
                     
 $alltext = $alltext."".$item['gsx$pname']['$t']."\n
