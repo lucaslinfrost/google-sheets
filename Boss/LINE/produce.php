@@ -17,7 +17,6 @@ foreach ($client->parseEvents() as $event) {
             $code = explode(' ', $message['text']);
             $alltext = "";
             $mline = "\n--------  分°Д°行  --------\n";
-            $blank = "";
             foreach ($data['feed']['entry'] as $item) {
                 $keywords = explode(',', $item['gsx$keyword']['$t']);
                 foreach ($keywords as $keyword) {
