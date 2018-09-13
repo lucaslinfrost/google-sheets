@@ -68,7 +68,7 @@ $g = "";
 }else{
 $g = "
 備註 :\n".$item['gsx$remark']['$t'];
-error_log("G等於[".$item['gsx$remark']."]");
+error_log("G等於[".$item['gsx$remark']['$t']."]");
 }
                     
 $alltext = $alltext."".$item['gsx$pname']['$t']."\n
