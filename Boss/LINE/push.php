@@ -17,7 +17,7 @@ $headers = [
 
 // POSTデータを設定してJSONにエンコード
 $post = [
-	'to' => 'U94272628984c7b1197cab9471f1e17fe',
+	'to' => 'C61e972897c6d2880f2e7d0998a18a9e7',
 	'messages' => [
 		[
 			'type' => 'text',
