@@ -63,7 +63,7 @@ $f = "
 大成功B : ".$item['gsx$sub']['$t'];
 }
 
-if($item['gsx$remark'] === ""){
+if($item['gsx$remark'] == empty){
 $g = "";
 }else{
 $g = "
