@@ -1,37 +1,32 @@
 <?php
-//掉落物品搜尋介面(文字版)
+//生產頁(文字介面)
 require_once('./LINEBotTiny.php');
+require_once('./utf8_chinese.class.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
-$googledataspi = getenv('googledataspi');
+$googledataspi2 = getenv('googledataspi2');
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
-// 取得事件(只接受文字訊息)
 foreach ($client->parseEvents() as $event) {
-switch ($event['type']) {       
-    case 'message':
-        // 讀入訊息
-        $message = $event['message'];
-        // 將Google表單轉成JSON資料
-        $json = file_get_contents($googledataspi);
-        $data = json_decode($json, true); 
-        $code = explode(' ', $message['text']);
-        $result = array();
-        $mline = "\n--------  分°Д°行  --------\n";
-        // 資料起始從feed.entry          
-        foreach ($data['feed']['entry'] as $item) {
-            // 將keywords欄位依,切成陣列
-            $keywords = explode('、', $item['gsx$key']['$t']);
-            // 以關鍵字比對文字內容，符合的話將店名/地址寫入
-            foreach ($keywords as $keyword) {
-                if (strcmp($code[1], $keyword) === 0) {    
-
-                $alltext = $alltext."怪物 : ".$item['gsx$name']['$t']."\n等級 : ".$item['gsx$level']['$t']."\n地圖 :\n".$item['gsx$map']['$t']."\n掉落 :\n".$item['gsx$drop1']['$t']."\n".$item['gsx$drop2']['$t']."\n".$item['gsx$drop3']['$t']."\n".$item['gsx$drop4']['$t'];
-                $alltext = $alltext."".$mline;
-}
-}
-}
-// END Google Sheet Keyword Decode
-
+    switch ($event['type']) {
+        case 'message':
+            $message = $event['message'];
+            $json = file_get_contents($googledataspi2);
+            $data = json_decode($json, true);
+            $c = new utf8_chinese;
+            $message['text'] = $c->gb2312_big5($message['text']);
+            $code = explode(' ', $message['text']);
+            $alltext = "";
+            $mline = "\n--------  分°Д°行  --------\n";
+            foreach ($data['feed']['entry'] as $item) {
+                $keywords = explode(',', $item['gsx$keyword']['$t']);
+                foreach ($keywords as $keyword) {
+                    if (strcmp($code[1], $keyword) === 0) {
+                    
+                    $alltext = $alltext."".$item['gsx$pname']['$t']."\n\n生產等級 : ".$item['gsx$newlv']['$t']."\n其他生產要求 : ".$item['gsx$others']['$t']."\n材料1 : ".$item['gsx$item1']['$t']."\n材料2 : ".$item['gsx$item2']['$t']."\n材料3 : ".$item['gsx$item3']['$t']."\n材料4 : ".$item['gsx$item4']['$t']."\n大成功A : ".$item['gsx$sua']['$t']."\n大成功B : ".$item['gsx$sub']['$t']."\n備註 :\n".$item['gsx$remark']['$t'];
+                    $alltext = $alltext."".$mline;
+                    }
+                }
+            }
             break;
         default:
             error_log("Unsupporeted event type: " . $event['type']);
