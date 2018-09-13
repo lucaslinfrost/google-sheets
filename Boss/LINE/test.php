@@ -21,57 +21,51 @@ foreach ($client->parseEvents() as $event) {
                 $keywords = explode(',', $item['gsx$keyword']['$t']);
                 foreach ($keywords as $keyword) {
                     if (strcmp($code[1], $keyword) === 0) {
-if($item['gsx$others'] == ""){
-$a = ""
-} else if($item['gsx$others'] !== ""){
-$a = "
-其他生產要求 : ".$item['gsx$others']['$t'];
-}
+                        if($item['gsx$others'] == ""){
+                        $a = ""
+                        }else{
+                        $a = "
+                        其他生產要求 : ".$item['gsx$others']['$t'];
+                        }
 
-if($item['gsx$item2'] == ""){
-$b = ""
-}
-else{                        
-$b = "
-材料2 : ".$item['gsx$item2']['$t'];
-}
+                        if($item['gsx$item2'] == ""){
+                        $b = ""
+                        }else{                        
+                        $b = "
+                        材料2 : ".$item['gsx$item2']['$t'];
+                        }
 
 if($item['gsx$item3'] == ""){
 $c = ""
-}
-else{
+}else{
 $c = "
 材料3 : ".$item['gsx$item3']['$t'];
 }
 
 if($item['gsx$item4'] == ""){
 $d = ""
-}
-else{
+}else{
 $d = "
 材料4 : ".$item['gsx$item4']['$t'];
 }
 
 if($item['gsx$sua'] == ""){
 $e = ""
-}
-else{
+}else{
 $e = "
 大成功A : ".$item['gsx$sua']['$t'];
 }
 
 if($item['gsx$sub'] == ""){
 $f = ""
-}
-else{
+}else{
 $f = "
 大成功B : ".$item['gsx$sub']['$t'];
 }
 
 if($item['gsx$remark'] == ""){
 $g = ""
-}
-else{
+}else{
 $g = "
 備註 :\n".$item['gsx$remark']['$t'];
 }
