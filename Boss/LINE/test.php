@@ -43,7 +43,7 @@ if($item['gsx$remark']['$t'] === ""){
 $d = "";
 }else{
 $d = "
-".$item['remark']['$t'];
+".$item['gsx$remark']['$t'];
 }
 
                     
