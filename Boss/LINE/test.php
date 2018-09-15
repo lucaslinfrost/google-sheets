@@ -25,13 +25,13 @@ if($item['gsx$atk']['$t'] === ""){
 $a = "";
 }else{
 $a = "
-ATK : ".$item['gsx$atk']['$t'];
+攻擊 : ".$item['gsx$atk']['$t'];
 }
 if($item['gsx$def']['$t'] === ""){
 $b = "";
 }else{                        
 $b = "
-DEF : ".$item['gsx$def']['$t'];
+防禦 : ".$item['gsx$def']['$t'];
 }
 if($item['gsx$slot']['$t'] === ""){
 $c = "";
