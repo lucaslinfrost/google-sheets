@@ -48,7 +48,7 @@ $d = "
 
                     
 $alltext = $alltext."".$item['gsx$name']['$t']." 【".$item['gsx$part']['$t']."】
-".$c."".$a."".$b."
+".$a."".$b."".$c."
 ".$d;
                     $alltext = $alltext."".$mline;
                     }
