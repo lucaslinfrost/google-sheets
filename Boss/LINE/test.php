@@ -45,10 +45,20 @@ $d = "";
 $d = "
 ".$item['gsx$remark']['$t'];
 }
+if($item['gsx$maxatk']['$t'] === ""){
+$e = "";
+}else{
+$e = " - ".$item['gsx$maxatk']['$t'];
+}
+if($item['gsx$maxdef']['$t'] === ""){
+$f = "";
+}else{
+$f = " - ".$item['gsx$maxdef']['$t'];
+}
 
                     
 $alltext = $alltext."".$item['gsx$name']['$t']." 【".$item['gsx$part']['$t']."】
-".$a."".$b."".$c."
+".$a."".$e."".$b."".$f."".$c."
 ".$d;
                     $alltext = $alltext."".$mline;
                     }
