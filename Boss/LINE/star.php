@@ -29,7 +29,7 @@ foreach ($client->parseEvents() as $event) {
                                 array(
                                     'type' => 'message',
                                     'label' => $item['gsx$equip']['$t'],
-                                    'text' => "老大掉落 ".$item['gsx$equip']['$t'],
+                                    'text' => "老大D ".$item['gsx$equip']['$t'],
                                     )
                                 ),
                             );
