@@ -92,8 +92,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		require_once('./new.php');
 	}
 	//查怪
-	if(stristr($inputStr, '怪物') != false||
-	       stristr($inputStr, 'm') != false||
+	if(stristr($inputStr, 'm') != false||
 	       stristr($inputStr, 'M') != false) {
 		
 		$rplyArr = explode(' ',$inputStr);
@@ -114,9 +113,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	}
 	//查生產(文字)
 	if(stristr($inputStr, 'p') != false||
-	       stristr($inputStr, 'P') != false||
-	       stristr($inputStr, '生產') != false||
-	       stristr($inputStr, '生产') != false) {
+	       stristr($inputStr, 'P') != false) {
 		
 		$rplyArr = explode(' ',$inputStr);
     
@@ -136,8 +133,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		}
 	}
 	//物品
-	if(stristr($inputStr, '掉落') != false||
-	       stristr($inputStr, 'd') != false||
+	if(stristr($inputStr, 'd') != false||
 	       stristr($inputStr, 'D') != false) {
 		
 		$rplyArr = explode(' ',$inputStr);
