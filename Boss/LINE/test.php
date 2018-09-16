@@ -24,8 +24,7 @@ foreach ($client->parseEvents() as $event) {
 if($item['gsx$atk']['$t'] === ""){
 $a = "";
 }else{
-$a = "
-攻擊 : ".$item['gsx$atk']['$t'];
+$a = "攻擊 : ".$item['gsx$atk']['$t'];
 }
 if($item['gsx$def']['$t'] === ""){
 $b = "";
@@ -45,8 +44,7 @@ $c = "
 if($item['gsx$remark']['$t'] === ""){
 $d = "";
 }else{
-$d = "
-".$item['gsx$remark']['$t'];
+$d = "".$item['gsx$remark']['$t'];
 }
 if($item['gsx$maxatk']['$t'] === ""){
 $e = "";
