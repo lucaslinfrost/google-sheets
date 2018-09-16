@@ -29,8 +29,12 @@ $a = "
 }
 if($item['gsx$def']['$t'] === ""){
 $b = "";
-}else{                        
+}else{
+if($item['gsx$atk']['$t'] === ""){
+$b = "防禦 : ".$item['gsx$def']['$t'];
+}else{
 $b = "     防禦 : ".$item['gsx$def']['$t'];
+}
 }
 if($item['gsx$slot']['$t'] === ""){
 $c = "";
