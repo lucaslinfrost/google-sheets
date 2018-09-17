@@ -1,6 +1,6 @@
 <?php
 
-//怪物搜尋介面 (文字最初版)
+//怪物搜尋介面 (文字版)
 
 require_once('./LINEBotTiny.php');
 require_once('./utf8_chinese.class.php');
@@ -31,9 +31,59 @@ switch ($event['type']) {
 
             // 以關鍵字比對文字內容，符合的話將店名/地址寫入
             foreach ($keywords as $keyword) {
-                if (strcmp($code[1], $keyword) === 0) {                      
-                    $store_text1 = $item['gsx$title1']['$t']."".$item['gsx$name']['$t']."".$item['gsx$title2']['$t']."".$item['gsx$level']['$t']."\n".$item['gsx$special']['$t']."".$item['gsx$title3']['$t']."".$item['gsx$map']['$t']."".$item['gsx$title5']['$t']."".$item['gsx$attribute']['$t']."".$item['gsx$title6']['$t']."".$item['gsx$week']['$t']."".$item['gsx$title4']['$t']."".$item['gsx$drop1']['$t']."\n".$item['gsx$drop2']['$t']."\n".$item['gsx$drop3']['$t']."\n".$item['gsx$drop4']['$t'];
-                    $store_text4 = $item['gsx$photo']['$t']; 
+                if (strcmp($code[1], $keyword) === 0) {   
+                    
+if($item['gsx$special']['$t'] === ""){
+$a = "";
+}else{
+$a = "
+--------  特殊攻擊  --------
+".$item['gsx$special']['$t'];
+}
+if($item['gsx$maxhp']['$t'] === ""){
+$b = "";
+}else{
+$b = "
+--------  最大血量  --------
+".$item['gsx$maxhp']['$t'];
+}
+if($item['gsx$map']['$t'] === ""){
+$c = "";
+}else{
+$c = "
+--------  出沒地圖  --------
+".$item['gsx$map']['$t'];
+}
+if($item['gsx$drop1']['$t'] === ""){
+$d = "";
+}else{
+$d = "
+--------  掉落物品  --------
+".$item['gsx$drop1']['$t'];
+}
+if($item['gsx$drop2']['$t'] === ""){
+$e = "";
+}else{
+$e = "
+".$item['gsx$drop2']['$t'];
+}    
+if($item['gsx$drop3']['$t'] === ""){
+$f = "";
+}else{
+$f = "
+".$item['gsx$drop3']['$t'];
+}   
+if($item['gsx$drop4']['$t'] === ""){
+$g = "";
+}else{
+$g = "
+".$item['gsx$drop4']['$t'];
+}   
+                    
+                    
+                    
+$store_text1 = "怪物名稱 : ".$item['gsx$name']['$t']."
+等級 : ".$item['gsx$level']['$t']."".$b."".$a."".$c."".$d."".$e."".$f."".$g."";
                 }
             }
         }    
