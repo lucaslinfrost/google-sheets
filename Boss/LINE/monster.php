@@ -79,11 +79,13 @@ $g = "";
 $g = "
 ".$item['gsx$drop4']['$t'];
 }   
-                    
-                    
+                                        
                     
 $store_text1 = "怪物名稱 : ".$item['gsx$name']['$t']."
-等級 : ".$item['gsx$level']['$t']."".$b."".$a."".$c."".$d."".$e."".$f."".$g."";
+等級 : ".$item['gsx$level']['$t']."
+屬性 : ".$item['gsx$attribute']['$t']."
+弱點 : ".$item['gsx$week']['$t']."
+".$b."".$a."".$c."".$d."".$e."".$f."".$g."";
                 }
             }
         }    
