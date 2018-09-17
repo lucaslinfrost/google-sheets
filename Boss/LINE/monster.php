@@ -44,8 +44,7 @@ if($item['gsx$maxhp']['$t'] === ""){
 $b = "";
 }else{
 $b = "
---------  怪物血量  --------
-".$item['gsx$maxhp']['$t'];
+血量 : ".$item['gsx$maxhp']['$t'];
 }
 if($item['gsx$map']['$t'] === ""){
 $c = "";
