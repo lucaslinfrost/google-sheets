@@ -33,7 +33,8 @@ switch ($event['type']) {
                         $usermid = $item['gsx$usermid']['$t']; 
                         }
             }
-        }    
+        } 
+     }
         break;
     default:
         error_log("Unsupporeted event type: " . $event['type']);
