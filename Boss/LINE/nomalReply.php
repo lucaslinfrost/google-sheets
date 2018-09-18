@@ -54,10 +54,12 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	//推送
 	if(stristr($inputStr, 'push') != false) {
 		require_once('./push.php');
-		if ($usermid === "nono") {
+		if ($usermidtext === "no") {
 		return buildTextMessage('推送失敗喔!~');
 		} else {
+		if ($usermidtext === "yes") {
 		return buildTextMessage('已推送!~');
+		}
 		}
 	}
 	
