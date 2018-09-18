@@ -39,7 +39,7 @@ if($item['gsx$slot']['$t'] === ""){
 $c = "";
 }else{
 $c = "
-※最少都有".$item['gsx$slot']['$t']."洞";
+※絕對有".$item['gsx$slot']['$t']."洞";
 }
 if($item['gsx$remark']['$t'] === ""){
 $d = "";
