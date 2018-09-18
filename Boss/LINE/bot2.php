@@ -28,7 +28,7 @@ switch ($event['type']) {
             foreach ($keywords as $keyword) {
                 if (strcmp($codemid[1], $keyword) === 0) {                      
                         if($item['gsx$usermid']['$t'] === ""){
-                        $usermid = ""; 
+                        $usermid = "nono"; 
                         }else{
                         $usermid = $item['gsx$usermid']['$t']; 
                         }
