@@ -54,7 +54,11 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	//推送
 	if(stristr($inputStr, 'frost') != false) {
 		require_once('./push.php');
+		if ($usermid === "") {
+		return buildTextMessage('推送失敗喔!~');
+		} else {
 		return buildTextMessage('已推送!~');
+		}
 	}
 	
 	//油價
