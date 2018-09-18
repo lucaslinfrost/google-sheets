@@ -52,7 +52,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	
 	
 	//推送
-	if(stristr($inputStr, 'frost') != false) {
+	if(stristr($inputStr, 'push') != false) {
 		require_once('./push.php');
 		if ($usermid === "") {
 		return buildTextMessage('推送失敗喔!~');
