@@ -57,7 +57,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		if ($usermidtext === "yes") {
 		return buildTextMessage('已推送!~');
 		}else{
-		return buildTextMessage('推送失敗啦@@');
+		return buildTextMessage('推送失敗啦@3@');
 		}
 	}
 	
