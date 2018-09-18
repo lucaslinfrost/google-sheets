@@ -27,10 +27,11 @@ switch ($event['type']) {
             // 以關鍵字比對文字內容，符合的話將店名/地址寫入
             foreach ($keywords as $keyword) {
                 if (strcmp($codemid[1], $keyword) === 0) {                      
-                    $usermid = $item['gsx$usermid']['$t']; 
-                }else{
-                    $usermid = ""; 
-                }
+                        if($item['gsx$usermid']['$t'] === ""){
+                        $usermid = ""; 
+                        }else{
+                        $usermid = $item['gsx$usermid']['$t']; 
+                        }
             }
         }    
         break;
