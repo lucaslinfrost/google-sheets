@@ -52,7 +52,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	
 	
 	//推送
-	if(stristr($inputStr, 'push') != false) {
+	if(stristr($inputStr, '龘') != false) {
 		require_once('./push.php');
 		if ($usermidtext === "yes") {
 		return buildTextMessage('已推送!~');
