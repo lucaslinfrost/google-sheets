@@ -28,6 +28,8 @@ switch ($event['type']) {
             foreach ($keywords as $keyword) {
                 if (strcmp($codemid[1], $keyword) === 0) {                      
                     $usermid = $item['gsx$usermid']['$t']; 
+                }else{
+                    $usermid = ""; 
                 }
             }
         }    
