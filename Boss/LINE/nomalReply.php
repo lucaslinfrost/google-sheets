@@ -56,10 +56,9 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		require_once('./push.php');
 		if ($usermidtext === "no") {
 		return buildTextMessage('推送失敗喔!~');
-		} else {
+		}
 		if ($usermidtext === "yes") {
 		return buildTextMessage('已推送!~');
-		}
 		}
 	}
 	
