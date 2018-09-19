@@ -1,21 +1,16 @@
 <?php
-
-//生產頁(文字介面)
-
+//石頭查詢頁
 require_once('./LINEBotTiny.php');
 require_once('./utf8_chinese.class.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
-$googledataspi2 = getenv('googledataspi2');
-
+$googledataspi = getenv('googledataspi6');
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
-
 foreach ($client->parseEvents() as $event) {
-
     switch ($event['type']) {
         case 'message':
             $message = $event['message'];
-            $json = file_get_contents($googledataspi2);
+            $json = file_get_contents($googledataspi);
             $data = json_decode($json, true);
             $c = new utf8_chinese;
             $message['text'] = $c->gb2312_big5($message['text']);
@@ -23,11 +18,19 @@ foreach ($client->parseEvents() as $event) {
             $alltext = "";
             $mline = "\n--------  分°Д°行  --------\n";
             foreach ($data['feed']['entry'] as $item) {
-                $keywords = explode(',', $item['gsx$keyword']['$t']);
+                $keywords = explode(',', $item['gsx$key']['$t']);
                 foreach ($keywords as $keyword) {
                     if (strcmp($code[1], $keyword) === 0) {
+if($item['gsx$remark']['$t'] === ""){
+$a = "";
+}else{
+$a = "
+".$item['gsx$remark']['$t'];
+}
+
+
                     
-                    $alltext = $alltext."".$item['gsx$pname']['$t']."\n\n生產等級 : ".$item['gsx$newlv']['$t']."\n其他生產要求 : ".$item['gsx$others']['$t']."\n材料1 : ".$item['gsx$item1']['$t']."\n材料2 : ".$item['gsx$item2']['$t']."\n材料3 : ".$item['gsx$item3']['$t']."\n材料4 : ".$item['gsx$item4']['$t']."\n大成功A : ".$item['gsx$sua']['$t']."\n大成功B : ".$item['gsx$sub']['$t']."\n備註 :\n".$item['gsx$remark']['$t'];
+$alltext = $alltext."【".$item['gsx$name']['$t']."】".$a;
                     $alltext = $alltext."".$mline;
                     }
                 }
