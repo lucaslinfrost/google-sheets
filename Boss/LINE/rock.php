@@ -25,12 +25,13 @@ if($item['gsx$remark']['$t'] === ""){
 $a = "";
 }else{
 $a = "
+
 ".$item['gsx$remark']['$t'];
 }
 
 
                     
-$alltext = $alltext."【".$item['gsx$name']['$t']."】".$a;
+$alltext = $alltext."".$item['gsx$name']['$t']."".$a;
                     $alltext = $alltext."".$mline;
                     }
                 }
