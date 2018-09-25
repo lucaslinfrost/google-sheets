@@ -20,9 +20,9 @@ foreach ($client->parseEvents() as $event) {
             $result = array();
             foreach ($data['feed']['entry'] as $item) {
                 $keywords = explode(',', $item['gsx$keyword']['$t']);
-                $key = explode(',', $item['gsx$key']['$t']);
                 foreach ($keywords as $keyword) {
                     if (strcmp($code[1], $keyword) === 0) {
+                        $key = explode(',', $item['gsx$key']['$t']);
                         if (strcmp($code[2], $key) === 0) {
                         $candidate = array(
                             'thumbnailImageUrl' => 'https://imgur.com/KQsuipD.png',
