@@ -20,10 +20,11 @@ foreach ($client->parseEvents() as $event) {
             $result = array();
             foreach ($data['feed']['entry'] as $item) {
                 $keywords = explode(',', $item['gsx$keyword']['$t']);
-                $key2 = explode(',', $item['gsx$key']['$t']);
+                $key = explode(',', $item['gsx$key']['$t']);
                 foreach ($keywords as $keyword) {
                     if (strcmp($code[1], $keyword) === 0) {
-                        if (strpos($code[2], $key2) !== false) {
+                        foreach ($key as $keyword2) {
+                        if (strpos($code[2], $keyword2) !== false) {
                         $candidate = array(
                             'thumbnailImageUrl' => 'https://imgur.com/KQsuipD.png',
                             'title' => $item['gsx$name']['$t'],
@@ -37,6 +38,7 @@ foreach ($client->parseEvents() as $event) {
                                 ),
                             );
                         array_push($result, $candidate);
+                           }
                         }
                     }
                 }
