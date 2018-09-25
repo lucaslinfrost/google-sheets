@@ -22,8 +22,7 @@ foreach ($client->parseEvents() as $event) {
                 $keywords = explode(',', $item['gsx$keyword']['$t']);
                 foreach ($keywords as $keyword) {
                     if (strcmp($code[1], $keyword) === 0) {
-                        $key = explode(',', $item['gsx$key']['$t']);
-                        if (strcmp($code[2], $key) === 0) {
+                        if (strpos($code[2], $item['gsx$key']['$t']) !== false) {
                         $candidate = array(
                             'thumbnailImageUrl' => 'https://imgur.com/KQsuipD.png',
                             'title' => $item['gsx$name']['$t'],
