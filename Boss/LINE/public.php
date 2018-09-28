@@ -27,7 +27,7 @@ switch ($event['type']) {
             // 以關鍵字比對文字內容
             foreach ($keywords as $keyword) {
                 if (strpos($message['text'], $keyword) !== false) {
-                    if ($item['gsx$groupid']['$t'], $groupId) === 0) {
+                    if (strcmp($item['gsx$groupid']['$t'], $groupId) === 0) {
                     $data999 = "╭☆ ╭╧╮╭╧╮╭╧╮╭☆\n╰╮ ║夢│║想│║家│╰╮\n☆╰ ╘∞╛╘∞╛╘∞╛☆╮\n\n".$item['gsx$message']['$t']."\n\n(ノ・ω・)ノ發佈者ヾ(・ω・ヾ)\n".$item['gsx$name']['$t'];             
                     }
                 }
