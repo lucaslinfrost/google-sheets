@@ -26,9 +26,59 @@ switch ($event['type']) {
             $keywords = explode('、', $item['gsx$key']['$t']);
             // 以關鍵字比對文字內容，符合的話將店名/地址寫入
             foreach ($keywords as $keyword) {
-                if (strcmp($code[1], $keyword) === 0) {    
-
-                $alltext = $alltext."怪物 : ".$item['gsx$name']['$t']."\n等級 : ".$item['gsx$level']['$t']."\n地圖 :\n".$item['gsx$map']['$t']."\n掉落 :\n".$item['gsx$drop1']['$t']."\n".$item['gsx$drop2']['$t']."\n".$item['gsx$drop3']['$t']."\n".$item['gsx$drop4']['$t'];
+                if (strcmp($code[1], $keyword) === 0) {  
+                    
+if($item['gsx$name']['$t'] === ""){
+$a = "";
+}else{
+$a = "怪物 : ".$item['gsx$name']['$t'];
+}
+                    
+if($item['gsx$level']['$t'] === ""){
+$b = "";
+}else{
+$b = "
+等級 : ".$item['gsx$level']['$t'];
+}
+                    
+if($item['gsx$map']['$t'] === ""){
+$c = "";
+}else{
+$c = "
+--------  出沒地圖  --------
+".$item['gsx$map']['$t'];
+}
+                    
+if($item['gsx$drop1']['$t'] === ""){
+$d = "";
+}else{
+$d = "
+--------  掉落物品  --------
+".$item['gsx$drop1']['$t'];
+}
+                    
+if($item['gsx$drop2']['$t'] === ""){
+$e = "";
+}else{
+$e = "
+".$item['gsx$drop2']['$t'];
+}
+                    
+if($item['gsx$drop3']['$t'] === ""){
+$f = "";
+}else{
+$f = "
+".$item['gsx$drop3']['$t'];
+}
+                    
+if($item['gsx$drop4']['$t'] === ""){
+$g = "";
+}else{
+$g = "
+".$item['gsx$drop4']['$t'];
+}
+                    
+$alltext = $alltext."".$a."".$b."".$c."".$d."".$e."".$f."".$g;
                 $alltext = $alltext."".$mline;
 }
 }
