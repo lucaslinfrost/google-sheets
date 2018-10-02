@@ -31,21 +31,21 @@ switch ($event['type']) {
 if($item['gsx$name']['$t'] === ""){
 $a = "";
 }else{
-$a = "怪物 : ".$item['gsx$name']['$t'];
+$a = "▪怪物 : ".$item['gsx$name']['$t'];
 }
                     
 if($item['gsx$level']['$t'] === ""){
 $b = "";
 }else{
 $b = "
-等級 : ".$item['gsx$level']['$t'];
+▪等級 : ".$item['gsx$level']['$t'];
 }
                     
 if($item['gsx$map']['$t'] === ""){
 $c = "";
 }else{
 $c = "
---------  出沒地圖  --------
+▪出沒地圖 : 
 ".$item['gsx$map']['$t'];
 }
                     
@@ -53,15 +53,19 @@ if($item['gsx$drop1']['$t'] === ""){
 $d = "";
 }else{
 $d = "
---------  掉落物品  --------
+▪掉落物品 : 
 ".$item['gsx$drop1']['$t'];
 }
                     
 if($item['gsx$drop2']['$t'] === ""){
 $e = "";
 }else{
+if($item['gsx$drop1']['$t'] === ""){
+$e = "".$item['gsx$drop2']['$t'];
+}else{
 $e = "
 ".$item['gsx$drop2']['$t'];
+}
 }
                     
 if($item['gsx$drop3']['$t'] === ""){
