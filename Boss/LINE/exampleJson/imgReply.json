@@ -93,7 +93,11 @@
   },
   {
     "chack": ["生產成功率","六屬石","六屬弓"],
-    "img": ["https://i.imgur.com/KcSYcxB.png"]
+    "img": ["https://i.imgur.com/H1VJKu0.png"]
+  },
+  {
+    "chack": ["武器ATK","武器攻擊力","武器atk"],
+    "img": ["https://i.imgur.com/hk0Ju8e.png"]
   }
 
   ]
