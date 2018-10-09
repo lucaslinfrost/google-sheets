@@ -98,6 +98,10 @@
   {
     "chack": ["武器ATK","武器攻擊力","武器atk"],
     "img": ["https://i.imgur.com/hk0Ju8e.png"]
+  },
+  {
+    "chack": ["異常狀態"],
+    "img": ["https://i.imgur.com/6yCxDas.png"]
   }
 
   ]
