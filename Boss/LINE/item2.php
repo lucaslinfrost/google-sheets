@@ -16,14 +16,12 @@ foreach ($client->parseEvents() as $event) {
             $message['text'] = $c->gb2312_big5($message['text']);
             $code = explode('#', $message['text']);
             $alltext = "";
-            $mline = "\n--------  分°Д°行  --------\n";
             foreach ($data['feed']['entry'] as $item) {
                 $keywords = explode(',', $item['gsx$ppic']['$t']);
                 foreach ($keywords as $keyword) {
                     if (strcmp($code[1], $keyword) === 0) {
                     
 $alltext = $alltext."".$item['gsx$pname']['$t']." → ".$item['gsx$newlv']['$t'];
-                    $alltext = $alltext."".$mline;
                     }
                 }
             }
