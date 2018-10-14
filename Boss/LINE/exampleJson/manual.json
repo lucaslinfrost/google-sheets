@@ -338,18 +338,18 @@
 				"actions": [
 						{
 						"type": "message",
+						"label": "【指令一覽】",
+						"text": "老大說明指令"
+						},
+						{
+						"type": "message",
 						"label": "【查詢怪物資料範例】",
 						"text": "老大m 魚"
 						},
 						{
 						"type": "message",
 						"label": "【查詢生產資料範例】",
-						"text": "老大p 鍛造150等"
-						},
-						{
-						"type": "message",
-						"label": "　",
-						"text": "　"
+						"text": "老大p 鍛造183"
 						}
 					]
 				},
@@ -369,8 +369,8 @@
 						},
 						{
 						"type": "message",
-						"label": "　",
-						"text": "　"
+						"label": "【查詢素材功能範例】",
+						"text": "老大look#花蜜"
 						}
 					]
 				},
@@ -380,18 +380,18 @@
 				"actions": [
 						{
 						"type": "message",
-						"label": "【抽籤】",
+						"label": "【抽籤範例】",
 						"text": "老大決定 蛇比較帥 狼哥比較帥 晴比較變態"
 						},
 						{
 						"type": "message",
-						"label": "【占卜】",
+						"label": "【占卜範例】",
 						"text": "老大占卜"
 						},
 						{
 						"type": "message",
-						"label": "　",
-						"text": "　"
+						"label": "【星座範例】",
+						"text": "老大星座 白羊"
 						}
 					]
 				},
@@ -401,18 +401,18 @@
 				"actions": [
 						{
 						"type": "message",
-						"label": "【關於老大】",
-						"text": "關於keyWord說明"
+						"label": "【遊戲公告】",
+						"text": "老大更新"
 						},
 						{
 						"type": "message",
-						"label": "【錯誤回報】",
-						"text": "keyWord出事啦!!"
+						"label": "【公會群組公告】",
+						"text": "老大公告"
 						},
 						{
 						"type": "message",
-						"label": "　",
-						"text": "　"
+						"label": "【匯率範例】",
+						"text": "老大匯率 香港"
 						}
 					]
 				}
