@@ -15,7 +15,7 @@ foreach ($client->parseEvents() as $event) {
             $c = new utf8_chinese;
             $message['text'] = $c->gb2312_big5($message['text']);
             $code = explode('#', $message['text']);
-            $alltext = "";
+            $alltext2 = "";
             foreach ($data['feed']['entry'] as $item) {
                 $keywords = explode(',', $item['gsx$search']['$t']);
                 foreach ($keywords as $keyword) {
