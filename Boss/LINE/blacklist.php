@@ -2,7 +2,7 @@
 require_once('./LINEBotTiny.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
-$googledataspi = getenv('googledataspi7');
+$googledataspi = getenv('googledataspi');
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 // 取得事件(只接受文字訊息)
 foreach ($client->parseEvents() as $event) {
