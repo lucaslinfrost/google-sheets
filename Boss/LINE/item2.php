@@ -22,19 +22,11 @@ foreach ($client->parseEvents() as $event) {
             $alltext = "";
             foreach ($data['feed']['entry'] as $item) {
                 $keywords = explode(',', $item['gsx$ppic']['$t']);
-            foreach ($data2['feed']['entry'] as $item2) {
-                $keywords2 = explode(',', $item2['gsx$search']['$t']);
                 foreach ($keywords as $keyword) {
                     if (strcmp($code[1], $keyword) === 0) {
 $alltext = $alltext."".$item['gsx$pname']['$t']." → ".$item['gsx$newlv']['$t']."\n";
                     }
                 }
-                foreach ($keywords2 as $keyword2) {
-                    if (strcmp($code[1], $keyword2) === 0) {
-$alltext = $alltext."".$item2['gsx$name']['$t']." → ".$item2['gsx$smith']['$t']."強化\n";
-                    }
-                }
-            }
             }
             break;
         default:
