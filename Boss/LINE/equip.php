@@ -44,7 +44,8 @@ $c = "
 if($item['gsx$remark']['$t'] === ""){
 $d = "";
 }else{
-$d = "".$item['gsx$remark']['$t'];
+$d = "
+".$item['gsx$remark']['$t'];
 }
 if($item['gsx$maxatk']['$t'] === ""){
 $e = "";
@@ -56,11 +57,46 @@ $f = "";
 }else{
 $f = " - ".$item['gsx$maxdef']['$t'];
 }
+if($item['gsx$smith']['$t'] === ""){
+$g = "";
+}else{
+$g = "
 
+鐵匠 : ".$item['gsx$smith']['$t'];
+}
+if($item['gsx$price']['$t'] === ""){
+$h = "";
+}else{
+$h = "
+價格 : ".$item['gsx$price']['$t']." 眾神幣";
+}
+if($item['gsx$item1']['$t'] === ""){
+$i = "";
+}else{
+$i = "
+材料1: ".$item['gsx$item1']['$t'];
+}
+if($item['gsx$item2']['$t'] === ""){
+$j = "";
+}else{
+$j = "
+材料2: ".$item['gsx$item2']['$t'];
+}
+if($item['gsx$item3']['$t'] === ""){
+$k = "";
+}else{
+$k = "
+材料3: ".$item['gsx$item3']['$t'];
+}                        
+if($item['gsx$item4']['$t'] === ""){
+$l = "";
+}else{
+$l = "
+材料4: ".$item['gsx$item4']['$t'];
+}                                
                     
 $alltext = $alltext."".$item['gsx$name']['$t']." 【".$item['gsx$part']['$t']."】
-".$a."".$e."".$b."".$f."".$c."
-".$d;
+".$a."".$e."".$b."".$f."".$c."".$d."".$g."".$h."".$i."".$j."".$k."".$l;
                     $alltext = $alltext."".$mline;
                     }
                 }
