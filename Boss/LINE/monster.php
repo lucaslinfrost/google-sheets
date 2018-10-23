@@ -18,7 +18,7 @@ switch ($event['type']) {
         $message = $event['message'];
 
         // 將Google表單轉成JSON資料
-        $json = file_get_contents($googledataspi);
+        $json = file_get_contents(.\test.json);
         $data = json_decode($json, true);   
         $c = new utf8_chinese;
         $message['text'] = $c->gb2312_big5($message['text']);
