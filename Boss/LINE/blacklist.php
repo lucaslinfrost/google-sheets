@@ -22,7 +22,7 @@ switch ($event['type']) {
             // 查看是否黑名單
             foreach ($keywords as $keyword) {
                 if (strcmp($userId, $keyword) === 0) {                      
-                return buildTextMessage(''.$userName.'，你沒有使用老大的權限。');
+                $blacklist = "yes";
             }
         } 
      }
