@@ -237,7 +237,7 @@ return buildTextMessage(''.$userName.'，你沒有使用老大的權限!
 		if ($alltext !== "") {
 		if ($alltext2 !== "") {
 		$alltext = substr($alltext, 0, -1);
-		$alltext2 = substr($alltext, 0, -1);
+		$alltext2 = substr($alltext2, 0, -1);
 		$alltext = $alltext."\n".$alltext2;
 		return buildTextMessage(''.$alltext.'');
 		}else{
