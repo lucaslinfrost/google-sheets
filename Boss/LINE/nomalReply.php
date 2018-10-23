@@ -4,7 +4,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	
 require_once('./blacklist.php');
 if ($blacklist === "yes") {
-return buildTextMessage(''.$userName.'，你沒有使用老大的權限!\nψ(^Ф∀Ф^)ψ');
+return buildTextMessage(''.$userName.'，你沒有使用老大的權限!
+◥(ฅº￦ºฅ)◤');
 }else{
 	
 	//以下是回應功能
