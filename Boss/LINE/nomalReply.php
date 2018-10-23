@@ -329,7 +329,7 @@ function SendImg($inputStr,$imgsReplyUrl) {
 	
 require_once('./blacklist.php');
 if ($blacklist === "yes") {
-return buildTextMessage(''.$userName.'，你沒有使用老大的權限!
+return buildTextMessage('你沒有使用老大的權限!
 ◥(ฅº￦ºฅ)◤');
 }else{
 	
