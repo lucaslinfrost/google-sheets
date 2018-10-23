@@ -327,6 +327,12 @@ return buildTextMessage(''.$userName.'，你沒有使用老大的權限!
 }
 function SendImg($inputStr,$imgsReplyUrl) {
 	
+require_once('./blacklist.php');
+if ($blacklist === "yes") {
+return buildTextMessage(''.$userName.'，你沒有使用老大的權限!
+◥(ฅº￦ºฅ)◤');
+}else{
+	
 	//讀入圖片回應變數
 	$content = file_get_contents($imgsReplyUrl);
 	//如果失敗就調用預設值
@@ -353,4 +359,5 @@ function SendImg($inputStr,$imgsReplyUrl) {
 	}
 	
 	return null;
+}
 }
