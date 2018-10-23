@@ -1,10 +1,10 @@
 <?php
-//生產頁(素材搜索介面)
+//裝備頁(強化搜索介面)
 require_once('./LINEBotTiny.php');
 require_once('./utf8_chinese.class.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
-$googledataspi2 = getenv('googledataspi2');
+$googledataspi2 = getenv('googledataspi6');
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 foreach ($client->parseEvents() as $event) {
     switch ($event['type']) {
@@ -17,11 +17,11 @@ foreach ($client->parseEvents() as $event) {
             $code = explode('#', $message['text']);
             $alltext = "";
             foreach ($data['feed']['entry'] as $item) {
-                $keywords = explode(',', $item['gsx$ppic']['$t']);
+                $keywords = explode(',', $item['gsx$search']['$t']);
                 foreach ($keywords as $keyword) {
                     if (strcmp($code[1], $keyword) === 0) {
                     
-$alltext = $alltext."".$item['gsx$pname']['$t']." → ".$item['gsx$newlv']['$t']."\n";
+$alltext2 = $alltext2."".$item['gsx$name']['$t']." → ".$item['gsx$smith']['$t']."強化\n";
                     }
                 }
             }
