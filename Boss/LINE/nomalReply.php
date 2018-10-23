@@ -244,15 +244,14 @@ return buildTextMessage(''.$userName.'，你沒有使用老大的權限!
 		$alltext = substr($alltext, 0, -1);
 		return buildTextMessage(''.$alltext.'');
 		}
-		}else{
-		if ($alltext2 === "") {
+		}
+		if ($alltext === "") {
 		$rplyArr = Array(
                  '你眼睛業障重ಠ_ಠ所以看不到',
                  '我找不到(๑•́ ₃ •̀๑)',
                  '資料庫沒有你要找的資料ʅ（´◔౪◔）ʃ',
                  '沒有喵(=ↀωↀ=)');
        		return buildTextMessage(''.$userName.'，'.$rplyArr[Dice(count($rplyArr))-1].'');
-		}	
 		}
 	}
 	
