@@ -245,7 +245,7 @@ return buildTextMessage(''.$userName.'，你沒有使用老大的權限!
 		return buildTextMessage(''.$alltext.'');
 		}
 		}
-		if ($alltext === "") {
+		if ($alltext2 === "") {
 		$rplyArr = Array(
                  '你眼睛業障重ಠ_ಠ所以看不到',
                  '我找不到(๑•́ ₃ •̀๑)',
