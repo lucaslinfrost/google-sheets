@@ -233,9 +233,17 @@ return buildTextMessage(''.$userName.'，你沒有使用老大的權限!
     
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
 		require_once('./item2.php');
+		require_once('./item3.php');
 		if ($alltext !== "") {
+		if ($alltext2 !== "") {
+		$alltext = substr($alltext, 0, -1);
+		$alltext2 = substr($alltext, 0, -1);
+		$alltext = $alltext."\n".$alltext2;
+		return buildTextMessage(''.$alltext.'');
+		}else{
 		$alltext = substr($alltext, 0, -1);
 		return buildTextMessage(''.$alltext.'');
+		}
 		}
 		if ($alltext === "") {
 		$rplyArr = Array(
