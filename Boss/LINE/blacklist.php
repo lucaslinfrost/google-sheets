@@ -1,3 +1,5 @@
+<?php
+
 //黑名單搜索
 require_once('./LINEBotTiny.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
