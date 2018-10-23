@@ -1,12 +1,11 @@
 <?php
+function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) { 
+	$inputStr = strtolower($inputStr);
+	
 require_once('./blacklist.php');
 if ($blacklist === "yes") {
 return buildTextMessage('你沒有使用老大的權限~!');
 }else{
-	
-function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) { 
-	$inputStr = strtolower($inputStr);
-	
 	
 	//以下是回應功能
 	//讀入文字回應變數
