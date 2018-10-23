@@ -324,6 +324,7 @@ return buildTextMessage(''.$userName.'，你沒有使用老大的權限!
 	return buildTextMessage($rplyArr[Dice(count($rplyArr))-1]);
 	
 }
+}
 function SendImg($inputStr,$imgsReplyUrl) {
 	
 	//讀入圖片回應變數
@@ -352,5 +353,4 @@ function SendImg($inputStr,$imgsReplyUrl) {
 	}
 	
 	return null;
-}
 }
