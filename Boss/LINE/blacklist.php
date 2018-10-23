@@ -10,22 +10,21 @@ switch ($event['type']) {
     case 'message':
         // 讀入訊息
         $message = $event['message'];
+        $source = $event['source'];
+        $userId = $source['userId'];
         // 將Google表單轉成JSON資料
         $json = file_get_contents($googledataspi);
         $data = json_decode($json, true);   
         // 資料起始從feed.entry          
         foreach ($data['feed']['entry'] as $item) {
             // 將keywords欄位依,切成陣列
-            $keywords = explode(',', $item['gsx$key']['$t']);
-            // 以關鍵字比對文字內容，符合的話將店名/地址寫入
+            $keywords = explode(',', $item['gsx$usermid']['$t']);
+            // 查看是否黑名單
             foreach ($keywords as $keyword) {
-                if (strcmp($codemid[1], $keyword) === 0) {                      
-                        if($item['gsx$usermid']['$t'] === ""){
-                        $usermidtext = "no"; 
-                        }else{
-                        $usermid = $item['gsx$usermid']['$t']; 
-                        $usermidtext = "yes";
-                        }
+                if (strcmp($userId, $keyword) === 0) {                      
+                return buildTextMessage(''.$userName.'，你沒有使用老大的權限。');
+                }else{
+                require_once('./index.php');
             }
         } 
      }
