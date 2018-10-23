@@ -23,8 +23,6 @@ switch ($event['type']) {
             foreach ($keywords as $keyword) {
                 if (strcmp($userId, $keyword) === 0) {                      
                 return buildTextMessage(''.$userName.'，你沒有使用老大的權限。');
-                }else{
-                require_once('./index.php');
             }
         } 
      }
