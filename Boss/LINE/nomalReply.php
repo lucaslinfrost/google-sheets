@@ -1,13 +1,9 @@
 <?php
+require_once('./blacklist.php');
+
 function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) { 
 	$inputStr = strtolower($inputStr);
-	
-require_once('./blacklist.php');
-if ($blacklist === "yes") {
-return buildTextMessage(''.$userName.'，你沒有使用老大的權限!
-◥(ฅº￦ºฅ)◤');
-}else{
-	
+
 	//以下是回應功能
 	//讀入文字回應變數
 	$content = file_get_contents($manualUrl);
@@ -337,14 +333,9 @@ return buildTextMessage(''.$userName.'，你沒有使用老大的權限!
 	return buildTextMessage($rplyArr[Dice(count($rplyArr))-1]);
 	
 }
-}
+
 function SendImg($inputStr,$imgsReplyUrl) {
-	
-require_once('./blacklist.php');
-if ($blacklist === "yes") {
-return buildTextMessage('你沒有使用老大的權限!
-◥(ฅº￦ºฅ)◤');
-}else{
+
 	
 	//讀入圖片回應變數
 	$content = file_get_contents($imgsReplyUrl);
@@ -372,5 +363,4 @@ return buildTextMessage('你沒有使用老大的權限!
 	}
 	
 	return null;
-}
 }
