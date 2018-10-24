@@ -28,9 +28,8 @@ switch ($event['type']) {
                     'replyToken' => $event['replyToken'],
                     'messages' => array(
                         array(
-'type' => 'text',
-'text' => ''.$userName.'，你沒有使用老大的權限!
-◥(ฅº￦ºฅ)◤',
+                        'type' => 'text',
+                        'text' => '你沒有使用老大的權限!◥(ฅº￦ºฅ)◤',
                         )
                     ),
                 )); 
