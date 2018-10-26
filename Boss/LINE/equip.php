@@ -93,10 +93,16 @@ $l = "";
 }else{
 $l = "
 材料4: ".$item['gsx$item4']['$t'];
-}                                
+}
+if($item['gsx$item5']['$t'] === ""){
+$m = "";
+}else{
+$m = "
+材料5: ".$item['gsx$item5']['$t'];
+}  
                     
 $alltext = $alltext."".$item['gsx$name']['$t']." 【".$item['gsx$part']['$t']."】
-".$a."".$e."".$b."".$f."".$c."".$d."".$g."".$h."".$i."".$j."".$k."".$l;
+".$a."".$e."".$b."".$f."".$c."".$d."".$g."".$h."".$i."".$j."".$k."".$l."".$m;
                     $alltext = $alltext."".$mline;
                     }
                 }
