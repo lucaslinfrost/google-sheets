@@ -266,7 +266,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		$testMessage = new MutiMessage();
 		$replyArr = Array(
 		$testMessage->text(''.$alltext.''),
-		$testMessage->img($pic),
+		$testMessage->img('\''.$pic.'\''),
 		);
 		return $testMessage->send($replyArr);
 		}
