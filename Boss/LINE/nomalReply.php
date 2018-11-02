@@ -268,7 +268,6 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		$testMessage->text(''.$alltext.''),
 		$testMessage->img('\''.$pic.'\''),
 		);
-		return $testMessage->send($replyArr);
 		}
 		if ($alltext === "") {
        		return buildTextMessage('《小島栽培功能一覽》\n\n每日早上9時為澆水更新時間\n\n島屬性對收成影響 :\n蔬菜類→風屬性\n穀物類→地屬性\n水果類→光屬性\n降低所有作物收成量→暗屬性\n\n--------  植物類別  --------\n葉\n花\n蘑菇\n--------  蔬菜類別  --------\n馬鈴薯\n西瓜\n胡蘿蔔\n青蔥\n蕃茄\n南瓜\n紅豆\n茄子\n毛豆\n--------  穀物類別  --------\n米\n小麥\n玉米\n--------  水果類別  --------\n橘子\n蘋果\n香蕉\n檸檬\n葡萄\n芒果\n哈蜜瓜\n可可\n櫻桃\n鳳梨\n椰子');
