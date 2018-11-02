@@ -35,12 +35,14 @@ if($item['gsx$time']['$t'] === ""){
 $b = "";
 }else{
 $b = "
+
 收成次數 : ".$item['gsx$time']['$t'];
 }                    
 if($item['gsx$date1']['$t'] === ""){
 $c = "";
 }else{
 $c = "
+
 --------  收°Д°成  -------- 
 ▸".$item['gsx$date1']['$t']."◂";
 }              
