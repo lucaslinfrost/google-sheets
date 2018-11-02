@@ -4,7 +4,6 @@ require_once('./LINEBotTiny.php');
 require_once('./utf8_chinese.class.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
-$googledataspi = ('./data/drill.json');
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 // 取得事件(只接受文字訊息)
 foreach ($client->parseEvents() as $event) {
@@ -45,8 +44,7 @@ if($item['gsx$item1']['$t'] === ""){
 $c = "";
 }else{
 $c = "
-採礦項目 : 
-".$item['gsx$item1']['$1'];
+採礦項目 : ".$item['gsx$item1']['$1'];
 }
                     
 if($item['gsx$item2']['$t'] === ""){
