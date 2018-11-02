@@ -380,7 +380,7 @@
 				"actions": [
 						{
 						"type": "message",
-						"label": "【採礦】",
+						"label": "【採礦範例】",
 						"text": "老大挖 白金礦"
 						},
 						{
