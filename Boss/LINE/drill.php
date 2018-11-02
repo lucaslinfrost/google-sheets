@@ -23,63 +23,58 @@ switch ($event['type']) {
         // 資料起始從feed.entry          
         foreach ($data['feed']['entry'] as $item) {
             // 將keywords欄位依,切成陣列
-            $keywords = explode('、', $item['gsx$key']['$t']);
+            $keywords = explode(',', $item['gsx$key']['$t']);
             // 以關鍵字比對文字內容，符合的話將店名/地址寫入
             foreach ($keywords as $keyword) {
                 if (strcmp($code[1], $keyword) === 0) {  
                     
-if($item['gsx$name']['$t'] === ""){
+if($item['gsx$place']['$t'] === ""){
 $a = "";
 }else{
-$a = "▸怪物◂ ".$item['gsx$name']['$t'];
+$a = "《".$item['gsx$place']['$t']."》";
 }
                     
-if($item['gsx$level']['$t'] === ""){
+if($item['gsx$drill']['$t'] === ""){
 $b = "";
 }else{
 $b = "
-▸等級◂ ".$item['gsx$level']['$t'];
+採礦點 : ".$item['gsx$drill']['$t'];
 }
                     
-if($item['gsx$map']['$t'] === ""){
+if($item['gsx$item1']['$t'] === ""){
 $c = "";
 }else{
 $c = "
-▸出沒地圖◂
-".$item['gsx$map']['$t'];
+採礦項目 : 
+".$item['gsx$item1']['$1'];
 }
                     
-if($item['gsx$drop1']['$t'] === ""){
+if($item['gsx$item2']['$t'] === ""){
 $d = "";
 }else{
 $d = "
-▸掉落物品◂
-".$item['gsx$drop1']['$t'];
+".$item['gsx$item2']['$t'];
 }
-                    
-if($item['gsx$drop2']['$t'] === ""){
+
+if($item['gsx$item3']['$t'] === ""){
 $e = "";
 }else{
-if($item['gsx$drop1']['$t'] === ""){
-$e = "".$item['gsx$drop2']['$t'];
-}else{
 $e = "
-".$item['gsx$drop2']['$t'];
+".$item['gsx$item3']['$t'];
 }
-}
-                    
-if($item['gsx$drop3']['$t'] === ""){
+
+if($item['gsx$item4']['$t'] === ""){
 $f = "";
 }else{
 $f = "
-".$item['gsx$drop3']['$t'];
+".$item['gsx$item4']['$t'];
 }
-                    
-if($item['gsx$drop4']['$t'] === ""){
+
+if($item['gsx$item5']['$t'] === ""){
 $g = "";
 }else{
 $g = "
-".$item['gsx$drop4']['$t'];
+".$item['gsx$item5']['$t'];
 }
                     
 $alltext = $alltext."".$a."".$b."".$c."".$d."".$e."".$f."".$g;
