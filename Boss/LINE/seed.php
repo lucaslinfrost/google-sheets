@@ -55,6 +55,7 @@ if($item['gsx$date2']['$t'] === ""){
 $e = "";
 }else{
 $e = "
+
 ▸".$item['gsx$date2']['$t']."◂";
 }
 if($item['gsx$got2']['$t'] === ""){
