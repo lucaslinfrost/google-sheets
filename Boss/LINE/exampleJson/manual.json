@@ -376,7 +376,28 @@
 				},
 				{
 				"title": "《其他技能》",
-				"text": "老大會些什麼呢?",
+				"text": "其他技能",
+				"actions": [
+						{
+						"type": "message",
+						"label": "【採礦】",
+						"text": "老大挖 白金礦"
+						},
+						{
+						"type": "message",
+						"label": "",
+						"text": ""
+						},
+						{
+						"type": "message",
+						"label": "",
+						"text": ""
+						}
+					]
+				},
+				{
+				"title": "《其他技能》",
+				"text": "其他技能",
 				"actions": [
 						{
 						"type": "message",
@@ -396,8 +417,8 @@
 					]
 				},
 				{
-				"title": "《其他》",
-				"text": "其他資訊",
+				"title": "《其他技能》",
+				"text": "其他技能",
 				"actions": [
 						{
 						"type": "message",
