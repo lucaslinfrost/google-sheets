@@ -44,7 +44,8 @@ if($item['gsx$item1']['$t'] === ""){
 $c = "";
 }else{
 $c = "
-採礦項目 : ".$item['gsx$item1']['$1'];
+採礦項目 : 
+".$item['gsx$item1']['$t'];
 }
                     
 if($item['gsx$item2']['$t'] === ""){
