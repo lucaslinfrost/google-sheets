@@ -51,8 +51,12 @@ $c = "
 if($item['gsx$item2']['$t'] === ""){
 $d = "";
 }else{
+if($item['gsx$item1']['$t'] === ""){
+$d = "".$item['gsx$item2']['$t'];
+}else{
 $d = "
 ".$item['gsx$item2']['$t'];
+}
 }
 
 if($item['gsx$item3']['$t'] === ""){
