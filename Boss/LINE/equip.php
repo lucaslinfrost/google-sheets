@@ -60,9 +60,14 @@ $f = " - ".$item['gsx$maxdef']['$t'];
 if($item['gsx$smith']['$t'] === ""){
 $g = "";
 }else{
+if($item['gsx$part']['$t'] === "素材"){
+$g = "
+鐵匠 : ".$item['gsx$smith']['$t'];
+}else{
 $g = "
 
 鐵匠 : ".$item['gsx$smith']['$t'];
+}
 }
 if($item['gsx$price']['$t'] === ""){
 $h = "";
