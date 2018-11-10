@@ -339,8 +339,8 @@ function create($inputStr,$userName){
 【職業】 ： ".$bg["PD"][Dice(count($bg["PD"]))-1]."的".$bg["IB"][Dice(count($bg["IB"]))-1]."。
 【稱號】 ： ".$bg["SP"][Dice(count($bg["SP"]))-1]."之".$bg["SPW"][Dice(count($bg["SPW"]))-1]."。
 【擅長】 ： ".$bg["ML"][Dice(count($bg["ML"]))-1]."。
-【喜歡】 ： 他最寶貴的東西就是".$bg["TP"][Dice(count($bg["TP"]))-1]."。
-【特徵】 ： 總括來說，".$userName."是一個".$bg["T"][Dice(count($bg["T"]))-1]."。"
+【喜歡】 ： 他的最愛就是".$bg["TP"][Dice(count($bg["TP"]))-1]."。
+【特徵】 ： 結論，".$userName."是一個".$bg["T"][Dice(count($bg["T"]))-1]."。"
 		);
 	
 }
