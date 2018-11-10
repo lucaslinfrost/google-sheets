@@ -64,7 +64,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	}
 	//創角
 	if(stristr($inputStr, '創角') != false) {
-		return create;
+		return create($inputStr,$userName);
 	}
 	
 	//油價
