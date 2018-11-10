@@ -62,6 +62,10 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		return buildTextMessage('推送失敗啦@3@');
 		}
 	}
+	//創角
+	if(stristr($inputStr, '創角') != false) {
+		return create;
+	}
 	
 	//油價
 	if(stristr($inputStr, '油價') != false) {
