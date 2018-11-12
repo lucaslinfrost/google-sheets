@@ -14,6 +14,8 @@ switch ($event['type']) {
         $c = new utf8_chinese;
         $message['text'] = $c->gb2312_big5($message['text']);
         $code = explode(' ', $message['text']);
+}
+};
 
 class PriorityQueue extends SplPriorityQueue
 {
@@ -99,11 +101,4 @@ $graph = array(
   'F' => array('A' => 6, 'C' => 3, 'D' => 2, 'E' => 5),
 );
 $g = new Dijkstra($graph);
-$g->shortestPath('D', 'C');  // 3:D->E->C
-$g->shortestPath('C', 'A');  // 6:C->E->D->A
-$g->shortestPath('B', 'F');  // 3:B->D->F
-$g->shortestPath('F', 'A');  // 5:F->D->A 
-$g->shortestPath('A', 'G');  // No route from A to G
-		
-}
-};
+$g->shortestPath('$code[1]', '$code[2]');  // 3:D->E->C
