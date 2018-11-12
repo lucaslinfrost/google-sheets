@@ -14,6 +14,8 @@ switch ($event['type']) {
         $c = new utf8_chinese;
         $message['text'] = $c->gb2312_big5($message['text']);
         $code = explode(' ', $message['text']);
+}
+};
 $graph = array(
   'A' => array('B', 'F'),
   'B' => array('A', 'D', 'E'),
@@ -85,6 +87,4 @@ class Graph
             $alltext =  "No route from".$origin."to".$destination;
         }
     }
-}
-}
 }
