@@ -24,8 +24,6 @@ $graph = array(
 );
 $g = new Graph($graph);
 $g->leastHops('\''.$code[1].'\'', '\''.$code[2].'\'');
-}
-};
 
 class Graph
 {
@@ -87,4 +85,6 @@ class Graph
             $alltext =  "No route from".$origin."to".$destination;
         }
     }
+}
+}
 }
