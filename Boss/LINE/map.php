@@ -1,4 +1,20 @@
 <?php
+
+require_once('./LINEBotTiny.php');
+require_once('./utf8_chinese.class.php');
+$channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
+$channelSecret = getenv('LINE_CHANNEL_SECRET');
+$client = new LINEBotTiny($channelAccessToken, $channelSecret);
+// 取得事件(只接受文字訊息)
+foreach ($client->parseEvents() as $event) {
+switch ($event['type']) {       
+    case 'message':
+        // 讀入訊息
+        $message = $event['message'];
+        $c = new utf8_chinese;
+        $message['text'] = $c->gb2312_big5($message['text']);
+        $code = explode(' ', $message['text']);
+
 class PriorityQueue extends SplPriorityQueue
 {
     public function compare($p1, $p2) {
@@ -88,3 +104,6 @@ $g->shortestPath('C', 'A');  // 6:C->E->D->A
 $g->shortestPath('B', 'F');  // 3:B->D->F
 $g->shortestPath('F', 'A');  // 5:F->D->A 
 $g->shortestPath('A', 'G');  // No route from A to G
+		
+}
+};
