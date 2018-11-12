@@ -14,7 +14,7 @@ switch ($event['type']) {
         $c = new utf8_chinese;
         $message['text'] = $c->gb2312_big5($message['text']);
         $code = explode(' ', $message['text']);
-        $alltext = "$origin to $destination in";
+      
 }
 };
 
@@ -68,14 +68,14 @@ class Graph
       
         if (isset($path[$destination])) {
 	count($path[$destination]) - 1;
-            $alltext = "$origin to $destination in ";
+            $alltext = $origin."to".$destination."in";
             $sep = '\n->';
             foreach ($path[$destination] as $vertex) {
                 $alltext = $vertex."".$sep;
             }
         }
         else {
-            $alltext =  "No route from $origin to $destination";
+            $alltext =  "No route from".$origin."to".$destination;
         }
     }
 }
