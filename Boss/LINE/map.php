@@ -23,7 +23,7 @@ $graph = array(
   'F' => array('A' => 6, 'C' => 3, 'D' => 2, 'E' => 5),
 );
 $g = new Dijkstra($graph);
-$g->shortestPath('$code[1]','$code[2]');  // 3:D->E->C
+$g->shortestPath('D', 'C');  // 3:D->E->C
 
 }
 };
