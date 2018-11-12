@@ -14,6 +14,17 @@ switch ($event['type']) {
         $c = new utf8_chinese;
         $message['text'] = $c->gb2312_big5($message['text']);
         $code = explode(' ', $message['text']);
+$graph = array(
+  'A' => array('B' => 3, 'D' => 3, 'F' => 6),
+  'B' => array('A' => 3, 'D' => 1, 'E' => 3),
+  'C' => array('E' => 2, 'F' => 3),
+  'D' => array('A' => 3, 'B' => 1, 'E' => 1, 'F' => 2),
+  'E' => array('B' => 3, 'C' => 2, 'D' => 1, 'F' => 5),
+  'F' => array('A' => 6, 'C' => 3, 'D' => 2, 'E' => 5),
+);
+$g = new Dijkstra($graph);
+$g->shortestPath('$code[1]','$code[2]');  // 3:D->E->C
+
 }
 };
 
@@ -91,13 +102,3 @@ class Dijkstra
         }
     }
 }
-$graph = array(
-  'A' => array('B' => 3, 'D' => 3, 'F' => 6),
-  'B' => array('A' => 3, 'D' => 1, 'E' => 3),
-  'C' => array('E' => 2, 'F' => 3),
-  'D' => array('A' => 3, 'B' => 1, 'E' => 1, 'F' => 2),
-  'E' => array('B' => 3, 'C' => 2, 'D' => 1, 'F' => 5),
-  'F' => array('A' => 6, 'C' => 3, 'D' => 2, 'E' => 5),
-);
-$g = new Dijkstra($graph);
-$g->shortestPath($code[1],$code[2]);  // 3:D->E->C
