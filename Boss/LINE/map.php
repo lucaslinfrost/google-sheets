@@ -14,7 +14,7 @@ switch ($event['type']) {
         $c = new utf8_chinese;
         $message['text'] = $c->gb2312_big5($message['text']);
         $code = explode(' ', $message['text']);
-      
+        $alltext = "111";
 }
 };
 
