@@ -14,7 +14,17 @@ switch ($event['type']) {
         $c = new utf8_chinese;
         $message['text'] = $c->gb2312_big5($message['text']);
         $code = explode(' ', $message['text']);
-        $alltext = "111";
+$graph = array(
+  'A' => array('B', 'F'),
+  'B' => array('A', 'D', 'E'),
+  'C' => array('F'),
+  'D' => array('B', 'E'),
+  'E' => array('B', 'D', 'F'),
+  'F' => array('A', 'E', 'C'),
+);
+$g = new Graph($graph);
+$g->leastHops('$code[1]', '$code[2]');
+        $alltext = "";
 }
 };
 
@@ -79,13 +89,3 @@ class Graph
         }
     }
 }
-$graph = array(
-  'A' => array('B', 'F'),
-  'B' => array('A', 'D', 'E'),
-  'C' => array('F'),
-  'D' => array('B', 'E'),
-  'E' => array('B', 'D', 'F'),
-  'F' => array('A', 'E', 'C'),
-);
-$g = new Graph($graph);
-$g->leastHops('$code[1]', '$code[2]');
