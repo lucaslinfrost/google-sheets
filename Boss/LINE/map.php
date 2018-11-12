@@ -23,8 +23,7 @@ $graph = array(
   'F' => array('A', 'E', 'C'),
 );
 $g = new Graph($graph);
-$g->leastHops('$code[1]', '$code[2]');
-        $alltext = "";
+$g->leastHops('\''.$code[1].'\'', '\''.$code[2].'\'');
 }
 };
 
