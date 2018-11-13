@@ -78,10 +78,10 @@ class Graph
             foreach ($path[$destination] as $vertex) {
                 echo $sep, $vertex;
                 $sep = '->';
-                $alltext = $alltext.">".$vertex;
+                $maphop = $maphop.">".$vertex;
             }
             echo "\n";
-          return buildTextMessage(''.$alltext.'');
+          return buildTextMessage(''.$maphop.'');
         }
         else {
             echo "No route from $origin to $destination\n";
