@@ -68,7 +68,7 @@ foreach ($client->parseEvents() as $event) {
     switch ($event['type']) {
         case 'message':
             $message = $event['message'];
-            $code = explode(' ', $message['text']);
+            $code = explode('#', $message['text']);
             
         break;
         }
