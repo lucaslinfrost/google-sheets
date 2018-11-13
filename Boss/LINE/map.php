@@ -1,4 +1,5 @@
 <?php
+  $maphop = "沒有";
   $graph = array(
   '拜倫陣地' => array('拜倫街','爆炸地中心'),
   '拜倫街' => array('米謝爾奈平原','拜倫陣地'),
@@ -31,6 +32,7 @@ class Graph
     }
   function leastHops($origin, $destination) {
         // mark all nodes as unvisited
+        global $maphop;
         foreach ($this->graph as $key => $vertex) {
             $this->visited[$key] = false;
         }
