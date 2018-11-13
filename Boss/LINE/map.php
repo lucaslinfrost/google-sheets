@@ -92,6 +92,7 @@ switch ($event['type']) {
      
 $g = new Graph($graph);
 $g->leastHops($mapcode[1], $mapcode[2]);
+        $alltext = $mapcode[1]."".$mapcode[2];
 }
 }
 
