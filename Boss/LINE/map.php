@@ -19,7 +19,7 @@ foreach ($client->parseEvents() as $event) {
 );
           $g = new Graph($graph);
           $g->leastHops($code[1], $code[2]);
-            
+          return buildTextMessage(''.$maptext.'');
         break;
     default:
         error_log("Unsupporeted event type: " . $event['type']);
