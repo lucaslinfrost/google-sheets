@@ -138,8 +138,8 @@ $sep = "
             }
         }
         else {
-$maphop = "沒有從【".$origin."】
-到【".$destination."】的路。";
+$maphop = "沒有找到從【".$origin."】
+到【".$destination."】的路喔。。";
         }
         $maphop = substr($maphop, 0, -3);
         $maphop = $title."".$maphop;
