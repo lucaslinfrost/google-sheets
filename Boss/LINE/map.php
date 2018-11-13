@@ -70,7 +70,7 @@ class Graph
                 }
             }
         }
-        global $maphop;
+    
         if (isset($path[$destination])) {
             $mapno = count($path[$destination]) - 1;
                 " 個地圖\n";
@@ -93,5 +93,6 @@ $maphop = "沒有從【".$origin."】
         $maphop = substr($maphop, 0, -3);
         $maphop = $title."".$maphop;
         error_log("".$maphop."");
+        $GLOBALS['maphop'] = $maphop
     }
 }
