@@ -95,15 +95,6 @@ $maphop = "沒有從【".$origin."】
         }
         $maphop = substr($maphop, 0, -3);
         $maphop = $title."".$maphop;
-        
-        $client->replyMessage([
-                        'replyToken' => $event['replyToken'],
-                        'messages' => [
-                            [
-                                'type' => 'text',
-                                'text' => $maphop
-                            ]
-                        ]
-                    ]);
+        return buildTextMessage(''.$maphop.'');
     }
 }
