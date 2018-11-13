@@ -51,7 +51,14 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	}	
 	}
 	
-
+	
+	//地圖
+	if(stristr($inputStr, '指路') != false) {
+	$mapcode = "有地圖";
+	$rplyArr = explode(' ',$inputStr);
+	if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
+	require_once('./map.php');
+	}
 	//推送
 	if(stristr($inputStr, '龘') != false||
 	       stristr($inputStr, '淼') != false) {
@@ -367,15 +374,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	}
 	
   //沒有觸發關鍵字則是這個
-	if(stristr($inputStr, '指路') != false) {
-	$mapcode = "有地圖";
-	$rplyArr = explode(' ',$inputStr);
-	if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
-	require_once('./map.php');
-	}else{
 	$rplyArr = $content[0]['text'];
 	return buildTextMessage($rplyArr[Dice(count($rplyArr))-1]);
-	}
 }
 
 
