@@ -101,7 +101,7 @@ $maphop = "沒有從【".$origin."】
                         'messages' => [
                             [
                                 'type' => 'text',
-                                'text' => $maphop['text']
+                                'text' => $maphop
                             ]
                         ]
                     ]);
