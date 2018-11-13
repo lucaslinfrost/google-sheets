@@ -94,9 +94,8 @@ $sep = "
 $maphop = "沒有從【".$origin."】
 到【".$destination."】的路。";
         }
-        
-    }
-    $maphop = substr($maphop, 0, -3);
+        $maphop = substr($maphop, 0, -3);
         $maphop = $title."".$maphop;
         return buildTextMessage(''.$maphop.'');
+    }
 }
