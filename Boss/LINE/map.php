@@ -16,11 +16,9 @@ foreach ($client->parseEvents() as $event) {
         case 'message':
             $message = $event['message'];
             $code = explode(' ', $message['text']);
-
-          
+            $g = new Graph($graph);
+            $g->leastHops($code[1], $code[2]);
         break;
-        $g = new Graph($graph);
-        $g->leastHops($code[1], $code[2]);
         }
 }
 
