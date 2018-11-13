@@ -78,7 +78,7 @@ class Graph
             foreach ($path[$destination] as $vertex) {
                 echo $sep, $vertex;
                 $sep = '->';
-                $alltext = $abc.">".$vertex;
+                $alltext = $alltext.">".$vertex;
             }
             echo "\n";
           return buildTextMessage(''.$alltext.'');
