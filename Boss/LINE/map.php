@@ -1,6 +1,14 @@
 <?php
 require_once('./LINEBotTiny.php');
-$graph = array(
+$channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
+$channelSecret = getenv('LINE_CHANNEL_SECRET');
+$client = new LINEBotTiny($channelAccessToken, $channelSecret);
+foreach ($client->parseEvents() as $event) {
+    switch ($event['type']) {
+        case 'message':
+            $message = $event['message'];
+            $code = explode(' ', $message['text']);
+  $graph = array(
   '拜倫陣地' => array('拜倫街','爆炸地中心'),
   '拜倫街' => array('米謝爾奈平原','拜倫陣地'),
   '米謝爾奈平原' => array('洛庫庫礦山之村','拜倫街'),
@@ -10,15 +18,6 @@ $graph = array(
 );
           $g = new Graph($graph);
           $g->leastHops('拜倫陣地', '洛恩法山');
-
-$channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
-$channelSecret = getenv('LINE_CHANNEL_SECRET');
-$client = new LINEBotTiny($channelAccessToken, $channelSecret);
-foreach ($client->parseEvents() as $event) {
-    switch ($event['type']) {
-        case 'message':
-            $message = $event['message'];
-            $code = explode(' ', $message['text']);
         break;
     default:
         error_log("Unsupporeted event type: " . $event['type']);
