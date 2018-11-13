@@ -75,11 +75,11 @@ class Graph
         }
       
         if (isset($path[$destination])) {
-            $mapno = count($path[$destination]) - 2;
+            $mapno = count($path[$destination]) - 1;
                 " 個地圖\n";
 $title = "從【".$origin."】
 到【".$destination."】
-會經過".$mapno."個地圖。
+會通過".$mapno."個傳點。
 
 --------  開始導航  --------
 ";
