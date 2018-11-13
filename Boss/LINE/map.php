@@ -66,6 +66,15 @@ class Graph
     }
 }
 
+$graph = array(
+  '拜倫陣地' => array('拜倫街','爆炸地中心'),
+  '拜倫街' => array('米謝爾奈平原','拜倫陣地'),
+  '米謝爾奈平原' => array('洛庫庫礦山之村','拜倫街'),
+  '洛庫庫礦山之村' => array('米謝爾奈平原','洛庫庫坑道','洛恩法山脈'),
+  '洛庫庫坑道' => array('洛庫庫礦山之村'),
+  '洛恩法山脈' => array('洛庫庫街','洛庫庫礦山之村','洛恩法洞窟','洛庫庫風洞'),
+);
+
 require_once('./LINEBotTiny.php');
 require_once('./utf8_chinese.class.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
@@ -86,11 +95,3 @@ $g->leastHops($mapcode[1], $mapcode[2]);
 }
 }
 
-$graph = array(
-  '拜倫陣地' => array('拜倫街','爆炸地中心'),
-  '拜倫街' => array('米謝爾奈平原','拜倫陣地'),
-  '米謝爾奈平原' => array('洛庫庫礦山之村','拜倫街'),
-  '洛庫庫礦山之村' => array('米謝爾奈平原','洛庫庫坑道','洛恩法山脈'),
-  '洛庫庫坑道' => array('洛庫庫礦山之村'),
-  '洛恩法山脈' => array('洛庫庫街','洛庫庫礦山之村','洛恩法洞窟','洛庫庫風洞'),
-);
