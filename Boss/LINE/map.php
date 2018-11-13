@@ -23,13 +23,7 @@ foreach ($client->parseEvents() as $event) {
         }
 }
 
-class Graph
-{
-    protected $graph;
-    protected $visited = array();
-    public function __construct($graph) {
-        $this->graph = $graph;
-    }
+
   function leastHops($origin, $destination) {
         // mark all nodes as unvisited
         foreach ($this->graph as $key => $vertex) {
