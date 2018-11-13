@@ -46,8 +46,9 @@ class Graph
                 }
             }
         }
-      if (isset($path[$destination])) {
-            echo "$origin 到 $destination 會經過 ", count($path[$destination]) - 2,
+      
+        if (isset($path[$destination])) {
+            echo "$origin 到 $destination 會經過 ", count($path[$destination]) - 1,
                 " 個地圖\n";
             $sep = '';
             foreach ($path[$destination] as $vertex) {
@@ -55,6 +56,7 @@ class Graph
                 $sep = '->';
             }
             echo "\n";
+        }
         else {
             echo "No route from $origin to $destination\n";
         }
