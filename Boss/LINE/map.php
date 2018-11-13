@@ -30,7 +30,7 @@ class Graph
     public function __construct($graph) {
         $this->graph = $graph;
     }
-  function leastHops($origin, $destination) {
+public function leastHops($origin, $destination) {
         // mark all nodes as unvisited
         foreach ($this->graph as $key => $vertex) {
             $this->visited[$key] = false;
