@@ -218,6 +218,7 @@ foreach ($bot->parseEvents() as $event) {
 							error_log("無觸發");
 							break;
 						}
+						}
 						
 						$bot->replyMessage(
 							array(
