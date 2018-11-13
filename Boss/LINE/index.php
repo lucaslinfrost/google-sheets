@@ -213,11 +213,9 @@ foreach ($bot->parseEvents() as $event) {
 						error_log("收到訊息：".$m_message);
 						$messages = parseInput($m_message);
 						
-						if($mapcode === "") {
 						if ($messages == null) {
 							error_log("無觸發");
 							break;
-						}
 						}
 						
 						$bot->replyMessage(
@@ -226,7 +224,6 @@ foreach ($bot->parseEvents() as $event) {
 							'messages' => $messages
 							)
 						);	
-							$mapcode = "";
 
                 	}
                     break;
