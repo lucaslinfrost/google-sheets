@@ -1,6 +1,6 @@
 <?php
 require_once('./LINEBotTiny.php');
-static $maphop;
+$maptext = "";
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
@@ -96,7 +96,8 @@ $maphop = "沒有從【".$origin."】
 到【".$destination."】的路。";
         }
         $maphop = substr($maphop, 0, -3);
-        $maphop = $title."".$maphop;
-        return buildTextMessage(''.$maphop.'');
+        global $maptext;
+        $maptext = $title."".$maphop;
+        return buildTextMessage(''.$maptext.'');
     }
 }
