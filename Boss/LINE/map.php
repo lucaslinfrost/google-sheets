@@ -1,7 +1,5 @@
 <?php
 require_once('./LINEBotTiny.php');
-$sep = "
-->";
 $graph = array(
   '拜倫陣地' => array('拜倫街','爆炸地中心'),
   '拜倫街' => array('米謝爾奈平原','拜倫陣地'),
@@ -81,6 +79,8 @@ class Graph
                 " 個地圖\n";
             $sep = '';
             foreach ($path[$destination] as $vertex) {
+$sep = "
+->";
                 $maphop = $maphop."".$vertex."".$sep;
             }
             echo "\n";
