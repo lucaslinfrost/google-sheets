@@ -46,8 +46,22 @@ class Graph
                 }
             }
         }
-      
-        
+      if (isset($path[$destination])) {
+            echo "$origin to $destination in ", count($path[$destination]) - 1,
+                " hops\n";
+            $sep = '';
+            $alltext = "有標題";
+            foreach ($path[$destination] as $vertex) {
+                echo $sep, $vertex;
+                $sep = '->';
+                $alltext = "有地圖";
+            }
+            echo "\n";
+        }
+        else {
+            echo "No route from $origin to $destination\n";
+            $alltext = "沒地圖";
+        }
     }
 }
 
@@ -77,23 +91,6 @@ switch ($event['type']) {
      
 $g = new Graph($graph);
 $g->leastHops($mapcode[1], $mapcode[2]);
-        
-        if (isset($path[$destination])) {
-            echo "$origin to $destination in ", count($path[$destination]) - 1,
-                " hops\n";
-            $sep = '';
-            $alltext = "有標題";
-            foreach ($path[$destination] as $vertex) {
-                echo $sep, $vertex;
-                $sep = '->';
-                $alltext = "有地圖";
-            }
-            echo "\n";
-        }
-        else {
-            echo "No route from $origin to $destination\n";
-            $alltext = "沒地圖";
-        }
         
 }
 }
