@@ -34,7 +34,6 @@ class Graph
         $this->graph = $graph;
     }
     public function leastHops($origin, $destination) {
-        static $maphop = "";
         // mark all nodes as unvisited
         foreach ($this->graph as $key => $vertex) {
             $this->visited[$key] = false;
@@ -96,7 +95,7 @@ $maphop = "沒有從【".$origin."】
 到【".$destination."】的路。";
         }
         $maphop = substr($maphop, 0, -3);
-        $maphop = $title."".$maphop;
+        static $maphop = $title."".$maphop;
         return buildTextMessage(''.$maphop.'');
     }
 }
