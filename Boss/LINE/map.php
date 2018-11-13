@@ -1,4 +1,5 @@
 <?php
+static $maphop = "";
 require_once('./LINEBotTiny.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
@@ -96,7 +97,6 @@ $maphop = "沒有從【".$origin."】
         }
         $maphop = substr($maphop, 0, -3);
         $maphop = $title."".$maphop;
-        static $maphop;
         return buildTextMessage(''.$maphop.'');
     }
 }
