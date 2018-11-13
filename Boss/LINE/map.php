@@ -93,7 +93,13 @@ $maphop = "沒有從【".$origin."】
         error_log("".$maphop."");
   
   
-    foreach ($client->parseEvents() as $event) {
+require_once('./LINEBotTiny.php');
+$channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
+$channelSecret = getenv('LINE_CHANNEL_SECRET');
+$client = new LINEBotTiny($channelAccessToken, $channelSecret);
+foreach ($client->parseEvents() as $event) {
+    switch ($event['type']) {
+    case 'message':
     $client->replyMessage(array(
         'replyToken' => $event['replyToken'],
         'messages' => array(
@@ -103,7 +109,8 @@ $maphop = "沒有從【".$origin."】
             )
         )
     ));
-};
+}
+}
   
   
     }
