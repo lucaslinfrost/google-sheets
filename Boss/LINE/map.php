@@ -1,5 +1,4 @@
 <?php
-  $maphop = "沒有";
   $graph = array(
   '拜倫陣地' => array('拜倫街','爆炸地中心'),
   '拜倫街' => array('米謝爾奈平原','拜倫陣地'),
@@ -70,7 +69,6 @@ public function leastHops($origin, $destination) {
             }
         }
         
-        global $maphop;
         if (isset($path[$destination])) {
             $mapno = count($path[$destination]) - 1;
                 " 個地圖\n";
@@ -93,6 +91,21 @@ $maphop = "沒有從【".$origin."】
         $maphop = substr($maphop, 0, -3);
         $maphop = $title."".$maphop;
         error_log("".$maphop."");
+  
+  
+    foreach ($client->parseEvents() as $event) {
+    $client->replyMessage(array(
+        'replyToken' => $event['replyToken'],
+        'messages' => array(
+            array(
+                'type' => 'text',
+                'text' => $maphop
+            )
+        )
+    ));
+};
+  
+  
     }
 }
 $g = new Graph($graph);
