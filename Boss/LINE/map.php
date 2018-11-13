@@ -12,6 +12,8 @@ require_once('./LINEBotTiny.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
+class Graph
+{
 foreach ($client->parseEvents() as $event) {
     switch ($event['type']) {
         case 'message':
@@ -23,8 +25,7 @@ foreach ($client->parseEvents() as $event) {
         }
 }
 
-class Graph
-{
+
     protected $graph;
     protected $visited = array();
     public function __construct($graph) {
