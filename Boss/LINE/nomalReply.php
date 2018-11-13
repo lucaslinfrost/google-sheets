@@ -358,24 +358,23 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		
 	foreach($content as $txtChack){
 		foreach($txtChack['chack'] as $chack){
-			if(stristr($inputStr, '指路') != false) {
-			$rplyArr = explode(' ',$inputStr);
-			if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
-			require_once('./map.php');
-			}else{
+			
 			if(stristr($inputStr, $chack) != false){
 			return buildTextMessage($txtChack['text'][Dice(count($txtChack['text']))-1]);
 			break;
-			}
 			}
 		}
 	}
 	
   //沒有觸發關鍵字則是這個
-	
+	if(stristr($inputStr, '指路') != false) {
+	$rplyArr = explode(' ',$inputStr);
+	if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
+	require_once('./map.php');
+	}else{
 	$rplyArr = $content[0]['text'];
 	return buildTextMessage($rplyArr[Dice(count($rplyArr))-1]);
-	
+	}
 }
 
 
