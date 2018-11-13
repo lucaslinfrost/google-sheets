@@ -87,7 +87,7 @@ switch ($event['type']) {
         $code = explode(' ', $message['text']);
 		
 $g = new Graph($graph);
-$g->leastHops('\''.$code[1].'\'', '\''.$code[2].'\'');
+$g->leastHops('A', 'G');
 	
 }
 };
