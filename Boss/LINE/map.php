@@ -19,7 +19,6 @@ foreach ($client->parseEvents() as $event) {
             $code = explode(' ', $message['text']);
             $g = new Graph($graph);
             $g->leastHops($code[1], $code[2]);
-        $maphop1 = $maphop;
         break;
         }
 }
