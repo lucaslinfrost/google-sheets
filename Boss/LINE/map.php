@@ -1,5 +1,4 @@
 <?php
-static $maphop = "";
 require_once('./LINEBotTiny.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
@@ -34,7 +33,7 @@ class Graph
     public function __construct($graph) {
         $this->graph = $graph;
     }
-    public function leastHops($origin, $destination) {
+  function leastHops($origin, $destination) {
         // mark all nodes as unvisited
         foreach ($this->graph as $key => $vertex) {
             $this->visited[$key] = false;
