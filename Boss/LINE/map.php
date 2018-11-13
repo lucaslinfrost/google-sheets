@@ -33,6 +33,7 @@ class Graph
         $this->graph = $graph;
     }
   function leastHops($origin, $destination) {
+      global $maphop;
         // mark all nodes as unvisited
         foreach ($this->graph as $key => $vertex) {
             $this->visited[$key] = false;
