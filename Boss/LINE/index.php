@@ -213,6 +213,7 @@ foreach ($bot->parseEvents() as $event) {
 						error_log("收到訊息：".$m_message);
 						$messages = parseInput($m_message);
 						
+				if(stristr($inputStr, '指路') === false) {
 						if ($messages == null) {
 							error_log("無觸發");
 							break;
