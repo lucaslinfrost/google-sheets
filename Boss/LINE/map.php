@@ -66,7 +66,7 @@ class Graph
       
         if (isset($path[$destination])) {
 	count($path[$destination]) - 1;
-            $alltext = $origin."to".$destination."in";
+            $alltext1 = $origin."to".$destination."in";
             $sep = '\n->';
             foreach ($path[$destination] as $vertex) {
                 $alltext = $vertex."".$sep;
