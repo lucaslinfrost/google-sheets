@@ -93,7 +93,6 @@ $maphop = "沒有從【".$origin."】
         $maphop = substr($maphop, 0, -3);
         $maphop = $title."".$maphop;
         error_log("".$maphop."");
-        global $maphop1;
-        $maphop1 = $maphop;
+        $GLOBALS['maphop1'] = $GLOBALS['maphop1']."".$maphop;
     }
 }
