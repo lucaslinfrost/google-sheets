@@ -1,4 +1,17 @@
 <?php
+require_once('./LINEBotTiny.php');
+require_once('./index.php');
+$channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
+$channelSecret = getenv('LINE_CHANNEL_SECRET');
+$client = new LINEBotTiny($channelAccessToken, $channelSecret);
+foreach ($client->parseEvents() as $event) {
+    switch ($event['type']) {
+        case 'message':
+            $message = $event['message'];
+            $code = explode(' ', $message['text']);
+        }
+}
+
 class Graph
 {
     protected $graph;
@@ -54,6 +67,8 @@ class Graph
             foreach ($path[$destination] as $vertex) {
                 echo $sep, $vertex;
                 $sep = '->';
+                $abc = $abc.">".$vertex;
+                return buildTextMessage(''.$abc.'');
             }
             echo "\n";
         }
