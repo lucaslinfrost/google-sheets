@@ -6,17 +6,7 @@ $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 // 取得事件(只接受文字訊息)
-foreach ($client->parseEvents() as $event) {
-switch ($event['type']) {       
-    case 'message':
-        // 讀入訊息
-        $message = $event['message'];
-        $c = new utf8_chinese;
-        $message['text'] = $c->gb2312_big5($message['text']);
-        $code = explode(' ', $message['text']);
-	return leastHops($code[1],$code[2]);
-}
-};
+
 $graph = array(
   'A' => array('B', 'F'),
   'B' => array('A', 'D', 'E'),
@@ -89,3 +79,14 @@ class Graph
         }
     }
 }
+foreach ($client->parseEvents() as $event) {
+switch ($event['type']) {       
+    case 'message':
+        // 讀入訊息
+        $message = $event['message'];
+        $c = new utf8_chinese;
+        $message['text'] = $c->gb2312_big5($message['text']);
+        $code = explode(' ', $message['text']);
+	
+}
+};
