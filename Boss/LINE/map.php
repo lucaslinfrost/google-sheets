@@ -85,13 +85,10 @@ $title = "從【".$origin."】
             foreach ($path[$destination] as $vertex) {
 $sep = "
 ->";
-                global $maphop;
                 $maphop = $maphop."".$vertex."".$sep;
             }
-            echo "\n";
         }
         else {
-global $maphop;
 $maphop = "沒有從【".$origin."】
 到【".$destination."】的路。";
         }
