@@ -19,8 +19,6 @@ foreach ($client->parseEvents() as $event) {
             $message = $event['message'];
             $code = explode(' ', $message['text']);
         }
-          $g = new Graph($graph);
-          $g->leastHops($code[1], $code[2]);
 }
 
 class Graph
@@ -87,3 +85,5 @@ class Graph
         }
     }
 }
+          $g = new Graph($graph);
+          $g->leastHops($code[1], $code[2]);
