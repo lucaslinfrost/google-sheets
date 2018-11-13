@@ -81,6 +81,7 @@ class Graph
                 $alltext = $abc.">".$vertex;
             }
             echo "\n";
+          return buildTextMessage(''.$alltext.'');
         }
         else {
             echo "No route from $origin to $destination\n";
