@@ -78,10 +78,9 @@ class Graph
             foreach ($path[$destination] as $vertex) {
                 echo $sep, $vertex;
                 $sep = '->';
-                $abc = $abc.">".$vertex;
+                $alltext = $abc.">".$vertex;
             }
             echo "\n";
-            return buildTextMessage(''.$abc.'');
         }
         else {
             echo "No route from $origin to $destination\n";
