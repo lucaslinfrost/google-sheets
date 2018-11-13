@@ -1,21 +1,4 @@
 <?php
-
-require_once('./LINEBotTiny.php');
-require_once('./utf8_chinese.class.php');
-$channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
-$channelSecret = getenv('LINE_CHANNEL_SECRET');
-$client = new LINEBotTiny($channelAccessToken, $channelSecret);
-// 取得事件(只接受文字訊息)
-
-$graph = array(
-  'A' => array('B', 'F'),
-  'B' => array('A', 'D', 'E'),
-  'C' => array('F'),
-  'D' => array('B', 'E'),
-  'E' => array('B', 'D', 'F'),
-  'F' => array('A', 'E', 'C'),
-);
-
 class Graph
 {
     protected $graph;
@@ -65,29 +48,27 @@ class Graph
         }
       
         if (isset($path[$destination])) {
-	count($path[$destination]) - 1;
-            $alltext1 = $origin."to".$destination."in";
-            $sep = '\n->';
+            echo "$origin to $destination in ", count($path[$destination]) - 1,
+                " hops\n";
+            $sep = '';
             foreach ($path[$destination] as $vertex) {
-                $alltext = $vertex."".$sep;
+                echo $sep, $vertex;
+                $sep = '->';
             }
+            echo "\n";
         }
         else {
-            $alltext =  "No route from".$origin."to".$destination;
+            echo "No route from $origin to $destination\n";
         }
     }
 }
-foreach ($client->parseEvents() as $event) {
-switch ($event['type']) {       
-    case 'message':
-        // 讀入訊息
-        $message = $event['message'];
-        $c = new utf8_chinese;
-        $message['text'] = $c->gb2312_big5($message['text']);
-        $code = explode(' ', $message['text']);
-		
+$graph = array(
+  '拜倫陣地' => array('拜倫街','爆炸地中心'),
+  '拜倫街' => array('米謝爾奈平原','拜倫陣地'),
+  '米謝爾奈平原' => array('洛庫庫礦山之村','拜倫街'),
+  '洛庫庫礦山之村' => array('米謝爾奈平原','洛庫庫坑道','洛恩法山脈'),
+  '洛庫庫坑道' => array('洛庫庫礦山之村'),
+  '洛恩法山脈' => array('洛庫庫街','洛庫庫礦山之村','洛恩法洞窟','洛庫庫風洞'),
+);
 $g = new Graph($graph);
-$g->leastHops('A', 'G');
-	
-}
-};
+$g->leastHops('D', 'C');
