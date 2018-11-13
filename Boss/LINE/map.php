@@ -20,6 +20,10 @@ foreach ($client->parseEvents() as $event) {
         case 'message':
             $message = $event['message'];
             $code = explode(' ', $message['text']);
+        break;
+    default:
+        error_log("Unsupporeted event type: " . $event['type']);
+        break;
         }
 }
 
