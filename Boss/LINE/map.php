@@ -18,8 +18,7 @@ foreach ($client->parseEvents() as $event) {
 );
           $g = new Graph($graph);
           $g->leastHops($code[1], $code[2]);
-          global $maphop;
-          error_log($maphop);
+            
         break;
     default:
         error_log("Unsupporeted event type: " . $event['type']);
@@ -35,6 +34,7 @@ class Graph
         $this->graph = $graph;
     }
     public function leastHops($origin, $destination) {
+        static $maphop
         // mark all nodes as unvisited
         foreach ($this->graph as $key => $vertex) {
             $this->visited[$key] = false;
