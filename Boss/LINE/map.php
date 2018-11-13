@@ -17,12 +17,10 @@ foreach ($client->parseEvents() as $event) {
             $message = $event['message'];
             $code = explode(' ', $message['text']);
 
-          $g = new Graph($graph);
-          $g->leastHops($code[1], $code[2]);
+          
         break;
-    default:
-        error_log("Unsupporeted event type: " . $event['type']);
-        break;
+        $g = new Graph($graph);
+        $g->leastHops($code[1], $code[2]);
         }
 }
 
