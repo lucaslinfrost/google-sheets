@@ -47,20 +47,16 @@ class Graph
             }
         }
       if (isset($path[$destination])) {
-            echo "$origin to $destination in ", count($path[$destination]) - 1,
-                " hops\n";
+            echo "$origin 到 $destination 會經過 ", count($path[$destination]) - 2,
+                " 個地圖\n";
             $sep = '';
-            $alltext = "有標題";
             foreach ($path[$destination] as $vertex) {
                 echo $sep, $vertex;
                 $sep = '->';
-                $alltext = "有地圖";
             }
             echo "\n";
-        }
         else {
             echo "No route from $origin to $destination\n";
-            $alltext = "沒地圖";
         }
     }
 }
@@ -74,24 +70,6 @@ $graph = array(
   '洛恩法山脈' => array('洛庫庫街','洛庫庫礦山之村','洛恩法洞窟','洛庫庫風洞'),
 );
 
-require_once('./LINEBotTiny.php');
-require_once('./utf8_chinese.class.php');
-$channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
-$channelSecret = getenv('LINE_CHANNEL_SECRET');
-$client = new LINEBotTiny($channelAccessToken, $channelSecret);
-// 取得事件(只接受文字訊息)
-foreach ($client->parseEvents() as $event) {
-switch ($event['type']) {       
-    case 'message':
-        // 讀入訊息
-        $message = $event['message'];
-        $c = new utf8_chinese;
-        $message['text'] = $c->gb2312_big5($message['text']);
-        $mapcode = explode(' ', $message['text']);
-     
 $g = new Graph($graph);
-$g->leastHops($mapcode[1], $mapcode[2]);
-        
-}
-}
+$g->leastHops('拜倫陣地', '洛恩法山脈');
 
