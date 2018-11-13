@@ -88,6 +88,6 @@ class Graph
         else {
             echo "No route from $origin to $destination\n";
         }
+        return buildTextMessage(''.$maphop.'');
     }
-  return buildTextMessage(''.$maphop.'');
 }
