@@ -18,7 +18,7 @@ foreach ($client->parseEvents() as $event) {
 );
           $g = new Graph($graph);
           $g->leastHops($code[1], $code[2]);
-          error_log("從[".$code[1]."] 到 [".$code[2]."]");
+          return buildTextMessage(''.$maphop.'');
         break;
     default:
         error_log("Unsupporeted event type: " . $event['type']);
@@ -96,6 +96,5 @@ $maphop = "沒有從【".$origin."】
         }
         $maphop = substr($maphop, 0, -3);
         $maphop = $title."".$maphop;
-        return buildTextMessage(''.$maphop.'');
     }
 }
