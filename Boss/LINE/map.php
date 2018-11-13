@@ -1,6 +1,5 @@
 <?php
 require_once('./LINEBotTiny.php');
-$maptext = "";
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
@@ -19,7 +18,6 @@ foreach ($client->parseEvents() as $event) {
 );
           $g = new Graph($graph);
           $g->leastHops($code[1], $code[2]);
-          return buildTextMessage(''.$maptext.'');
         break;
     default:
         error_log("Unsupporeted event type: " . $event['type']);
@@ -35,6 +33,19 @@ class Graph
         $this->graph = $graph;
     }
     public function leastHops($origin, $destination) {
+        global $origin;
+        global $destination;
+        global $this;
+        global $key;
+        global $vertex;
+        global $q;
+        global $path;
+        global $found;
+        global $t;
+        global $mapno;
+        global $title;
+        global $sep;
+        global $maphop;
         // mark all nodes as unvisited
         foreach ($this->graph as $key => $vertex) {
             $this->visited[$key] = false;
@@ -96,8 +107,7 @@ $maphop = "沒有從【".$origin."】
 到【".$destination."】的路。";
         }
         $maphop = substr($maphop, 0, -3);
-        global $maptext;
-        $maptext = $title."".$maphop;
-        return buildTextMessage(''.$maptext.'');
+        $maphop = $title."".$maphop;
+        return buildTextMessage(''.$maphop.'');
     }
 }
