@@ -15,8 +15,6 @@ $graph = array(
   'E' => array('B', 'D', 'F'),
   'F' => array('A', 'E', 'C'),
 );
-$g = new Graph($graph);
-$g->leastHops('\''.$code[1].'\'', '\''.$code[2].'\'');
 
 class Graph
 {
@@ -87,6 +85,9 @@ switch ($event['type']) {
         $c = new utf8_chinese;
         $message['text'] = $c->gb2312_big5($message['text']);
         $code = explode(' ', $message['text']);
+		
+$g = new Graph($graph);
+$g->leastHops('\''.$code[1].'\'', '\''.$code[2].'\'');
 	
 }
 };
