@@ -51,13 +51,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	}	
 	}
 	
-	//地圖
-	if(stristr($inputStr, '指路') != false) {
-		
-		$rplyArr = explode(' ',$inputStr);
-		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
-		require_once('./map.php');
-	}
+
 	//推送
 	if(stristr($inputStr, '龘') != false||
 	       stristr($inputStr, '淼') != false) {
@@ -378,6 +372,14 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	return buildTextMessage($rplyArr[Dice(count($rplyArr))-1]);
 	
 }
+
+	//地圖
+	if(stristr($inputStr, '指路') != false) {
+		
+		$rplyArr = explode(' ',$inputStr);
+		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
+		require_once('./map.php');
+	}
 
 function SendImg($inputStr,$imgsReplyUrl) {
 
