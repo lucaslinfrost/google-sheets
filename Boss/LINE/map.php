@@ -17,8 +17,7 @@ foreach ($client->parseEvents() as $event) {
         case 'message':
             $message = $event['message'];
             $code = explode(' ', $message['text']);
-            $g = new Graph($graph);
-            $g->leastHops($code[1], $code[2]);
+            
         break;
         }
 }
@@ -96,3 +95,5 @@ $maphop = "沒有從【".$origin."】
         $GLOBALS['maphop1'] = $GLOBALS['maphop1']."".$maphop;
     }
 }
+$g = new Graph($graph);
+$g->leastHops($code[1], $code[2]);
