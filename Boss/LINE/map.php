@@ -36,12 +36,9 @@ class Graph
     public function leastHops($origin, $destination) {
         global $origin;
         global $destination;
-        global $key;
         global $vertex;
-        global $q;
         global $path;
         global $found;
-        global $t;
         global $mapno;
         global $title;
         global $sep;
