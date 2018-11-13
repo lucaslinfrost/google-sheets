@@ -86,8 +86,10 @@ $sep = "
             echo "\n";
         }
         else {
-            echo "No route from $origin to $destination\n";
+$maphop = "沒有從【".$origin."】
+到【".$destination."】的路。";
         }
+        $$maphop = substr($maphop, 0, -3);
         return buildTextMessage(''.$maphop.'');
     }
 }
