@@ -32,7 +32,6 @@ class Graph
     }
   function leastHops($origin, $destination) {
         // mark all nodes as unvisited
-        global $maphop;
         foreach ($this->graph as $key => $vertex) {
             $this->visited[$key] = false;
         }
@@ -71,7 +70,7 @@ class Graph
                 }
             }
         }
-      
+        global $maphop;
         if (isset($path[$destination])) {
             $mapno = count($path[$destination]) - 1;
                 " 個地圖\n";
