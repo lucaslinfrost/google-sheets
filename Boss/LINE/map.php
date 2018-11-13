@@ -86,4 +86,4 @@ class Graph
     }
 }
           $g = new Graph($graph);
-          $g->leastHops($code[1], $code[2]);
+          $g->leastHops('拜倫陣地', '洛恩法山脈');
