@@ -75,9 +75,14 @@ class Graph
         }
       
         if (isset($path[$destination])) {
-            echo "$origin 到 $destination 會經過 ", count($path[$destination]) - 1,
+            $mapno = count($path[$destination]) - 2;
                 " 個地圖\n";
-            $sep = '';
+$title = "從【".$origin."】
+到【".$destination."】
+會經過".$mapno."個地圖。
+
+--------  開始導航  --------
+";
             foreach ($path[$destination] as $vertex) {
 $sep = "
 ->";
@@ -90,6 +95,7 @@ $maphop = "沒有從【".$origin."】
 到【".$destination."】的路。";
         }
         $maphop = substr($maphop, 0, -3);
+        $maphop = $mapno."".$maphop;
         return buildTextMessage(''.$maphop.'');
     }
 }
