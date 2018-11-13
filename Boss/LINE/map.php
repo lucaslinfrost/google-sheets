@@ -103,6 +103,6 @@ $maphop = "沒有從【".$origin."】
       'type' => 'text',
       'text' => $maphop.'',
       ),
-      ));
+      )),
     }
 }
