@@ -9,6 +9,9 @@ $graph = array(
   '洛庫庫坑道' => array('洛庫庫礦山之村'),
   '洛恩法山脈' => array('洛庫庫街','洛庫庫礦山之村','洛恩法洞窟','洛庫庫風洞'),
 );
+$g = new Graph($graph);
+$g->leastHops('拜倫陣地', '洛恩法山脈');
+
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
@@ -17,9 +20,6 @@ foreach ($client->parseEvents() as $event) {
         case 'message':
             $message = $event['message'];
             $code = explode(' ', $message['text']);
-            $g = new Graph($graph);
-            $g->leastHops('拜倫陣地', '洛恩法山脈');
-            return buildTextMessage(''.$abc.'');
         }
 }
 
@@ -81,6 +81,7 @@ class Graph
                 $abc = $abc.">".$vertex;
             }
             echo "\n";
+            return buildTextMessage(''.$abc.'');
         }
         else {
             echo "No route from $origin to $destination\n";
