@@ -10,7 +10,7 @@ $graph = array(
   '洛恩法山脈' => array('洛庫庫街','洛庫庫礦山之村','洛恩法洞窟','洛庫庫風洞'),
 );
 $g = new Graph($graph);
-$g->leastHops('拜倫陣地', '洛恩法山脈');
+$g->leastHops($code[1], $code[2]);
 
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
