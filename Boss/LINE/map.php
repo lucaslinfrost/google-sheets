@@ -91,6 +91,6 @@ $maphop = "沒有從【".$origin."】
         }
         $maphop = substr($maphop, 0, -3);
         $maphop = $title."".$maphop;
-        return buildTextMessage(''.$maphop.'');
+        error_log("".$maphop."");
     }
 }
