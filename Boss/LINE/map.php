@@ -711,6 +711,7 @@ foreach ($client->parseEvents() as $event) {
                 }
         } 
      }
+        error_log("查找~".$mappush1." 和 ".$mappush2."");
         break;
         }
 }
