@@ -15,7 +15,7 @@ foreach ($client->parseEvents() as $event) {
                 $keywords = explode(',', $item['gsx$key']['$t']);
                 foreach ($keywords as $keyword) {
                     if (strcmp($code[1], $keyword) === 0) {
-                    $mappush1 = $item['gsx$mapname']['$t']; 
+                    $mappush1 = $item['gsx$mapn']['$t']; 
                     }
                 }
             }
