@@ -55,7 +55,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	$rplyArr = explode('#',$inputStr);
 	if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
 	require_once('./test.php');
-	return buildTextMessage('第1圖:'.$mappush1.'   第2圖:'.$mappush2.''));
+	return buildTextMessage('第1圖:'.$mappush1.'   第2圖:'.$mappush2.'');
 	}
 	//地圖
 	if(stristr($inputStr, '指路') != false) {
