@@ -12,7 +12,7 @@ foreach ($client->parseEvents() as $event) {
             $data = json_decode($json, true);
             $code = explode('#', $message['text']);
             foreach ($data['feed']['entry'] as $item) {
-                $keywords = explode(',', $item['gsx$search']['$t']);
+                $keywords = explode(',', $item['gsx$key']['$t']);
                 foreach ($keywords as $keyword) {
                     if (strcmp($code[1], $keyword) === 0) {
                     $mappush1 = $item['gsx$mapname']['$t']; 
