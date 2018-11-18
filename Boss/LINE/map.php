@@ -687,7 +687,7 @@
 require_once('./LINEBotTiny.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
-$googledataspi = getenv('https://spreadsheets.google.com/feeds/list/1DF1BBZUPVGWHLN6V4W_2G2ZzfIo3iU67Mr1Fu85ZMMg/oga9yuu/public/values?alt=json');
+$googledataspi = getenv('googledataspi9');
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 foreach ($client->parseEvents() as $event) {
     switch ($event['type']) {
