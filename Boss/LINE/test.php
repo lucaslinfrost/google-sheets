@@ -14,19 +14,18 @@ switch ($event['type']) {
         foreach ($data['feed']['entry'] as $item) {
             $keywords = explode(',', $item['gsx$key']['$t']);
             foreach ($keywords as $keyword) {
-                if (strcmp($code1, $keyword) === 0) {                      
-                $mappush1 = $item['gsx$mapname']['$t'];     
+                if (strcmp($code[1], $keyword) === 0) {                      
+                $mappush1 = $item['gsx$mapn']['$t'];     
                 }else{       
                 $mappush1 = $code[1];      
                 }
-                if (strcmp($code2, $keyword) === 0) {                      
-                $mappush2 = $item['gsx$mapname']['$t'];     
+                if (strcmp($code[2], $keyword) === 0) {                      
+                $mappush2 = $item['gsx$mapn']['$t'];     
                 }else{       
                 $mappush2 = $code[2];      
                 }
 }
 }
-error_log("第1圖".$mappush1."   第2圖".$mappush2."");
             break;
         default:
             error_log("Unsupporeted event type: " . $event['type']);
