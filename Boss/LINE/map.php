@@ -809,4 +809,4 @@ foreach ($client->parseEvents() as $event) {
     }
 }
 $g = new Graph($graph);
-$g->leastHops($mappush1, $code[]);
+$g->leastHops($mappush1, $code[2]);
