@@ -17,6 +17,9 @@ foreach ($client->parseEvents() as $event) {
                     if (strcmp($code[1], $keyword) === 0) {
                     $mappush1 = $item['gsx$mapn']['$t']; 
                     }
+                    if (strcmp($code[2], $keyword) === 0) {
+                    $mappush2 = $item['gsx$mapn']['$t']; 
+                    }
                 }
             }
             break;
