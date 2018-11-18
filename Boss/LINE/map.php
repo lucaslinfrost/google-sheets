@@ -701,9 +701,14 @@ switch ($event['type']) {
             $keywords = explode(',', $item['gsx$key']['$t']);
             foreach ($keywords as $keyword) {
                 if (strcmp($code[1], $keyword) === 0) {                      
-                $mappush1 = $item['gsx$mapname']['$t'];     
+                $mappush1 = $item['gsx$mapn']['$t'];     
                 }else{       
                 $mappush1 = $code[1];      
+                }
+                if (strcmp($code[2], $keyword) === 0) {                      
+                $mappush2 = $item['gsx$mapn']['$t'];     
+                }else{       
+                $mappush2 = $code[2];      
                 }
 }
 }
@@ -713,6 +718,9 @@ switch ($event['type']) {
             break;
     }
 };
+
+$g = new Graph($graph);
+$g->leastHops($mappush1, $mappush2);
 
 class Graph
 {
@@ -808,5 +816,3 @@ foreach ($client->parseEvents() as $event) {
   
     }
 }
-$g = new Graph($graph);
-$g->leastHops($mappush1, $code[2]);
