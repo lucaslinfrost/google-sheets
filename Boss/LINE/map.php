@@ -705,11 +705,6 @@ switch ($event['type']) {
                 }else{       
                 $mappush1 = $code[1];      
                 }
-                if (strcmp($code[2], $keyword) === 0) {                      
-                $mappush2 = $item['gsx$mapname']['$t'];     
-                }else{       
-                $mappush2 = $code[2];      
-                }
 }
 }
             break;
@@ -814,4 +809,4 @@ foreach ($client->parseEvents() as $event) {
     }
 }
 $g = new Graph($graph);
-$g->leastHops($mappush1, $mappush2);
+$g->leastHops($mappush1, $code[]);
