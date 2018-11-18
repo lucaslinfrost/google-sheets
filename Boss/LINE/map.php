@@ -687,13 +687,30 @@
 require_once('./LINEBotTiny.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
+$googledataspi = getenv('https://spreadsheets.google.com/feeds/list/1DF1BBZUPVGWHLN6V4W_2G2ZzfIo3iU67Mr1Fu85ZMMg/oga9yuu/public/values?alt=json');
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 foreach ($client->parseEvents() as $event) {
     switch ($event['type']) {
         case 'message':
             $message = $event['message'];
+            $json = file_get_contents($googledataspi);
+            $data = json_decode($json, true);   
             $code = explode('#', $message['text']);
-            
+         foreach ($data['feed']['entry'] as $item) {
+            $keywords = explode(',', $item['gsx$key']['$t']);
+            foreach ($keywords as $keyword) {
+                if (strcmp($code[1], $keyword) === 0) {                      
+                $mappush1 = $item['gsx$mapname']['$t'];     
+                }else{       
+                $mappush1 = $code[1];      
+                }
+                if (strcmp($code[2], $keyword) === 0) {                      
+                $mappush2 = $item['gsx$mapname']['$t'];     
+                }else{       
+                $mappush2 = $code[2];      
+                }
+        } 
+     }
         break;
         }
 }
@@ -793,4 +810,4 @@ foreach ($client->parseEvents() as $event) {
     }
 }
 $g = new Graph($graph);
-$g->leastHops($code[1], $code[2]);
+$g->leastHops($mappush1, $mappush2);
