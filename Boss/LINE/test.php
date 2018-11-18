@@ -10,8 +10,7 @@ switch ($event['type']) {
         $message = $event['message'];
         $json = file_get_contents($googledataspi);
         $data = json_decode($json, true);
-        $code1 = "拜倫"; 
-        $code2 = "洛庫"; 
+        $code = explode('#', $message['text']);  
         foreach ($data['feed']['entry'] as $item) {
             $keywords = explode(',', $item['gsx$key']['$t']);
             foreach ($keywords as $keyword) {
