@@ -684,19 +684,20 @@
     '朱貝倫的巨樹' => array('蒙塔特樹林・區域3'),
     '塔克杰的小房子' => array('蒙塔特樹林・區域1'),
 );
+
 require_once('./LINEBotTiny.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
 $googledataspi = getenv('googledataspi9');
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 foreach ($client->parseEvents() as $event) {
-    switch ($event['type']) {
-        case 'message':
-            $message = $event['message'];
-            $json = file_get_contents($googledataspi);
-            $data = json_decode($json, true);   
-            $code = explode('#', $message['text']);
-         foreach ($data['feed']['entry'] as $item) {
+switch ($event['type']) {       
+    case 'message':
+        $message = $event['message'];
+        $json = file_get_contents($googledataspi);
+        $data = json_decode($json, true);
+        $code = explode('#', $message['text']);       
+        foreach ($data['feed']['entry'] as $item) {
             $keywords = explode(',', $item['gsx$key']['$t']);
             foreach ($keywords as $keyword) {
                 if (strcmp($code[1], $keyword) === 0) {                      
@@ -709,12 +710,14 @@ foreach ($client->parseEvents() as $event) {
                 }else{       
                 $mappush2 = $code[2];      
                 }
-        } 
-     }
-        error_log("查找~".$mappush1." 和 ".$mappush2."");
-        break;
-        }
 }
+}
+            break;
+        default:
+            error_log("Unsupporeted event type: " . $event['type']);
+            break;
+    }
+};
 
 class Graph
 {
