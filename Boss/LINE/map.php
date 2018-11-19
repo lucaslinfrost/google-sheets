@@ -688,13 +688,12 @@
 require_once('./LINEBotTiny.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
-$googledataspi = getenv('googledataspi9');
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 foreach ($client->parseEvents() as $event) {
     switch ($event['type']) {
         case 'message':
             $message = $event['message'];
-            $json = file_get_contents($googledataspi);
+            $json = file_get_contents('./data/.json');
             $data = json_decode($json, true);
             $code = explode('#', $message['text']);
             foreach ($data['feed']['entry'] as $item) {
