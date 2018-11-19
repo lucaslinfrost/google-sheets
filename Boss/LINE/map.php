@@ -693,7 +693,7 @@ foreach ($client->parseEvents() as $event) {
     switch ($event['type']) {
         case 'message':
             $message = $event['message'];
-            $json = file_get_contents('./data/.json');
+            $json = file_get_contents('./data/map.json');
             $data = json_decode($json, true);
             $code = explode('#', $message['text']);
             foreach ($data['feed']['entry'] as $item) {
