@@ -1,6 +1,5 @@
 <?php
 require_once('./blacklist.php');
-require_once('./LINEBotTiny.php');
 
 function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) { 
 	$inputStr = strtolower($inputStr);
@@ -87,7 +86,6 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	       stristr($inputStr, 'bye') != false||
 	       stristr($inputStr, 'Bye') != false||
 	       stristr($inputStr, '再见') != false) {
-	$bot->leaveGroup($groupId);
 	return buildTextMessage(''.$userName.'，我偏不走，怎麼樣?');
 	}
 
