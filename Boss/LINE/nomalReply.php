@@ -1,5 +1,6 @@
 <?php
 require_once('./blacklist.php');
+require_once('./LINEBotTiny.php');
 
 function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) { 
 	$inputStr = strtolower($inputStr);
