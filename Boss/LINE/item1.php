@@ -12,7 +12,7 @@ switch ($event['type']) {
         // 讀入訊息
         $message = $event['message'];
         // 將Google表單轉成JSON資料
-        $json = file_get_contents($googledataspi);
+        $json = file_get_contents('./data/m&d.json');
         $data = json_decode($json, true);
         $code = explode(' ', $message['text']);
         $alltext = "";
