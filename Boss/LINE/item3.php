@@ -9,7 +9,7 @@ foreach ($client->parseEvents() as $event) {
     switch ($event['type']) {
         case 'message':
             $message = $event['message'];
-            $json2 = file_get_contents($googledataspi);
+            $json2 = file_get_contents('./data/equip.json');
             $data2 = json_decode($json2, true);
             $code = explode('#', $message['text']);
             $alltext2 = "";
