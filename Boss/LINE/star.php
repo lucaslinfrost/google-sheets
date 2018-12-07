@@ -11,7 +11,7 @@ foreach ($client->parseEvents() as $event) {
     switch ($event['type']) {
         case 'message':
             $message = $event['message'];
-            $json = file_get_contents($googledataspi);
+            $json = file_get_contents('./data/star.json');
             $data = json_decode($json, true);
             $code = explode(' ', $message['text']);
             $result = array();
