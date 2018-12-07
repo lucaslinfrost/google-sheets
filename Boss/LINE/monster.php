@@ -17,7 +17,7 @@ switch ($event['type']) {
         $message = $event['message'];
 
         // 將Google表單轉成JSON資料
-        $json = file_get_contents($googledataspi);
+        $json = file_get_contents('./data/m&d.json');
         $data = json_decode($json, true);   
         $store_text1 = ""; 
         $code = explode(' ', $message['text']);
