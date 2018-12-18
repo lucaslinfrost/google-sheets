@@ -247,7 +247,7 @@ foreach ($bot->parseEvents() as $event) {
 			error_log("被加入聊天室");
 			$messages = new MutiMessage();
 			$replyArr = Array(
-				$messages->text("機體編號 : @opp9538z\n隸屬Iruna公會【★夢想家★】。\n工作是公會顧問和吉祥物，\n您可以輸入[老大說明]\n來了解我的所有功能。"),
+				$messages->text("機體編號 : @svf5367e\n隸屬Iruna公會【★夢想家★】。\n工作是公會顧問和吉祥物，\n您可以輸入[老大說明]\n來了解我的所有功能。"),
 				$messages->sticker(4,294)
 			);
 			
