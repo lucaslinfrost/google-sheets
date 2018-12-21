@@ -422,18 +422,18 @@
 				"actions": [
 						{
 						"type": "message",
+						"label": "【地圖導航】",
+						"text": "老大導航#洛庫#上宮"
+						},
+						{
+						"type": "message",
 						"label": "【惡搞功能】",
 						"text": "老大創角"
 						},
 						{
 						"type": "message",
-						"label": " ",
-						"text": " "
-						},
-						{
-						"type": "message",
-						"label": " ",
-						"text": " "
+						"label": "【匯率範例】",
+						"text": "老大匯率 香港"
 						}
 					]
 				},
@@ -453,8 +453,8 @@
 						},
 						{
 						"type": "message",
-						"label": "【匯率範例】",
-						"text": "老大匯率 香港"
+						"label": "【暫定(無功能)】",
+						"text": " "
 						}
 					]
 				}
