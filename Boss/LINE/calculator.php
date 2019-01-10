@@ -11,7 +11,11 @@ switch ($event['type']) {
         // 讀入訊息
         $message = $event['message'];
         $code = explode(' ', $message['text']);
-        $alltext = "";
+        
+if (strpos($code[1], 'x') !== false) { 
+$num = explode('x', $code[1]);
+$alltext = $num[0] * $num[1];
+}   
 
 // END Google Sheet Keyword Decode
             break;
