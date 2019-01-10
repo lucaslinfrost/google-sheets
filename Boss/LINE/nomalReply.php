@@ -52,6 +52,15 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	}
 	
 
+	//計算機
+	if(stristr($inputStr, '算') != false) {
+		require_once('./calculator.php');
+		if ($ans === "yes") {
+		return buildTextMessage('答案是 : '.$alltext.' 喔。');
+		}else{
+		return buildTextMessage('這樣我不會算啦，森77！');
+		}
+	}
 	//地圖
 	if(stristr($inputStr, '指路') != false||
 	       stristr($inputStr, '導航') != false) {
