@@ -12,16 +12,47 @@ switch ($event['type']) {
         $message = $event['message'];
         $code = explode(' ', $message['text']);
         $ans = "no";
+        
 if (strpos($code[1], 'x') !== false) { 
 $ans = "yes";
 $num = explode('x', $code[1]);
 $alltext = $num[0] * $num[1];
 }
+if (strpos($code[1], '乘') !== false) { 
+$ans = "yes";
+$num = explode('乘', $code[1]);
+$alltext = $num[0] * $num[1];
+}      
+if (strpos($code[1], '/') !== false) { 
+$ans = "yes";
+$num = explode('/', $code[1]);
+$alltext = $num[0] / $num[1];
+}           
+if (strpos($code[1], '除') !== false) { 
+$ans = "yes";
+$num = explode('除', $code[1]);
+$alltext = $num[0] / $num[1];
+}       
+if (strpos($code[1], '加') !== false) { 
+$ans = "yes";
+$num = explode('加', $code[1]);
+$alltext = $num[0] + $num[1];
+}           
 if (strpos($code[1], '+') !== false) { 
 $ans = "yes";
 $num = explode('+', $code[1]);
 $alltext = $num[0] + $num[1];
 }   
+if (strpos($code[1], '減') !== false) { 
+$ans = "yes";
+$num = explode('減', $code[1]);
+$alltext = $num[0] - $num[1];
+}           
+if (strpos($code[1], '-') !== false) { 
+$ans = "yes";
+$num = explode('-', $code[1]);
+$alltext = $num[0] - $num[1];
+}             
 
 // END Google Sheet Keyword Decode
             break;
