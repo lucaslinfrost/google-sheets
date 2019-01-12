@@ -300,7 +300,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	//採礦(文字)
 	if(stristr($inputStr, '挖') != false||
 	       stristr($inputStr, '採礦') != false) {
-		$main = "《採礦功能一覽》\n\n採礦需要工具[鶴嘴鋤]\n相關裝備 : 礦工的手帕\n\n--------  採礦列表  --------\n石塊\n銅礦\n鋅礦\n秘銀\n金礦\n銀礦\n白金礦\n秘銀礦\n赤鐵礦\n冰之碎片\n白色冰棒\n石頭碎片\n紅色原石\n藍色原石\n黃色原石\n綠色原石\n白色原石\n黑色原石\n堅硬的石頭\n大馬士革鋼";
+		$main = "《採礦功能一覽》\n\n採礦需要工具[鶴嘴鋤]\n相關裝備 : 礦工的手帕\n\n--------  採礦列表  --------\n石塊\n銅礦\n鋅礦\n秘銀\n金礦\n銀礦\n白金礦\n秘銀礦\n赤鐵礦\n冰之碎片\n白色冰棒\n石頭碎片\n紅色原石\n藍色原石\n黃色原石\n綠色原石\n白色原石\n黑色原石\n堅硬的石頭\n大馬士革鋼\n點金石礦";
 		$rplyArr = explode(' ',$inputStr);
     
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$main.'');}
