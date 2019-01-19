@@ -63,7 +63,7 @@ $g = "
 }else{
 $g = "
 
-鐵匠 : ".$item['gsx$smith']['$t']."【".$item['gsx$smithtype']['$t']."】";
+鐵匠 : ".$item['gsx$smith']['$t']." [".$item['gsx$smithtype']['$t']."]";
 }
 }
 if($item['gsx$price']['$t'] === ""){
