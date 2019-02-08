@@ -145,7 +145,13 @@
       {
         "chack": ["奇襲箱"],
         "text": [		
-		"【奇襲箱A】老大奇襲箱1\n【奇襲箱B】老大奇襲箱2\n【奇襲箱C】老大奇襲箱3\n【奇襲箱D】老大奇襲箱4\n【奇襲箱E】老大奇襲箱5"
+		"【奇襲箱A】老大奇襲箱1\n【奇襲箱B】老大奇襲箱2\n【奇襲箱C(未開放)】老大奇襲箱3\n【奇襲箱D(未開放)】老大奇襲箱4\n【奇襲箱E(未開放)】老大奇襲箱5"
+		]
+      },
+      {
+        "chack": ["技能大全"],
+        "text": [		
+		"https://docs.google.com/spreadsheets/d/e/2PACX-1vTlcT52C7YOIE5k0Y9_h8PuFIrQSUDHc1T9N82MuzRcyh_7jaf1X8jmXPq1JkDZ7lQTg7qc6f0BC8AD/pubhtml?gid=0&single=true"
 		]
       }
     ]
