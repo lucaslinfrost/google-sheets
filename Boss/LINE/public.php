@@ -27,7 +27,7 @@ switch ($event['type']) {
             // 以關鍵字比對文字內容
             foreach ($keywords as $keyword) {
                 if (strpos($message['text'], $keyword) !== false) {
-                    $data999 = "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║\n☆╰╘∞╛╘∞╛╘∞╛\n\n".$item['gsx$message']['$t']."\n\n(ノ・ω・)ノ發佈者\n".$item['gsx$name']['$t']."ヾ(・ω・ヾ)";
+                    $data999 = "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║\n☆╰ ╘∞╛╘∞╛╘∞╛\n\n".$item['gsx$message']['$t']."\n\n(ノ・ω・)ノ發佈者\n".$item['gsx$name']['$t']."ヾ(・ω・ヾ)";
                 }
             }
         }       
