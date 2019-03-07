@@ -74,6 +74,23 @@ function buildStickerMessage($packageId, $stickerId){
 	return $message;
 }
 
+//建立旋轉木馬的函數
+function buildcarousel($altText, $result){	
+		error_log("準備回傳旋轉木馬訊息（殺小啦wwww");
+		$message = array
+		( 
+		array(
+			'type'=> "template",
+			'altText'=> $altText,
+			'template'=> array(
+				'type'=> "carousel",
+				'columns'=> $result
+            		)
+		      )
+		);
+	return $message;
+}
+
 
 //建立複數訊息，的物件
 class MutiMessage{
