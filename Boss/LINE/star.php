@@ -37,26 +37,7 @@ foreach ($client->parseEvents() as $event) {
                     }
                 }
             }
-            switch ($message['type']) {
-                case 'text':
-                    $client->replyMessage(array(
-                        'replyToken' => $event['replyToken'],
-                        'messages' => array(
-                            array(
-                                'type' => 'template',
-                                'altText' => '關於 '.$message['text'].' 的資料',
-                                'template' => array(
-                                    'type' => 'carousel',
-                                    'columns' => $result,
-                                )
-                            ),
-                        ),
-                    ));
-                    break;
-                default:
-                    error_log("Unsupporeted message type: " . $message['type']);
-                    break;
-            }
+
             break;
         default:
             error_log("Unsupporeted event type: " . $event['type']);
