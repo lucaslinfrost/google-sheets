@@ -40,9 +40,6 @@ foreach ($client->parseEvents() as $event) {
 		        $code[2] === "") {
                         $startype = 1;
                         }
-			if (empty($candidate)) {
-			$startype = 2;	
-			}
                     }
                 }
             }
