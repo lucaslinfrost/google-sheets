@@ -347,7 +347,15 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$starall.'');}
 		
 		require_once('./star.php');
+		if ($startype === 1) {
+		return buildTextMessage('輸入錯誤');
+		}else{
+		if ($startype === 2) {
+		return buildTextMessage('我找不到');
+		}else{
 		return buildcarousel($altText,$result);
+		}
+		}
 	}
 	else 		
 	//以下是運勢功能
