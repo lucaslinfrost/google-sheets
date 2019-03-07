@@ -35,6 +35,8 @@ foreach ($client->parseEvents() as $event) {
                             );
                         array_push($result, $candidate);
                         }
+                    }else{
+                    $result = "";
                     }
                 }
             }
