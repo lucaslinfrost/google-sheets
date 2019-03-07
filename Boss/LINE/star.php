@@ -34,17 +34,14 @@ foreach ($client->parseEvents() as $event) {
                                 ),
                             );
                         array_push($result, $candidate);
-                        }else{
-                        	if($result === null){
-                       		$startype = 2;
-		       		}
 		        }
                     }else{
                         if($code[2] === null||
 		        $code[2] === "") {
                         $startype = 1;
                         }
-                        if($result === null){
+                        if($result === null||
+		        $result === "") {
                         $startype = 2;
                         }
                     }
