@@ -36,7 +36,12 @@ foreach ($client->parseEvents() as $event) {
                         array_push($result, $candidate);
                         }
                     }else{
-                    $result = "";
+                        if($code[2] === ""){
+                        $startype = 1;
+                        }
+                        if($result === ""){
+                        $startype = 2;
+                        }
                     }
                 }
             }
