@@ -347,6 +347,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$starall.'');}
 		
 		require_once('./star.php');
+		return buildcarousel;
 	}
 	else 		
 	//以下是運勢功能
