@@ -35,7 +35,7 @@ foreach ($client->parseEvents() as $event) {
                             );
                         array_push($result, $candidate);
                         }else{
-                        	if($candidate === null){
+                        	if($result === null){
                        		$startype = 2;
 		       		}
 		        }
@@ -44,7 +44,7 @@ foreach ($client->parseEvents() as $event) {
 		        $code[2] === "") {
                         $startype = 1;
                         }
-                        if($candidate === null){
+                        if($result === null){
                         $startype = 2;
                         }
                     }
