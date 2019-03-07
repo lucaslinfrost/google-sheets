@@ -34,6 +34,13 @@ foreach ($client->parseEvents() as $event) {
                             );
                         array_push($result, $candidate);
                         }
+                    }else{
+                    if($code[2] === ""){
+                    return buildTextMessage('資料庫沒有相關 資料喔。');
+                    }else{
+                    $starall = "《星能力一覽》\n\n請輸入:老大 星能 [能力]\n\n生命力\n精神力\n攻撃力\n物理防禦\n魔法防禦\n魔法力\n命中\n迴避\n亂舞\n速唱\n力士\n魔導\n體力\n神速\n巧技\n必殺\n高速使用\n高速冷卻\n自癒\n節能\n挑釁\n緩和\n治療\n藥學\n技術\n自動\n比例減輕\n癒受\n火的加護\n水的加護\n風的加護\n地的加護\n光的加護\n暗的加護\n物理貫通\n固定物理\n魔法狂化\n固定魔法\n魔法貫通\n範圍減輕\n反射\n夥伴\n收集家\n努力家";
+                    return buildTextMessage(''.$starall.'');
+                    }
                     }
                 }
             }
