@@ -348,10 +348,10 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		
 		require_once('./star.php');
 		if ($startype === 1) {
-		return buildTextMessage('輸入錯誤');
+		return buildTextMessage(''.$starall.'');
 		}else{
-		if ($startype === 2) {
-		return buildTextMessage('我找不到');
+		if (empty($result)) {
+		return buildTextMessage('資料庫找不到喔。');
 		}else{
 		return buildcarousel($altText,$result);
 		}
