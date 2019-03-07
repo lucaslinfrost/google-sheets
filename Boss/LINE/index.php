@@ -86,7 +86,7 @@ function buildcarousel($altText, $result){
 				'type'=> "carousel",
 				'columns'=> $result
             		)
-		      )
+		      ),
 		);
 	return $message;
 }
