@@ -15,6 +15,7 @@ foreach ($client->parseEvents() as $event) {
             $data = json_decode($json, true);
             $code = explode(' ', $message['text']);
             $result = array();
+            $altText = "關於 ".$message['text']." 的資料"
             foreach ($data['feed']['entry'] as $item) {
                 $keywords = explode(',', $item['gsx$keyword']['$t']);
                 foreach ($keywords as $keyword) {
