@@ -39,11 +39,9 @@ foreach ($client->parseEvents() as $event) {
                         if($code[2] === null||
 		        $code[2] === "") {
                         $startype = 1;
-                        }
-                        if($result === null||
-		        $result === "") {
-                        $startype = 2;
-                        }
+                        }else{
+			$startype = 2;	
+			}
                     }
                 }
             }
