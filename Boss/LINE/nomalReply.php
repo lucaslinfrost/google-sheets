@@ -91,6 +91,11 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		return buildTextMessage(''.$dataall.'');
 	}
 	
+	//數據統計
+	if(stristr($inputStr, '數據') != false) {
+		require_once('./database.php');
+		return buildTextMessage(''.$dataall.'');
+	}
 
 	//離開
 	if(stristr($inputStr, '再見') != false||
