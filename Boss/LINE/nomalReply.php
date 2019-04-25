@@ -109,7 +109,11 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	//可以是為一個使用外聯檔案的範例
 	if(stristr($inputStr, '公告') != false) {
 		require_once('./public.php');
-		return buildTextMessage(''.$data999.'');
+	if ($data999 !== "") {
+	return buildTextMessage(''.$data999.'');
+	}
+	if ($data999 === "") {
+	return buildTextMessage('找不到你所指定的公告喔。');
 	}
 	
 	//更新筆記
