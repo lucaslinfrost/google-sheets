@@ -30,8 +30,6 @@ switch ($event['type']) {
                 if($code[1] === Null) {$code[1] = "公告";}
                 if (strcmp($code[1], $keyword) === 0) {
                     $data999 = "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║\n☆╰╘∞╛╘∞╛╘∞╛\n\n".$item['gsx$message']['$t']."\n\n(ノ・ω・)ノ發佈者\n".$item['gsx$name']['$t']."ヾ(・ω・ヾ)";
-                }else{
-                    $data999 = "沒有您指定的公告喔。";
                }
             }
         }    
