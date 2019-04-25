@@ -18,7 +18,8 @@ switch ($event['type']) {
 
         // 將Google表單轉成JSON資料
         $json = file_get_contents($googledataspi);
-        $data = json_decode($json, true);           
+        $data = json_decode($json, true); 
+        $code = explode(' ', $message['text']);
         // 資料起始從feed.entry          
         foreach ($data['feed']['entry'] as $item) {
             // 將keywords欄位依,切成陣列
@@ -26,31 +27,15 @@ switch ($event['type']) {
 
             // 以關鍵字比對文字內容
             foreach ($keywords as $keyword) {
-                if (strpos($message['text'], $keyword) !== false) {
+                if (strcmp($code[1], $keyword) === 0) {
                     $data999 = "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║\n☆╰╘∞╛╘∞╛╘∞╛\n\n".$item['gsx$message']['$t']."\n\n(ノ・ω・)ノ發佈者\n".$item['gsx$name']['$t']."ヾ(・ω・ヾ)";
+                }else{
+                $code[1] = "公告";
+                if (strcmp($code[1], $keyword) === 0) {
+                $data999 = "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║\n☆╰╘∞╛╘∞╛╘∞╛\n\n".$item['gsx$message']['$t']."\n\n(ノ・ω・)ノ發佈者\n".$item['gsx$name']['$t']."ヾ(・ω・ヾ)";
                 }
             }
         }       
-
-
-
-        switch ($message['type']) {
-            case 'text':
-
-                $client->replyMessage(array(
-                    'replyToken' => $event['replyToken'],
-                    'messages' => array(
-                        array(
-                            'type' => 'text',                                                                
-                            'text' => ''.$data999.'',
-                        )
-                    ),
-                ));               
-                break;
-            default:
-                error_log("Unsupporeted message type: " . $message['type']);
-                break;
-        }
         break;
     default:
         error_log("Unsupporeted event type: " . $event['type']);
