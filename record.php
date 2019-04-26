@@ -48,7 +48,7 @@ putenv('GOOGLE_APPLICATION_CREDENTIALS=' . __DIR__ . '/My Project-aeb1d8a3a4ed.j
 					'table' => "'". $table,
 					'tableid' => "'". $tableid,
 					'userid' => "'". $userId,
-					'date' => date_create('now')->format('Y-m-d H:i:s')
+					'date' => date_create('now')->format('Y年m月d日 D')
 				]);
 
 			}catch(Exception $e){
