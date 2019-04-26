@@ -43,7 +43,7 @@ putenv('GOOGLE_APPLICATION_CREDENTIALS=' . __DIR__ . '/My Project-aeb1d8a3a4ed.j
 					'name' => "'". $userName,
 					'message' => "'". $key1,
 					'title' => "'". '公告',
-					'date' => date_create('now')->format('Y-m-d H:i:s')
+					'date' => date_create('now')->format('Y年m月d日 D')
 				]);
 			}catch(Exception $e){
 			  echo $e->getMessage() . ' ' . $e->getLine() . ' ' . $e->getFile() . ' ' . $e->getCode;
