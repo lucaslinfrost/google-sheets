@@ -35,10 +35,11 @@ if($item['gsx$history']['$t'] === ""){
 $a = "";
 }else{
 $a = "
+
 --------活動歷史--------
 ".$item['gsx$history']['$t'];
 }
-                    $data999 = "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║\n☆╰╘∞╛╘∞╛╘∞╛\n\n".$item['gsx$message']['$t']."\n".$a."\n\n(ノ・ω・)ノ發佈者\n".$item['gsx$name']['$t']."\nヾ(・ω・ヾ)發佈時間\n".$item['gsx$date']['$t'];
+                    $data999 = "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║\n☆╰╘∞╛╘∞╛╘∞╛\n\n".$item['gsx$message']['$t']."".$a."\n\n(ノ・ω・)ノ發佈者\n".$item['gsx$name']['$t']."\nヾ(・ω・ヾ)發佈時間\n".$item['gsx$date']['$t'];
                }
             }
         }    
