@@ -12,7 +12,6 @@ switch ($event['type']) {
         $message = $event['message'];
         $content = "";
         $code = explode(' ', $message['text']);
-        
         $data = "theCityName=".$code[1];
     	$curlobj = curl_init();
     curl_setopt($curlobj, CURLOPT_URL, "http://www.webxml.com.cn/WebServices/WeatherWebService.asmx/getWeatherbyCityName");
@@ -26,6 +25,7 @@ switch ($event['type']) {
         )); // 设置 HTTP Header
     curl_setopt($curlobj, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.152 Safari/537.36'); // 伪造一个 HTTP_USER_AGENT 信息，解决为将对象引用设置到对象的实例问题
     $rtn = curl_exec($curlobj);   
+    str_replace("</string>","",$rtn);
 
     if(!curl_errno($curlobj)) {
     
