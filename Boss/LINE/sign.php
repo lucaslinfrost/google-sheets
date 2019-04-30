@@ -17,6 +17,10 @@ switch ($event['type']) {
         $message = $event['message'];
 
         // 將Google表單轉成JSON資料
+        $opts = array('http'=>array('header' => "User-Agent:MyAgent/1.0\r\n"));
+        $context = stream_context_create($opts);
+        $json = file_get_contents($googledataspi,false,$context);
+        
         $json = file_get_contents($googledataspi);
         $data = json_decode($json, true);
         $c = new utf8_chinese;
