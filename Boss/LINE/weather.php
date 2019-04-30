@@ -13,9 +13,9 @@ switch ($event['type']) {
         $message = $event['message'];
         $content = "";
         $code = explode(' ', $message['text']);
-        $data = "theCityName=".$code[1];
         $cc = new utf8_chinese;
         $code[1] = $cc->big5_gb2312($code[1]);
+        $data = "theCityName=".$code[1];
     	$curlobj = curl_init();
     curl_setopt($curlobj, CURLOPT_URL, "http://www.webxml.com.cn/WebServices/WeatherWebService.asmx/getWeatherbyCityName");
     curl_setopt($curlobj, CURLOPT_HEADER, 0); // 不显示 Header
