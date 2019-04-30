@@ -9,18 +9,6 @@ $channelSecret = getenv('LINE_CHANNEL_SECRET');
 $googledataspi = getenv('googledataspi5');
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 
-$local = ('./data/public.json');
-curlDownload($googledataspi, $local);
-function curlDownload($googledataspi, $local){
-    $ch = curl_init($googledataspi);
-    $fp = fopen($local, "wb");
-    curl_setopt($ch, CURLOPT_FILE, $fp);
-    curl_setopt($ch, CURLOPT_HEADER, 0);
-    $res = curl_exec($ch);
-    curl_close($ch);
-    fclose($fp);    return $res;
-}
-
 // 取得事件(只接受文字訊息)
 foreach ($client->parseEvents() as $event) {
 switch ($event['type']) {       
