@@ -28,7 +28,7 @@ switch ($event['type']) {
     $rtn = str_replace("</string>","",$rtn);
     $rtn = str_replace(" ","",$rtn);
     $rtn = explode('<string>', $rtn);
-    $rtns = explode('；', $rtns[11]);
+    $rtns = explode('；', $rtn[11]);
     $content = "更新時間 : ".$rtn[5]."".$rtn[1]."".$rtn[2]."\n".$rtns[0]."\n".$rtns[1]."\n".$rtns[2]."\n".$rtns[3]."\n--------三日天氣--------\n".$rtn[7]."".$rtn[6]."".$rtn[8]."\n".$rtn[14]."".$rtn[13]."".$rtn[15]."\n".$rtn[19]."".$rtn[18]."".$rtn[20];
     if(!curl_errno($curlobj)) {
     } else {
