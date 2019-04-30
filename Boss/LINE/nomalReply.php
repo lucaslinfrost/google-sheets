@@ -113,7 +113,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	return buildTextMessage(''.$data999.'');
 	}
 	if ($data999 === "") {
-	return buildTextMessage(''.$json.'');
+	return buildTextMessage('找不到你所指定的公告喔。');
 	}
 	}
 	
