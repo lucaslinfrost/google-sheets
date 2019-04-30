@@ -1,6 +1,7 @@
 <?php
 //其他功能介面 (文字版)
 require_once('./LINEBotTiny.php');
+require_once('./utf8_chinese.class.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
@@ -30,6 +31,8 @@ switch ($event['type']) {
     $rtn = explode('<string>', $rtn);
     $rtns = explode('；', $rtn[11]);
     $content = "更新時間 : ".$rtn[5]."".$rtn[1]."".$rtn[2]."\n".$rtns[0]."\n".$rtns[1]."\n".$rtns[2]."\n".$rtns[3]."\n--------三日天氣--------\n".$rtn[7]."".$rtn[6]."".$rtn[8]."\n".$rtn[14]."".$rtn[13]."".$rtn[15]."\n".$rtn[19]."".$rtn[18]."".$rtn[20];
+    $c = new utf8_chinese;
+    $content = $c->gb2312_big5($content);
     if(!curl_errno($curlobj)) {
     } else {
     $content = "沒有。";
