@@ -19,8 +19,6 @@ switch ($event['type']) {
         // 將Google表單轉成JSON資料
         $json = curl_init($googledataspi);
         curl_exec($json);
-        curl_close($json);
-        
         $data = json_decode($json, true); 
         $data999 = "";
         $code = explode(' ', $message['text']);
