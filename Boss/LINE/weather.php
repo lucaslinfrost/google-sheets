@@ -26,9 +26,9 @@ switch ($event['type']) {
     curl_setopt($curlobj, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.152 Safari/537.36'); // 伪造一个 HTTP_USER_AGENT 信息，解决为将对象引用设置到对象的实例问题
     $rtn = curl_exec($curlobj);   
     $rtn = str_replace("</string>","",$rtn);
+    $rtn = str_replace(" ","",$rtn);
     $rtn = explode('<string>', $rtn);
-    $rtns = str_replace(" ","",$rtn[11]);
-    $rtns = explode('；', $rtns);
+    $rtns = explode('；', $rtns[11]);
     $content = $rtn[1]."".$rtn[2]."更新時間 : ".$rtn[5]."\n".$rtns[0]."\n".$rtns[1]."\n".$rtns[2]."\n".$rtns[3]."\n--------三日天氣--------\n".$rtn[7]."".$rtn[6]."".$rtn[8]."\n\n".$rtn[14]."".$rtn[13]."".$rtn[15]."\n\n".$rtn[19]."".$rtn[18]."".$rtn[20];
     if(!curl_errno($curlobj)) {
     } else {
