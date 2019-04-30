@@ -84,6 +84,16 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	if(stristr($inputStr, '創角') != false) {
 		return create($inputStr,$userName);
 	}
+	//天氣
+	if(stristr($inputStr, '天氣') != false) {
+		
+		$rplyArr = explode(' ',$inputStr);
+    
+		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
+		
+		require_once('./weather.php');
+		return buildTextMessage(''.$rtn.'');
+	}
 	
 	//油價
 	if(stristr($inputStr, '油價') != false) {
