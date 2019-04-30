@@ -30,7 +30,7 @@ switch ($event['type']) {
     $rtn = str_replace(" ","",$rtn);
     $rtn = explode('<string>', $rtn);
         
-    if (strpos("结果为空", $rtn[1]) !== false) {    
+    if ($rtn[7] === "") {    
     $content = "沒有找到。(๑•́ ₃ •̀๑)";
     }else{
     $rtns = explode('；', $rtn[11]);
