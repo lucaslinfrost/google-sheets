@@ -17,7 +17,7 @@ switch ($event['type']) {
         $message = $event['message'];
 
         // 將Google表單轉成JSON資料
-        $json = curl_init($googledataspi);
+        $json = curl_init('https://spreadsheets.google.com/feeds/list/10cSG-jmJmqan8esBqf-9vCYbswnpLTuHbNi2aku2c4o/owbhs7b/public/values?alt=json');
         curl_exec($json);
         $data = json_decode($json, true); 
         $data999 = "";
