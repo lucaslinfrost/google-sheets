@@ -18,7 +18,7 @@ switch ($event['type']) {
 
         // 將Google表單轉成JSON資料
         $json = file_get_contents($googledataspi);
-        if ($json === "") {$json = file_get_contents('./data/public.json');}
+        if ($json === Null) {$json = file_get_contents('./data/public.json');}
         $data = json_decode($json, true); 
         $data999 = "";
         $code = explode(' ', $message['text']);
