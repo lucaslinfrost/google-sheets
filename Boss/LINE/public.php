@@ -17,14 +17,11 @@ switch ($event['type']) {
         $message = $event['message'];
 
         // 將Google表單轉成JSON資料
-        $curlobj = curl_init();
-        curl_setopt($curlobj, CURLOPT_URL, $googledataspi);
-        curl_setopt($curlobj, CURLOPT_RETURNTRANSFER, true);
-        date_default_timezone_set('PRC');
-        curl_setopt($curlobj, CURLOPT_SSL_VERIFYPEER, 0);
-        curl_setopt($curlobj, CURLOPT_SSL_VERIFYHOST, 2);
-        $json = curl_exec($curlobj);
-        curl_close($curlobj);
+        $json = curl_init();
+        curl_setopt($json, CURLOPT_URL, $googledataspi);
+        curl_setopt($json, CURLOPT_HEADER, 0);
+        curl_exec($json);
+        curl_close($json);
         
         $data = json_decode($json, true); 
         $data999 = "";
