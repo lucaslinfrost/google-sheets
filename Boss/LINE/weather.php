@@ -28,7 +28,7 @@ switch ($event['type']) {
     $rtn = str_replace("</string>","",$rtn);
     $rtn = explode('<string>', $rtn);
     $rtns = explode('；', $rtn[11]);
-    $content = "【".$rtn[1]." / ".$rtn[2]."】\n更新時間 : ".$rtn[5]."\n\n".$rtns[0]."\n".$rtns[1]."\n".$rtns[2]."\n".$rtns[3]."\n\n--------三日天氣--------\n".$rtn[7]."\n".$rtn[6]."\n".$rtn[8]."\n\n".$rtn[14]."\n".$rtn[13]."\n".$rtn[15]."\n\n".$rtn[19]."\n".$rtn[18]."\n".$rtn[20];
+    $content = $rtn[1]."".$rtn[2]."更新時間 : ".$rtn[5]."\n".$rtns[0]."\n".$rtns[1]."\n".$rtns[2]."\n".$rtns[3]."\n--------三日天氣--------\n".$rtn[7]."".$rtn[6]."".$rtn[8]."\n\n".$rtn[14]."".$rtn[13]."".$rtn[15]."\n\n".$rtn[19]."".$rtn[18]."".$rtn[20];
     if(!curl_errno($curlobj)) {
     } else {
     $content = "沒有。";
