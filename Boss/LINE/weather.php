@@ -29,8 +29,8 @@ switch ($event['type']) {
     $rtn = str_replace("</string>","",$rtn);
     $rtn = str_replace(" ","",$rtn);
     $rtn = explode('<string>', $rtn);
-        
-    if ($rtn[7] === "") {    
+    
+    if (strpos("<string/>", $rtn) !== false) {
     $content = "沒有找到。(๑•́ ₃ •̀๑)";
     }else{
     $rtns = explode('；', $rtn[11]);
