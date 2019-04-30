@@ -30,6 +30,7 @@ switch ($event['type']) {
     $rtn = str_replace(" ","",$rtn);
     $rtn = explode('<string>', $rtn);
     $rtns = explode('；', $rtn[11]);
+    $rtns[0] = str_replace("实况：","实况：\n",$rtns[0]);
     $rtns[3] = str_replace("空气","\n空气",$rtns[3]);
     $content = "地區 : ".$rtn[1]."城市 : ".$rtn[2]."\n".$rtns[0]."\n".$rtns[1]."\n".$rtns[2]."\n".$rtns[3]."\n--------三日天氣--------\n".$rtn[7]."".$rtn[6]."".$rtn[8]."\n".$rtn[14]."".$rtn[13]."".$rtn[15]."\n".$rtn[19]."".$rtn[18]."".$rtn[20];
     $c = new utf8_chinese;
