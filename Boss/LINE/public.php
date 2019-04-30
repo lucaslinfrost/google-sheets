@@ -17,7 +17,9 @@ switch ($event['type']) {
         $message = $event['message'];
 
         // 將Google表單轉成JSON資料
-        $json = file_get_contents($googledataspi);
+        $opts = array('http'=>array('header' => "User-Agent:MyAgent/1.0\r\n"));
+        $context = stream_context_create($opts);
+        $json = file_get_contents($googledataspi,false,$context);
         $data = json_decode($json, true); 
         $data999 = "";
         $code = explode(' ', $message['text']);
