@@ -36,7 +36,7 @@ switch ($event['type']) {
     $c = new utf8_chinese;
     $content = $c->gb2312_big5($content);
         
-    if (strpos('string/', $content) !== false) {
+    if (strpos('為空', $content) !== false) {
     $content = "沒有找到。(๑•́ ₃ •̀๑)";
     }
     if(!curl_errno($curlobj)) {
