@@ -30,9 +30,8 @@ switch ($event['type']) {
     $rtns = explode('；', $rtn[11]);
     $content = "【".$rtn[1]." / ".$rtn[2]."】\n更新時間 : ".$rtn[5]."\n\n".$rtns[0]."\n".$rtns[1]."\n".$rtns[2]."\n".$rtns[3]."\n\n--------三日天氣--------\n".$rtn[7]."\n".$rtn[6]."\n".$rtn[8]."\n\n".$rtn[14]."\n".$rtn[13]."\n".$rtn[15]."\n\n".$rtn[19]."\n".$rtn[18]."\n".$rtn[20];
     if(!curl_errno($curlobj)) {
-    $content = "沒有。";
     } else {
-        $rtn = "沒有。";
+    $content = "沒有。";
     }  
          
         break;
