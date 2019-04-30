@@ -17,14 +17,8 @@ switch ($event['type']) {
         $message = $event['message'];
 
         // 將Google表單轉成JSON資料
-        $opts = array(
-        'http'=>array(
-        'method'=> "GET",
-        'header'=> "User-Agent: OreOreAgent\r\n"
-         )
-         );
-        $context = stream_context_create($opts);
-        $json = file_get_contents($googledataspi, false, $context);
+        ini_set('user_agent', 'OreOreAgent');
+        $json = file_get_contents($googledataspi);
         $data = json_decode($json, true); 
         $data999 = "";
         $code = explode(' ', $message['text']);
