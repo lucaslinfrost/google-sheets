@@ -35,7 +35,7 @@ switch ($event['type']) {
                                 array(
                                     'type' => 'uri',
                                     'label' => '詳細資訊',
-                                    'uri' => $
+                                    'uri' => $data2
                                      )
                              )
                        )
