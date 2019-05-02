@@ -38,7 +38,7 @@ switch ($event['type']) {
                                     'linkUri' => $data2,
                                      )
                              )
-                       ),
+                       )
                 );
         break;
     default:
