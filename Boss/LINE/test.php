@@ -37,7 +37,6 @@ switch ($event['type']) {
                                 array(
                                     'type' => 'uri',
                                     'linkUri' => $data2,
-                                    'text' => "老大D ".$item['gsx$equip']['$t'],
                                     )
                                 ),
                             );
