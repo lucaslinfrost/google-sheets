@@ -94,7 +94,11 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		require_once('./weather.php');
 		return buildTextMessage(''.$content.'');
 	}
-	
+	//測試
+	if(stristr($inputStr, '解') != false) {
+		require_once('./test.php');
+		return buildTextMessage(''.$dataall.'');
+	}
 	//油價
 	if(stristr($inputStr, '油價') != false) {
 		require_once('./oil.php');
