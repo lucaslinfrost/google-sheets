@@ -94,11 +94,6 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		require_once('./weather.php');
 		return buildTextMessage(''.$content.'');
 	}
-	//測試
-	if(stristr($inputStr, '解') != false) {
-		require_once('./test.php');
-		return buildcarousel($altText,$result);
-	}
 	//油價
 	if(stristr($inputStr, '油價') != false) {
 		require_once('./oil.php');
@@ -143,6 +138,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	//更新爬蟲
 	if(stristr($inputStr, '更新') != false) {
 		require_once('./new.php');
+		return buildcarousel($altText,$result);
 	}
 	//查怪
 	if(stristr($inputStr, 'm') != false||
