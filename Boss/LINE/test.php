@@ -26,10 +26,21 @@ switch ($event['type']) {
         // create domxpath instance
         $xPath = new DOMXPath($dom);
         // get all elements with a particular id and then loop through and print the href attribute
-        $data1 = $xPath->evaluate('string(//*[@id="newsList"]/li[1]/a/@href)'); //第一筆網址
+        $data0 = $xPath->evaluate('string(//*[@id="newsList"]/li[1]/a/text())'); //第一筆文字
         $data1 = $xPath->evaluate('string(//*[@id="newsList"]/li[1]/a/time/@datetime)'); //第一筆日期
-        $data2 = $xPath->evaluate('string(//*[@id="newsList"]/li[1]/a/text())'); //第一筆文字
-        $dataall = $elements." ".$elements1;
+        $data2 = $xPath->evaluate('string(//*[@id="newsList"]/li[1]/a/@href)'); //第一筆網址
+        $dataall = array(
+                            'thumbnailImageUrl' => 'https://imgur.com/KQsuipD.png',
+                            'title' => $data0,
+                            'text' => $data1,
+                            'actions' => array(
+                                array(
+                                    'type' => 'uri',
+                                    'linkUri' => $data2,
+                                    'text' => "老大D ".$item['gsx$equip']['$t'],
+                                    )
+                                ),
+                            );
         break;
     default:
         error_log("Unsupporeted event type: " . $event['type']);
