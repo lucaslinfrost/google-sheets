@@ -26,8 +26,9 @@ switch ($event['type']) {
         // create domxpath instance
         $xPath = new DOMXPath($dom);
         // get all elements with a particular id and then loop through and print the href attribute
-        $elements = $xPath->evaluate('string(//*[@id="newsList"]/li[1]/a/time/@datetime)');
-        $elements1 = $xPath->evaluate('string(//*[@id="newsList"]/li[1]/a/text())');
+        $data1 = $xPath->evaluate('string(//*[@id="newsList"]/li[1]/a/@href)'); //第一筆網址
+        $data1 = $xPath->evaluate('string(//*[@id="newsList"]/li[1]/a/time/@datetime)'); //第一筆日期
+        $data2 = $xPath->evaluate('string(//*[@id="newsList"]/li[1]/a/text())'); //第一筆文字
         $dataall = $elements." ".$elements1;
         break;
     default:
