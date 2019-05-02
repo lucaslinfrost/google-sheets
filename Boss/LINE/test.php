@@ -33,9 +33,9 @@ switch ($event['type']) {
                             'text' => $data1,
                             'actions' => array(
                                 array(
-                                    'type' => 'message',
-                                    'label' => 'Message example 1',
-                                    'text' => 'Message example 1'
+                                    'type' => 'uri', // 類型 (連結)
+                                    'label' => 'Uri example 1', // 標籤 3
+                                    'uri' => '$data2'
                                      )
                              )
                        )
