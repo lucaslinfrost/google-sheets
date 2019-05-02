@@ -18,15 +18,15 @@ $puaruvn = basename($_FILES["fileToUpload"]["name"]);
 $puarupham = strtolower(pathinfo($puaruvn,PATHINFO_EXTENSION));
 if($puarupham != "jpg" && $puarupham != "png" && $puarupham != "jpeg"
 && $puarupham != "gif" ) {
-	echo '<div class="element-input"><label class="title">Kết Quả</label><input class="large" type="text" name="input" value="Sorry, only JPG, JPEG, PNG & GIF files are allowed." /></div>';
+	echo '<div class="element-input"><label class="title">網址</label><input class="large" type="text" name="input" value="附檔名僅限 JPG, JPEG, PNG 及 GIF 喔。" /></div>';
 }
 else
 {
 	$img = upload($_FILES["fileToUpload"]["tmp_name"]);
-echo '<div class="element-input"><label class="title">Kết Quả</label><input class="large" type="text" name="input" value="'.$img.'" /></div><div class="element-input"><label class="title">BBCode</label><input class="large" type="text" name="input" value="[img]'.$img.'[/img]" /></div><div class="element-input"><label class="title">Hình Ảnh</label><img src="'.$img.'" width="100%"></div>';
+echo '<div class="element-input"><label class="title">網址</label><input class="large" type="text" name="input" value="'.$img.'" /></div><div class="element-input"><label class="title">BBCode</label><input class="large" type="text" name="input" value="[img]'.$img.'[/img]" /></div><div class="element-input"><label class="title">圖片</label><img src="'.$img.'" width="100%"></div>';
 }
 ?>
-<div class="submit"><a href="/"><input type="submit" value="Quay Lại"/></a></div>
+<div class="submit"><a href="https://irunamuscelboss.herokuapp.com/Boss/LINE/index.html"><input type="submit" value="返回"/></a></div>
       </div>
    </body>
 </html>
