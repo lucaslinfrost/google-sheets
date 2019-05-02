@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-      <title>肌肉老大圖片上傳器</title>
+      <meta charset="utf-8" />
+      <title>Upload Hình Ảnh</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
    <body class="blurBg-false" style="background-color:#EBEBEB">
@@ -14,20 +14,19 @@
             <h2>Upload Images</h2>
          </div>
 <?php
-header("Content-Type:text/html; charset=utf-8");
 $puaruvn = basename($_FILES["fileToUpload"]["name"]);
 $puarupham = strtolower(pathinfo($puaruvn,PATHINFO_EXTENSION));
 if($puarupham != "jpg" && $puarupham != "png" && $puarupham != "jpeg"
 && $puarupham != "gif" ) {
-	echo '<div class="element-input"><label class="title">網址</label><input class="large" type="text" name="input" value="僅限附檔名為 JPG, JPEG, PNG 及 GIF 的檔案喔。" /></div>';
+	echo '<div class="element-input"><label class="title">Kết Quả</label><input class="large" type="text" name="input" value="Sorry, only JPG, JPEG, PNG & GIF files are allowed." /></div>';
 }
 else
 {
 	$img = upload($_FILES["fileToUpload"]["tmp_name"]);
-echo '<div class="element-input"><label class="title">網址</label><input class="large" type="text" name="input" value="'.$img.'" /></div><div class="element-input"><label class="title">BBCode</label><input class="large" type="text" name="input" value="[img]'.$img.'[/img]" /></div><div class="element-input"><label class="title">圖片</label><img src="'.$img.'" width="100%"></div>';
+echo '<div class="element-input"><label class="title">Kết Quả</label><input class="large" type="text" name="input" value="'.$img.'" /></div><div class="element-input"><label class="title">BBCode</label><input class="large" type="text" name="input" value="[img]'.$img.'[/img]" /></div><div class="element-input"><label class="title">Hình Ảnh</label><img src="'.$img.'" width="100%"></div>';
 }
 ?>
-<div class="submit"><a href="https://irunamuscelboss.herokuapp.com/Boss/LINE/upload/index.html"><input type="submit" value="返回"/></a></div>
+<div class="submit"><a href="/"><input type="submit" value="Quay Lại"/></a></div>
       </div>
    </body>
 </html>
