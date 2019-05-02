@@ -2,7 +2,7 @@
 <html>
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-      <title>Upload Hình Ảnh</title>
+      <title>肌肉老大圖片上傳器</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
    <body class="blurBg-false" style="background-color:#EBEBEB">
