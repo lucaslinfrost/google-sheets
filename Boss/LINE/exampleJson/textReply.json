@@ -175,7 +175,7 @@
       {
         "chack": ["圖片上傳"],
         "text": [		
-		"https://irunamuscelboss.herokuapp.com/Boss/LINE/upload/upload.php"
+		"https://irunamuscelboss.herokuapp.com/Boss/LINE/upload/index.html"
 		]
       }
     ]
