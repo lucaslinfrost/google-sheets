@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <meta charset="utf-8" />
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <title>Upload Hình Ảnh</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
@@ -14,6 +14,7 @@
             <h2>Upload Images</h2>
          </div>
 <?php
+header("Content-Type:text/html; charset=utf-8");
 $puaruvn = basename($_FILES["fileToUpload"]["name"]);
 $puarupham = strtolower(pathinfo($puaruvn,PATHINFO_EXTENSION));
 if($puarupham != "jpg" && $puarupham != "png" && $puarupham != "jpeg"
