@@ -4,14 +4,14 @@ require_once('./LINEBotTiny.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
-header("Content-Type: text/html;charset=utf-8");  
 // 取得事件(只接受文字訊息)
 foreach ($client->parseEvents() as $event) {
 switch ($event['type']) {       
     case 'message':
         // 讀入訊息
         $message = $event['message'];
-   
+        $dataall = array();
+        $altText = "最新公告~~!!";
         $url = 'http://tw.iruna-online.com/index#news';
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_FILE, fopen('php://stdout', 'w'));
@@ -29,7 +29,7 @@ switch ($event['type']) {
         $data0 = $xPath->evaluate('string(//*[@id="newsList"]/li[1]/a/text())'); //第一筆文字
         $data1 = $xPath->evaluate('string(//*[@id="newsList"]/li[1]/a/time/@datetime)'); //第一筆日期
         $data2 = $xPath->evaluate('string(//*[@id="newsList"]/li[1]/a/@href)'); //第一筆網址
-        $dataall = array(
+        $candidate = array(
                             'thumbnailImageUrl' => 'https://imgur.com/KQsuipD.png',
                             'title' => $data0,
                             'text' => $data1,
@@ -40,6 +40,7 @@ switch ($event['type']) {
                                     )
                                 ),
                             );
+        array_push($dataall, $candidate);
         break;
     default:
         error_log("Unsupporeted event type: " . $event['type']);
