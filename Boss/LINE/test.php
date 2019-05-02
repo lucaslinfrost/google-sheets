@@ -27,7 +27,7 @@ switch ($event['type']) {
         $data0 = $xPath->evaluate('string(//*[@id="newsList"]/li[1]/a/text())'); //第一筆文字
         $data1 = $xPath->evaluate('string(//*[@id="newsList"]/li[1]/a/time/@datetime)'); //第一筆日期
         $data2 = $xPath->evaluate('string(//*[@id="newsList"]/li[1]/a/@href)'); //第一筆網址
-        $dataall = array(
+        $result = array(
                       array(
                             'thumbnailImageUrl' => 'https://imgur.com/KQsuipD.png',
                             'title' => $data0,
@@ -39,7 +39,7 @@ switch ($event['type']) {
                                      )
                              )
                        ),
-                            );
+                );
         break;
     default:
         error_log("Unsupporeted event type: " . $event['type']);
