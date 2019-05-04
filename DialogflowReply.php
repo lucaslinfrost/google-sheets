@@ -1,17 +1,18 @@
 <?php
 //其他功能介面 (文字版)
 require_once('./LINEBotTiny.php');
+// Token in Heroku
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
-// 取得事件(只接受文字訊息)
 foreach ($client->parseEvents() as $event) {
-switch ($event['type']) {       
-    case 'message':
-        // 讀入訊息
-    $message = $event['message'];
-
-		if($m_message != "")
+    switch ($event['type']) {
+        case 'message':
+            $message = $event['message'];
+            switch ($message['type']) {
+                case 'text':
+                	$m_message = $message['text'];
+                	if($m_message != "")
                 	{						
 						if(preg_match("/^\抽/i", $m_message))	// 抽開頭的字樣
 						{			
@@ -50,6 +51,12 @@ switch ($event['type']) {
                 	}
                     break;                
             }
+            break;
+        default:
+            error_log("Unsupporeted event type: " . $event['type']);
+            break;
+    }
+};
 	
 	
 function GetDialogFlowWord($Word)
