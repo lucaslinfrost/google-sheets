@@ -10,8 +10,33 @@ switch ($event['type']) {
     case 'message':
         // 讀入訊息
     $message = $event['message'];
- // DialogFlow
-    
+
+		if($m_message != "")
+                	{						
+						if(preg_match("/^\抽/i", $m_message))	// 抽開頭的字樣
+						{			
+							$image_link = GetImgurIamge($m_message);	// 取得圖片網址
+							if($image_link == "")	// 無法取得則給 DialogFlow 回應
+							{
+								$m_message = "聽不懂在抽什麼啦！";	// 給下方 DialogFlow 使用											
+							}
+							else
+							{
+								$client->replyMessage(array(
+									'replyToken' => $event['replyToken'],
+									'messages' => array(
+									array(								
+									'type' => 'image', 						// 訊息類型 (圖片)
+									'originalContentUrl' => $image_link, 	// 回復圖片
+									'previewImageUrl' => $image_link 		// 回復的預覽圖片									
+									))));										
+									
+									return;	
+							}																					
+						}
+						
+						// DialogFlow
+						{							
 							$client->replyMessage(array(
 							'replyToken' => $event['replyToken'],
 							'messages' => array(
@@ -21,8 +46,12 @@ switch ($event['type']) {
 								)
 							)
 							));									
-    
-    
+						}													
+                	}
+                    break;                
+            }
+	
+	
 function GetDialogFlowWord($Word)
 {
 	require_once __DIR__.'/vendor/autoload.php';
