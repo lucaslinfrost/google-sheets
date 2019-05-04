@@ -360,29 +360,6 @@ return buildTextMessage("【名字】".$userName."
 	
 }
 
-function GetDialogFlowWord($Word)
-{
-	require_once __DIR__.'/vendor/autoload.php';
-	require_once('./DialogFlow_Src/DialogFlow_Client.php');	
-	// Token in Heroku
-	$DialogFlow_Secret = getenv('DialogFlow_Secret');	
-	try {
-			$client = new DialogFlow\DialogFlow_Client($DialogFlow_Secret);
-		
-		    $query = $client->get('query', [
-			'query' => $Word,
-			'sessionId' => '1234567890',
-			'lang' => 'zh-TW',
-		]);
-		$response = json_decode((string) $query->getBody(), true);
-		return $response['result']['fulfillment']['speech'];		
-	} 
-	catch (\Exception $error)
-	{
-		echo $error->getMessage();
-	}	
-}
-
 function DvTest ($inputStr,$userName,$textReplyUrl,$imgsReplyUrl){
 
 
