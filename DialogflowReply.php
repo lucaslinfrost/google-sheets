@@ -81,11 +81,3 @@ function GetDialogFlowWord($Word)
 		echo $error->getMessage();
 	}	
 }
-
-    
-        break;
-    default:
-        error_log("Unsupporeted event type: " . $event['type']);
-        break;
-}
-};
