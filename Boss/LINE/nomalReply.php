@@ -343,6 +343,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$main.'');}
 		require_once('./smith.php');
 		if ($alltext !== "") {
+		$alltext = substr($alltext, 0, -1);
 		$toptitle = "《".$code[1]."鐵匠》";
 		$alltext = $toptitle."\n\n--------  配方列表  --------\n".$alltext;
 		return buildTextMessage(''.$alltext.'');
