@@ -16,7 +16,7 @@ foreach ($client->parseEvents() as $event) {
                 $keywords = explode(',', $item['gsx$smith']['$t']);
                 foreach ($keywords as $keyword) {
                     if (strcmp($code[1], $keyword) === 0) {
-$alltext = $alltext."".$item['gsx$name']['$t']." 【".$item['gsx$part']['$t']."】";
+$alltext = $alltext."".$item['gsx$name']['$t']." 【".$item['gsx$part']['$t']."】[".$item['gsx$smithtype']['$t']."]";
                     $alltext = $alltext."\n";
                     }
                 }
