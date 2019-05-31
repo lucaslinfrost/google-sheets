@@ -1,6 +1,5 @@
 <?php
 //所有頁(素材搜索介面)
-ini_set("memory_limit","128M");
 require_once('./LINEBotTiny.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
