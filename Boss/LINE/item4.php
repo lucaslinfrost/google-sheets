@@ -22,6 +22,13 @@ foreach ($client->parseEvents() as $event) {
             $data6 = json_decode($json6, true);
             $code = explode(' ', $message['text']);
             $alltext = "";
+            $a = "";
+            $b = "";
+            $c = "";
+            $d = "";
+            $e = "";
+            $f = "";
+            $g = "";
        
 foreach ($data1['feed']['entry'] as $item) {
 $keywords = explode(',', $item['gsx$keywords']['$t']);
