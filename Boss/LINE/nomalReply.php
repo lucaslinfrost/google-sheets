@@ -175,6 +175,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		return buildTextMessage(''.$alltext.'');
 		}
 		if ($alltext === "") {
+		unset($json, $data, $keywords, $keyword);
 		require_once('./item4.php');
 		$alltext = $a."".$b."".$c."".$d."".$e."".$f."".$g;
 		if ($alltext !== "") {
@@ -197,6 +198,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		return buildTextMessage(''.$alltext.'');
 		}
 		if ($alltext === "") {
+		unset($json, $data, $keywords, $keyword);
 		require_once('./item4.php');
 		$alltext = $a."".$b."".$c."".$d."".$e."".$f."".$g;
 		if ($alltext !== "") {
@@ -241,6 +243,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		}
 		if ($alltext === "") {
 		require_once('./item4.php');
+		unset($json, $data, $keywords, $keyword);
 		$alltext = $a."".$b."".$c."".$d."".$e."".$f."".$g;
 		if ($alltext !== "") {
 		$alltext = "請用下方指令再試一次吧。\n\n--------  建議指令  --------\n".$alltext;
@@ -263,6 +266,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		}
 		if ($alltext === "") {
 		require_once('./item4.php');
+		unset($json, $data, $keywords, $keyword);
 		$alltext = $a."".$b."".$c."".$d."".$e."".$f."".$g;
 		if ($alltext !== "") {
 		$alltext = "請用下方指令再試一次吧。\n\n--------  建議指令  --------\n".$alltext;
