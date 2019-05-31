@@ -166,7 +166,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		}
 		if ($store_text1 === "") {
 		require_once('./item4.php');
-		$alltext = $a."".$b."".$c."".$d."".$e."".$f."".$g;
+		$alltext = "請用下方指令再試一次吧。\n\n--------  建議指令  --------\n".$a."".$b."".$c."".$d."".$e."".$f."".$g;
 		if ($alltext !== "") {
 		$alltext = substr($alltext, 0, -1);
 		return buildTextMessage(''.$alltext.'');
@@ -186,12 +186,12 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		return buildTextMessage(''.$alltext.'');
 		}
 		if ($alltext === "") {
-		$rplyArr = Array(
-                 '你眼睛業障重ಠ_ಠ所以看不到',
-                 '我找不到(๑•́ ₃ •̀๑)',
-                 '資料庫沒有你要找的資料ʅ（´◔౪◔）ʃ',
-                 '沒有喵(=ↀωↀ=)');
-       		return buildTextMessage(''.$userName.'，'.$rplyArr[Dice(count($rplyArr))-1].'');
+		require_once('./item4.php');
+		$alltext = "請用下方指令再試一次吧。\n\n--------  建議指令  --------\n".$a."".$b."".$c."".$d."".$e."".$f."".$g;
+		if ($alltext !== "") {
+		$alltext = substr($alltext, 0, -1);
+		return buildTextMessage(''.$alltext.'');
+		}else{return buildTextMessage('資料庫沒有你要找的資料(๑•́ ₃ •̀๑)');}
 		}
 	}
 	//物品
@@ -207,12 +207,12 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		return buildTextMessage(''.$alltext.'');
 		}
 		if ($alltext === "") {
-		$rplyArr = Array(
-                 '你眼睛業障重ಠ_ಠ所以看不到',
-                 '我找不到(๑•́ ₃ •̀๑)',
-                 '資料庫沒有你要找的資料ʅ（´◔౪◔）ʃ',
-                 '沒有喵(=ↀωↀ=)');
-       		return buildTextMessage(''.$userName.'，'.$rplyArr[Dice(count($rplyArr))-1].'');
+		require_once('./item4.php');
+		$alltext = "請用下方指令再試一次吧。\n\n--------  建議指令  --------\n".$a."".$b."".$c."".$d."".$e."".$f."".$g;
+		if ($alltext !== "") {
+		$alltext = substr($alltext, 0, -1);
+		return buildTextMessage(''.$alltext.'');
+		}else{return buildTextMessage('資料庫沒有你要找的資料(๑•́ ₃ •̀๑)');}
 		}
 	}
    	 //星座
@@ -249,12 +249,12 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		return buildTextMessage(''.$alltext.'');
 		}
 		if ($alltext === "") {
-		$rplyArr = Array(
-                 '你眼睛業障重ಠ_ಠ所以看不到',
-                 '我找不到(๑•́ ₃ •̀๑)',
-                 '資料庫沒有你要找的資料ʅ（´◔౪◔）ʃ',
-                 '沒有喵(=ↀωↀ=)');
-       		return buildTextMessage(''.$userName.'，'.$rplyArr[Dice(count($rplyArr))-1].'');
+		require_once('./item4.php');
+		$alltext = "請用下方指令再試一次吧。\n\n--------  建議指令  --------\n".$a."".$b."".$c."".$d."".$e."".$f."".$g;
+		if ($alltext !== "") {
+		$alltext = substr($alltext, 0, -1);
+		return buildTextMessage(''.$alltext.'');
+		}else{return buildTextMessage('資料庫沒有你要找的資料(๑•́ ₃ •̀๑)');}
 		}
 	 }
 	//查石頭(文字)
@@ -270,12 +270,12 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		return buildTextMessage(''.$alltext.'');
 		}
 		if ($alltext === "") {
-		$rplyArr = Array(
-                 '你眼睛業障重ಠ_ಠ所以看不到',
-                 '我找不到(๑•́ ₃ •̀๑)',
-                 '資料庫沒有你要找的資料ʅ（´◔౪◔）ʃ',
-                 '沒有喵(=ↀωↀ=)');
-       		return buildTextMessage(''.$userName.'，'.$rplyArr[Dice(count($rplyArr))-1].'');
+		require_once('./item4.php');
+		$alltext = "請用下方指令再試一次吧。\n\n--------  建議指令  --------\n".$a."".$b."".$c."".$d."".$e."".$f."".$g;
+		if ($alltext !== "") {
+		$alltext = substr($alltext, 0, -1);
+		return buildTextMessage(''.$alltext.'');
+		}else{return buildTextMessage('資料庫沒有你要找的資料(๑•́ ₃ •̀๑)');}
 		}
 	 }
 	//查材料用途
