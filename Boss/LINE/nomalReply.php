@@ -150,6 +150,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		require_once('./monster.php');
 		if ($store_text1 !== "") {
 		return buildTextMessage(''.$store_text1.'');
+		unset($json, $data, $keywords, $keyword);
 		}
 		if ($store_text1 === "") {
 		unset($json, $data, $keywords, $keyword);
@@ -160,6 +161,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		$alltext = substr($alltext, 0, -1);
 		return buildTextMessage(''.$alltext.'');
 		}else{return buildTextMessage('資料庫沒有你要找的資料(๑•́ ₃ •̀๑)');}
+		unset($json1, $data1, $keywords, $keyword, $json2, $data2, $json3, $data3, $json4, $data5, $json5, $data5, $json6, $data6);
 		}	
 	}
 	//查生產(文字)
@@ -173,6 +175,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		if ($alltext !== "") {
 		$alltext = substr($alltext, 0, -34);
 		return buildTextMessage(''.$alltext.'');
+		unset($json, $data, $keywords, $keyword);
 		}
 		if ($alltext === "") {
 		unset($json, $data, $keywords, $keyword);
@@ -183,6 +186,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		$alltext = substr($alltext, 0, -1);
 		return buildTextMessage(''.$alltext.'');
 		}else{return buildTextMessage('資料庫沒有你要找的資料(๑•́ ₃ •̀๑)');}
+		unset($json1, $data1, $keywords, $keyword, $json2, $data2, $json3, $data3, $json4, $data5, $json5, $data5, $json6, $data6);
 		}
 	}
 	//物品
@@ -196,6 +200,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		if ($alltext !== "") {
 		$alltext = substr($alltext, 0, -34);
 		return buildTextMessage(''.$alltext.'');
+		unset($json, $data, $keywords, $keyword);
 		}
 		if ($alltext === "") {
 		unset($json, $data, $keywords, $keyword);
@@ -206,6 +211,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		$alltext = substr($alltext, 0, -1);
 		return buildTextMessage(''.$alltext.'');
 		}else{return buildTextMessage('資料庫沒有你要找的資料(๑•́ ₃ •̀๑)');}
+		unset($json1, $data1, $keywords, $keyword, $json2, $data2, $json3, $data3, $json4, $data5, $json5, $data5, $json6, $data6);
 		}
 	}
    	 //星座
@@ -240,6 +246,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		if ($alltext !== "") {
 		$alltext = substr($alltext, 0, -34);
 		return buildTextMessage(''.$alltext.'');
+		unset($json, $data, $keywords, $keyword);
 		}
 		if ($alltext === "") {
 		require_once('./item4.php');
@@ -250,6 +257,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		$alltext = substr($alltext, 0, -1);
 		return buildTextMessage(''.$alltext.'');
 		}else{return buildTextMessage('資料庫沒有你要找的資料(๑•́ ₃ •̀๑)');}
+		unset($json1, $data1, $keywords, $keyword, $json2, $data2, $json3, $data3, $json4, $data5, $json5, $data5, $json6, $data6);
 		}
 	 }
 	//查石頭(文字)
@@ -263,6 +271,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		if ($alltext !== "") {
 		$alltext = substr($alltext, 0, -34);
 		return buildTextMessage(''.$alltext.'');
+		unset($json, $data, $keywords, $keyword);
 		}
 		if ($alltext === "") {
 		require_once('./item4.php');
@@ -273,6 +282,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		$alltext = substr($alltext, 0, -1);
 		return buildTextMessage(''.$alltext.'');
 		}else{return buildTextMessage('資料庫沒有你要找的資料(๑•́ ₃ •̀๑)');}
+		unset($json1, $data1, $keywords, $keyword, $json2, $data2, $json3, $data3, $json4, $data5, $json5, $data5, $json6, $data6);
 		}
 	 }
 	//查材料用途
