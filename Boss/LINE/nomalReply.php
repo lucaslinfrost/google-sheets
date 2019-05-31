@@ -67,9 +67,10 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	if(stristr($inputStr, 'ts') != false) {
 		
 		$rplyArr = explode(' ',$inputStr);
-    
-		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
+    		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
+		
 		require_once('./item4.php');
+		$alltext = $a."".$b."".$c."".$d."".$e."".$f."".$g;
 		if ($alltext !== "") {
 		$alltext = substr($alltext, 0, -1);
 		return buildTextMessage(''.$alltext.'');
