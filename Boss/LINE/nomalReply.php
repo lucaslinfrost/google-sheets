@@ -152,6 +152,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		return buildTextMessage(''.$store_text1.'');
 		}
 		if ($store_text1 === "") {
+		unset($json, $data, $keywords, $keyword);
 		require_once('./item4.php');
 		$alltext = $a."".$b."".$c."".$d."".$e."".$f."".$g;
 		if ($alltext !== "") {
