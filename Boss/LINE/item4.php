@@ -27,7 +27,7 @@ foreach ($data1['feed']['entry'] as $item) {
 $keywords = explode(',', $item['gsx$keywords']['$t']);
 foreach ($keywords as $keyword) {
 if (strcmp($code[1], $keyword) === 0) {
-$alltext = $alltext."[搜尋怪物]m指令\n";
+$a = "[搜尋怪物] m指令\n";
 }
 }
 }
@@ -36,7 +36,7 @@ foreach ($data1['feed']['entry'] as $item) {
 $keywords = explode('、', $item['gsx$key']['$t']);
 foreach ($keywords as $keyword) {
 if (strcmp($code[1], $keyword) === 0) {
-$alltext = $alltext."[搜尋物品]d指令\n";
+$b = "[搜尋物品] d指令\n";
 }
 }
 }
@@ -45,7 +45,7 @@ foreach ($data2['feed']['entry'] as $item) {
 $keywords = explode(',', $item['gsx$keyword']['$t']);
 foreach ($keywords as $keyword) {
 if (strcmp($code[1], $keyword) === 0) {
-$alltext = $alltext."[搜尋生產]p指令\n";
+$c = "[搜尋生產] p指令\n";
 }
 }
 }
@@ -54,7 +54,7 @@ foreach ($data3['feed']['entry'] as $item) {
 $keywords = explode(',', $item['gsx$key']['$t']);
 foreach ($keywords as $keyword) {
 if (strcmp($code[1], $keyword) === 0) {
-$alltext = $alltext."[搜尋裝備]m指令\n";
+$d = "[搜尋裝備] e指令\n";
 }
 }
 }
@@ -63,7 +63,7 @@ foreach ($data4['feed']['entry'] as $item) {
 $keywords = explode(',', $item['gsx$key']['$t']);
 foreach ($keywords as $keyword) {
 if (strcmp($code[1], $keyword) === 0) {
-$alltext = $alltext."[搜尋寶石]m指令\n";
+$e = "[搜尋寶石] r指令\n";
 }
 }
 }
@@ -72,7 +72,7 @@ foreach ($data5['feed']['entry'] as $item) {
 $keywords = explode(',', $item['gsx$key']['$t']);
 foreach ($keywords as $keyword) {
 if (strcmp($code[1], $keyword) === 0) {
-$alltext = $alltext."[搜尋栽培]栽培指令\n";
+$f = "[搜尋栽培] 栽培指令\n";
 }
 }
 }
@@ -81,7 +81,7 @@ foreach ($data6['feed']['entry'] as $item) {
 $keywords = explode(',', $item['gsx$key']['$t']);
 foreach ($keywords as $keyword) {
 if (strcmp($code[1], $keyword) === 0) {
-$alltext = $alltext."[搜尋挖礦]挖礦指令\n";
+$g = "[搜尋挖礦] 挖礦指令\n";
 }
 }
 }            
