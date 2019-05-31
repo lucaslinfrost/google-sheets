@@ -165,12 +165,12 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		return buildTextMessage(''.$store_text1.'');
 		}
 		if ($store_text1 === "") {
-		$rplyArr = Array(
-                 '你眼睛業障重ಠ_ಠ所以看不到',
-                 '我找不到(๑•́ ₃ •̀๑)',
-                 '資料庫沒有你要找的資料ʅ（´◔౪◔）ʃ',
-                 '沒有喵(=ↀωↀ=)');
-       		return buildTextMessage(''.$userName.'，'.$rplyArr[Dice(count($rplyArr))-1].'');
+		require_once('./item4.php');
+		$alltext = $a."".$b."".$c."".$d."".$e."".$f."".$g;
+		if ($alltext !== "") {
+		$alltext = substr($alltext, 0, -1);
+		return buildTextMessage(''.$alltext.'');
+		}else{return buildTextMessage('資料庫沒有你要找的資料(๑•́ ₃ •̀๑)');}
 		}	
 	}
 	//查生產(文字)
