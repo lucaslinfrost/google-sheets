@@ -166,8 +166,9 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		}
 		if ($store_text1 === "") {
 		require_once('./item4.php');
-		$alltext = "請用下方指令再試一次吧。\n\n--------  建議指令  --------\n".$a."".$b."".$c."".$d."".$e."".$f."".$g;
+		$alltext = $a."".$b."".$c."".$d."".$e."".$f."".$g;
 		if ($alltext !== "") {
+		$alltext = "請用下方指令再試一次吧。\n\n--------  建議指令  --------\n".$alltext;
 		$alltext = substr($alltext, 0, -1);
 		return buildTextMessage(''.$alltext.'');
 		}else{return buildTextMessage('資料庫沒有你要找的資料(๑•́ ₃ •̀๑)');}
@@ -187,8 +188,9 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		}
 		if ($alltext === "") {
 		require_once('./item4.php');
-		$alltext = "請用下方指令再試一次吧。\n\n--------  建議指令  --------\n".$a."".$b."".$c."".$d."".$e."".$f."".$g;
+		$alltext = $a."".$b."".$c."".$d."".$e."".$f."".$g;
 		if ($alltext !== "") {
+		$alltext = "請用下方指令再試一次吧。\n\n--------  建議指令  --------\n".$alltext;
 		$alltext = substr($alltext, 0, -1);
 		return buildTextMessage(''.$alltext.'');
 		}else{return buildTextMessage('資料庫沒有你要找的資料(๑•́ ₃ •̀๑)');}
@@ -208,8 +210,9 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		}
 		if ($alltext === "") {
 		require_once('./item4.php');
-		$alltext = "請用下方指令再試一次吧。\n\n--------  建議指令  --------\n".$a."".$b."".$c."".$d."".$e."".$f."".$g;
+		$alltext = $a."".$b."".$c."".$d."".$e."".$f."".$g;
 		if ($alltext !== "") {
+		$alltext = "請用下方指令再試一次吧。\n\n--------  建議指令  --------\n".$alltext;
 		$alltext = substr($alltext, 0, -1);
 		return buildTextMessage(''.$alltext.'');
 		}else{return buildTextMessage('資料庫沒有你要找的資料(๑•́ ₃ •̀๑)');}
@@ -250,8 +253,9 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		}
 		if ($alltext === "") {
 		require_once('./item4.php');
-		$alltext = "請用下方指令再試一次吧。\n\n--------  建議指令  --------\n".$a."".$b."".$c."".$d."".$e."".$f."".$g;
+		$alltext = $a."".$b."".$c."".$d."".$e."".$f."".$g;
 		if ($alltext !== "") {
+		$alltext = "請用下方指令再試一次吧。\n\n--------  建議指令  --------\n".$alltext;
 		$alltext = substr($alltext, 0, -1);
 		return buildTextMessage(''.$alltext.'');
 		}else{return buildTextMessage('資料庫沒有你要找的資料(๑•́ ₃ •̀๑)');}
@@ -271,8 +275,9 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		}
 		if ($alltext === "") {
 		require_once('./item4.php');
-		$alltext = "請用下方指令再試一次吧。\n\n--------  建議指令  --------\n".$a."".$b."".$c."".$d."".$e."".$f."".$g;
+		$alltext = $a."".$b."".$c."".$d."".$e."".$f."".$g;
 		if ($alltext !== "") {
+		$alltext = "請用下方指令再試一次吧。\n\n--------  建議指令  --------\n".$alltext;
 		$alltext = substr($alltext, 0, -1);
 		return buildTextMessage(''.$alltext.'');
 		}else{return buildTextMessage('資料庫沒有你要找的資料(๑•́ ₃ •̀๑)');}
