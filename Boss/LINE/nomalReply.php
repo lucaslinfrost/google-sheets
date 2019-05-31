@@ -63,19 +63,6 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		return buildTextMessage('這樣我不會算啦，森77！');
 		}
 	}
-	//測試
-	if(stristr($inputStr, 'ts') != false) {
-		
-		$rplyArr = explode(' ',$inputStr);
-    		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
-		
-		require_once('./item4.php');
-		$alltext = $a."".$b."".$c."".$d."".$e."".$f."".$g;
-		if ($alltext !== "") {
-		$alltext = substr($alltext, 0, -1);
-		return buildTextMessage(''.$alltext.'');
-		}else{return buildTextMessage('資料庫沒有你要找的資料(๑•́ ₃ •̀๑)');}
-	}
 	//地圖
 	if(stristr($inputStr, '指路') != false||
 	       stristr($inputStr, '導航') != false) {
