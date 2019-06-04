@@ -8,15 +8,15 @@ foreach ($client->parseEvents() as $event) {
     switch ($event['type']) {
         case 'message':
             $message = $event['message'];
-            $json0 = file_get_contents('./data/m&d.json');
-            $json1 = file_get_contents('./data/m&d.json');
+            
+            
             $json2 = file_get_contents('./data/production.json');
             
             $json4 = file_get_contents('./data/rock.json');
             $json5 = file_get_contents('./data/seed.json');
             $json6 = file_get_contents('./data/drill.json');
-            $data0 = json_decode($json0, true);
-            $data1 = json_decode($json1, true);
+            
+            
             $data2 = json_decode($json2, true);
             
             $data4 = json_decode($json4, true);
@@ -31,7 +31,10 @@ foreach ($client->parseEvents() as $event) {
             $e = "";
             $f = "";
             $g = "";
-       
+            
+//怪物關鍵字
+$json0 = file_get_contents('./data/m&d.json');
+$data0 = json_decode($json0, true);
 foreach ($data0['feed']['entry'] as $item) {
 $keywords = explode(',', $item['gsx$keywords']['$t']);
 foreach ($keywords as $keyword) {
@@ -42,6 +45,9 @@ unset($json0, $data0, $keywords, $keyword);
 }
 }
 
+//掉落物關鍵字
+$json1 = file_get_contents('./data/m&d.json');
+$data1 = json_decode($json1, true);
 foreach ($data1['feed']['entry'] as $item) {
 $keywords = explode('、', $item['gsx$key']['$t']);
 foreach ($keywords as $keyword) {
@@ -52,6 +58,7 @@ unset($json1, $data1, $keywords, $keyword);
 }
 }
             
+//生產關鍵字         
 foreach ($data2['feed']['entry'] as $item) {
 $keywords = explode(',', $item['gsx$keyword']['$t']);
 foreach ($keywords as $keyword) {
@@ -61,7 +68,8 @@ unset($json2, $data2, $keywords, $keyword);
 }
 }
 }
-
+            
+//裝備關鍵字
 $json3 = file_get_contents('./data/equip.json');
 $data3 = json_decode($json3, true);
 foreach ($data3['feed']['entry'] as $item) {
@@ -74,6 +82,7 @@ unset($json3, $data3, $keywords, $keyword);
 }
 }
             
+//石頭關鍵字         
 foreach ($data4['feed']['entry'] as $item) {
 $keywords = explode(',', $item['gsx$key']['$t']);
 foreach ($keywords as $keyword) {
@@ -84,6 +93,7 @@ unset($json4, $data4, $keywords, $keyword);
 }
 }
             
+//栽培關鍵字            
 foreach ($data5['feed']['entry'] as $item) {
 $keywords = explode(',', $item['gsx$key']['$t']);
 foreach ($keywords as $keyword) {
@@ -94,6 +104,7 @@ unset($json5, $data5, $keywords, $keyword);
 }
 }
             
+//採礦關鍵字           
 foreach ($data6['feed']['entry'] as $item) {
 $keywords = explode(',', $item['gsx$key']['$t']);
 foreach ($keywords as $keyword) {
