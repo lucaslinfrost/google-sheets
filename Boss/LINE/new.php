@@ -33,6 +33,12 @@ switch ($event['type']) {
         $data6 = $xPath->evaluate('string(//*[@id="newsList"]/li[3]/a/text())'); //第三筆文字
         $data7 = $xPath->evaluate('string(//*[@id="newsList"]/li[3]/a/time/@datetime)'); //第三筆日期
         $data8 = $xPath->evaluate('string(//*[@id="newsList"]/li[3]/a/@href)'); //第三筆網址
+        $data9 = $xPath->evaluate('string(//*[@id="newsList"]/li[4]/a/text())'); //第四筆文字
+        $data10 = $xPath->evaluate('string(//*[@id="newsList"]/li[4]/a/time/@datetime)'); //第四筆日期
+        $data11 = $xPath->evaluate('string(//*[@id="newsList"]/li[4]/a/@href)'); //第四筆網址
+        $data12 = $xPath->evaluate('string(//*[@id="newsList"]/li[5]/a/text())'); //第五筆文字
+        $data13 = $xPath->evaluate('string(//*[@id="newsList"]/li[5]/a/time/@datetime)'); //第五筆日期
+        $data14 = $xPath->evaluate('string(//*[@id="newsList"]/li[5]/a/@href)'); //第五筆網址
         $result = array(array(
                             'thumbnailImageUrl' => 'https://imgur.com/KQsuipD.png',
                             'title' => $data0,
@@ -66,6 +72,30 @@ switch ($event['type']) {
                                     'type' => 'uri',
                                     'label' => '詳細資訊',
                                     'uri' => $data8
+                                     )
+                             )
+                         ),
+                         array(
+                            'thumbnailImageUrl' => 'https://imgur.com/KQsuipD.png',
+                            'title' => $data9,
+                            'text' => $data10,
+                            'actions' => array(
+                                array(
+                                    'type' => 'uri',
+                                    'label' => '詳細資訊',
+                                    'uri' => $data11
+                                     )
+                             )
+                         ),
+                         array(
+                            'thumbnailImageUrl' => 'https://imgur.com/KQsuipD.png',
+                            'title' => $data12,
+                            'text' => $data13,
+                            'actions' => array(
+                                array(
+                                    'type' => 'uri',
+                                    'label' => '詳細資訊',
+                                    'uri' => $data14
                                      )
                              )
                          ));
