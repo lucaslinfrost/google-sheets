@@ -139,6 +139,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	if(stristr($inputStr, '更新') != false) {
 		require_once('./new.php');
 		return buildcarousel($altText,$result);
+		unset($data0, $data1, $data2, $data3, $data4, $data5, $data6, $data7, $data8, $html, $ch, $url, $result, $dom, $xPath);
 	}
 	//查怪
 	if(stristr($inputStr, 'm') != false||
