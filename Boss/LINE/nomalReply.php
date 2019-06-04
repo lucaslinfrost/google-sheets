@@ -246,11 +246,11 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		if ($alltext !== "") {
 		$alltext = substr($alltext, 0, -34);
 		return buildTextMessage(''.$alltext.'');
-		unset($json, $data, $keywords, $keyword);
+		unset($json, $data, $keywords, $keyword, $a, $b, $c, $d, $e, $f, $g, $h, $i, $j, $k, $l, $m);
 		}
 		if ($alltext === "") {
 		require_once('./item4.php');
-		unset($json, $data, $keywords, $keyword);
+		unset($json1, $data1, $keywords, $keyword, $json2, $data2, $json3, $data3, $json4, $data5, $json5, $data5, $json6, $data6);
 		$alltext = $a."".$b."".$c."".$d."".$e."".$f."".$g;
 		if ($alltext !== "") {
 		$alltext = "請用下方指令再試一次吧。\n\n--------  建議指令  --------\n".$alltext;
