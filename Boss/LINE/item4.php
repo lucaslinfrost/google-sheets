@@ -8,20 +8,6 @@ foreach ($client->parseEvents() as $event) {
     switch ($event['type']) {
         case 'message':
             $message = $event['message'];
-            
-            
-            $json2 = file_get_contents('./data/production.json');
-            
-            $json4 = file_get_contents('./data/rock.json');
-            $json5 = file_get_contents('./data/seed.json');
-            $json6 = file_get_contents('./data/drill.json');
-            
-            
-            $data2 = json_decode($json2, true);
-            
-            $data4 = json_decode($json4, true);
-            $data5 = json_decode($json5, true);
-            $data6 = json_decode($json6, true);
             $code = explode(' ', $message['text']);
             $alltext = "";
             $a = "";
@@ -31,8 +17,10 @@ foreach ($client->parseEvents() as $event) {
             $e = "";
             $f = "";
             $g = "";
+            $countno = 0;
             
 //怪物關鍵字
+if ($countno === 0) {
 $json0 = file_get_contents('./data/m&d.json');
 $data0 = json_decode($json0, true);
 foreach ($data0['feed']['entry'] as $item) {
@@ -44,8 +32,11 @@ unset($json0, $data0, $keywords, $keyword);
 }
 }
 }
+$countno = $countno+1;   
+}
 
 //掉落物關鍵字
+if ($countno === 1) {
 $json1 = file_get_contents('./data/m&d.json');
 $data1 = json_decode($json1, true);
 foreach ($data1['feed']['entry'] as $item) {
@@ -57,8 +48,13 @@ unset($json1, $data1, $keywords, $keyword);
 }
 }
 }
+$countno = $countno+1;   
+}
             
-//生產關鍵字         
+//生產關鍵字
+if ($countno === 2) {
+$json2 = file_get_contents('./data/production.json');
+$data2 = json_decode($json2, true);
 foreach ($data2['feed']['entry'] as $item) {
 $keywords = explode(',', $item['gsx$keyword']['$t']);
 foreach ($keywords as $keyword) {
@@ -68,8 +64,11 @@ unset($json2, $data2, $keywords, $keyword);
 }
 }
 }
+$countno = $countno+1;   
+} 
             
 //裝備關鍵字
+if ($countno === 3) {
 $json3 = file_get_contents('./data/equip.json');
 $data3 = json_decode($json3, true);
 foreach ($data3['feed']['entry'] as $item) {
@@ -81,8 +80,13 @@ unset($json3, $data3, $keywords, $keyword);
 }
 }
 }
+$countno = $countno+1;   
+}
             
-//石頭關鍵字         
+//石頭關鍵字  
+if ($countno === 4) {
+$json4 = file_get_contents('./data/rock.json');
+$data4 = json_decode($json4, true);            
 foreach ($data4['feed']['entry'] as $item) {
 $keywords = explode(',', $item['gsx$key']['$t']);
 foreach ($keywords as $keyword) {
@@ -92,8 +96,13 @@ unset($json4, $data4, $keywords, $keyword);
 }
 }
 }
+$countno = $countno+1;   
+}
             
-//栽培關鍵字            
+//栽培關鍵字
+if ($countno === 5) {
+$json5 = file_get_contents('./data/seed.json');
+$data5 = json_decode($json5, true);
 foreach ($data5['feed']['entry'] as $item) {
 $keywords = explode(',', $item['gsx$key']['$t']);
 foreach ($keywords as $keyword) {
@@ -103,8 +112,13 @@ unset($json5, $data5, $keywords, $keyword);
 }
 }
 }
+$countno = $countno+1;   
+}
             
-//採礦關鍵字           
+//採礦關鍵字   
+if ($countno === 6) {
+$json6 = file_get_contents('./data/drill.json');
+$data6 = json_decode($json6, true);
 foreach ($data6['feed']['entry'] as $item) {
 $keywords = explode(',', $item['gsx$key']['$t']);
 foreach ($keywords as $keyword) {
@@ -113,7 +127,9 @@ $g = "[搜尋挖礦] 挖礦指令\n";
 unset($json6, $data6, $keywords, $keyword);
 }
 }
-}            
+}   
+$countno = $countno+1;   
+}
             break;
         default:
             error_log("Unsupporeted event type: " . $event['type']);
