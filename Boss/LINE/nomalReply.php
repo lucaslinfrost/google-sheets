@@ -378,7 +378,6 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
     //幫我選～～
 	if(stristr($inputStr, '選') != false||
 		stristr($inputStr, '決定') != false||
-		stristr($inputStr, '抽') != false||
 		stristr($inputStr, '选') != false||
 		stristr($inputStr, '决定') != false) {
 		
