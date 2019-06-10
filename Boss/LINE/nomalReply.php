@@ -190,6 +190,31 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		unset($json1, $data1, $keywords, $keyword, $json2, $data2, $json3, $data3, $json4, $data5, $json5, $data5, $json6, $data6);
 		}
 	}
+	//查裝備(文字)
+	if(stristr($inputStr, 'e') != false||
+	       stristr($inputStr, 'E') != false) {
+		
+		$rplyArr = explode(' ',$inputStr);
+    
+		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
+		require_once('./equip.php');
+		if ($alltext !== "") {
+		$alltext = substr($alltext, 0, -34);
+		return buildTextMessage(''.$alltext.'');
+		unset($json, $data, $keywords, $keyword, $a, $b, $c, $d, $e, $f, $g, $h, $i, $j, $k, $l, $m);
+		}
+		if ($alltext === "") {
+		require_once('./item4.php');
+		unset($json1, $data1, $keywords, $keyword, $json2, $data2, $json3, $data3, $json4, $data5, $json5, $data5, $json6, $data6);
+		$alltext = $a."".$b."".$c."".$d."".$e."".$f."".$g;
+		if ($alltext !== "") {
+		$alltext = "請用下方指令再試一次吧。\n\n--------  建議指令  --------\n".$alltext;
+		$alltext = substr($alltext, 0, -1);
+		return buildTextMessage(''.$alltext.'');
+		}else{return buildTextMessage('資料庫沒有你要找的資料(๑•́ ₃ •̀๑)');}
+		unset($json1, $data1, $keywords, $keyword, $json2, $data2, $json3, $data3, $json4, $data5, $json5, $data5, $json6, $data6);
+		}
+	 }
 	//物品
 	if(stristr($inputStr, 'd') != false||
 	       stristr($inputStr, 'D') != false) {
@@ -236,31 +261,6 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		require_once('./currency.php');
 		return buildTextMessage(''.$dataall.'');
 	}
-	//查裝備(文字)
-	if(stristr($inputStr, 'e') != false||
-	       stristr($inputStr, 'E') != false) {
-		
-		$rplyArr = explode(' ',$inputStr);
-    
-		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
-		require_once('./equip.php');
-		if ($alltext !== "") {
-		$alltext = substr($alltext, 0, -34);
-		return buildTextMessage(''.$alltext.'');
-		unset($json, $data, $keywords, $keyword, $a, $b, $c, $d, $e, $f, $g, $h, $i, $j, $k, $l, $m);
-		}
-		if ($alltext === "") {
-		require_once('./item4.php');
-		unset($json1, $data1, $keywords, $keyword, $json2, $data2, $json3, $data3, $json4, $data5, $json5, $data5, $json6, $data6);
-		$alltext = $a."".$b."".$c."".$d."".$e."".$f."".$g;
-		if ($alltext !== "") {
-		$alltext = "請用下方指令再試一次吧。\n\n--------  建議指令  --------\n".$alltext;
-		$alltext = substr($alltext, 0, -1);
-		return buildTextMessage(''.$alltext.'');
-		}else{return buildTextMessage('資料庫沒有你要找的資料(๑•́ ₃ •̀๑)');}
-		unset($json1, $data1, $keywords, $keyword, $json2, $data2, $json3, $data3, $json4, $data5, $json5, $data5, $json6, $data6);
-		}
-	 }
 	//查石頭(文字)
 	if(stristr($inputStr, 'r') != false||
 	       stristr($inputStr, 'R') != false) {
