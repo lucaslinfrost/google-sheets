@@ -421,7 +421,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	if(stristr($inputStr, '運勢') != false||
 	       stristr($inputStr, '占卜') != false||
 		stristr($inputStr, '运势') != false) {
-		$rplyArr=Array('超大吉','大吉','大吉','中吉','中吉','中吉','小吉','小吉','小吉','小吉','凶','凶','凶','大凶','大凶','你還是，不要知道比較好','這應該不關我的事');
+		$rplyArr=Array('超大吉','大吉','大吉','中吉','中吉','中吉','小吉','小吉','小吉','小吉','平','平','平','平','平','平','平','平','平','平','凶','凶','凶','大凶','超大凶','你還是，不要知道比較好','這應該不關我的事');
 		return buildTextMessage(''.$userName.'，你今日的運勢是【'.$rplyArr[Dice(count($rplyArr))-1].'】喔。');
 	} 
 
