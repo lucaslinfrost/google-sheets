@@ -29,7 +29,8 @@ switch ($event['type']) {
                     'messages' => array(
                         array(
                         'type' => 'text',
-                        'text' => '你沒有使用老大的權限!\n◥(ฅº￦ºฅ)◤',
+'text' => '你沒有使用老大的權限!
+◥(ฅº￦ºฅ)◤',
                         )
                     ),
                 )); 
