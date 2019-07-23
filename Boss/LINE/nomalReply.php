@@ -115,8 +115,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	}
 
 	//公告
-	//可以是為一個使用外聯檔案的範例
-	if(stristr($inputStr, '公告') != false) {
+	if(stristr($inputStr, '公告') != false||
+	       stristr($inputStr, '活動') != false) {
 		require_once('./public.php');
 	if ($data999 !== "") {
 	return buildTextMessage(''.$data999.'');
@@ -127,8 +127,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	}
 	
 	//更新筆記
-	if(stristr($inputStr, '筆記') != false||
-	       stristr($inputStr, '笔记') != false) {
+	if(stristr($inputStr, 'note') != false) {
 		$rplyArr = explode(' ',$inputStr);
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
 		require_once('../../notice.php');
