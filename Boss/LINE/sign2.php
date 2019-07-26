@@ -49,7 +49,7 @@ switch ($event['type']) {
         $data4 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[4]/text())');
         $data5 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[5]/span/text())');
         $data6 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[6]/text())');
-        $data1 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[7]/span/text())');
+        $data7 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[7]/span/text())');
         $data8 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[8]/text())');
 
 $dataall = $data1."\n".$data2."\n\n".$data3."\n".$data4."\n\n".$data5."\n".$data6."\n\n".$data7."\n".$data8;
