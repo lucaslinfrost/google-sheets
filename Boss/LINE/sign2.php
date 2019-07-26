@@ -43,7 +43,8 @@ switch ($event['type']) {
         // create domxpath instance
         $xPath = new DOMXPath($dom);
         // get all elements with a particular id and then loop through and print the href attribute
-        $data0 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/h3/text())');
+        $datatime = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/h3/text())');
+        $data0 = $xPath->evaluate('string(//*[@id="iAcDay"]/option[6]/text())');
         $data1 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[1]/span/text())');
         $data2 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[2]/text())');
         $data3 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[3]/span/text())');
@@ -59,7 +60,7 @@ switch ($event['type']) {
         $data13 = $xPath->evaluate('string(//*[@class="LUCKY"][4]/h4/text())');
         $data14 = $xPath->evaluate('string(//*[@class="LUCKY"][5]/h4/text())');
 
-$dataall = $data0."\n\n".$data1."\n".$data2."\n\n".$data3."\n".$data4."\n\n".$data5."\n".$data6."\n\n".$data7."\n".$data8."\n\n今日短評：\n".$data9."\n\n幸運數字：".$data10."\n\n幸運顏色：".$data11."\n\n開運方位：".$data12."\n\n今日吉時：".$data13."\n\n幸運星座：".$data14;
+$dataall = $data0." (".$datatime.")\n\n".$data1."\n".$data2."\n\n".$data3."\n".$data4."\n\n".$data5."\n".$data6."\n\n".$data7."\n".$data8."\n\n今日短評：\n".$data9."\n\n幸運數字：".$data10."\n\n幸運顏色：".$data11."\n\n開運方位：".$data12."\n\n今日吉時：".$data13."\n\n幸運星座：".$data14;
         
 error_log("星座第【".$snum."】號。
 網址為
