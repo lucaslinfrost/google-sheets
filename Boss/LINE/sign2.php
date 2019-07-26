@@ -43,10 +43,16 @@ switch ($event['type']) {
         // create domxpath instance
         $xPath = new DOMXPath($dom);
         // get all elements with a particular id and then loop through and print the href attribute
-        $data0 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[1]/span/text())');
-        $data1 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[2]/text())');
+        $data1 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[1]/span/text())');
+        $data2 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[2]/text())');
+        $data3 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[3]/span/text())');
+        $data4 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[4]/text())');
+        $data5 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[5]/span/text())');
+        $data6 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[6]/text())');
+        $data1 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[7]/span/text())');
+        $data8 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[8]/text())');
 
-$dataall = $data0."\n".$data1;
+$dataall = $data1."\n".$data2."\n\n".$data3."\n".$data4."\n\n".$data5."\n".$data6."\n\n".$data7."\n".$data8;
         
 error_log("星座第【".$snum."】號。
 網址為
