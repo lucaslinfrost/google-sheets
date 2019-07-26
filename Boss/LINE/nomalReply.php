@@ -246,7 +246,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
     
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
 		
-		require_once('./sign.php');
+		require_once('./sign2.php');
 		return buildTextMessage(''.$dataall.'');
 	}
   	  //匯率
