@@ -15,7 +15,7 @@ switch ($event['type']) {
         $c = new utf8_chinese;
         $message['text'] = $c->gb2312_big5($message['text']);
         $code = explode(' ', $message['text']);
-        $snum = '1';
+        $snum = '999';
         if (strpos($code[1], '白羊') !== false||strpos($code[1], '牡羊') !== false||strpos($code[1], '牧羊') !== false){$snum = '0';}
         if (strpos($code[1], '金牛') !== false||strpos($code[1], '牡牛') !== false||strpos($code[1], '牧牛') !== false){$snum = '1';}
         if (strpos($code[1], '雙子') !== false){$snum = '2';}
@@ -60,7 +60,7 @@ switch ($event['type']) {
         $data13 = $xPath->evaluate('string(//*[@class="LUCKY"][4]/h4/text())');
         $data14 = $xPath->evaluate('string(//*[@class="LUCKY"][5]/h4/text())');
             
-if ($snum === "12"){
+if ($snum === "999"){
 $dataall = "沒有這個星座。";
 }else{
 $dataall = $data0." (".$datatime.")\n\n".$data1."\n".$data2."\n\n".$data3."\n".$data4."\n\n".$data5."\n".$data6."\n\n".$data7."\n".$data8."\n\n今日短評：\n".$data9."\n\n幸運數字：".$data10."\n\n幸運顏色：".$data11."\n\n開運方位：".$data12."\n\n今日吉時：".$data13."\n\n幸運星座：".$data14;
