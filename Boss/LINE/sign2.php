@@ -43,7 +43,7 @@ switch ($event['type']) {
         // create domxpath instance
         $xPath = new DOMXPath($dom);
         // get all elements with a particular id and then loop through and print the href attribute
-        $dataall = $xPath->evaluate('string(//div[1]/table[2]/tbody/tr[2]/td/div[2]/div[1]/div[5]/div[3]/div[1]/div[3]/text())'); //星座資訊
+        $dataall = $xPath->evaluate('string(//div[1]/table[2]/tbody/tr[2]/td/div[2]/div[1]/div[5]/div[3]/div[1]/div[3])'); //星座資訊
 error_log("星座第【".$snum."】號。
 網址為
 【".$url."】");
