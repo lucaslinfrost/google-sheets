@@ -43,6 +43,7 @@ switch ($event['type']) {
         // create domxpath instance
         $xPath = new DOMXPath($dom);
         // get all elements with a particular id and then loop through and print the href attribute
+        $data0 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/h3/text())');
         $data1 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[1]/span/text())');
         $data2 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[2]/text())');
         $data3 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[3]/span/text())');
@@ -52,8 +53,9 @@ switch ($event['type']) {
         $data7 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[7]/span/text())');
         $data8 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[8]/text())');
         $data9 = $xPath->evaluate('string(//*[@class="TODAY_WORD"]/p/text())');
+        $data10 = $xPath->evaluate('string(//*[@class="LUCKY"]/h4/text())');
 
-$dataall = $data1."\n".$data2."\n\n".$data3."\n".$data4."\n\n".$data5."\n".$data6."\n\n".$data7."\n".$data8."\n\n今日短評：\n".$data9;
+$dataall = $data0."\n\n".$data1."\n".$data2."\n\n".$data3."\n".$data4."\n\n".$data5."\n".$data6."\n\n".$data7."\n".$data8."\n\n今日短評：\n".$data9."\n\n幸運數字：".$data10;
         
 error_log("星座第【".$snum."】號。
 網址為
