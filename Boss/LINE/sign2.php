@@ -43,8 +43,8 @@ switch ($event['type']) {
         // create domxpath instance
         $xPath = new DOMXPath($dom);
         // get all elements with a particular id and then loop through and print the href attribute
-        $datatime = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/h3/text())');
-        $data0 = $xPath->evaluate('string(//*[@id="iAcDay"]/option[6]/text())');
+        $datatime = $xPath->evaluate('string(//*[@id="iAcDay"]/option[6]/text())');
+        $data0 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/h3/text())');
         $data1 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[1]/span/text())');
         $data2 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[2]/text())');
         $data3 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[3]/span/text())');
