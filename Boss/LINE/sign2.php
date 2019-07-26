@@ -15,19 +15,19 @@ switch ($event['type']) {
         $c = new utf8_chinese;
         $message['text'] = $c->gb2312_big5($message['text']);
         $code = explode(' ', $message['text']);
-        
-        if (strpos($code[1], '白羊') !== false||strpos($code[1], '牡羊') !== false||strpos($code[1], '牧羊') !== false){$snum = '0';}else{
-        if (strpos($code[1], '金牛') !== false||strpos($code[1], '牡牛') !== false||strpos($code[1], '牧牛') !== false){$snum = '1';}else{
-        if (strpos($code[1], '雙子') !== false){$snum = '2';}else{
-        if (strpos($code[1], '巨蟹') !== false){$snum = '3';}else{
-        if (strpos($code[1], '獅子') !== false){$snum = '4';}else{
-        if (strpos($code[1], '處女') !== false){$snum = '5';}else{
-        if (strpos($code[1], '天秤') !== false||strpos($code[1], '天平') !== false){$snum = '6';}else{
-        if (strpos($code[1], '天蠍') !== false){$snum = '7';}else{
-        if (strpos($code[1], '射手') !== false){$snum = '8';}else{
-        if (strpos($code[1], '魔羯') !== false||strpos($code[1], '山羊') !== false||strpos($code[1], '摩羯') !== false){$snum = '9';}else{
-        if (strpos($code[1], '水瓶') !== false||strpos($code[1], '寶瓶') !== false){$snum = '10';}else{
-        if (strpos($code[1], '雙魚') !== false){$snum = '11';}else{$snum = '12';}}
+        $snum = '1';
+        if (strpos($code[1], '白羊') !== false||strpos($code[1], '牡羊') !== false||strpos($code[1], '牧羊') !== false){$snum = '0';}
+        if (strpos($code[1], '金牛') !== false||strpos($code[1], '牡牛') !== false||strpos($code[1], '牧牛') !== false){$snum = '1';}
+        if (strpos($code[1], '雙子') !== false){$snum = '2';}
+        if (strpos($code[1], '巨蟹') !== false){$snum = '3';}
+        if (strpos($code[1], '獅子') !== false){$snum = '4';}
+        if (strpos($code[1], '處女') !== false){$snum = '5';}
+        if (strpos($code[1], '天秤') !== false||strpos($code[1], '天平') !== false){$snum = '6';}
+        if (strpos($code[1], '天蠍') !== false){$snum = '7';}
+        if (strpos($code[1], '射手') !== false){$snum = '8';}
+        if (strpos($code[1], '魔羯') !== false||strpos($code[1], '山羊') !== false||strpos($code[1], '摩羯') !== false){$snum = '9';}
+        if (strpos($code[1], '水瓶') !== false||strpos($code[1], '寶瓶') !== false){$snum = '10';}
+        if (strpos($code[1], '雙魚') !== false){$snum = '11';}
         
         $url = 'http://astro.click108.com.tw/daily_0.php?iAstro='.$snum;
         $ch = curl_init();
