@@ -27,7 +27,7 @@ switch ($event['type']) {
         if (strpos($code[1], '射手') !== false){$snum = '8';}else{
         if (strpos($code[1], '魔羯') !== false||strpos($code[1], '山羊') !== false||strpos($code[1], '摩羯') !== false){$snum = '9';}else{
         if (strpos($code[1], '水瓶') !== false||strpos($code[1], '寶瓶') !== false){$snum = '10';}else{
-        if (strpos($code[1], '雙魚') !== false){$snum = '11';}else{$snum = '12';}
+        if (strpos($code[1], '雙魚') !== false){$snum = '11';}else{$snum = '12';}}
         
         $url = 'http://astro.click108.com.tw/daily_0.php?iAstro='.$snum;
         $ch = curl_init();
