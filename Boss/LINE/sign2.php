@@ -43,7 +43,7 @@ switch ($event['type']) {
         // create domxpath instance
         $xPath = new DOMXPath($dom);
         // get all elements with a particular id and then loop through and print the href attribute
-        $datall = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/text())'); //星座資訊
+        $dataall = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/text())'); //星座資訊
         
         break;
     default:
