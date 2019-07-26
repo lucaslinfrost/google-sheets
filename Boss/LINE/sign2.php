@@ -56,8 +56,10 @@ switch ($event['type']) {
         $data10 = $xPath->evaluate('string(//*[@class="LUCKY"]/h4/text())');
         $data11 = $xPath->evaluate('string(//*[@class="LUCKY"][2]/h4/text())');
         $data12 = $xPath->evaluate('string(//*[@class="LUCKY"][3]/h4/text())');
+        $data13 = $xPath->evaluate('string(//*[@class="LUCKY"][4]/h4/text())');
+        $data14 = $xPath->evaluate('string(//*[@class="LUCKY"][5]/h4/text())');
 
-$dataall = $data0."\n\n".$data1."\n".$data2."\n\n".$data3."\n".$data4."\n\n".$data5."\n".$data6."\n\n".$data7."\n".$data8."\n\n今日短評：\n".$data9."\n\n幸運數字：".$data10."\n\n幸運顏色：".$data11."\n\n開運方位：".$data12;
+$dataall = $data0."\n\n".$data1."\n".$data2."\n\n".$data3."\n".$data4."\n\n".$data5."\n".$data6."\n\n".$data7."\n".$data8."\n\n今日短評：\n".$data9."\n\n幸運數字：".$data10."\n\n幸運顏色：".$data11."\n\n開運方位：".$data12."\n\n今日吉時：".$data13."\n\n幸運星座：".$data14;
         
 error_log("星座第【".$snum."】號。
 網址為
