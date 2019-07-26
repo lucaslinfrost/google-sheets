@@ -248,6 +248,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		
 		require_once('./sign2.php');
 		return buildTextMessage(''.$dataall.'');
+		unset($data0, $data1, $data2, $data3, $data4, $data5, $data6, $data7, $data8, $data9, $data10, $data11, $data12, $data13, $data14, $datatime, $dataall, $ch, $url, $html, $dom, $xPath);
 	}
   	  //匯率
 	if(stristr($inputStr, '匯率') != false||
