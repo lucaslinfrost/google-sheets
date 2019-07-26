@@ -4,7 +4,7 @@ require_once('./LINEBotTiny.php');
 require_once('./utf8_chinese.class.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
-$googledataspi = getenv('googledataspi4');
+
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 // 取得事件(只接受文字訊息)
 foreach ($client->parseEvents() as $event) {
@@ -12,23 +12,34 @@ switch ($event['type']) {
     case 'message':
         // 讀入訊息
         $message = $event['message'];
-        // 將Google表單轉成JSON資料
-        $json = file_get_contents($googledataspi);
-        $data = json_decode($json, true);
         $c = new utf8_chinese;
         $message['text'] = $c->gb2312_big5($message['text']);
         $code = explode(' ', $message['text']);
-        // 資料起始從feed.entry          
-        foreach ($data['feed']['entry'] as $item) {
-            // 將keywords欄位依,切成陣列
-            $keywords = explode(',', $item['gsx$key']['$t']);
-            // 以關鍵字比對文字內容
-            foreach ($keywords as $keyword) {
-                if (strpos($code[1], $keyword) !== false) {
-                    $dataall = $item['gsx$data0']['$t']." ".$item['gsx$data1']['$t']."\n\n".$item['gsx$data2']['$t']."\n".$item['gsx$data3']['$t']."\n\n".$item['gsx$data4']['$t']."\n".$item['gsx$data5']['$t']."\n\n".$item['gsx$data6']['$t']."\n".$item['gsx$data7']['$t']."\n\n".$item['gsx$data8']['$t']."\n".$item['gsx$data9']['$t'];
-              }
-            }
-        }       
+
+        $url = 'http://tw.iruna-online.com/index#news';
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_FILE, fopen('php://stdout', 'w'));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($ch, CURLOPT_URL, $url);
+        $html = curl_exec($ch); 
+        curl_close($ch);
+        // create document object model
+        $dom = new DOMDocument();
+        // load html into document object model
+        @$dom->loadHTML('<?xml encoding="UTF-8">' . $html);
+        // create domxpath instance
+        $xPath = new DOMXPath($dom);
+        // get all elements with a particular id and then loop through and print the href attribute
+        $data0 = $xPath->evaluate('string(//*[@id="newsList"]/li[1]/a/text())'); //第一筆文字
+        $data1 = $xPath->evaluate('string(//*[@id="newsList"]/li[1]/a/time/@datetime)'); //第一筆日期
+        $data2 = $xPath->evaluate('string(//*[@id="newsList"]/li[1]/a/@href)'); //第一筆網址
+        $data3 = $xPath->evaluate('string(//*[@id="newsList"]/li[2]/a/text())'); //第二筆文字
+        $data4 = $xPath->evaluate('string(//*[@id="newsList"]/li[2]/a/time/@datetime)'); //第二筆日期
+        $data5 = $xPath->evaluate('string(//*[@id="newsList"]/li[2]/a/@href)'); //第二筆網址
+        $data6 = $xPath->evaluate('string(//*[@id="newsList"]/li[3]/a/text())'); //第三筆文字
+        $data7 = $xPath->evaluate('string(//*[@id="newsList"]/li[3]/a/time/@datetime)'); //第三筆日期
+        $data8 = $xPath->evaluate('string(//*[@id="newsList"]/li[3]/a/@href)'); //第三筆網址
+        
         break;
     default:
         error_log("Unsupporeted event type: " . $event['type']);
