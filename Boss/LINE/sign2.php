@@ -15,8 +15,21 @@ switch ($event['type']) {
         $c = new utf8_chinese;
         $message['text'] = $c->gb2312_big5($message['text']);
         $code = explode(' ', $message['text']);
-
-        $url = 'http://tw.iruna-online.com/index#news';
+        
+        if (strpos($code[1], '白羊') !== false||strpos($code[1], '牡羊') != false){$snum = '0';}
+        if (strpos($code[1], '金牛') !== false||strpos($code[1], '牡牛') != false){$snum = '1';}
+        if (strpos($code[1], '白羊') !== false||strpos($code[1], '牡羊') != false){$snum = '2';}
+        if (strpos($code[1], '白羊') !== false||strpos($code[1], '牡羊') != false){$snum = '3';}
+        if (strpos($code[1], '白羊') !== false||strpos($code[1], '牡羊') != false){$snum = '4';}
+        if (strpos($code[1], '白羊') !== false||strpos($code[1], '牡羊') != false){$snum = '5';}
+        if (strpos($code[1], '白羊') !== false||strpos($code[1], '牡羊') != false){$snum = '6';}
+        if (strpos($code[1], '白羊') !== false||strpos($code[1], '牡羊') != false){$snum = '7';}
+        if (strpos($code[1], '白羊') !== false||strpos($code[1], '牡羊') != false){$snum = '8';}
+        if (strpos($code[1], '白羊') !== false||strpos($code[1], '牡羊') != false){$snum = '9';}
+        if (strpos($code[1], '白羊') !== false||strpos($code[1], '牡羊') != false){$snum = '10';}
+        if (strpos($code[1], '白羊') !== false||strpos($code[1], '牡羊') != false){$snum = '11';}
+        
+        $url = 'http://astro.click108.com.tw/daily_0.php?iAstro=';
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_FILE, fopen('php://stdout', 'w'));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
