@@ -51,7 +51,7 @@ switch ($event['type']) {
         $data6 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[6]/text())');
         $data7 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[7]/span/text())');
         $data8 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[8]/text())');
-        $data9 = $xPath->evaluate('string(//*[@class="STARBABY"]/p/text())');
+        $data9 = $xPath->evaluate('string(//*[@class="TODAY_WORD"]/p/text())');
 
 $dataall = $data1."\n".$data2."\n\n".$data3."\n".$data4."\n\n".$data5."\n".$data6."\n\n".$data7."\n".$data8."\n\n今日短評：\n".$data9;
         
