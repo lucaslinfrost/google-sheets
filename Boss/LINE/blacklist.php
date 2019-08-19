@@ -23,7 +23,7 @@ switch ($event['type']) {
             $keywords = explode(',', $item['gsx$usermid']['$t']);
             // 查看是否黑名單
             foreach ($keywords as $keyword) {
-                if (strcmp($userId, $keyword) !== 0) {  
+                if (strcmp($userId, $keyword) != 0) {  
                 $client->replyMessage(array(
                     'replyToken' => $event['replyToken'],
                     'messages' => array(
