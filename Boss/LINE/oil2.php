@@ -25,25 +25,21 @@ switch ($event['type']) {
         // create domxpath instance
         $xPath = new DOMXPath($dom);
         // get all elements with a particular id and then loop through and print the href attribute
-        $datatime = date("Y-m-d");
-        $data0 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/h3/text())');
-        $data1 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[1]/span/text())');
-        $data2 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[2]/text())');
-        $data3 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[3]/span/text())');
-        $data4 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[4]/text())');
-        $data5 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[5]/span/text())');
-        $data6 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[6]/text())');
-        $data7 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[7]/span/text())');
-        $data8 = $xPath->evaluate('string(//*[@class="TODAY_CONTENT"]/p[8]/text())');
-        $data9 = $xPath->evaluate('string(//*[@class="TODAY_WORD"]/p/text())');
-        $data10 = $xPath->evaluate('string(//*[@class="LUCKY"]/h4/text())');
-        $data11 = $xPath->evaluate('string(//*[@class="LUCKY"][2]/h4/text())');
-        $data12 = $xPath->evaluate('string(//*[@class="LUCKY"][3]/h4/text())');
-        $data13 = $xPath->evaluate('string(//*[@class="LUCKY"][4]/h4/text())');
-        $data14 = $xPath->evaluate('string(//*[@class="LUCKY"][5]/h4/text())');
+        $data00 = $xPath->evaluate('string(//*[@id="gas-price"]/ul/li[3]/p/text()[1])');
+        $data0 = $xPath->evaluate('string(//*[@id="gas-price"]/ul/li[3]/p/text()[2])');
+        $data1 = $xPath->evaluate('string(//*[@id="gas-price"]/ul/li[3]/h2/text())');
+        $data2 = $xPath->evaluate('string(//*[@id="cpc"]/ul/li[1]/text())');
+        $data3 = $xPath->evaluate('string(//*[@id="cpc"]/ul/li[2]/text())');
+        $data4 = $xPath->evaluate('string(//*[@id="cpc"]/ul/li[3]/text())');
+        $data5 = $xPath->evaluate('string(//*[@id="cpc"]/ul/li[4]/text())');
+        $data6 = $xPath->evaluate('string(//*[@id="cpc"]/ul[2]/li[1]/text())');
+        $data7 = $xPath->evaluate('string(//*[@id="cpc"]/ul[2]/li[2]/text())');
+        $data8 = $xPath->evaluate('string(//*[@id="cpc"]/ul[2]/li[3]/text())');
+        $data9 = $xPath->evaluate('string(//*[@id="cpc"]/ul[2]/li[4]/text())');
+        $data10 = $xPath->evaluate('string(//*[@id="gas-price"]/ul/li[1]/text())');
+        $datatime = $xPath->evaluate('string(//*[@id="main"]/p/text())');
             
-
-$dataall = $data0." (".$datatime.")\n\n".$data1."\n".$data2."\n\n".$data3."\n".$data4."\n\n".$data5."\n".$data6."\n\n".$data7."\n".$data8."\n\n今日短評：\n".$data9."\n\n幸運數字：".$data10."\n\n幸運顏色：".$data11."\n\n開運方位：".$data12."\n\n今日吉時：".$data13."\n\n幸運星座：".$data14;
+$dataall = $datatime."\n\n".$data00."\n".$data0."".$data1."\n\n今日中油油價\n92 : ".$data2."\n95 : ".$data3."\n98 : ".$data4."\n柴油 : ".$data5."\n\n今日台塑油價\n92 : ".$data6."\n95 : ".$data7."\n98 : ".$data8."\n柴油 : ".$data9."\n\n柴油預計調整\n".$data10;
 
         break;
     default:
