@@ -30,14 +30,14 @@ switch ($event['type']) {
         $data1 = $xPath->evaluate('string(//*[@id="gas-price"]/ul/li[3]/h2/text())');
         $data01 = $xPath->evaluate('string(//*[@id="gas-price"]/ul/li[3]/h2/em/text())');
         $data001 = $xPath->evaluate('string(//*[@id="gas-price"]/ul/li[3]/h2/text()[2])');
-        $data2 = $xPath->evaluate('string(//*[@id="cpc"][1]/ul/li[1]/text())');
+        $data2 = $xPath->evaluate('string(//*[@id="cpc"]/ul/li[1]/text())');
         $data3 = $xPath->evaluate('string(//*[@id="cpc"]/ul/li[2]/text())');
         $data4 = $xPath->evaluate('string(//*[@id="cpc"]/ul/li[3]/text())');
         $data5 = $xPath->evaluate('string(//*[@id="cpc"]/ul/li[4]/text())');
-        $data6 = $xPath->evaluate('string(//*[@id="cpc"]/ul[2]/li[1]/text())');
-        $data7 = $xPath->evaluate('string(//*[@id="cpc"]/ul[2]/li[2]/text())');
-        $data8 = $xPath->evaluate('string(//*[@id="cpc"]/ul[2]/li[3]/text())');
-        $data9 = $xPath->evaluate('string(//*[@id="cpc"]/ul[2]/li[4]/text())');
+        $data6 = $xPath->evaluate('string(//*[@id="cpc"][2]/ul/li[1]/text())');
+        $data7 = $xPath->evaluate('string(//*[@id="cpc"][2]/ul/li[2]/text())');
+        $data8 = $xPath->evaluate('string(//*[@id="cpc"][2]/ul/li[3]/text())');
+        $data9 = $xPath->evaluate('string(//*[@id="cpc"][2]/ul/li[4]/text())');
         $data10 = $xPath->evaluate('string(//*[@id="gas-price"]/ul/li[1]/text())');
         $datatime = $xPath->evaluate('string(//*[@id="main"]/p/time/text())');
             
