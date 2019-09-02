@@ -16,7 +16,7 @@ switch ($event['type']) {
         $message['text'] = $c->gb2312_big5($message['text']);
         $code = explode(' ', $message['text']);
         $snum = '999';
-        if (strpos($code[1], '白羊') !== false||strpos($code[1], '牡羊') !== false||strpos($code[1], '牧羊') !== false){$snum = '0';}
+        if (strpos($code[1], '白羊') !== false||strpos($code[1], '牡羊') !== false||strpos($code[1], '牧羊') !== false||strpos($code[1], '♈') !== false){$snum = '0';}
         if (strpos($code[1], '金牛') !== false||strpos($code[1], '牡牛') !== false||strpos($code[1], '牧牛') !== false){$snum = '1';}
         if (strpos($code[1], '雙子') !== false){$snum = '2';}
         if (strpos($code[1], '巨蟹') !== false){$snum = '3';}
