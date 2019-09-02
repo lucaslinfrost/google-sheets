@@ -41,7 +41,7 @@ switch ($event['type']) {
         $data10 = $xPath->evaluate('string(//*[@id="gas-price"]/ul/li[1]/text()[2])');
         $data11 = $xPath->evaluate('string(//*[@id="gas-price"]/ul/li[1]/text()[3])');
         $datatime = $xPath->evaluate('string(//*[@id="main"]/p/time/text())');
-        $datatime2 = $xPath->evaluate('string(//*[@id="main"]/p/time/text()[2])');
+        $datatime2 = $xPath->evaluate('string(//*[@id="main"]/p/time/@timeago/text())');
         $data2 = preg_replace('/\s(?=)/', '', $data2);
         $data3 = preg_replace('/\s(?=)/', '', $data3);
         $data4 = preg_replace('/\s(?=)/', '', $data4);
