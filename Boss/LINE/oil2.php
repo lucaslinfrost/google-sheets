@@ -39,6 +39,7 @@ switch ($event['type']) {
         $data8 = $xPath->evaluate('string(//*[@id="cpc"][2]/ul/li[3]/text()[2])');
         $data9 = $xPath->evaluate('string(//*[@id="cpc"][2]/ul/li[4]/text()[2])');
         $data10 = $xPath->evaluate('string(//*[@id="gas-price"]/ul/li[1]/text()[2])');
+        $data11 = $xPath->evaluate('string(//*[@id="gas-price"]/ul/li[1]/text()[3])');
         $datatime = $xPath->evaluate('string(//*[@id="main"]/p/time/text())');
         $data2 = substr($data2,-5);
         $data3 = substr($data3,-5);
@@ -50,7 +51,7 @@ switch ($event['type']) {
         $data9 = substr($data9,-5);
         $data10 = substr($data10,-5);
         
-$dataall = "最後更新時間\n".$datatime."\n\n".$data00."".$data0."".$data1."".$data01."".$data001."\n\n今日中油油價\n92 : ".$data2."\n95 : ".$data3."\n98 : ".$data4."\n柴油 : ".$data5."\n\n今日台塑油價\n92 : ".$data6."\n95 : ".$data7."\n98 : ".$data8."\n柴油 : ".$data9."\n\n柴油預計調整\n".$data10;
+$dataall = "最後更新時間\n".$datatime."\n\n".$data00."".$data0."".$data1."".$data01."".$data001."\n\n今日中油油價\n92 : ".$data2."\n95 : ".$data3."\n98 : ".$data4."\n柴油 : ".$data5."\n\n今日台塑油價\n92 : ".$data6."\n95 : ".$data7."\n98 : ".$data8."\n柴油 : ".$data9."\n\n柴油預計調整\n".$data10."".$data11;
 
         break;
     default:
