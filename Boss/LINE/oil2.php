@@ -53,7 +53,7 @@ switch ($event['type']) {
         $data10 = preg_replace('/\s(?=)/', '', $data10);
         $datatime2 = preg_replace('/\s(?=)/', '', $datatime2);
         
-$dataall = "最後更新時間(".$datatime2.")\n".$datatime."\n\n".$data00."".$data0."".$data1."".$data01."".$data001."\n\n今日中油油價\n92 : ".$data2."\n95 : ".$data3."\n98 : ".$data4."\n柴油 : ".$data5."\n\n今日台塑油價\n92 : ".$data6."\n95 : ".$data7."\n98 : ".$data8."\n柴油 : ".$data9."\n\n柴油預計調整\n".$data10."".$data11;
+$dataall = "最後更新時間(".$datatime2.")\n".$datatime."\n\n".$data00."".$data0."".$data1."".$data01."".$data001."\n\n【今日中油油價】\n92 : ".$data2."\n95 : ".$data3."\n98 : ".$data4."\n柴油 : ".$data5."\n\n【今日台塑油價】\n92 : ".$data6."\n95 : ".$data7."\n98 : ".$data8."\n柴油 : ".$data9."\n\n【柴油預計調整】\n".$data10."".$data11;
 
         break;
     default:
