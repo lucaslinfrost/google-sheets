@@ -27,7 +27,7 @@ switch ($event['type']) {
         // get all elements with a particular id and then loop through and print the href attribute
         $data00 = $xPath->evaluate('string(//*[@id="gas-price"]/ul/li[3]/p/text()[1])');
         $data0 = $xPath->evaluate('string(//*[@id="gas-price"]/ul/li[3]/p/text()[2])');
-        $data1 = $xPath->evaluate('string(//*[@id="gas-price"]/ul/li[3]/h2/text())');
+        $data1 = $xPath->evaluate('string(//*[@id="gas-price"]/ul/li[3]/h2/)');
         $data2 = $xPath->evaluate('string(//*[@id="cpc"]/ul/li[1]/text())');
         $data3 = $xPath->evaluate('string(//*[@id="cpc"]/ul/li[2]/text())');
         $data4 = $xPath->evaluate('string(//*[@id="cpc"]/ul/li[3]/text())');
