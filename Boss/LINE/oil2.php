@@ -10,7 +10,6 @@ switch ($event['type']) {
     case 'message':
         // 讀入訊息
         $message = $event['message'];
-        $code = explode(' ', $message['text']);
         $url = 'https://gas.goodlife.tw/';
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_FILE, fopen('php://stdout', 'w'));
