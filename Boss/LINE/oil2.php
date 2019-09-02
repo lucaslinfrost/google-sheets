@@ -30,7 +30,7 @@ switch ($event['type']) {
         $data1 = $xPath->evaluate('string(//*[@id="gas-price"]/ul/li[3]/h2/text())');
         $data01 = $xPath->evaluate('string(//*[@id="gas-price"]/ul/li[3]/h2/em/text())');
         $data001 = $xPath->evaluate('string(//*[@id="gas-price"]/ul/li[3]/h2/text()[2])');
-        $data2 = $xPath->evaluate('string(//*[@id="cpc"]/ul[1]/li[1]/text())');
+        $data2 = $xPath->evaluate('string(//*[@id="cpc"][1]/ul/li[1]/text())');
         $data3 = $xPath->evaluate('string(//*[@id="cpc"]/ul/li[2]/text())');
         $data4 = $xPath->evaluate('string(//*[@id="cpc"]/ul/li[3]/text())');
         $data5 = $xPath->evaluate('string(//*[@id="cpc"]/ul/li[4]/text())');
