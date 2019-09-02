@@ -74,8 +74,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	if(stristr($inputStr, '搜尋') != false) {
 	$rplyArr = explode('#',$inputStr);
 	if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
-	$code = explode('#', $message['text']);
-        return buildTextMessage('http://www.google.com.tw/#hl=zh-TW&site=&q='.$code[1]);
+        return buildTextMessage('http://www.google.com.tw/#hl=zh-TW&site=&q='.$rplyArr[1]);
 	}
 	//推送
 	if(stristr($inputStr, '龘') != false||
