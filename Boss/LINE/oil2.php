@@ -30,16 +30,26 @@ switch ($event['type']) {
         $data1 = $xPath->evaluate('string(//*[@id="gas-price"]/ul/li[3]/h2/text())');
         $data01 = $xPath->evaluate('string(//*[@id="gas-price"]/ul/li[3]/h2/em/text())');
         $data001 = $xPath->evaluate('string(//*[@id="gas-price"]/ul/li[3]/h2/text()[2])');
-        $data2 = $xPath->evaluate('string(//*[@id="cpc"]/ul/li[1]/text()[1])');
+        $data2 = $xPath->evaluate('string(//*[@id="cpc"]/ul/li[1]/text()[2])');
         $data3 = $xPath->evaluate('string(//*[@id="cpc"]/ul/li[2]/text()[2])');
-        $data4 = $xPath->evaluate('string(//*[@id="cpc"]/ul/li[3]/text()[3])');
-        $data5 = $xPath->evaluate('string(//*[@id="cpc"]/ul/li[4]/text())');
-        $data6 = $xPath->evaluate('string(//*[@id="cpc"][2]/ul/li[1]/text())');
-        $data7 = $xPath->evaluate('string(//*[@id="cpc"][2]/ul/li[2]/text())');
-        $data8 = $xPath->evaluate('string(//*[@id="cpc"][2]/ul/li[3]/text())');
-        $data9 = $xPath->evaluate('string(//*[@id="cpc"][2]/ul/li[4]/text())');
-        $data10 = $xPath->evaluate('string(//*[@id="gas-price"]/ul/li[1]/text())');
+        $data4 = $xPath->evaluate('string(//*[@id="cpc"]/ul/li[3]/text()[2])');
+        $data5 = $xPath->evaluate('string(//*[@id="cpc"]/ul/li[4]/text()[2])');
+        $data6 = $xPath->evaluate('string(//*[@id="cpc"][2]/ul/li[1]/text()[2])');
+        $data7 = $xPath->evaluate('string(//*[@id="cpc"][2]/ul/li[2]/text()[2])');
+        $data8 = $xPath->evaluate('string(//*[@id="cpc"][2]/ul/li[3]/text()[2])');
+        $data9 = $xPath->evaluate('string(//*[@id="cpc"][2]/ul/li[4]/text()[2])');
+        $data10 = $xPath->evaluate('string(//*[@id="gas-price"]/ul/li[1]/text()[2])');
         $datatime = $xPath->evaluate('string(//*[@id="main"]/p/time/text())');
+        $data2 = substr($data2,-5);
+        $data3 = substr($data3,-5);
+        $data4 = substr($data4,-5);
+        $data5 = substr($data5,-5);
+        $data6 = substr($data6,-5);
+        $data7 = substr($data7,-5);
+        $data8 = substr($data8,-5);
+        $data9 = substr($data9,-5);
+        $data10 = substr($data10,-5);
+        
 $dataall = "最後更新時間\n".$datatime."\n\n".$data00."".$data0."".$data1."".$data01."".$data001."\n\n今日中油油價\n92 : ".$data2."\n95 : ".$data3."\n98 : ".$data4."\n柴油 : ".$data5."\n\n今日台塑油價\n92 : ".$data6."\n95 : ".$data7."\n98 : ".$data8."\n柴油 : ".$data9."\n\n柴油預計調整\n".$data10;
 
         break;
