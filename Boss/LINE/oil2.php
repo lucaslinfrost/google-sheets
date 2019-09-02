@@ -41,14 +41,14 @@ switch ($event['type']) {
         $data10 = $xPath->evaluate('string(//*[@id="gas-price"]/ul/li[1]/text()[2])');
         $data11 = $xPath->evaluate('string(//*[@id="gas-price"]/ul/li[1]/text()[3])');
         $datatime = $xPath->evaluate('string(//*[@id="main"]/p/time/text())');
-        $data2 = substr($data2,-5);
-        $data3 = substr($data3,-5);
-        $data4 = substr($data4,-5);
-        $data5 = substr($data5,-5);
-        $data6 = substr($data6,-5);
-        $data7 = substr($data7,-5);
-        $data8 = substr($data8,-5);
-        $data9 = substr($data9,-5);
+        $data2 = preg_replace('/\s(?=)/', '', $data2);
+        $data3 = preg_replace('/\s(?=)/', '', $data3);
+        $data4 = preg_replace('/\s(?=)/', '', $data4);
+        $data5 = preg_replace('/\s(?=)/', '', $data5);
+        $data6 = preg_replace('/\s(?=)/', '', $data6);
+        $data7 = preg_replace('/\s(?=)/', '', $data7);
+        $data8 = preg_replace('/\s(?=)/', '', $data8);
+        $data9 = preg_replace('/\s(?=)/', '', $data9);
         $data10 = preg_replace('/\s(?=)/', '', $data10);
         
 $dataall = "最後更新時間\n".$datatime."\n\n".$data00."".$data0."".$data1."".$data01."".$data001."\n\n今日中油油價\n92 : ".$data2."\n95 : ".$data3."\n98 : ".$data4."\n柴油 : ".$data5."\n\n今日台塑油價\n92 : ".$data6."\n95 : ".$data7."\n98 : ".$data8."\n柴油 : ".$data9."\n\n柴油預計調整\n".$data10."".$data11;
