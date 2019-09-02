@@ -30,9 +30,9 @@ switch ($event['type']) {
         $data1 = $xPath->evaluate('string(//*[@id="gas-price"]/ul/li[3]/h2/text())');
         $data01 = $xPath->evaluate('string(//*[@id="gas-price"]/ul/li[3]/h2/em/text())');
         $data001 = $xPath->evaluate('string(//*[@id="gas-price"]/ul/li[3]/h2/text()[2])');
-        $data2 = $xPath->evaluate('string(//*[@id="cpc"]/ul/li[1]/text())');
-        $data3 = $xPath->evaluate('string(//*[@id="cpc"]/ul/li[2]/text())');
-        $data4 = $xPath->evaluate('string(//*[@id="cpc"]/ul/li[3]/text())');
+        $data2 = $xPath->evaluate('string(//*[@id="cpc"]/ul/li[1]/text()[1])');
+        $data3 = $xPath->evaluate('string(//*[@id="cpc"]/ul/li[2]/text()[2])');
+        $data4 = $xPath->evaluate('string(//*[@id="cpc"]/ul/li[3]/text()[3])');
         $data5 = $xPath->evaluate('string(//*[@id="cpc"]/ul/li[4]/text())');
         $data6 = $xPath->evaluate('string(//*[@id="cpc"][2]/ul/li[1]/text())');
         $data7 = $xPath->evaluate('string(//*[@id="cpc"][2]/ul/li[2]/text())');
@@ -40,7 +40,6 @@ switch ($event['type']) {
         $data9 = $xPath->evaluate('string(//*[@id="cpc"][2]/ul/li[4]/text())');
         $data10 = $xPath->evaluate('string(//*[@id="gas-price"]/ul/li[1]/text())');
         $datatime = $xPath->evaluate('string(//*[@id="main"]/p/time/text())');
-        $data2 = substr($data2,-5);
 $dataall = "最後更新時間\n".$datatime."\n\n".$data00."".$data0."".$data1."".$data01."".$data001."\n\n今日中油油價\n92 : ".$data2."\n95 : ".$data3."\n98 : ".$data4."\n柴油 : ".$data5."\n\n今日台塑油價\n92 : ".$data6."\n95 : ".$data7."\n98 : ".$data8."\n柴油 : ".$data9."\n\n柴油預計調整\n".$data10;
 
         break;
