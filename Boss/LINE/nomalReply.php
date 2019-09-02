@@ -70,6 +70,13 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
 	require_once('./map.php');
 	}
+	//基本查詢
+	if(stristr($inputStr, '搜尋') != false) {
+	$rplyArr = explode('#',$inputStr);
+	if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
+	$code = explode('#', $message['text']);
+        return buildTextMessage('http://www.google.com.tw/#hl=zh-TW&site=&q='.$code[1]);
+	}
 	//推送
 	if(stristr($inputStr, '龘') != false||
 	       stristr($inputStr, '淼') != false) {
@@ -98,6 +105,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	if(stristr($inputStr, '油價') != false) {
 		require_once('./oil2.php');
 		return buildTextMessage(''.$dataall.'');
+		unset($data0, $data1, $data2, $data3, $data4, $data5, $data6, $data7, $data8, $data, $data10, $data11, $html, $ch, $url, $result, $dom, $xPath, $datatime, $dataall, $data01, $data001, $data00);
 	}
 	
 	//數據統計
