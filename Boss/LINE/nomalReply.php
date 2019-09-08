@@ -51,7 +51,39 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	}	
 	}
 	
+	//查材料用途
+	if(stristr($inputStr, 'look') != false) {
+		
+		$rplyArr = explode('#',$inputStr);
+    
+		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
+		require_once('./item2.php');
+		require_once('./item3.php');
+		if ($alltext !== "") {
+		if ($alltext2 !== "") {
+		$alltext = substr($alltext, 0, -1);
+		$alltext2 = substr($alltext2, 0, -1);
+		$alltext = $alltext."\n".$alltext2;
+		return buildTextMessage(''.$alltext.'');
+		}else{
+		$alltext = substr($alltext, 0, -1);
+		return buildTextMessage(''.$alltext.'');
+		}
+		}else{
+		if ($alltext2 !== "") {
+		$alltext = substr($alltext2, 0, -1);
+		return buildTextMessage(''.$alltext.'');
+		}else{
+		$rplyArr = Array(
+                 '你眼睛業障重ಠ_ಠ所以看不到',
+                 '我找不到(๑•́ ₃ •̀๑)',
+                 '資料庫沒有你要找的資料ʅ（´◔౪◔）ʃ',
+                 '沒有喵(=ↀωↀ=)');
+       		return buildTextMessage(''.$userName.'，'.$rplyArr[Dice(count($rplyArr))-1].'');
+		}
+		}
 
+	}
 	//計算機
 	if(stristr($inputStr, '算') != false) {
 		$rplyArr = explode(' ',$inputStr);
@@ -293,39 +325,6 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		unset($json1, $data1, $keywords, $keyword, $json2, $data2, $json3, $data3, $json4, $data5, $json5, $data5, $json6, $data6);
 		}
 	 }
-	//查材料用途
-	if(stristr($inputStr, 'look') != false) {
-		
-		$rplyArr = explode('#',$inputStr);
-    
-		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
-		require_once('./item2.php');
-		require_once('./item3.php');
-		if ($alltext !== "") {
-		if ($alltext2 !== "") {
-		$alltext = substr($alltext, 0, -1);
-		$alltext2 = substr($alltext2, 0, -1);
-		$alltext = $alltext."\n".$alltext2;
-		return buildTextMessage(''.$alltext.'');
-		}else{
-		$alltext = substr($alltext, 0, -1);
-		return buildTextMessage(''.$alltext.'');
-		}
-		}else{
-		if ($alltext2 !== "") {
-		$alltext = substr($alltext2, 0, -1);
-		return buildTextMessage(''.$alltext.'');
-		}else{
-		$rplyArr = Array(
-                 '你眼睛業障重ಠ_ಠ所以看不到',
-                 '我找不到(๑•́ ₃ •̀๑)',
-                 '資料庫沒有你要找的資料ʅ（´◔౪◔）ʃ',
-                 '沒有喵(=ↀωↀ=)');
-       		return buildTextMessage(''.$userName.'，'.$rplyArr[Dice(count($rplyArr))-1].'');
-		}
-		}
-
-	}
 	//栽培(文字)
 	if(stristr($inputStr, '種') != false||
 	       stristr($inputStr, '栽培') != false) {
