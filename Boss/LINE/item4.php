@@ -105,7 +105,7 @@ if ($countno === 5) {
 $json5 = file_get_contents('./data/seed.json');
 $data5 = json_decode($json5, true);
 foreach ($data5['feed']['entry'] as $item) {
-$keywords = explode(',', $item['gsx$key']['$t']);
+$keywords = explode('、', $item['gsx$key2']['$t']);
 foreach ($keywords as $keyword) {
 if (strcmp($code[1], $keyword) === 0) {
 $f = "[搜尋栽培] 栽培指令\n";
