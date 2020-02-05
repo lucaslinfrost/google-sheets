@@ -85,7 +85,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 
 	}
 	//計算機
-	if(stristr($inputStr, '算') != false) {
+	if(stristr($inputStr, 'count') != false) {
 		$rplyArr = explode(' ',$inputStr);
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
 		require_once('./calculator.php');
