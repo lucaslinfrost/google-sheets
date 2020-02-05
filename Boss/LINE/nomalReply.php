@@ -364,7 +364,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	//鐵匠一覽(文字)
 	if(stristr($inputStr, 'smith') != false||
 	       stristr($inputStr, '鐵匠') != false) {
-		$main = "《鐵匠出沒的城鎮一覽》\n\n--------  城鎮列表  --------\n拜倫陣地\n洛庫庫街\n月之民的村子\n首都索菲亞\n維波街\n庫雷亞街\n首都薩特利卡\n首都埃魯巴\n米那烏拉街\n斯帕加斯港\n德拉夫伯格・異邦人街\n庫雷魯教堂區\n皮拉內薩街\n卡開烏拉街\n羅古拉斯街\n奧盧多加集落\n薩特利亞府街\n庫勒伊亞車站街\n首都埃魯達恩\n拜倫地下街\n伊歐里村\n邁歐斯\n迪奧斯集落\n里奧克多伯\n米歐萊塔城\n巴蘭朵小鎮\n馬爾達利歐鬧區\n阿克魯夫城(未更新)\n週年慶會場";
+		$main = "《鐵匠出沒的城鎮一覽》\n\n--------  城鎮列表  --------\n拜倫陣地\n洛庫庫街\n月之民的村子\n首都索菲亞\n維波街\n庫雷亞街\n首都薩特利卡\n首都埃魯巴\n米那烏拉街\n斯帕加斯港\n德拉夫伯格・異邦人街\n庫雷魯教堂區\n皮拉內薩街\n卡開烏拉街\n羅古拉斯街\n奧盧多加集落\n薩特利亞府街\n庫勒伊亞車站街\n首都埃魯達恩\n拜倫地下街\n伊歐里村\n邁歐斯\n迪奧斯集落\n里奧克多伯\n米歐萊塔城\n巴蘭朵小鎮\n馬爾達利歐鬧區\n阿克魯夫城\n週年慶會場";
 		$rplyArr = explode('#',$inputStr);
     
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$main.'');}
