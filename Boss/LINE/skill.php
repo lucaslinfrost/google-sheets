@@ -36,7 +36,7 @@ foreach ($client->parseEvents() as $event) {
                             'actions' => $allskill,
                             );
                         array_push($result, $candidate);
-		   
+		   }
                 }
             }
 
