@@ -26,8 +26,8 @@ foreach ($client->parseEvents() as $event) {
                                     'text' => "測試",
                                     );
 			array_push($per3skill, $allskill);
-			error_log("$allskill: " . $allskill);
-			error_log("$per3skill: " . $per3skill);
+			error_log("allskill: " . $allskill);
+			error_log("per3skill: " . $per3skill);
 				
 			$countnum = 0;
 			array_chunk($per3skill, 3);
