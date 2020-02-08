@@ -58,14 +58,10 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$joball.'');}
 		
 		require_once('./skill.php');
-		if ($startype === 1) {
+		if (empty($result)) {
 		return buildTextMessage(''.$joball.'');
 		}else{
-		if (empty($result)) {
-		return buildTextMessage('資料庫找不到喔。');
-		}else{
 		return buildcarousel($altText,$result);
-		}
 		}
 	}
 	//查材料用途
