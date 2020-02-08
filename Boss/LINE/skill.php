@@ -26,30 +26,17 @@ foreach ($client->parseEvents() as $event) {
                                     ),
 					array_push($per3skill, $allskill);  
 					  );
-			$per3skills = array_chunk($per3skill, 3);	
+			$countnum = 0;
+			$per3skills = array_chunk($per3skill, 3);
+
                         $candidate = array(
                             'thumbnailImageUrl' => 'https://imgur.com/KQsuipD.png',
                             'title' => $item['gsx$job']['$t'],
                             'text' => $item['gsx$job']['$t'],
-                            'actions' => array(
-                                array(
-                                    'type' => 'message',
-                                    'label' => $item['gsx$skname']['$t']."".$item['gsx$sklv']['$t'],
-                                    'text' => "老大D ".$item['gsx$equip']['$t'],
-                                    ),
-                       		array(
-                            	    'type' => 'message',
-                                    'label' => $item['gsx$equip']['$t'],
-                                    'text' => "老大D ".$item['gsx$equip']['$t'],
-                                    ),
-				array(
-                            	    'type' => 'message',
-                                    'label' => $item['gsx$equip']['$t'],
-                                    'text' => "老大D ".$item['gsx$equip']['$t'],
-                                    )
-                                ),
+                            'actions' => $per3skills[$countnum],
                             );
                         array_push($result, $candidate);
+			$countnum = $countnum+1;
 		        }
 
                     }
