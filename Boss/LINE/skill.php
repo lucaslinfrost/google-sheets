@@ -27,7 +27,8 @@ foreach ($client->parseEvents() as $event) {
                                     'label' => $item['gsx$skname']['$t']."".$item['gsx$sklv']['$t'],
                                     'text' => "測試",
                                     ),);
-				
+			}
+			
                         $candidate = array(
                             'thumbnailImageUrl' => 'https://imgur.com/KQsuipD.png',
                             'title' => $item['gsx$job']['$t'],
@@ -35,7 +36,7 @@ foreach ($client->parseEvents() as $event) {
                             'actions' => $allskill,
                             );
                         array_push($result, $candidate);
-		   }
+		   
                 }
             }
 
