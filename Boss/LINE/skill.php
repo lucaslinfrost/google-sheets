@@ -16,10 +16,9 @@ foreach ($client->parseEvents() as $event) {
             $result = array();
             $altText = "關於 ".$message['text']." 的資料";
             foreach ($data['feed']['entry'] as $item) {
-                $keywords = explode(',', $item['gsx$keyword']['$t']);
+                $keywords = explode(',', $item['gsx$job']['$t']);
                 foreach ($keywords as $keyword) {
-                    if (strcmp($code[2], $keyword) === 0) {
-                        if (strpos($code[1], $item['gsx$key']['$t']) !== false) {
+                        if (strcmp($code[1], $keyword) === 0) {
                         $candidate = array(
                             'thumbnailImageUrl' => 'https://imgur.com/KQsuipD.png',
                             'title' => $item['gsx$name']['$t'],
@@ -34,11 +33,7 @@ foreach ($client->parseEvents() as $event) {
                             );
                         array_push($result, $candidate);
 		        }
-                    }else{
-                        if($code[2] === null||
-		        $code[2] === "") {
-                        $startype = 1;
-                        }
+
                     }
                 }
             }
