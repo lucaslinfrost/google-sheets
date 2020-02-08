@@ -34,7 +34,7 @@ foreach ($client->parseEvents() as $event) {
                             'thumbnailImageUrl' => 'https://imgur.com/KQsuipD.png',
                             'title' => $item['gsx$job']['$t'],
                             'text' => $item['gsx$job']['$t'],
-                            'actions' => $per3skill[$countnum],
+                            'actions' => $per3skill[0],
                             );
                         array_push($result, $candidate);
 			$countnum = $countnum+1;
