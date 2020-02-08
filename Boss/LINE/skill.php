@@ -27,7 +27,6 @@ foreach ($client->parseEvents() as $event) {
                                     'label' => $item['gsx$skname']['$t']."".$item['gsx$sklv']['$t'],
                                     'text' => "測試",
                                     ),);
-			}else{
 			
                         $candidate = array(
                             'thumbnailImageUrl' => 'https://imgur.com/KQsuipD.png',
