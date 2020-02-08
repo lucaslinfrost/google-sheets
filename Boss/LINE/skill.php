@@ -15,6 +15,8 @@ foreach ($client->parseEvents() as $event) {
             $code = explode(' ', $message['text']);
             $result = array();
 	    $per3skill = array();
+            $per3skills = array();
+            $countnum = 0;
             $altText = "關於 ".$message['text']." 的資料";
             foreach ($data['feed']['entry'] as $item) {
                 $keywords = explode(',', $item['gsx$job']['$t']);
@@ -26,20 +28,14 @@ foreach ($client->parseEvents() as $event) {
                                     'text' => "測試",
                                     );
 			array_push($per3skill, $allskill);
-			error_log("allskill: " . $allskill);
-			error_log("per3skill: " . $per3skill);
-				
-			$countnum = 0;
-			array_chunk($per3skill, 3);
 
                         $candidate = array(
                             'thumbnailImageUrl' => 'https://imgur.com/KQsuipD.png',
                             'title' => $item['gsx$job']['$t'],
                             'text' => $item['gsx$job']['$t'],
-                            'actions' => $per3skill[$countnum],
+                            'actions' => $per3skill,
                             );
                         array_push($result, $candidate);
-			$countnum = $countnum+1;
 		   }
                 }
             }
