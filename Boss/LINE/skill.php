@@ -10,7 +10,7 @@ foreach ($client->parseEvents() as $event) {
     switch ($event['type']) {
         case 'message':
             $message = $event['message'];
-            $json = file_get_contents('./data/s.json');
+            $json = file_get_contents('./data/skill.json');
             $data = json_decode($json, true);
             $code = explode(' ', $message['text']);
             $result = array();
