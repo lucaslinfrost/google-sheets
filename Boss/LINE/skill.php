@@ -25,10 +25,11 @@ foreach ($client->parseEvents() as $event) {
                                     'label' => $item['gsx$skname']['$t']."".$item['gsx$sklv']['$t'],
                                     'text' => "測試",
                                     );
-			array_push($per3skill, $allskill); 
+			array_push($per3skill, $allskill);
+			}
 			$countnum = 0;
 			array_chunk($per3skill, 3);
-				
+
                         $candidate = array(
                             'thumbnailImageUrl' => 'https://imgur.com/KQsuipD.png',
                             'title' => $item['gsx$job']['$t'],
