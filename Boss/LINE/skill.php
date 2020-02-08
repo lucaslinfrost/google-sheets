@@ -20,26 +20,16 @@ foreach ($client->parseEvents() as $event) {
             $altText = "關於 ".$message['text']." 的資料";
             foreach ($data['feed']['entry'] as $item) {
                 $keywords = explode(',', $item['gsx$job']['$t']);
-		    
-		$Last = end($item['gsx$job']['$t']);
-		    
                 foreach ($keywords as $keyword) {
                         if (strcmp($code[1], $keyword) === 0) {
-				
-				
-				foreach($item['gsx$job']['$t'] as $Key=>$Value){
-   				if ($Last === $Value){
+				if (end($item['gsx$job']['$t']) !==0) {
 				$allskill =  array(array(
                                     'type' => 'message',
                                     'label' => $item['gsx$skname']['$t']."".$item['gsx$sklv']['$t'],
                                     'text' => "測試",
                                     ),);
-				}	
 				}
-  				
 				
-				
-		
 			
                         $candidate = array(
                             'thumbnailImageUrl' => 'https://imgur.com/KQsuipD.png',
