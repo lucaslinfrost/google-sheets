@@ -22,11 +22,11 @@ foreach ($client->parseEvents() as $event) {
                 $keywords = explode(',', $item['gsx$job']['$t']);
                 foreach ($keywords as $keyword) {
                         if (strcmp($code[1], $keyword) === 0) {
-			$allskill =  array(array(
+			$allskill =  array(
                                     'type' => 'message',
                                     'label' => $item['gsx$skname']['$t']."".$item['gsx$sklv']['$t'],
                                     'text' => "測試",
-                                    ));
+                                    );
 			array_push($per3skill, $allskill);
 				
                         $candidate = array(
