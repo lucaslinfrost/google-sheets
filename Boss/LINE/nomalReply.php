@@ -50,7 +50,24 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		}
 	}	
 	}
-	
+	//技能
+	if(stristr($inputStr, '技能') != false) {
+		$joball = "職業一覽";
+		$rplyArr = explode(' ',$inputStr);
+    
+		if (count($rplyArr) == 1) {return buildTextMessage(''.$joball.'');}
+		
+		require_once('./skill.php');
+		if ($startype === 1) {
+		return buildTextMessage(''.$joball.'');
+		}else{
+		if (empty($result)) {
+		return buildTextMessage('資料庫找不到喔。');
+		}else{
+		return buildcarousel($altText,$result);
+		}
+		}
+	}
 	//查材料用途
 	if(stristr($inputStr, 'look') != false) {
 		
