@@ -21,11 +21,21 @@ foreach ($client->parseEvents() as $event) {
                         if (strcmp($code[1], $keyword) === 0) {
                         $candidate = array(
                             'thumbnailImageUrl' => 'https://imgur.com/KQsuipD.png',
-                            'title' => $item['gsx$name']['$t'],
-                            'text' => $item['gsx$map']['$t'],
+                            'title' => $item['gsx$job']['$t'],
+                            'text' => $item['gsx$job']['$t'],
                             'actions' => array(
                                 array(
                                     'type' => 'message',
+                                    'label' => $item['gsx$equip']['$t'],
+                                    'text' => "老大D ".$item['gsx$equip']['$t'],
+                                    ),
+                       		array(
+                            	    'type' => 'message',
+                                    'label' => $item['gsx$equip']['$t'],
+                                    'text' => "老大D ".$item['gsx$equip']['$t'],
+                                    ),
+				array(
+                            	    'type' => 'message',
                                     'label' => $item['gsx$equip']['$t'],
                                     'text' => "老大D ".$item['gsx$equip']['$t'],
                                     )
