@@ -26,7 +26,7 @@ foreach ($client->parseEvents() as $event) {
                             'actions' => array(
                                 array(
                                     'type' => 'message',
-                                    'label' => $item['gsx$equip']['$t'],
+                                    'label' => $item['gsx$skname']['$t']."".$item['gsx$sklv']['$t'],
                                     'text' => "老大D ".$item['gsx$equip']['$t'],
                                     ),
                        		array(
