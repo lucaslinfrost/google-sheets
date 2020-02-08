@@ -17,6 +17,7 @@ foreach ($client->parseEvents() as $event) {
 	    $per3skill = array();
             $per3skills = array();
             $countnum = 0;
+            $keywords = "";
             $len = count($keywords);
             $i = 0;
             $altText = "關於 ".$message['text']." 的資料";
