@@ -26,7 +26,7 @@ foreach ($client->parseEvents() as $event) {
                                     ),
 					array_push($per3skill, $allskill);  
 					  );
-				
+			$per3skills = array_chunk($per3skill, 3);	
                         $candidate = array(
                             'thumbnailImageUrl' => 'https://imgur.com/KQsuipD.png',
                             'title' => $item['gsx$job']['$t'],
