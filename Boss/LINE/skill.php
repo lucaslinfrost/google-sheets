@@ -38,7 +38,7 @@ foreach ($client->parseEvents() as $event) {
                             );
                         array_push($result, $candidate);
 			$countnum = $countnum+1;
-                    }
+
                 }
             }
 
