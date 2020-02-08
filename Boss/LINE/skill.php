@@ -14,17 +14,17 @@ foreach ($client->parseEvents() as $event) {
             $data = json_decode($json, true);
             $code = explode(' ', $message['text']);
             $result = array();
+	    $per3skill = array();
             $altText = "關於 ".$message['text']." 的資料";
             foreach ($data['feed']['entry'] as $item) {
                 $keywords = explode(',', $item['gsx$job']['$t']);
                 foreach ($keywords as $keyword) {
                         if (strcmp($code[1], $keyword) === 0) {
-			$allskill =  array(array(
+			$allskill =  array(
                                     'type' => 'message',
                                     'label' => $item['gsx$skname']['$t']."".$item['gsx$sklv']['$t'],
                                     'text' => "測試",
-                                    ),
-					  );
+                                    );
 			array_push($per3skill, $allskill); 
 			}else{
 			$countnum = 0;
