@@ -27,13 +27,13 @@ foreach ($client->parseEvents() as $event) {
                                     );
 			array_push($per3skill, $allskill); 
 			$countnum = 0;
-			$per3skill = array_chunk($per3skill, 3);
+			array_chunk($per3skill, 3);
 				
                         $candidate = array(
                             'thumbnailImageUrl' => 'https://imgur.com/KQsuipD.png',
                             'title' => $item['gsx$job']['$t'],
                             'text' => $item['gsx$job']['$t'],
-                            'actions' => $per3skill,
+                            'actions' => $per3skill[$countnum],
                             );
                         array_push($result, $candidate);
 			$countnum = $countnum+1;
