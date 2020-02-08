@@ -26,12 +26,7 @@ foreach ($client->parseEvents() as $event) {
                                     'type' => 'message',
                                     'label' => $item['gsx$skname']['$t']."".$item['gsx$sklv']['$t'],
                                     'text' => "測試",
-                                    ),
-				    array(
-                                    'type' => 'message',
-                                    'label' => $item['gsx$skname']['$t']."".$item['gsx$sklv']['$t'],
-                                    'text' => "測試",
-                                    ));
+                                    ),);
 				
                         $candidate = array(
                             'thumbnailImageUrl' => 'https://imgur.com/KQsuipD.png',
