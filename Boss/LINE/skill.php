@@ -31,7 +31,7 @@ foreach ($client->parseEvents() as $event) {
                                     'label' => $item['gsx$skname']['$t']."".$item['gsx$sklv']['$t'],
                                     'text' => "測試",
                                     );
-				$allskill = $allskill.",";
+				$allskill[] = $allskill;
 				}
 				
 			
@@ -39,7 +39,7 @@ foreach ($client->parseEvents() as $event) {
                             'thumbnailImageUrl' => 'https://imgur.com/KQsuipD.png',
                             'title' => $item['gsx$job']['$t'],
                             'text' => $item['gsx$job']['$t'],
-                            'actions' => $allskill,
+                            'actions' => array($allskill),
                             );
                         array_push($result, $candidate);
 		   }
