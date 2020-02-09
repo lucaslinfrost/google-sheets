@@ -39,7 +39,7 @@ foreach ($client->parseEvents() as $event) {
                             'thumbnailImageUrl' => 'https://imgur.com/KQsuipD.png',
                             'title' => $item['gsx$job']['$t'],
                             'text' => $item['gsx$job']['$t'],
-                            'actions' => array($per3skill),
+                            'actions' => $per3skill,
                             );
                         array_push($result, $candidate);
 		   }
