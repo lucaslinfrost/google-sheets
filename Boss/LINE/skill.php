@@ -32,7 +32,7 @@ foreach ($client->parseEvents() as $event) {
                                     'text' => "測試",
                                     );
 				$allskill[] = $allskill;
-				}
+				}else{
 				
 			
                         $candidate = array(
@@ -41,7 +41,7 @@ foreach ($client->parseEvents() as $event) {
                             'text' => $item['gsx$job']['$t'],
                             'actions' => array($allskill),
                             );
-                        array_push($result, $candidate);
+                        array_push($result, $candidate);}
 		   }
                 }
             }
