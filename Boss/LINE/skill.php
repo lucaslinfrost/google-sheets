@@ -32,16 +32,16 @@ foreach ($client->parseEvents() as $event) {
                                     'text' => "測試",
                                     );
 				$allskill[] = $allskill;
-				}else{
+				}
 				
 			
                         $candidate = array(
                             'thumbnailImageUrl' => 'https://imgur.com/KQsuipD.png',
                             'title' => $item['gsx$job']['$t'],
                             'text' => $item['gsx$job']['$t'],
-                            'actions' => array($allskill),
+                            'actions' => $allskill,
                             );
-                        array_push($result, $candidate);}
+                        array_push($result, $candidate);
 		   }
                 }
             }
