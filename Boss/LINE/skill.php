@@ -26,11 +26,11 @@ foreach ($client->parseEvents() as $event) {
 		$i++;
                         if (strcmp($code[1], $keyword) === 0) {
 				if($i != $len){
-				$allskill =  array(
+				$allskill =  array(array(
                                     'type' => 'message',
                                     'label' => $item['gsx$skname']['$t']."".$item['gsx$sklv']['$t'],
                                     'text' => "測試",
-                                    );
+                                    ),);
 				array_push($per3skill, $allskill);
 				}
 				
