@@ -17,12 +17,11 @@ foreach ($client->parseEvents() as $event) {
 	    $per3skill = array();
             $per3skills = array();
             $countnum = 0;
-            $keywords = "";
-            $len = count($keywords);
             $i = 0;
             $altText = "關於 ".$message['text']." 的資料";
             foreach ($data['feed']['entry'] as $item) {
                 $keywords = explode(',', $item['gsx$job']['$t']);
+		$len = count($keywords);
                 foreach ($keywords as $keyword) {
 		$i++;
                         if (strcmp($code[1], $keyword) === 0) {
