@@ -14,7 +14,7 @@ foreach ($client->parseEvents() as $event) {
             $data = json_decode($json, true);
             $code = explode(' ', $message['text']);
             $result = array();
-	    $per3skill = array();
+	    $allskill = array();
             $per3skills = array();
             $countnum = 0;
             $i = 0;
@@ -26,12 +26,11 @@ foreach ($client->parseEvents() as $event) {
 		$i++;
                         if (strcmp($code[1], $keyword) === 0) {
 				if($i != $len){
-				$allskill =  array(array(
+				array_push($allskill, array(
                                     'type' => 'message',
                                     'label' => $item['gsx$skname']['$t']."".$item['gsx$sklv']['$t'],
                                     'text' => "測試",
-                                    ),);
-				array_push($per3skill, $allskill);
+                                    ));
 				}
 				
 			
@@ -39,7 +38,7 @@ foreach ($client->parseEvents() as $event) {
                             'thumbnailImageUrl' => 'https://imgur.com/KQsuipD.png',
                             'title' => $item['gsx$job']['$t'],
                             'text' => $item['gsx$job']['$t'],
-                            'actions' => $per3skill,
+                            'actions' => $allskill,
                             );
                         array_push($result, $candidate);
 		   }
