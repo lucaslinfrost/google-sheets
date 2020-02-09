@@ -36,8 +36,8 @@ foreach ($client->parseEvents() as $event) {
 			
                         $candidate = array(
                             'thumbnailImageUrl' => 'https://imgur.com/KQsuipD.png',
-                            'title' => $item['gsx$job']['$t'],
-                            'text' => $item['gsx$job']['$t'],
+                            'title' => $code[1],
+                            'text' => $code[1],
                             'actions' => $allskill,
                             );
                         array_push($result, $candidate);
