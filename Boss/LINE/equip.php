@@ -69,7 +69,7 @@ $g = "
 if($item['gsx$price']['$t'] === ""){
 $h = "";
 }else{
-if (is_numeric($item['gsx$price']['$t'])) {
+if (preg_match('/[0-9]+/', $item['gsx$price']['$t'])) {
 $h = "
 價格 : ".$item['gsx$price']['$t']." 眾神幣";
 }else{
