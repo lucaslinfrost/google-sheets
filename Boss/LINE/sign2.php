@@ -12,7 +12,8 @@ switch ($event['type']) {
     case 'message':
         // 讀入訊息
         $message = $event['message'];
-
+        $c = new utf8_chinese;
+        $message['text'] = $c->gb2312_big5($message['text']);
         $code = explode(' ', $message['text']);
         $snum = '999';
         if (strpos($code[1], '白羊') !== false||strpos($code[1], '牡羊') !== false||strpos($code[1], '牧羊') !== false||strpos($code[1], '♈') !== false){$snum = '0';}
