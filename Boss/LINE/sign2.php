@@ -59,7 +59,8 @@ switch ($event['type']) {
         $data12 = $xPath->evaluate('string(//*[@class="LUCKY"][3]/h4/text())');
         $data13 = $xPath->evaluate('string(//*[@class="LUCKY"][4]/h4/text())');
         $data14 = $xPath->evaluate('string(//*[@class="LUCKY"][5]/h4/text())');
-            
+        $data0 = iconv("UTF-8", "ISO-8859-1//IGNORE", $data0);
+        
 if ($snum === "999"){
 $dataall = "沒有這個星座的運勢資訊。";
 }else{
