@@ -39,7 +39,7 @@ switch ($event['type']) {
         // create document object model
         $dom = new DOMDocument();
         // load html into document object model
-        @$dom->loadHTML('<?xml encoding="UTF-8">' . $html);
+        @$dom->loadHTML('<?xml encoding="ISO-8859-1">' . $html);
         // create domxpath instance
         $xPath = new DOMXPath($dom);
         // get all elements with a particular id and then loop through and print the href attribute
@@ -63,8 +63,7 @@ switch ($event['type']) {
 if ($snum === "999"){
 $dataall = "沒有這個星座的運勢資訊。";
 }else{
-$dataalll = $data0." (".$datatime.")\n\n".$data1."\n".$data2."\n\n".$data3."\n".$data4."\n\n".$data5."\n".$data6."\n\n".$data7."\n".$data8."\n\n今日短評：\n".$data9."\n\n幸運數字：".$data10."\n\n幸運顏色：".$data11."\n\n開運方位：".$data12."\n\n今日吉時：".$data13."\n\n幸運星座：".$data14;
-$dataall = iconv("UTF-8", "ISO-8859-1", $dataalll);
+$dataall = $data0." (".$datatime.")\n\n".$data1."\n".$data2."\n\n".$data3."\n".$data4."\n\n".$data5."\n".$data6."\n\n".$data7."\n".$data8."\n\n今日短評：\n".$data9."\n\n幸運數字：".$data10."\n\n幸運顏色：".$data11."\n\n開運方位：".$data12."\n\n今日吉時：".$data13."\n\n幸運星座：".$data14;
 }
         break;
     default:
