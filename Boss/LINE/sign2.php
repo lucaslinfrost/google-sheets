@@ -60,21 +60,7 @@ switch ($event['type']) {
         $data13 = $xPath->evaluate('string(//*[@class="LUCKY"][4]/h4/text())');
         $data14 = $xPath->evaluate('string(//*[@class="LUCKY"][5]/h4/text())');
         
-        $data0 = iconv("UTF-8", "ISO-8859-1//IGNORE", $data0);
-        $data1 = iconv("UTF-8", "ISO-8859-1//IGNORE", $data1);
-        $data2 = iconv("UTF-8", "ISO-8859-1//IGNORE", $data2);
-        $data3 = iconv("UTF-8", "ISO-8859-1//IGNORE", $data3);
-        $data4 = iconv("UTF-8", "ISO-8859-1//IGNORE", $data4);
-        $data5 = iconv("UTF-8", "ISO-8859-1//IGNORE", $data5);
-        $data6 = iconv("UTF-8", "ISO-8859-1//IGNORE", $data6);
-        $data7 = iconv("UTF-8", "ISO-8859-1//IGNORE", $data7);
-        $data8 = iconv("UTF-8", "ISO-8859-1//IGNORE", $data8);
-        $data9 = iconv("UTF-8", "ISO-8859-1//IGNORE", $data9);
-        $data10 = iconv("UTF-8", "ISO-8859-1//IGNORE", $data10);
-        $data11 = iconv("UTF-8", "ISO-8859-1//IGNORE", $data11);
-        $data12 = iconv("UTF-8", "ISO-8859-1//IGNORE", $data12);
-        $data13 = iconv("UTF-8", "ISO-8859-1//IGNORE", $data13);
-        $data14 = iconv("UTF-8", "ISO-8859-1//IGNORE", $data14);
+
         
 if ($snum === "999"){
 $dataall = "沒有這個星座的運勢資訊。";
