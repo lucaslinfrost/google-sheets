@@ -248,9 +248,19 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		unset($json1, $data1, $keywords, $keyword, $json2, $data2, $json3, $data3, $json4, $data5, $json5, $data5, $json6, $data6);
 		$alltext = $a."".$b."".$c."".$d."".$e."".$f."".$g;
 		if ($alltext !== "") {
+		if(stristr($wordsave, '奇襲箱E') != false) {
+		unset($json1, $data1, $keywords, $keyword, $json2, $data2, $json3, $data3, $json4, $data5, $json5, $data5, $json6, $data6);
+		require_once('./item1.php');
+		if ($alltext !== "") {
+		$alltext = substr($alltext, 0, -34);
+		return buildTextMessage(''.$alltext.'');
+		unset($json, $data, $keywords, $keyword);
+		}
+		}else{
 		$alltext = "請用下方指令再試一次吧。\n\n--------  建議指令  --------\n".$alltext;
 		$alltext = substr($alltext, 0, -1);
 		return buildTextMessage(''.$alltext.'');
+		}
 		}else{return buildTextMessage('資料庫沒有你要找的資料
 (๑•́ ₃ •̀๑)');}
 		unset($json1, $data1, $keywords, $keyword, $json2, $data2, $json3, $data3, $json4, $data5, $json5, $data5, $json6, $data6);
