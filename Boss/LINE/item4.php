@@ -10,6 +10,7 @@ foreach ($client->parseEvents() as $event) {
         case 'message':
             $message = $event['message'];
             $code = explode(' ', $message['text']);
+            $wordsave = $code[1];
             $alltext = "";
             $a = "";
             $b = "";
