@@ -151,6 +151,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	       stristr($inputStr, 'Bye') != false||
 	       stristr($inputStr, '再见') != false) {
 	return buildTextMessage(''.$userName.'，我偏不走，怎麼樣?');
+	bot->leaveGroup($groupId);
+	bot->leaveRoom($roomId);
 	}
 
 	//公告
