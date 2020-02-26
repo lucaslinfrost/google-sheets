@@ -223,49 +223,46 @@ class LINEBotTiny
 	
 	
 
-    public function leaveGroup($groupId)
-    {
-        $header = array(
-            "Content-Type: application/json",
-            'Authorization: Bearer ' . $this->channelAccessToken,
-        );
+public function leaveRoom($roomId)
+{
+    $header = array(
+        'Authorization: Bearer ' . $this->channelAccessToken,
+    );
 
-        $context = stream_context_create(array(
-            "http" => array(
-                "method" => "POST",
-                "header" => implode("\r\n", $header),
-                "content" => "[]",              
-            ),
-        ));
+    $context = stream_context_create(array(
+        "http" => array(
+            "method" => "POST",
+            "header" => implode("\r\n", $header),
+            "content" => "[]",
+        ),
+    ));
 
-        $url='https://api.line.me/v2/bot/group/'.urlencode($groupId).'/leave';
-        $response = file_get_contents($url, false, $context);
-        if (strpos($http_response_header[0], '200') === false) {
+    $response = file_get_contents('https://api.line.me/v2/bot/room/'.urlencode($roomId).'/leave', false, $context);
+    if (strpos($http_response_header[0], '200') === false) {
         http_response_code(500);
         error_log("Request failed: " . $response);
     }
-    }
-	
-    public function leaveRoom($roomId)
-    {
-        $header = array(
-            'Authorization: Bearer ' . $this->channelAccessToken,
-        );
+}
 
-        $context = stream_context_create(array(
-            "http" => array(
-                "method" => "POST",
-                "header" => implode("\r\n", $header),
-                "content" => "[]",             
-            ),
-        ));
+public function leaveGroup($groupId)
+{
+    $header = array(
+        'Authorization: Bearer ' . $this->channelAccessToken,
+    );
 
-        $url='https://api.line.me/v2/bot/room/'.urlencode($roomId).'/leave';
-        $response = file_get_contents($url, false, $context);
-        if (strpos($http_response_header[0], '200') === false) {
+    $context = stream_context_create(array(
+        "http" => array(
+            "method" => "POST",
+            "header" => implode("\r\n", $header),
+            "content" => "[]",
+        ),
+    ));
+
+    $response = file_get_contents('https://api.line.me/v2/bot/group/'.urlencode($groupId).'/leave', false, $context);
+    if (strpos($http_response_header[0], '200') === false) {
         http_response_code(500);
         error_log("Request failed: " . $response);
     }
-    }
+}
 	
 }
