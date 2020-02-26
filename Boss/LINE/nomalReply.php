@@ -151,9 +151,9 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	       stristr($inputStr, 'Bye') != false||
 	       stristr($inputStr, '再见') != false) {
 
-	require_once('./LINEBotTiny.php');
-	return bot->leaveRoom($roomId);
-	return bot->leaveGroup($groupId);
+	require_once('./index.php');
+	return leaveRoom($roomId);
+	return leaveGroup($groupId);
 	}
 
 	//公告
