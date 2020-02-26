@@ -154,11 +154,28 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	$channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 	$channelSecret = getenv('LINE_CHANNEL_SECRET');
 	$bot = new LINEBotTiny($channelAccessToken, $channelSecret);
-   	$source = $event['source'];
-        $roomId = $source['roomId'];
-        return $bot->leaveRoom($roomId);
+	foreach ($bot->parseEvents() as $event) {
+        
+    	switch ($event['type']) {
+    	case 'message':
+    	$source = $event['source'];
+        if($source['type'] == "room"){  
+            $roomId = $source['roomId'];
+            return leaveRoom($roomId);
+        }
+	if($source['type'] == "group"){  
+            $groupId = $source['groupId'];
+            return leaveGroup($groupId);
+        }
+
+    break;
+            
+        default:
+            error_log("不支援的訊息: " . $event['type']);
+            break;
+    }
+	};
  
-		
 		
 	}
 
