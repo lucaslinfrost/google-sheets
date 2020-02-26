@@ -153,11 +153,14 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		
 	$channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 	$channelSecret = getenv('LINE_CHANNEL_SECRET');
+	$owner = getenv('Owner');
 	$bot = new LINEBotTiny($channelAccessToken, $channelSecret);
 	foreach ($bot->parseEvents() as $event) {
    	switch ($event['type']) {
  	case 'message':
     	$source = $event['source'];
+	$userId = $source['userId'];
+	if($userId !== $owner){ 		
         if($source['type'] == "room"){  
         $roomId = $source['roomId'];
 	$bot->replyMessage(array(
@@ -165,7 +168,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
         'messages' => array(
             array(
                 'type' => 'text',
-                'text' => '(ó﹏ò｡)有緣再見。'))));
+                'text' => '｡ﾟヽ(ﾟ´Д`)ﾉﾟ｡有緣再見。'))));
             return $bot->leaveRoom($roomId);
         }
 	if($source['type'] == "group"){  
@@ -175,9 +178,9 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
         'messages' => array(
             array(
                 'type' => 'text',
-                'text' => '(ó﹏ò｡)有緣再見。'))));
+                'text' => '｡ﾟヽ(ﾟ´Д`)ﾉﾟ｡有緣再見。'))));
             return $bot->leaveGroup($groupId);
-        }
+        }}else{return buildTextMessage('你並沒有權限使用這個指令。');}
 	break;
             
         default:
