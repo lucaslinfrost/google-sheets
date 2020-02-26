@@ -5,7 +5,11 @@
   },
   {
     "chack": ["收回"],
-    "img": ["https://i.imgur.com/vbQfxS0.png"]
+    "img": ["https://i.imgur.com/vbQfxS0.png","https://i.imgur.com/qtzdnBV.png"]
+  },
+  {
+    "chack": ["歡迎"],
+    "img": ["https://i.imgur.com/liEVAQY.png"]
   },
   {
     "chack": ["業障重"],
@@ -73,11 +77,11 @@
   },
   {
     "chack": ["插你","肛你","肛死你","插死你","肛爆你","插爆你"],
-    "img": ["https://i.imgur.com/fKhYGoh.jpg","https://i.imgur.com/HZ2wWa9.jpg","https://i.imgur.com/y32wfjZ.jpg","https://i.imgur.com/pFRL7WD.jpg","https://i.imgur.com/3WIPxW8.jpg"]
+    "img": ["https://i.imgur.com/fKhYGoh.jpg","https://i.imgur.com/HZ2wWa9.jpg","https://i.imgur.com/y32wfjZ.jpg","https://i.imgur.com/pFRL7WD.jpg","https://i.imgur.com/3WIPxW8.jpg","https://i.imgur.com/ZBJ0SuN.jpg"]
   },
   {
     "chack": ["有姦情","有奸情"],
-    "img": ["https://i.imgur.com/0JFjyvR.png","https://i.imgur.com/qlOAKjX.jpg","https://i.imgur.com/ShOk8p5.jpg","https://i.imgur.com/Bhubn9i.jpg","https://i.imgur.com/2oP3imv.jpg","https://i.imgur.com/ErpXThh.jpg"]
+    "img": ["https://i.imgur.com/0JFjyvR.png","https://i.imgur.com/qlOAKjX.jpg","https://i.imgur.com/ShOk8p5.jpg","https://i.imgur.com/Bhubn9i.jpg"https://i.imgur.com/2oP3imv.jpg","https://i.imgur.com/ErpXThh.jpg"]
   },
   {
     "chack": ["傻眼"],
@@ -96,7 +100,7 @@
     "img": ["https://i.imgur.com/19u08fG.png"]
   },
   {
-    "chack": ["武器ATK","武器攻擊力","武器atk"],
+    "chack": ["武器ATK","武器攻擊力","武器atk","武器表"],
     "img": ["https://i.imgur.com/hk0Ju8e.png"]
   },
   {
@@ -105,7 +109,7 @@
   },
   {
     "chack": ["肌肉"],
-    "img": ["https://i.imgur.com/PKRvpIa.png"]
+    "img": ["https://i.imgur.com/PKRvpIa.png","https://i.imgur.com/W2RXGnw.jpg","https://i.imgur.com/BeSxCJf.jpg","https://i.imgur.com/UXs97TK.png"]
   },
   {
     "chack": ["復活任務"],
@@ -130,6 +134,14 @@
   {
     "chack": ["兔兔"],
     "img": ["https://i.imgur.com/a1fHFZT.png"]
+  },
+  {
+    "chack": ["毒追玩","毒追怎"],
+    "img": ["https://i.imgur.com/Ij0szn1.jpg"]
+  },
+  {
+    "chack": ["全部","全要"],
+    "img": ["https://i.imgur.com/DZ8xatB.png","https://i.imgur.com/hTriM0b.jpg"]
   }
 
   ]
