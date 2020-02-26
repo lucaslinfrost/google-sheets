@@ -155,6 +155,10 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	$channelSecret = getenv('LINE_CHANNEL_SECRET');
 	$bot = new LINEBotTiny($channelAccessToken, $channelSecret);
     	$source = $event['source'];
+	foreach ($bot->parseEvents() as $event) {
+        
+   	switch ($event['type']) {
+ 	case 'message':
         if($source['type'] == "room"){  
             $roomId = $source['roomId'];
             return $bot->leaveRoom($roomId);
@@ -163,7 +167,13 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
             $groupId = $source['groupId'];
             return $bot->leaveGroup($groupId);
         }
-
+	break;
+            
+        default:
+            error_log("不支援的訊息: " . $event['type']);
+            break;
+   	}
+	};
 		
 	}
 
