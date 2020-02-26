@@ -233,33 +233,39 @@ class LINEBotTiny
         $context = stream_context_create(array(
             "http" => array(
                 "method" => "POST",
-                "header" => $header,               
+                "header" => implode("\r\n", $header),
+                "content" => "[]",              
             ),
         ));
 
         $url='https://api.line.me/v2/bot/group/'.urlencode($groupId).'/leave';
         $response = file_get_contents($url, false, $context);
-        $response = json_decode($response,true);
-        return $response;
+        if (strpos($http_response_header[0], '200') === false) {
+        http_response_code(500);
+        error_log("Request failed: " . $response);
     }
+    }
+	
     public function leaveRoom($roomId)
     {
         $header = array(
-            "Content-Type: application/json",
             'Authorization: Bearer ' . $this->channelAccessToken,
         );
 
         $context = stream_context_create(array(
             "http" => array(
                 "method" => "POST",
-                "header" => $header,               
+                "header" => implode("\r\n", $header),
+                "content" => "[]",             
             ),
         ));
 
         $url='https://api.line.me/v2/bot/room/'.urlencode($roomId).'/leave';
         $response = file_get_contents($url, false, $context);
-        $response = json_decode($response,true);
-        return $response;
+        if (strpos($http_response_header[0], '200') === false) {
+        http_response_code(500);
+        error_log("Request failed: " . $response);
+    }
     }
 	
 }
