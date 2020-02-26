@@ -160,7 +160,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
  	case 'message':
     	$source = $event['source'];
 	$userId = $source['userId'];
-	if($userId !== $owner){ 		
+	if($userId === $owner){ 		
         if($source['type'] == "room"){  
         $roomId = $source['roomId'];
 	$bot->replyMessage(array(
