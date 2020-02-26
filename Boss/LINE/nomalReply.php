@@ -150,10 +150,27 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	       stristr($inputStr, 'bye') != false||
 	       stristr($inputStr, 'Bye') != false||
 	       stristr($inputStr, '再见') != false) {
+		
+	$bot = new LINEBotTiny($channelAccessToken, $channelSecret);
+	foreach ($bot->parseEvents() as $event) {
+        
+   	switch ($event['type']) {
+    	case 'message':
+   	$source = $event['source'];
+            if($source['type'] == "room"){  
+            $roomId = $source['roomId'];
+            return leaveRoom($roomId);
+        }
 
-	require_once('./index.php');
-	return leaveRoom($roomId);
-	return leaveGroup($groupId);
+    	break;
+            
+        default:
+            error_log("不支援的訊息: " . $event['type']);
+            break;
+    	}
+	};
+		
+		
 	}
 
 	//公告
