@@ -103,10 +103,10 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	require_once('./map.php');
 	}
 	//基本查詢
-	if(stristr($inputStr, '搜尋') != false) {
+	if(stristr($inputStr, '查') != false) {
 	$rplyArr = explode('#',$inputStr);
 	if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
-        return buildTextMessage('http://www.google.com.tw/#hl=zh-TW&site=&q='.$rplyArr[1]);
+        return buildTextMessage('http://tw.iruna-online.info/search?search='.$rplyArr[1]);
 	}
 	//推送
 	if(stristr($inputStr, '龘') != false||
