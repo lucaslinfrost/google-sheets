@@ -151,7 +151,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	       stristr($inputStr, 'Bye') != false||
 	       stristr($inputStr, '再见') != false) {
 		
-	require_once('./LINEBotTiny.php');	
+	$channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
+	$channelSecret = getenv('LINE_CHANNEL_SECRET');
 	$bot = new LINEBotTiny($channelAccessToken, $channelSecret);
 	foreach ($bot->parseEvents() as $event) {
         
