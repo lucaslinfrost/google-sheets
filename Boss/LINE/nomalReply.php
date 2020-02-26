@@ -159,13 +159,23 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
  	case 'message':
     	$source = $event['source'];
         if($source['type'] == "room"){  
-            $roomId = $source['roomId'];
-	    return buildTextMessage('(ó﹏ò｡)有緣再見。');
+        $roomId = $source['roomId'];
+	$bot->replyMessage(array(
+        'replyToken' => $event['replyToken'],
+        'messages' => array(
+            array(
+                'type' => 'text',
+                'text' => '(ó﹏ò｡)有緣再見。'))));
             return $bot->leaveRoom($roomId);
         }
 	if($source['type'] == "group"){  
-            $groupId = $source['groupId'];
-            return buildTextMessage('(ó﹏ò｡)有緣再見。');
+        $groupId = $source['groupId'];
+        $bot->replyMessage(array(
+        'replyToken' => $event['replyToken'],
+        'messages' => array(
+            array(
+                'type' => 'text',
+                'text' => '(ó﹏ò｡)有緣再見。'))));
             return $bot->leaveGroup($groupId);
         }
 	break;
