@@ -150,10 +150,10 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	       stristr($inputStr, 'bye') != false||
 	       stristr($inputStr, 'Bye') != false||
 	       stristr($inputStr, '再见') != false) {
-	return buildTextMessage(''.$userName.'，我偏不走，怎麼樣?');
+
 	require_once('./LINEBotTiny.php');
-	return leaveRoom($roomId);
-	return leaveGroup($groupId);
+	return bot->leaveRoom($roomId);
+	return bot->leaveGroup($groupId);
 	}
 
 	//公告
