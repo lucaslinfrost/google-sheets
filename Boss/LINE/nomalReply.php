@@ -160,16 +160,18 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
     	$source = $event['source'];
         if($source['type'] == "room"){  
             $roomId = $source['roomId'];
+	    return buildTextMessage('(ó﹏ò｡)有緣再見。');
             return $bot->leaveRoom($roomId);
         }
 	if($source['type'] == "group"){  
             $groupId = $source['groupId'];
+            return buildTextMessage('(ó﹏ò｡)有緣再見。');
             return $bot->leaveGroup($groupId);
         }
 	break;
             
         default:
-            error_log("不支援的訊息: " . $event['type']);
+
             break;
    	}
 	};
