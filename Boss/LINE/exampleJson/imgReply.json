@@ -108,6 +108,10 @@
     "img": ["https://i.imgur.com/ewlulBi.png"]
   },
   {
+    "chack": ["異常裝備","異常消耗品","異常食品","異常狀態裝備","異常狀態消耗品","異常狀態食品"],
+    "img": ["https://i.imgur.com/MwAhiLy.png"]
+  },
+  {
     "chack": ["肌肉"],
     "img": ["https://i.imgur.com/PKRvpIa.png","https://i.imgur.com/W2RXGnw.jpg","https://i.imgur.com/BeSxCJf.jpg","https://i.imgur.com/UXs97TK.png"]
   },
