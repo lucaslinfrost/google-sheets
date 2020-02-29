@@ -28,7 +28,7 @@ if (strcmp($code[1], $keyword) === 0) {
 $a = "【".$item['gsx$name']['$t']."】
 公式 :
 ".$item['gsx$equipformula']['$t'];
-}
+
 
 foreach ($data1['feed']['entry'] as $item1) {
 $keywords1 = explode(',', $item1['gsx$autonum']['$t']);
@@ -44,6 +44,7 @@ $b = "
 }
 } 
     
+}
 }
 }
             
