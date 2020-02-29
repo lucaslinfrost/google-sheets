@@ -52,7 +52,7 @@ echo '<div class="element-input"><label class="title">網址</label><input class
 
 function upload($anh)
 {
-$client_id = '33a2f8feed009b3';
+$client_id = getenv('ImgurId');
 $file = file_get_contents($anh);
 $url = 'https://api.imgur.com/3/image.json';
 $headers = array("Authorization: Client-ID $client_id");
