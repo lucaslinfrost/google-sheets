@@ -38,7 +38,7 @@ if (strpos($a, $keyword1) !== false) {
 if (strpos($a, 'equipidAutoskill') !== false) {
 $b = "
 
-自動技能"."【".$item1['gsx$autoname']['$t']."】
+自動技能".$item1['gsx$autonum']['$t']."【".$item1['gsx$autoname']['$t']."】
 ".$item1['gsx$autoformula']['$t'];
 }
 }
