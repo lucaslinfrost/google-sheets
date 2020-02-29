@@ -61,25 +61,23 @@ if($puarupham != "jpg" && $puarupham != "png" && $puarupham != "jpeg"
 else
 {
 	$img = upload($_FILES["fileToUpload"]["tmp_name"]);
-echo '<div class="element-input"><label class="title">網址</label><input class="large" type="text" name="input" value="'.$img.'" id="input" ng-model="copyvalue" /><button ng-click="doCopy(copyvalue);">複製</button></div>
+echo '<div class="element-input"><label class="title">網址</label><input class="large" type="text" name="input" value="'.$img.'" id="myInput" /><button onclick="copyFunction()">Copy text</button></div>
 <div class="element-input"><label class="title">BBCode</label><input class="large" type="text" name="input" value="[img]'.$img.'[/img]" /></div><div class="element-input"><label class="title">圖片</label><img src="'.$img.'" width="100%"></div>';
 }
 ?>
 <div class="submit"><a href="https://irunamuscelboss.herokuapp.com/Boss/LINE/upload/index.html"><input type="submit" value="返回"/></a></div>
       </div>
 	   
-<script type="text/javascript">
-doCopy(value) {
-    const input = document.querySelector('.nput');
-
-    input.value = value;
-
-    // 选中赋值过的input
-    input.select();
-
-    document.execCommand('Copy');
-    alert('複製成功!');
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script >
+$(document).ready(function(){
+function copyFunction() {
+  var copyText = $("$myInput");
+  copyText.select();
+  document.execCommand("Copy");
+  alert("Copied the text: " + copyText.value);
 }
+  });
 </script>
 	   
    </body>
