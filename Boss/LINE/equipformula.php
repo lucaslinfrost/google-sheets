@@ -1,4 +1,5 @@
 <?php
+ini_set('memory_limit', '512M');
 //裝備公式
 require_once('./LINEBotTiny.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
