@@ -25,8 +25,7 @@ $keywords = explode(',', $item['gsx$key']['$t']);
 foreach ($keywords as $keyword) {
     
 if (strcmp($code[1], $keyword) === 0) {
-$a = "【".$item['gsx$name']['$t']."】
-公式 :
+$a = $item['gsx$name']['$t']."【".$item['gsx$part']['$t']."】
 ".$item['gsx$equipformula']['$t'];
 
 
