@@ -433,12 +433,13 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		}
 	 }
 	//裝備公式
-	if(stristr($inputStr, 'eqa') != false) {
+	if(stristr($inputStr, 'ef') != false) {
 		$rplyArr = explode('#',$inputStr);
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，中間是#喔。');}
 		require_once('./equipformula.php');
-		return buildTextMessage(''.$dataall.'');
-		unset($data0, $data1, $data2, $data3, $data4, $data5, $data6, $data7, $data8, $data9, $data10, $data11, $data12, $data13, $data14, $datatime, $dataall, $ch, $url, $html, $dom, $xPath);
+		$alltext = substr($alltext, 0, -34);
+		return buildTextMessage(''.$alltext.'');
+		unset($json0, $data0, $keywords, $keyword, $json1, $data1, $keywords1, $keyword1, $a, $b);
 	}
 	
         //幫我選～～
