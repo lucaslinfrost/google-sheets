@@ -435,10 +435,10 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	//裝備公式
 	if(stristr($inputStr, '公式') != false) {
 		$owner = getenv('Owner');
-		if($userId === $owner){ 
 		$rplyArr = explode('#',$inputStr);
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，中間是#喔。');}
 		require_once('./equipformula.php');
+		if($userId === $owner){ 
 		if ($alltext !== "") {
 		$alltext = substr($alltext, 0, -34);
 		return buildTextMessage(''.$alltext.'');
