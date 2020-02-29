@@ -437,9 +437,13 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		$rplyArr = explode('#',$inputStr);
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，中間是#喔。');}
 		require_once('./equipformula.php');
+		if ($alltext !== "") {
 		$alltext = substr($alltext, 0, -34);
 		return buildTextMessage(''.$alltext.'');
 		unset($json0, $data0, $keywords, $keyword, $json1, $data1, $keywords1, $keyword1, $a, $b);
+		}
+		if ($alltext === "") {return buildTextMessage('資料庫沒有你要找的資料
+(๑•́ ₃ •̀๑)');}
 	}
 	
         //幫我選～～
