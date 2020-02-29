@@ -432,9 +432,16 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
        		return buildTextMessage(''.$main.'');
 		}
 	 }
+	//裝備公式
+	if(stristr($inputStr, 'eqa') != false) {
+		$rplyArr = explode('#',$inputStr);
+		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，中間是#喔。');}
+		require_once('./equipformula.php');
+		return buildTextMessage(''.$dataall.'');
+		unset($data0, $data1, $data2, $data3, $data4, $data5, $data6, $data7, $data8, $data9, $data10, $data11, $data12, $data13, $data14, $datatime, $dataall, $ch, $url, $html, $dom, $xPath);
+	}
 	
-          
-    //幫我選～～
+        //幫我選～～
 	if(stristr($inputStr, '選') != false||
 		stristr($inputStr, '決定') != false||
 		stristr($inputStr, '选') != false||
