@@ -23,19 +23,22 @@ foreach ($data0['feed']['entry'] as $item) {
 $keywords = explode(',', $item['gsx$key']['$t']);
 foreach ($keywords as $keyword) {
 if (strcmp($code[1], $keyword) === 0) {
-$a = "公式 :
+$a = "【".$item['gsx$name']['$t']."】
+公式 :
 ".$item['gsx$equipformula']['$t'];
 
 foreach ($data1'feed']['entry'] as $item1) {
 $keywords1 = $item1['gsx$autonum']['$t'];
 foreach ($keywords1 as $keyword1) {
 if (strpos($a, $keyword1) !== false) {
+if (strpos($a, 'equipidAutoskill') !== false) {
 $b = "
 
-自動技能"."【".$item['gsx$autoname']['$t']."】
-".$item['gsx$autoformula']['$t'];
+自動技能"."【".$item1['gsx$autoname']['$t']."】
+".$item1['gsx$autoformula']['$t'];
 $alltext = $alltext."".$a."".$b;
 $alltext = $alltext."".$mline;
+}
 }else{
 $alltext = $alltext."".$a;
 $alltext = $alltext."".$mline;
