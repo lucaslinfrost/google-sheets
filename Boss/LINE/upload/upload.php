@@ -61,7 +61,7 @@ if($puarupham != "jpg" && $puarupham != "png" && $puarupham != "jpeg"
 else
 {
 	$img = upload($_FILES["fileToUpload"]["tmp_name"]);
-echo '<div class="element-input"><label class="title">網址</label><input class="large" type="text" name="input" value="'.$img.'" ng-model="copyvalue" /></div><button ng-click="doCopy(copyvalue);">複製</button>
+echo '<div class="element-input"><label class="title">網址</label><input class="large" type="text" name="input" value="'.$img.'" id="input" ng-model="copyvalue" /><button ng-click="doCopy(copyvalue);">複製</button></div>
 <div class="element-input"><label class="title">BBCode</label><input class="large" type="text" name="input" value="[img]'.$img.'[/img]" /></div><div class="element-input"><label class="title">圖片</label><img src="'.$img.'" width="100%"></div>';
 }
 ?>
@@ -70,7 +70,7 @@ echo '<div class="element-input"><label class="title">網址</label><input class
 	   
 <script type="text/javascript">
 doCopy(value) {
-    const input = document.querySelector('.copyInput');
+    const input = document.querySelector('.nput');
 
     input.value = value;
 
