@@ -41,16 +41,18 @@ $b = "
 
 自動技能"."【".$item1['gsx$autoname']['$t']."】
 ".$item1['gsx$autoformula']['$t'];
+}
+}
+}
+}
+            
+if($item[$b === ""){
+$alltext = $alltext."".$a;
+$alltext = $alltext."".$mline;
+}else{
 $alltext = $alltext."".$a."".$b;
 $alltext = $alltext."".$mline;
 }
-}else{
-$alltext = $alltext."".$a;
-$alltext = $alltext."".$mline;
-}
-}
-}
-
 
             break;
         default:
