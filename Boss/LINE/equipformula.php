@@ -29,9 +29,7 @@ $a = "【".$item['gsx$name']['$t']."】
 公式 :
 ".$item['gsx$equipformula']['$t'];
 }
-}
-}
-            
+
 foreach ($data1['feed']['entry'] as $item1) {
 $keywords1 = explode(',', $item1['gsx$autonum']['$t']);
 foreach ($keywords1 as $keyword1) {
@@ -44,7 +42,12 @@ $b = "
 }
 }
 }
+} 
+    
 }
+}
+            
+
             
 if($b === ""){
 $alltext = $alltext."".$a;
