@@ -46,7 +46,7 @@ $b = "
 }
 }
             
-if($item[$b === ""){
+if($b === ""){
 $alltext = $alltext."".$a;
 $alltext = $alltext."".$mline;
 }else{
