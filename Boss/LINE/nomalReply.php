@@ -444,9 +444,12 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		return buildTextMessage(''.$alltext.'');
 		unset($json0, $data0, $keywords, $keyword, $json1, $data1, $keywords1, $keyword1, $a, $b);
 		}
-		if ($alltext === "") {return buildTextMessage('資料庫沒有你要找的資料
-(๑•́ ₃ •̀๑)');}
-	}else{return buildTextMessage('你並沒有權限使用這個指令。');}
+		if ($alltext === "") {
+		return buildTextMessage('資料庫沒有你要找的資料
+(๑•́ ₃ •̀๑)');
+		unset($json0, $data0, $keywords, $keyword, $json1, $data1, $keywords1, $keyword1, $a, $b);
+		}
+	}else{return buildTextMessage('你並沒有權限使用這個指令。');}}
 	
         //幫我選～～
 	if(stristr($inputStr, '選') != false||
