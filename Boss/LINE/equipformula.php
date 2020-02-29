@@ -29,7 +29,7 @@ $a = "【".$item['gsx$name']['$t']."】
 ".$item['gsx$equipformula']['$t'];
 }
     
-foreach ($data1'feed']['entry'] as $item1) {
+foreach ($data1['feed']['entry'] as $item1) {
 $keywords1 = $item1['gsx$autonum']['$t'];
 foreach ($keywords1 as $keyword1) {
 if (strpos($a, $keyword1) !== false) {
