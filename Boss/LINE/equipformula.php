@@ -8,6 +8,8 @@ $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 foreach ($client->parseEvents() as $event) {
     switch ($event['type']) {
         case 'message':
+            $source = $event['source'];
+	        $userId = $source['userId'];
             $message = $event['message'];
             $code = explode('#', $message['text']);
             $alltext = "";
