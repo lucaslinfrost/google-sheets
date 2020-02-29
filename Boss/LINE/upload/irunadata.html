@@ -1,0 +1,353 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0032)http://lawlaw.net/loa/mobdb.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<link rel="stylesheet" media="all" href="./css/jquery.dataTables.css">
+<link rel="stylesheet" media="all" href="./css/mdb.css">
+<link href="./css/font-awesome.min.css" rel="stylesheet">
+<script src="./js/jquery-latest.min.js" type="text/javascript"></script>
+<script src="./js/tableSort.js" type="text/javascript"></script>
+<title>Iruna黑市</title>
+<script>
+$(function(){
+	function getQueryVariable(variable)
+	{
+		var query = window.location.search.substring(1);
+		var vars = query.split("&");
+		for (var i=0;i<vars.length;i++) {
+			var pair = vars[i].split("=");
+			if(pair[0] == variable){return pair[1];}
+		}
+		return(false);
+	}
+	var m = getQueryVariable('m');
+	var name_str;
+	var fname_str;
+	var tname_str;
+	var n = '';
+	var mobname = [];
+	var mobtype = [];
+	var mobrank = [];
+	var mobmaxlvl = [];
+	var mobhp = [];
+	var mobsp = [];
+	var mobimg = [];
+	var moblist = "https://spreadsheets.google.com/feeds/list/1pHll3E_sOo6YcWugdNWwEB9xUzG_KdfDGRhXHybHakw/od6/public/values?alt=json";
+	var pagenum;
+	var tablelength;
+	var currentIndex = 10;
+	// Get monster list data
+	$.getJSON(moblist, function (data) {
+         
+			
+			for (var i=0; i < data.feed.entry.length; i++){           
+				mobname[i] = data.feed.entry[i].gsx$name.$t;
+				mobtype[i] = data.feed.entry[i].gsx$type.$t;
+				mobrank[i] = data.feed.entry[i].gsx$money.$t;
+				mobmaxlvl[i] = data.feed.entry[i].gsx$player.$t;
+				mobhp[i] = data.feed.entry[i].gsx$remark.$t;
+				mobsp[i] = data.feed.entry[i].gsx$contact.$t;		
+				mobimg[i] = data.feed.entry[i].gsx$image.$t;
+				$("#dbcontent").append("<tr class='mname ntr' align='center' id='" + i + "'><td>" + mobname[i] + "</td><td align='center' id='mtype'>" + mobtype[i] + "</td><td align='center' id='mrank'>" + mobrank[i] + "</td><td align='center' id='mlvl'>" + mobmaxlvl[i] + "</td><td align='center' id='mhp'>" + mobhp[i] + "</td><td align='center' id='msp'>" + mobsp[i] + "</td></tr>");
+			};
+			// Add background to table rows, prev and next button
+			$('.display tbody tr:odd').css('background-color', '#f9f9f9');
+			$('.prev').html('<i class="fa fa-chevron-left"></i>');
+			$('.next').html('<i class="fa fa-chevron-right"></i>');
+			updateTablelength();
+			// Open monster detail info in div
+			$('tr.mname').on('click', function(n){
+				window.scrollTo(0, 0);
+				$('#sbox').hide();
+				$('#mobdetail').slideDown();
+				$('#obtain').html('');
+				$('#droplist').html('');
+     
+     			name_str = $(this).find('td:first').html();
+				if(fname_str == '' && tname_str == ''){
+					n = jQuery.inArray( name_str, mobname );
+				}
+				else{
+					n = jQuery.inArray( name_str, mobname );
+				}
+				if (mobimg[n] == ""){
+					$('#mobimg').html('<img src="https://i.imgur.com/0FoemhZ.jpg?1" width=350px">');
+				}
+				else {
+					$('#mobimg').html('<img src="' + mobimg[n] + '" width=350px">');
+				}
+     		});
+
+	}); // Close monster list data list
+	// Close monster detail div
+	$('#btnclose').click(function(){
+		$('#mobdetail').slideUp();
+	});
+	// Filter function
+	$('#ttype').click(function(){
+		var type = $('#dbcontent.mname').length;
+		var left = event.pageX + 20;
+		var top = event.pageY;
+		$('#sbox').css('left', left);
+		$('#sbox').css('top', top);
+		if($('#sbox').hasClass('opened')){
+			$('#sbox').fadeOut('fast').removeClass('opened');
+		}
+		else{
+			$('#sbox').fadeIn('fast').addClass('opened');
+		}
+		$('input[name="mtype"]').on('change', function(){
+			$('#dbcontent tr.ntr').removeClass('ntr').hide();
+			if($('input[value="劍類"]').is(":checked")){
+				$('#dbcontent tr').has('td:contains("劍類")').each(function(){
+					$(this).addClass('ntr').show();
+				});
+			}
+			if($('input[value="杖類"]').is(":checked")){
+				$('#dbcontent tr').has('td:contains("杖類")').each(function(){
+					$(this).addClass('ntr').show();
+				});
+			}
+			if($('input[value="弓類"]').is(":checked")){
+				$('#dbcontent tr').has('td:contains("弓類")').each(function(){
+					$(this).addClass('ntr').show();
+				});
+			}
+			if($('input[value="爪類"]').is(":checked")){
+				$('#dbcontent tr').has('td:contains("爪類")').each(function(){
+					$(this).addClass('ntr').show();
+				});
+			}
+			if($('input[value="投擲"]').is(":checked")){
+				$('#dbcontent tr').has('td:contains("投擲")').each(function(){
+					$(this).addClass('ntr').show();
+				});
+			}
+			if($('input[value="體裝"]').is(":checked")){
+				$('#dbcontent tr').has('td:contains("體裝")').each(function(){
+					$(this).addClass('ntr').show();
+				});
+			}
+			if($('input[value="附加"]').is(":checked")){
+				$('#dbcontent tr').has('td:contains("附加")').each(function(){
+					$(this).addClass('ntr').show();
+				});
+			}
+			if($('input[value="特殊"]').is(":checked")){
+				$('#dbcontent tr').has('td:contains("特殊")').each(function(){
+					$(this).addClass('ntr').show();
+				});
+			}
+			if($('input[value="王石"]').is(":checked")){
+				$('#dbcontent tr').has('td:contains("王石")').each(function(){
+					$(this).addClass('ntr').show();
+				});
+			}
+			if($('input[value="素材"]').is(":checked")){
+				$('#dbcontent tr').has('td:contains("素材")').each(function(){
+					$(this).addClass('ntr').show();
+				});
+			}
+			if($('input[value="其他"]').is(":checked")){
+				$('#dbcontent tr').has('td:contains("其他")').each(function(){
+					$(this).addClass('ntr').show();
+				});
+			}
+			$('.prev').hide();
+			updateTablelength();
+		});
+	});
+	// Close monster type filter box
+	$('#bclose').click(function(){
+		$('#sbox').fadeOut('fast').removeClass('opened');
+	});
+	// Sorting function
+	var table = $('table#mobdb');
+	$('#header3, #lvl_header, #header4')
+	.wrapInner('<span title="sort this column"/>')
+	.each(function(){
+		var th = $(this),
+			thIndex = th.index(),
+			inverse = false;
+		th.click(function(){
+			table.find('td').filter(function(){
+				return $(this).index() === thIndex;
+			}).sortElements(function(a, b){
+				return parseInt($.text([a])) > parseInt($.text([b])) ?
+				inverse ? -1 : 1
+				: inverse ? 1 : -1;
+			}, function(){
+				// parentNode is the element we want to move
+				return this.parentNode; 
+			});
+			inverse = !inverse;
+			if(th.find('#tsort').hasClass('sorting')==false){
+				$('#mobdb th').find('#tsort').removeClass('sorting').removeClass('fa-sort-asc').removeClass('fa-sort-desc').addClass('fa-sort');
+			}
+			if(th.find('#tsort').hasClass('fa-sort')){
+				th.find('#tsort').removeClass('fa-sort').addClass('fa-sort-asc').addClass('sorting');
+			}
+			else if(th.find('#tsort').hasClass('fa-sort-asc')){
+				th.find('#tsort').removeClass('fa-sort-asc').addClass('fa-sort-desc');
+			}
+			else {
+				th.find('#tsort').removeClass('fa-sort-desc').addClass('fa-sort-asc');
+			}
+		});
+	});
+	// Add background to table rows after sorted
+	$('#mobdb th').click(function(){
+		$('#dbcontent tr.ntr').css('background','#fff').show();
+		$('#dbcontent tr.ntr:odd').css('background','#f9f9f9');
+		updateTablelength();
+	})
+	// Next button
+	$('.next').click(function(e){
+		e.preventDefault();
+		$('#dbcontent tr.ntr').hide();
+		$('#dbcontent tr.ntr').slice(currentIndex, currentIndex+10).show();
+		currentIndex += 10;
+		checkLength();
+	});
+	// Prev button
+	$('.prev').click(function(e){
+		e.preventDefault();
+		$('#dbcontent tr.ntr').hide();
+		$('#dbcontent tr.ntr').slice(currentIndex-20, currentIndex-10).show();
+		currentIndex -= 10;
+		checkLength();
+	});
+	// Check the length of visible rows
+	function updateTablelength(){
+		tablelength = $('#dbcontent tr.ntr').length;
+		pagenum = Math.ceil(tablelength/10);
+		currentIndex = 10;
+		$('#dbcontent tr.ntr').hide();
+		$('#dbcontent tr.ntr').slice(0, 10).show();
+		if (pagenum > 1){
+			$('#pagecontainer').removeClass('hide');
+			$('.next').removeClass('hide');
+			$('#paging').html('');
+			for (var pa=1; pa<=pagenum; pa++){
+				$('#paging').append('<span class="page" id="' + pa + '">' + pa + '</span> ');
+			}
+			checkLength();
+		}
+		else if (pagenum == 0) {
+			$('#pagecontainer').addClass('hide');
+		}
+		$('.page').click(function(e){
+			var page = parseFloat($(this).text())-1;
+		//	console.log(page);
+			currentIndex = 10;
+			var newIndex = page*currentIndex;
+			currentIndex = newIndex+10;
+			e.preventDefault();
+			$('#dbcontent tr.ntr').hide();
+			$('#dbcontent tr.ntr').slice(newIndex, newIndex+10).show();
+			checkLength();
+		})
+	}
+	// Check table length to determine to show the prev/next button or not
+	function checkLength(){
+		var itemLength = $('#dbcontent tr.ntr').length;
+		//console.log(currentIndex);
+		if(currentIndex >= itemLength){
+			
+			$('.next').hide();
+		}
+		else {
+			$('.next').show();
+		}
+		if (currentIndex > 10) {
+			$('.prev').show();
+		}
+		else {
+			$('.prev').hide();
+		}
+	}
+});
+</script>
+<style type="text/css">
+.auto-style1 {
+	text-align: center;
+}
+</style>
+</head>
+
+<body>
+<div id="maincontainer">
+	<div id="nav">
+		<ul>
+			<li style="background-color: #f3f3f3;"><a href="https://tx9vs5swfgjw9nqh1z3gyw-on.drv.tw/iruna/irunadata.html"><strong>Iruna交易板</strong></li>
+			<li><a href="https://googledrive.com/host/0B10VsvhVUeZ5VlUycG1hWjdYYjA/produce.html">巧匠的午宴</a></li>
+			<li><a href="https://tx9vs5swfgjw9nqh1z3gyw-on.drv.tw/iruna/datainput.html">交易物品登陸</li>
+			<li><a href="">未分類</a></li>
+			<li><a href="">未分類</a></li>
+		</ul>
+	</div>
+	<br clear="all">
+	<h1 class="auto-style1">Iruna交易板</h1>
+	<div id="mobdetail">
+		<div id="btnclose">
+			<i class="fa fa-times-circle"></i></div>
+		<br>
+				<div id="imgcontainer">
+			<br>
+			<div id="mobname">
+			</div>
+			<div id="mobimg">
+			</div>
+			<br>
+					</div>
+	</div>
+		<br clear="all"><br>
+	<table id="mobdb" class="display" cellspacing="0" style="width: 100%">
+		<thead>
+			<tr>
+				<th style="height: 36px; width: 25%" class="auto-style1">販售物品</th>
+				<th style="height: 36px; width: 5%">分類  
+				<i class="fa fa-caret-square-o-down" id="ttype"></i></th>
+				<th id="lvl_header" style="height: 36px; width: 5%">
+				<span title="sort this column">價格  
+				<i class="fa fa-sort" id="tsort"></i></span></th>
+				<th id="header0" style="height: 36px; width: 20%">
+				玩家ID</th>
+				<th id="header1" style="height: 36px; width: 25%">
+				備註</th>
+				<th width=15%" id="header2" style="height: 36px">
+				聯絡方式</th>
+							</tr>
+		</thead>
+		<tbody id="dbcontent" title="mobdb">
+		</tbody>
+	</table>
+	<div id='pagecontainer' class="hide">
+		<div class='prev'>
+		</div>
+		<div id='paging'>
+		</div>
+		<div class='next'>
+		</div>
+	</div>
+	<div id="sbox">
+		<div id="bclose">
+			<i class="fa fa-times-circle"></i></div>
+		<div id="bframe">
+			<input type="checkbox" name="mtype" value="劍類" checked="">劍類<br>
+			<input type="checkbox" name="mtype" value="杖類" checked="">杖類<br>
+			<input type="checkbox" name="mtype" value="弓類" checked="">弓類<br>
+			<input type="checkbox" name="mtype" value="爪類" checked="">爪類<br>
+			<input type="checkbox" name="mtype" value="投擲" checked="">投擲<br>
+			<input type="checkbox" name="mtype" value="體裝" checked="">體裝<br>
+			<input type="checkbox" name="mtype" value="附加" checked="">附加<br>
+			<input type="checkbox" name="mtype" value="特殊" checked="">特殊<br>
+			<input type="checkbox" name="mtype" value="王石" checked="">王石<br>
+			<input type="checkbox" name="mtype" value="素材" checked="">素材<br>
+			<input type="checkbox" name="mtype" value="其他" checked="">其他<br>
+    </div>
+	</div>
+</div>
+
+
+</body></html>

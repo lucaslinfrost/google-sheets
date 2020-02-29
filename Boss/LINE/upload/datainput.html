@@ -1,0 +1,116 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<link rel="stylesheet" media="all" href="./css/jquery.dataTables.css">
+<link rel="stylesheet" media="all" href="./css/mdb.css">
+<link href="./css/font-awesome.min.css" rel="stylesheet">
+<script src="./js/jquery-latest.min.js" type="text/javascript"></script>
+<script src="./js/tableSort.js" type="text/javascript"></script>
+<title>交易物品登陸</title>
+<script>
+</script>
+<style type="text/css">
+.auto-style1 {
+	text-align: center;
+}
+.auto-style2 {
+	color: #FF0000;
+}
+.auto-style3 {
+	color: #000000;
+}
+</style>
+</head>
+
+<body>
+<div id="maincontainer">
+	<div id="nav">
+		<ul>
+			<li><a href="https://tx9vs5swfgjw9nqh1z3gyw-on.drv.tw/iruna/irunadata.html">Iruna黑市</li>
+			<li><a href="https://googledrive.com/host/0B10VsvhVUeZ5VlUycG1hWjdYYjA/produce.html">巧匠的午宴</a></li>
+			<li style="background-color: #f3f3f3;"><a href="https://tx9vs5swfgjw9nqh1z3gyw-on.drv.tw/iruna/datainput.html"><strong>交易物品登陸</strong></li>
+			<li><a href="">未分類</a></li>
+			<li><a href="">未分類</a></li>
+		</ul>
+	</div>
+	<br clear="all">
+	<h1 class="auto-style1">交易物品登陸</h1>
+		<br clear="all"><br>
+	<div id='pagecontainer' class="hide">
+		<div class='prev'>
+		</div>
+		<div id='paging'>
+		</div>
+		<div class='next'>
+		</div>
+	</div>
+	</div>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <p class="auto-style1">&nbsp;</p>
+    <div class="auto-style1">
+    <span class="auto-style3">販售物品: </span> 
+	<input type="text" id="NameInput"><br class="auto-style3">
+	<br class="auto-style3">
+    <span class="auto-style3">物品分類: </span> 
+	<select size=1 id="TypeInput" name="D1"> 
+    <option value="劍類"selected>劍類
+     <option value="杖類">杖類
+    <option value= "弓類">弓類
+    <option value="爪類">爪類
+    <option value= "投擲">投擲
+    <option value="體裝">體裝
+    <option value= "附加">附加
+    <option value="特殊">特殊
+    <option value= "王石">王石
+    <option value="素材">素材
+    <option value= "其他">其他
+
+
+</select><br class="auto-style3"><br class="auto-style3">
+    <span class="auto-style3">販售價格: </span> 
+	<input type="text" id="MoneyInput" onkeyup = "value=value.replace(/[^\d]/g,'')"><br class="auto-style3">
+	<br class="auto-style3">
+    <span class="auto-style3">遊戲名稱: </span> 
+	<input type="text" id="PlayerInput"><br class="auto-style3">
+	<br class="auto-style3">
+    <span class="auto-style3">備註資訊: </span> 
+	<input type="text" id="RemarkInput"><br class="auto-style3">
+	<br class="auto-style3">
+    <span class="auto-style3">聯絡方式: </span> 
+	<input type="text" id="ContactInput"><br class="auto-style3" />
+		<br class="auto-style3" />
+		<span class="auto-style3">圖片網址: </span> 
+	<input type="text" id="ImageInput"><br class="auto-style2">
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="button"  value="交易登錄" onclick="SendScore();this.style.visibility='hidden';"><br />
+    &nbsp;
+    <script type="text/javascript">
+    
+        function SendScore(){
+            $.get("https://script.google.com/macros/s/AKfycbx3xk0eaSla30lUj0GVCvRF7j-MyQeKSe0VE0WqCmFtzEduHvN4/exec", {
+                        "Name": document.getElementById("NameInput").value,
+                        "Type": document.getElementById("TypeInput").value,
+                        "Money": document.getElementById("MoneyInput").value,
+                        "Player": document.getElementById("PlayerInput").value,
+                        "Remark": document.getElementById("RemarkInput").value,
+                        "Contact": document.getElementById("ContactInput").value,
+                        "Image": document.getElementById("ImageInput").value,
+                    },
+                    function (data) {
+                                               window.location.assign("https://tx9vs5swfgjw9nqh1z3gyw-on.drv.tw/iruna/irunadata.html");;
+                    });
+        }
+    </script>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<script type="text/javascript"><!--
+var yudan = "";
+var now = new Date();
+var month = now.getMonth() + 1;
+var date = now.getDate();
+var year = now.getYear();
+if (year < 2000) year = year + 1900;
+document.write(year + "年" + month + "月" + date + "日");
+// --></script>
+
+
+
+</div>
+</body>
+</html>
