@@ -44,19 +44,20 @@ $b = "
 }
 } 
     
-}
-}
-}
-            
-
-            
 if($b === ""){
 $alltext = $alltext."".$a;
 $alltext = $alltext."".$mline;
 }else{
 $alltext = $alltext."".$a."".$b;
 $alltext = $alltext."".$mline;
+}  
+    
 }
+}
+}
+            
+
+           
 
             break;
         default:
