@@ -449,7 +449,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 (๑•́ ₃ •̀๑)');
 		unset($json0, $data0, $keywords, $keyword, $json1, $data1, $keywords1, $keyword1, $a, $b);
 		}
-	}else{return buildTextMessage('你並沒有權限使用這個指令。');}}
+	}else{return buildTextMessage('你並沒有權限使用這個指令。');
+	     unset($json0, $data0, $keywords, $keyword, $json1, $data1, $keywords1, $keyword1, $a, $b);}}
 	
         //幫我選～～
 	if(stristr($inputStr, '選') != false||
