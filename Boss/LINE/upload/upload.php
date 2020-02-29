@@ -61,7 +61,7 @@ if($puarupham != "jpg" && $puarupham != "png" && $puarupham != "jpeg"
 else
 {
 	$img = upload($_FILES["fileToUpload"]["tmp_name"]);
-echo '<div class="element-input"><label class="title">網址</label><input type="button"  value="複製" onclick="copyFunction()"><input class="large" type="text" name="myInput" value="'.$img.'" id="myInput" /></div>
+echo '<div class="element-input"><label class="title">網址<div class="button" onclick="copyFunction()">複製</div></label><input class="large" type="text" name="myInput" value="'.$img.'" id="myInput" /></div>
 <div class="element-input"><label class="title">BBCode</label><input class="large" type="text" name="input" value="[img]'.$img.'[/img]" /></div><div class="element-input"><label class="title">圖片</label><img src="'.$img.'" width="100%"></div>';
 }
 ?>
