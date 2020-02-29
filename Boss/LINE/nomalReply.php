@@ -433,7 +433,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		}
 	 }
 	//裝備公式
-	if(stristr($inputStr, 'ef') != false) {
+	if(stristr($inputStr, '公式') != false) {
 		$rplyArr = explode('#',$inputStr);
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，中間是#喔。');}
 		require_once('./equipformula.php');
