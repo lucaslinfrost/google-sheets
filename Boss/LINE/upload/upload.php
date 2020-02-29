@@ -1,17 +1,55 @@
 <!DOCTYPE html>
-<html>
-   <head>
-      <meta charset="utf-8" />
-      <title>肌肉老大圖片上傳器</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<link rel="stylesheet" media="all" href="./css/jquery.dataTables.css">
+<link rel="stylesheet" media="all" href="./css/mdb.css">
+<link href="./css/font-awesome.min.css" rel="stylesheet">
+<script src="./js/jquery-latest.min.js" type="text/javascript"></script>
+<script src="./js/tableSort.js" type="text/javascript"></script>
+      <title>圖片上傳器</title>
+<script>
+</script>
+<style type="text/css">
+.auto-style1 {
+	text-align: center;
+}
+.auto-style2 {
+	color: #FF0000;
+}
+.auto-style3 {
+	color: #000000;
+}
+</style>
    </head>
-   <body class="blurBg-false" style="background-color:#EBEBEB">
+   <body>
+   <div id="maincontainer">
+	<div id="nav">
+		<ul>
+			<li><a href="https://tx9vs5swfgjw9nqh1z3gyw-on.drv.tw/iruna/irunadata.html">Iruna交易板</li>
+			<li><a href="https://tx9vs5swfgjw9nqh1z3gyw-on.drv.tw/iruna/datainput.html">交易物品登陸</li>
+			<li style="background-color: #f3f3f3;"><a href="https://googledrive.com/host/0B10VsvhVUeZ5VlUycG1hWjdYYjA/produce.html"><strong>圖片上傳器</strong></a></li>
+                        <li><a href="">未分類</a></li>
+			<li><a href="">未分類</a></li>
+		</ul>
+	</div>
+	<br clear="all">
+	<h1 class="auto-style1"></h1>
+		<br clear="all"><br>
+	<div id='pagecontainer' class="hide">
+		<div class='prev'>
+		</div>
+		<div id='paging'>
+		</div>
+		<div class='next'>
+		</div>
+	</div>
+	</div>
       <!-- Start Formoid form-->
       <link rel="stylesheet" href="formoid_files/formoid1/formoid-flat-red.css" type="text/css" />
       <script type="text/javascript" src="formoid_files/formoid1/jquery.min.js"></script>
       <div enctype="multipart/form-data" class="formoid-flat-red" style="background-color:#FFFFFF;font-size:14px;font-family:'Lato', sans-serif;color:#666666;max-width:480px;min-width:150px" method="post">
          <div class="title">
-            <h2>肌肉老大圖片上傳器<img src="https://i.imgur.com/p0ZUih1.png" width="32"></h2>
+            <h2>圖片上傳器<img src="https://i.imgur.com/p0ZUih1.png" width="32"></h2>
          </div>
 <?php
 $puaruvn = basename($_FILES["fileToUpload"]["name"]);
