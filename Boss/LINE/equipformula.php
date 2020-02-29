@@ -30,7 +30,7 @@ $a = "【".$item['gsx$name']['$t']."】
 }
     
 foreach ($data1['feed']['entry'] as $item1) {
-$keywords1 = $item1['gsx$autonum']['$t'];
+$keywords1 = explode(',', $item1['gsx$autonum']['$t']);
 foreach ($keywords1 as $keyword1) {
 if (strpos($a, $keyword1) !== false) {
 if (strpos($a, 'equipidAutoskill') !== false) {
