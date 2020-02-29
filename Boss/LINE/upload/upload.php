@@ -25,9 +25,9 @@
    <div id="maincontainer">
 	<div id="nav">
 		<ul>
-			<li><a href="https://tx9vs5swfgjw9nqh1z3gyw-on.drv.tw/iruna/irunadata.html">Iruna交易板</li>
-			<li><a href="https://tx9vs5swfgjw9nqh1z3gyw-on.drv.tw/iruna/datainput.html">交易物品登陸</li>
-			<li style="background-color: #f3f3f3;"><a href="https://googledrive.com/host/0B10VsvhVUeZ5VlUycG1hWjdYYjA/produce.html"><strong>圖片上傳器</strong></a></li>
+			<li><a href="https://irunamuscelboss.herokuapp.com/Boss/LINE/upload/irunadata.html">Iruna交易板</li>
+			<li><a href="https://irunamuscelboss.herokuapp.com/Boss/LINE/upload/datainput.html">交易物品登陸</li>
+			<li style="background-color: #f3f3f3;"><a href="https://irunamuscelboss.herokuapp.com/Boss/LINE/upload/index.html"><strong>圖片上傳器</strong></a></li>
                         <li><a href="">未分類</a></li>
 			<li><a href="">未分類</a></li>
 		</ul>
@@ -61,24 +61,12 @@ if($puarupham != "jpg" && $puarupham != "png" && $puarupham != "jpeg"
 else
 {
 	$img = upload($_FILES["fileToUpload"]["tmp_name"]);
-echo '<div class="element-input"><label class="title">網址</label><div class="button" onclick="copyFunction()">複製</div><input class="large" type="text" name="myInput" value="'.$img.'" id="myInput" /></div>
-<div class="element-input"><label class="title">BBCode</label><input class="large" type="text" name="input" value="[img]'.$img.'[/img]" /></div><div class="element-input"><label class="title">圖片</label><img src="'.$img.'" width="100%"></div>';
+echo '<div class="element-input"><label class="title">網址</label><input class="large" type="text" name="myInput" value="'.$img.'" /></div><div class="element-input"><label class="title">BBCode</label><input class="large" type="text" name="input" value="[img]'.$img.'[/img]" /></div><div class="element-input"><label class="title">圖片</label><img src="'.$img.'" width="100%"></div>';
 }
 ?>
 <div class="submit"><a href="https://irunamuscelboss.herokuapp.com/Boss/LINE/upload/index.html"><input type="submit" value="返回"/></a></div>
       </div>
 	   
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script >
-$(document).ready(function(){
-function copyFunction() {
-  var copyText = $("$myInput");
-  copyText.select();
-  document.execCommand("Copy");
-  alert("Copied the text: " + copyText.value);
-}
-  });
-</script>
 	   
    </body>
 </html>
