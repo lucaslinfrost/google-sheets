@@ -434,6 +434,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	 }
 	//裝備公式
 	if(stristr($inputStr, '公式') != false) {
+		$owner = getenv('Owner');
+		if($userId === $owner){ 
 		$rplyArr = explode('#',$inputStr);
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，中間是#喔。');}
 		require_once('./equipformula.php');
@@ -444,7 +446,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		}
 		if ($alltext === "") {return buildTextMessage('資料庫沒有你要找的資料
 (๑•́ ₃ •̀๑)');}
-	}
+	}else{return buildTextMessage('你並沒有權限使用這個指令。');}
 	
         //幫我選～～
 	if(stristr($inputStr, '選') != false||
