@@ -32,6 +32,7 @@ $(function(){
 	var mobhp = [];
 	var mobsp = [];
 	var mobimg = [];
+	var mobtime = [];
 	var moblist = "https://spreadsheets.google.com/feeds/list/1pHll3E_sOo6YcWugdNWwEB9xUzG_KdfDGRhXHybHakw/od6/public/values?alt=json";
 	var pagenum;
 	var tablelength;
@@ -48,7 +49,8 @@ $(function(){
 				mobhp[i] = data.feed.entry[i].gsx$remark.$t;
 				mobsp[i] = data.feed.entry[i].gsx$contact.$t;		
 				mobimg[i] = data.feed.entry[i].gsx$image.$t;
-				$("#dbcontent").append("<tr class='mname ntr' align='center' id='" + i + "'><td>" + mobname[i] + "</td><td align='center' id='mtype'>" + mobtype[i] + "</td><td align='center' id='mrank'>" + mobrank[i] + "</td><td align='center' id='mlvl'>" + mobmaxlvl[i] + "</td><td align='center' id='mhp'>" + mobhp[i] + "</td><td align='center' id='msp'>" + mobsp[i] + "</td></tr>");
+				mobtime[i] = data.feed.entry[i].gsx$time.$t;
+				$("#dbcontent").append("<tr class='mname ntr' align='center' id='" + i + "'><td>" + mobname[i] + "</td><td align='center' id='mtype'>" + mobtype[i] + "</td><td align='center' id='mrank'>" + mobrank[i] + "</td><td align='center' id='mlvl'>" + mobmaxlvl[i] + "</td><td align='center' id='mhp'>" + mobhp[i] + "</td><td align='center' id='msp'>" + mobsp[i] + "</td><td align='center' id='time'>" + mobtime[i] + "</td></tr>");
 			};
 			// Add background to table rows, prev and next button
 			$('.display tbody tr:odd').css('background-color', '#f9f9f9');
@@ -317,6 +319,8 @@ $(function(){
 				備註</th>
 				<th width=15%" id="header2" style="height: 36px">
 				聯絡方式</th>
+				<th width=10%" id="header2" style="height: 36px">
+				發佈日期</th>
 							</tr>
 		</thead>
 		<tbody id="dbcontent" title="mobdb">
