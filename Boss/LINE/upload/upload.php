@@ -74,16 +74,6 @@ echo '<div class="element-input"><label class="title">網址</label><input class
 
 
 
-
-
-
-
-
-
-
-
-
-
 <?php
 
 
