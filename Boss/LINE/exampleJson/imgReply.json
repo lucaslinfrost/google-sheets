@@ -136,16 +136,16 @@
     "img": ["https://i.imgur.com/gk7Hc6I.png"]
   },
   {
+    "chack": ["全部","全要","全都要"],
+    "img": ["https://i.imgur.com/DZ8xatB.png","https://i.imgur.com/hTriM0b.jpg"]
+  },
+  {
     "chack": ["兔兔"],
     "img": ["https://i.imgur.com/a1fHFZT.png"]
   },
   {
     "chack": ["毒追玩","毒追怎"],
     "img": ["https://i.imgur.com/Ij0szn1.jpg"]
-  },
-  {
-    "chack": ["全部","全要","全都要"],
-    "img": ["https://i.imgur.com/DZ8xatB.png","https://i.imgur.com/hTriM0b.jpg"]
-  },
+  }
 
   ]
