@@ -45,12 +45,11 @@ $(function(){
 				mobname[i] = data.feed.entry[i].gsx$name.$t;
 				mobtype[i] = data.feed.entry[i].gsx$type.$t;
 				mobrank[i] = data.feed.entry[i].gsx$money.$t;
-				mobmaxlvl[i] = data.feed.entry[i].gsx$player.$t;
 				mobhp[i] = data.feed.entry[i].gsx$remark.$t;
 				mobsp[i] = data.feed.entry[i].gsx$contact.$t;		
 				mobimg[i] = data.feed.entry[i].gsx$image.$t;
 				mobtime[i] = data.feed.entry[i].gsx$time.$t;
-				$("#dbcontent").append("<tr class='mname ntr' align='center' id='" + i + "'><td>" + mobname[i] + "</td><td align='center' id='mtype'>" + mobtype[i] + "</td><td align='center' id='mrank'>" + mobrank[i] + "</td><td align='center' id='mlvl'>" + mobmaxlvl[i] + "</td><td align='center' id='mhp'>" + mobhp[i] + "</td><td align='center' id='msp'>" + mobsp[i] + "</td><td align='center' id='time'>" + mobtime[i] + "</td></tr>");
+				$("#dbcontent").append("<tr class='mname ntr' align='center' id='" + i + "'><td>" + mobname[i] + "</td><td align='center' id='mtype'>" + mobtype[i] + "</td><td align='center' id='mrank'>" + mobrank[i] + "</td><td align='center' id='mhp'>" + mobhp[i] + "</td><td align='center' id='msp'>" + mobsp[i] + "</td><td align='center' id='time'>" + mobtime[i] + "</td></tr>");
 			};
 			// Add background to table rows, prev and next button
 			$('.display tbody tr:odd').css('background-color', '#f9f9f9');
