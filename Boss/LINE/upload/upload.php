@@ -25,8 +25,8 @@
    <div id="maincontainer">
 	<div id="nav">
 		<ul>
-			<li><a href="https://irunamuscelboss.herokuapp.com/Boss/LINE/upload/irunadata.html">Iruna交易板</li>
-			<li><a href="https://irunamuscelboss.herokuapp.com/Boss/LINE/upload/datainput.html">交易物品登陸</li>
+			<li><a href="https://irunamuscelboss.herokuapp.com/Boss/LINE/upload/irunadata.html">Iruna交易板</a></li>
+			<li><a href="https://irunamuscelboss.herokuapp.com/Boss/LINE/upload/datainput.html">交易物品登陸</a></li>
 			<li style="background-color: #f3f3f3;"><a href="https://irunamuscelboss.herokuapp.com/Boss/LINE/upload/index.html"><strong>圖片上傳器</strong></a></li>
                         <li><a href="">未分類</a></li>
 			<li><a href="">未分類</a></li>
