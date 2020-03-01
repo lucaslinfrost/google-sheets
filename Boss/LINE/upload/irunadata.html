@@ -1,10 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0032)http://lawlaw.net/loa/mobdb.html -->
-<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-<link rel="stylesheet" media="all" href="./css/jquery.dataTables.css"/>
-<link rel="stylesheet" media="all" href="./css/mdb.css"/>
-<link href="./css/font-awesome.min.css" rel="stylesheet"/>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<link rel="stylesheet" media="all" href="./css/jquery.dataTables.css">
+<link rel="stylesheet" media="all" href="./css/mdb.css">
+<link href="./css/font-awesome.min.css" rel="stylesheet">
 <script src="./js/jquery-latest.min.js" type="text/javascript"></script>
 <script src="./js/tableSort.js" type="text/javascript"></script>
 <title>Iruna交易板</title>
@@ -73,12 +73,11 @@ $(function(){
 					n = jQuery.inArray( name_str, mobname );
 				}
 				if (mobimg[n] == ""){
-					$('#mobimg').html('<img src="https://i.imgur.com/JCsMDOq.jpg">');
+					$('#mobimg').html('<img src="https://i.imgur.com/JCsMDOq.jpg" width=250px height=300px">');
 				}
 				else {
-					$('#mobimg').html('<img src="' + mobimg[n] + '" width="172px">');
+					$('#mobimg').html('<img src="' + mobimg[n] + '" width=350px height=350px">');
 				}
-
      		});
 
 	}); // Close monster list data list
@@ -282,8 +281,8 @@ $(function(){
 <div id="maincontainer">
 	<div id="nav">
 		<ul>
-			<li style="background-color: #f3f3f3;"><a href="https://irunamuscelboss.herokuapp.com/Boss/LINE/upload/irunadata.html"><strong>Iruna交易板</strong></a></li>
-			<li><a href="https://irunamuscelboss.herokuapp.com/Boss/LINE/upload/datainput.html">交易物品登陸</a></li>
+			<li style="background-color: #f3f3f3;"><a href="https://irunamuscelboss.herokuapp.com/Boss/LINE/upload/irunadata.html"><strong>Iruna交易板</strong></li>
+			<li><a href="https://irunamuscelboss.herokuapp.com/Boss/LINE/upload/datainput.html">交易物品登陸</li>
 			<li><a href="https://irunamuscelboss.herokuapp.com/Boss/LINE/upload/index.html">圖片上傳器</a></li>
 			<li><a href="">未分類</a></li>
 			<li><a href="">未分類</a></li>
@@ -294,17 +293,18 @@ $(function(){
 	<div id="mobdetail">
 		<div id="btnclose">
 			<i class="fa fa-times-circle"></i></div>
-	
+		<br>
 				<div id="imgcontainer">
-			
+			<br>
 			<div id="mobname">
 			</div>
 			<div id="mobimg">
 			</div>
-			
+			<br>
 					</div>
 	</div>
-		<table id="mobdb" class="display" cellspacing="0" style="width: 100%">
+		<br clear="all"><br>
+	<table id="mobdb" class="display" cellspacing="0" style="width: 100%">
 		<thead>
 			<tr>
 				<th style="height: 36px; width: 30%" class="auto-style1">物品</th>
@@ -317,9 +317,10 @@ $(function(){
 				遊戲ID</th>
 				<th id="header1" style="height: 36px; width: 20%">
 				備註</th>
-				<th width=15% id="header2" style="height: 36px">
+				<th width=15%" id="header2" style="height: 36px">
 				聯繫方式</th>
-				<th width=10% id="header3" style="height: 36px"><span title="sort this column">發佈日期<i class="fa fa-sort" id="tsort"></i></span></th>
+				<th width=10%" id="header2" style="height: 36px">
+				發佈日期</th>
 							</tr>
 		</thead>
 		<tbody id="dbcontent" title="mobdb">
