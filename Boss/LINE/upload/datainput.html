@@ -56,7 +56,7 @@ input::-webkit-input-placeholder {
     <p class="auto-style1">&nbsp;</p>
     <div class="auto-style1">
     
-    <form action="javascript:SendScore();this.style.visibility='hidden';" method="post">
+    <form action="javascript:SendScore();" method="post" onsubmit="this.style.visibility='hidden';">
     
     <span class="auto-style3">買賣物品: </span> 
 	<input type="text" name="NameInput" id="NameInput" required /><br class="auto-style3">
@@ -114,15 +114,7 @@ input::-webkit-input-placeholder {
         
         
 </script>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<script type="text/javascript"><!--
-var yudan = "";
-var now = new Date();
-var month = now.getMonth() + 1;
-var date = now.getDate();
-var year = now.getYear();
-if (year < 2000) year = year + 1900;
-document.write(year + "年" + month + "月" + date + "日");
-// --></script><br></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br></div>
 
 </body>
 </html>
