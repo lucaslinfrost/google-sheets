@@ -210,14 +210,11 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	require_once('./authorization.php');
 	if($userId === $owner){ 
 	if(stristr($inputStr, '開') != false) {
-	global $recorddata;
-	$recorddata = "開";
+	$GLOBALS['recorddata'] = "開";
 	return buildTextMessage('已開啟。');
-	error_log("RECORDDATA");
 	}else{
 	if(stristr($inputStr, '關') != false) {
-	global $recorddata;
-	$recorddata = "關";
+	$GLOBALS['recorddata'] = "關";
 	return buildTextMessage('已關閉。');
 	}}}else{return buildTextMessage('你並沒有權限使用這個指令。');}}
 
