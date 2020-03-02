@@ -205,6 +205,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	
 	//紀錄開關功能
 	if(stristr($inputStr, '紀錄') != false) {
+	global $recorddata;
 	$rplyArr = explode('#',$inputStr);
 	if (count($rplyArr) == 1) {return buildTextMessage('目前狀態為【'.$GLOBALS['recorddata'].'】。');}
 	require_once('./authorization.php');
