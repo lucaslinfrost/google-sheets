@@ -1,14 +1,12 @@
 <?php
-header('Content-type: text/html; charset=utf-8');
 require_once('./LINEBotTiny.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
-$googledataspi = getenv('googledataspi7');
 $bot = new LINEBotTiny($channelAccessToken, $channelSecret);
 
 $json_string = file_get_contents('php://input');
 
-$file = fopen("./exampleJson/textReply.txt", "a+");
+$file = fopen("./exampleJson/textReply.", "a+");
 //***將收到的資料存到文字黨做紀錄***
 fwrite($file, "\n使用者傳送資料\n");
 fwrite($file, $json_string."\n"); 
