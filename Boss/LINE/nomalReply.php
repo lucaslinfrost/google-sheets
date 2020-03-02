@@ -205,7 +205,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 
 	
 	//更新json檔案
-	if(stristr($inputStr, '上傳') === 0) {
+	if(stristr($inputStr, '上傳') != false) {
 		$rplyArr = explode('#',$inputStr);
 		if (count($rplyArr) == 1) {return buildTextMessage('請用[#]區隔。');}
 		require_once('./authorization.php');
