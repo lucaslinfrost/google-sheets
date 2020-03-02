@@ -6,7 +6,7 @@ $bot = new LINEBotTiny($channelAccessToken, $channelSecret);
 
 $json_string = file_get_contents('php://input');
 
-$file = fopen("./exampleJson/test.json.", "a+");
+$file = fopen("./exampleJson/test.json", "a+");
 //***將收到的資料存到文字黨做紀錄***
 fwrite($file, "\n使用者傳送資料\n");
 fwrite($file, $json_string."\n"); 
