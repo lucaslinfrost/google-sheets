@@ -4,26 +4,25 @@ require_once('./test2.php');
 $access_token = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $secret = getenv('LINE_CHANNEL_SECRET');
 $bot = new LINEBotTiny($access_token, $secret);
+$json_string = file_get_contents('php://input');
+$file = fopen("./exampleJson/test.json", "a+");
+$json_obj = json_decode($json_string);
 
-$birthdays = get_birthday_data();
-  if (empty($birthdays->{"birthdays"})) {
+  if (empty($json_obj->{"birthdays"})) {
     $new_id = 1;
   }
   else {
     $used_nums = [];
-    foreach ($birthdays->{"birthdays"} as $user) {
+    foreach ($json_obj->{"birthdays"} as $user) {
       array_push($used_nums, $user->{"birthdayId"});
     }
     $new_id = max($used_nums) + 1;
   }
 
-$json_string = file_get_contents('php://input');
-$file = fopen("./exampleJson/test.json", "a+");
 //***將收到的資料存到文字黨做紀錄***
 fwrite($file, "第[".$new_id."]筆資料。\n"); 
 fwrite($file, "\n使用者傳送資料\n");
 fwrite($file, $json_string."\n"); 
-$json_obj = json_decode($json_string);
 
 $event = $json_obj->{"events"}[0];
 $type  = $event->{"message"}->{"type"};
