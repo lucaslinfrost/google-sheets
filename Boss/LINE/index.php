@@ -43,7 +43,6 @@ function buildTextMessage($inputStr){
             )
         );
 	return $message;
-	require_once('../../record.php');
 }
 
 //建立圖片訊息的函數
