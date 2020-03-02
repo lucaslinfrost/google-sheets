@@ -101,6 +101,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	$rplyArr = explode('#',$inputStr);
 	if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
 	require_once('./map.php');
+	return buildTextMessage(''.$maphop.'');
 	}
 	//基本查詢
 	if(stristr($inputStr, '查') != false) {
