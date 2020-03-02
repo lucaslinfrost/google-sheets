@@ -150,6 +150,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	       stristr($inputStr, 'bye') != false||
 	       stristr($inputStr, 'Bye') != false||
 	       stristr($inputStr, '再见') != false) {
+	require_once('./authorization.php');
 	if($userId === $owner){ 		
         if($source['type'] == "room"){  
         $roomId = $source['roomId'];
@@ -203,7 +204,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	
 	//紀錄開關功能
 	if(stristr($inputStr, '紀錄') != false) {
-	$owner = getenv('Owner');
+	require_once('./authorization.php');
 	if($userId === $owner){ 
 	if(stristr($inputStr, '開') != false) {
 	define("RECORDDATA", True);
