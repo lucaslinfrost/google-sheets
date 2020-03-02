@@ -270,7 +270,6 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	//查裝備(文字)
 	if(stristr($inputStr, 'e') != false||
 	       stristr($inputStr, 'E') != false) {
-		$owner = getenv('Owner');
 		$rplyArr = explode(' ',$inputStr);
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
 		require_once('./equip.php');
@@ -432,6 +431,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	 }
 	//裝備公式
 	if(stristr($inputStr, '公式') != false) {
+		$owner = getenv('Owner');
 		$rplyArr = explode('#',$inputStr);
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，中間是#喔。');}
 		require_once('./equipformula.php');
