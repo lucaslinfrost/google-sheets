@@ -1,5 +1,5 @@
 <?php
-
+header('Content-type: text/html; charset=utf-8');
 require_once('./LINEBotTiny.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
