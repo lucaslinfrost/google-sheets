@@ -203,6 +203,18 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		unset($data0, $data1, $data2, $data3, $data4, $data5, $data6, $data7, $data8, $html, $ch, $url, $result, $dom, $xPath);
 	}
 
+	
+	//更新json檔案
+	if(stristr($inputStr, '上傳') === 0) {
+		$rplyArr = explode('#',$inputStr);
+		if (count($rplyArr) == 1) {return buildTextMessage('請用[#]區隔。');}
+		require_once('./authorization.php');
+		if($userId === $owner){ 
+		require_once('./renewfile.php');
+		return buildTextMessage($updatelog);
+		unset($$update, $file, $updatelog);}else{return buildTextMessage('你並沒有權限使用這個指令。');}
+	}
+	
 	//查怪
 	if(stristr($inputStr, 'm') != false||
 	       stristr($inputStr, 'M') != false) {
