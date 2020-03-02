@@ -202,21 +202,6 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		return buildcarousel($altText,$result);
 		unset($data0, $data1, $data2, $data3, $data4, $data5, $data6, $data7, $data8, $html, $ch, $url, $result, $dom, $xPath);
 	}
-	
-	//紀錄開關功能
-	if(stristr($inputStr, '紀錄') != false) {
-	$rplyArr = explode('#',$inputStr);
-	if (count($rplyArr) == 1) {return buildTextMessage('目前狀態為【'.$recorddata.'】。');}
-	require_once('./authorization.php');
-	if($userId === $owner){ 
-	if(stristr($inputStr, '開') != false) {
-	$recorddata = "開";
-	return buildTextMessage('已開啟。');
-	}else{
-	if(stristr($inputStr, '關') != false) {
-	$recorddata = "關";
-	return buildTextMessage('已關閉。');
-	}}}else{return buildTextMessage('你並沒有權限使用這個指令。');}}
 
 	//查怪
 	if(stristr($inputStr, 'm') != false||
