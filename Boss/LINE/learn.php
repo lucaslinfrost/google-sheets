@@ -6,10 +6,7 @@ $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
 $googledataspi = getenv('googledataspi7');
 $bot = new LINEBotTiny($channelAccessToken, $channelSecret);
-foreach ($client->parseEvents() as $event) {
-switch ($event['type']) {       
-    case 'message':
-    $text = $event['message'];
+default :
       if(preg_match("/#/u", $text)){
         $text = mb_substr($text,1);
         //memory.jsonを検索
@@ -145,9 +142,3 @@ if($pref_json->mode === "input"){
     break;
 
     }
-break;
-    default:
-        error_log("Unsupporeted event type: " . $event['type']);
-        break;
-}
-};
