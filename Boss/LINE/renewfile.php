@@ -8,7 +8,7 @@ foreach ($bot->parseEvents() as $event) {
 switch ($event['type']) {
 case 'message':
 $message = $event['message'];
-$code = explode(' ', $message['text']);
+$code = explode('#', $message['text']);
 $updatelog = "沒有可以更新的資料。\n\n--------  建議輸入  --------\n怪物\n生產\n裝備\n石頭\n星能\n地圖\n栽培\n採礦";
     
 if (strcmp($code[1], "全部") === 0) {
