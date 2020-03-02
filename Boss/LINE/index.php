@@ -27,7 +27,6 @@ $manualUrl = getenv('MANUAL_URL');
 $textReplyUrl = getenv('TEXT_REPLY_URL');
 $imgsReplyUrl = getenv('IMGS_REPLY_URL');
 $yababangUrl = getenv('YABABANG_URL');
-global $recorddata;
 
 $bot = new LINEBotTiny($channelAccessToken, $channelSecret);
 $userName = '你';
@@ -173,11 +172,15 @@ foreach ($bot->parseEvents() as $event) {
 					$userName = $bot->getGroupProfile($groupId,$userId)['displayName'];
 					error_log("訊息發送人：".$userName);
 					error_log("發送人ID：".$userId);
-					if ($recorddata === "開") {$table = "群組";$tableid = $groupId;require_once('../../record.php');}
+					$table = "群組";
+					$tableid = $groupId;
+					//require_once('../../record.php');
 					}
 				else{
 					error_log("訊息發送人：不明");
-					if ($recorddata === "開") {$table = "群組";$tableid = $groupId;require_once('../../record.php');}
+					$table = "群組";
+					$tableid = $groupId;
+					//require_once('../../record.php');
 				}
 				}
 		    
@@ -191,11 +194,15 @@ foreach ($bot->parseEvents() as $event) {
 					$userName = $bot->getRoomProfile($roomId,$userId)['displayName'];
 					error_log("訊息發送人：".$userName);
 					error_log("發送人ID：".$userId);
-					if ($recorddata === "開") {$table = "房間";$tableid = $roomId;require_once('../../record.php');}
+					$table = "房間";
+					$tableid = $roomId;
+					//require_once('../../record.php');
 					}
 				else{
 					error_log("訊息發送人：不明");
-					if ($recorddata === "開") {$table = "房間";$tableid = $roomId;require_once('../../record.php');}	
+					$table = "房間";
+					$tableid = $roomId;
+					//require_once('../../record.php');
 				}
 				}
 		    
@@ -204,7 +211,9 @@ foreach ($bot->parseEvents() as $event) {
 				$userId = $source['userId'];
 				error_log("訊息發送人：".$userName);
 				error_log("發送人ID：".$userId);
-				if ($recorddata === "開") {$table = "私人";$tableid = $userId;require_once('../../record.php');}
+				$table = "私人";
+				$tableid = $userId;
+				//require_once('../../record.php');
 				}
 			
 			
