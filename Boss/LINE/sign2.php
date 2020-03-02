@@ -1,7 +1,6 @@
 <?php
 //星座功能介面 (文字版)
 require_once('./LINEBotTiny.php');
-require_once('./utf8_chinese.class.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
 
@@ -12,8 +11,6 @@ switch ($event['type']) {
     case 'message':
         // 讀入訊息
         $message = $event['message'];
-        $c = new utf8_chinese;
-        $message['text'] = $c->gb2312_big5($message['text']);
         $code = explode(' ', $message['text']);
         $snum = '999';
         if (strpos($code[1], '白羊') !== false||strpos($code[1], '牡羊') !== false||strpos($code[1], '牧羊') !== false||strpos($code[1], '♈') !== false){$snum = '0';}
