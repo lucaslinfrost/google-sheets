@@ -174,13 +174,13 @@ foreach ($bot->parseEvents() as $event) {
 					error_log("發送人ID：".$userId);
 					$table = "群組";
 					$tableid = $groupId;
-					require_once('../../record.php');
+					
 					}
 				else{
 					error_log("訊息發送人：不明");
 					$table = "群組";
 					$tableid = $groupId;
-					require_once('../../record.php');
+					
 				}
 				}
 		    
@@ -196,13 +196,13 @@ foreach ($bot->parseEvents() as $event) {
 					error_log("發送人ID：".$userId);
 					$table = "房間";
 					$tableid = $roomId;
-					require_once('../../record.php');
+					
 					}
 				else{
 					error_log("訊息發送人：不明");
 					$table = "房間";
 					$tableid = $roomId;
-					require_once('../../record.php');
+					
 				}
 				}
 		    
@@ -213,7 +213,7 @@ foreach ($bot->parseEvents() as $event) {
 				error_log("發送人ID：".$userId);
 				$table = "私人";
 				$tableid = $userId;
-				require_once('../../record.php');
+				
 				}
 			
 			
