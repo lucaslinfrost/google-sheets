@@ -1,5 +1,6 @@
 <?php
 require_once('./LINEBotTiny.php');
+require_once('./test2.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
 $bot = new LINEBotTiny($channelAccessToken, $channelSecret);
@@ -25,22 +26,3 @@ fwrite($file, "系統回復資訊\n");
 fwrite($file, json_encode($post_data)."\n");
 //***將訊息發出去然後關閉寫入***
 doBotPost($post_data,$access_token,$file);
-
-function doBotPost($post_data,$access_token,$file){
-  $ch = curl_init("https://api.line.me/v2/bot/message/reply");
-  curl_setopt($ch, CURLOPT_POST, true);
-  curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-  curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-  curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data));
-  curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-      'Content-Type: application/json',
-      'Authorization: Bearer '.$access_token
-      //'Authorization: Bearer '. TOKEN
-  ));
-  $result = curl_exec($ch);
-  fwrite($file, $result."\n");  
-  fclose($file);
-  curl_close($ch); 
-}
