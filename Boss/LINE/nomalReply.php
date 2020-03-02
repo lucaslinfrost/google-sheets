@@ -150,15 +150,6 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	       stristr($inputStr, 'bye') != false||
 	       stristr($inputStr, 'Bye') != false||
 	       stristr($inputStr, '再见') != false) {
-	$channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
-	$channelSecret = getenv('LINE_CHANNEL_SECRET');
-	$owner = getenv('Owner');
-	$bot = new LINEBotTiny($channelAccessToken, $channelSecret);	
-	foreach ($bot->parseEvents() as $event) {
-   	switch ($event['type']) {
- 	case 'message':
-    	$source = $event['source'];
-	$userId = $source['userId'];
 	if($userId === $owner){ 		
         if($source['type'] == "room"){  
         $roomId = $source['roomId'];
@@ -180,13 +171,6 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
                 'text' => '｡ﾟヽ(ﾟ´Д`)ﾉﾟ｡有緣再見。'))));
             return $bot->leaveGroup($groupId);
         }}else{return buildTextMessage('你並沒有權限使用這個指令。');}
-	break;
-            
-        default:
-
-            break;
-   	}
-	};
 		
 	}
 
