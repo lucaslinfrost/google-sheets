@@ -173,9 +173,9 @@
 		]
       },
       {
-        "chack": ["圖片上傳"],
+        "chack": ["交易板"],
         "text": [		
-		"https://irunamuscelboss.herokuapp.com/Boss/LINE/upload/index.html"
+		"https://irunamuscelboss.herokuapp.com/Boss/LINE/upload/irunadata.html"
 		]
       },
       {
