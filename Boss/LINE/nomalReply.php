@@ -205,22 +205,19 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	//紀錄開關功能
 	if(stristr($inputStr, '紀錄') != false) {
 	$rplyArr = explode('#',$inputStr);
-	if (count($rplyArr) == 1) {return buildTextMessage('請使用[#]來分隔。');}
+	if (count($rplyArr) == 1) {return buildTextMessage('目前狀態為【'.$recorddata.'】。');}
 	require_once('./authorization.php');
 	if($userId === $owner){ 
 	if(stristr($inputStr, '開') != false) {
-	define("RECORDDATA", True);
+	$recorddata = "開";
 	return buildTextMessage('已開啟。');
+	error_log("RECORDDATA");
 	}else{
 	if(stristr($inputStr, '關') != false) {
-	define("RECORDDATA", false);
+	$recorddata = "關";
 	return buildTextMessage('已關閉。');
-	}
-	}
-	}else{return buildTextMessage('你並沒有權限使用這個指令。');}
-	}
+	}}}else{return buildTextMessage('你並沒有權限使用這個指令。');}}
 
-	
 	//查怪
 	if(stristr($inputStr, 'm') != false||
 	       stristr($inputStr, 'M') != false) {
