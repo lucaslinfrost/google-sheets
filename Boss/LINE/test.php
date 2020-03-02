@@ -1,9 +1,9 @@
 <?php
 require_once('./LINEBotTiny.php');
 require_once('./test2.php');
-$channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
-$channelSecret = getenv('LINE_CHANNEL_SECRET');
-$bot = new LINEBotTiny($channelAccessToken, $channelSecret);
+$access_token = getenv('LINE_CHANNEL_ACCESSTOKEN');
+$secret = getenv('LINE_CHANNEL_SECRET');
+$bot = new LINEBotTiny($access_token, $secret);
 
 $json_string = file_get_contents('php://input');
 
