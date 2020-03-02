@@ -1,5 +1,5 @@
 <?php
-require_once('./blacklist.php');
+
 
 function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) { 
 	$inputStr = strtolower($inputStr);
