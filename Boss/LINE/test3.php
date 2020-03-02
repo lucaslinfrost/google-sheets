@@ -7,4 +7,4 @@ $newjson = file_get_contents('https://spreadsheets.google.com/feeds/list/1DF1BBZ
 $newdata = json_decode($newjson, true);
 
 $file = fopen("./data/m&d.json", "w+");
-fwrite($file, $newdata);
+fwrite($file, implode('',$newdata));
