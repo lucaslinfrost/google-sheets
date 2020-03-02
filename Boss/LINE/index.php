@@ -76,7 +76,7 @@ function buildStickerMessage($packageId, $stickerId){
 
 //建立旋轉木馬的函數
 function buildcarousel($altText, $result){	
-		error_log("準備回傳旋轉木馬訊息（殺小啦wwww");
+		error_log("準備回傳旋轉木馬訊息。");
 		$message = array
 		( 
 		array(
@@ -138,7 +138,7 @@ class MutiMessage{
 	
 	//建立旋轉木馬訊息(???)的函數
 	public function carousel($altText, $columns){	
-		error_log("準備回傳旋轉木馬訊息（殺小啦wwww");
+		error_log("準備回傳旋轉木馬訊息。");
 		$message = array(
 			'type'=> "template",
 			'altText'=> $altText,
@@ -172,11 +172,11 @@ foreach ($bot->parseEvents() as $event) {
 					$userName = $bot->getGroupProfile($groupId,$userId)['displayName'];
 					error_log("訊息發送人：".$userName);
 					error_log("發送人ID：".$userId);
-					if (RECORDDATA) {$table = "群組";$tableid = $groupId;require_once('../../record.php');}
+					if ($GLOBALS['recorddata'] === "開") {$table = "群組";$tableid = $groupId;require_once('../../record.php');}
 					}
 				else{
 					error_log("訊息發送人：不明");
-					if (RECORDDATA) {$table = "群組";$tableid = $groupId;require_once('../../record.php');}
+					if ($GLOBALS['recorddata'] === "開") {$table = "群組";$tableid = $groupId;require_once('../../record.php');}
 				}
 				}
 		    
@@ -190,11 +190,11 @@ foreach ($bot->parseEvents() as $event) {
 					$userName = $bot->getRoomProfile($roomId,$userId)['displayName'];
 					error_log("訊息發送人：".$userName);
 					error_log("發送人ID：".$userId);
-					if (RECORDDATA) {$table = "房間";$tableid = $roomId;require_once('../../record.php');}
+					if ($GLOBALS['recorddata'] === "開") {$table = "房間";$tableid = $roomId;require_once('../../record.php');}
 					}
 				else{
 					error_log("訊息發送人：不明");
-					if (RECORDDATA) {$table = "房間";$tableid = $roomId;require_once('../../record.php');}	
+					if ($GLOBALS['recorddata'] === "開") {$table = "房間";$tableid = $roomId;require_once('../../record.php');}	
 				}
 				}
 		    
@@ -203,7 +203,7 @@ foreach ($bot->parseEvents() as $event) {
 				$userId = $source['userId'];
 				error_log("訊息發送人：".$userName);
 				error_log("發送人ID：".$userId);
-				if (RECORDDATA) {$table = "私人";$tableid = $userId;require_once('../../record.php');}
+				if ($GLOBALS['recorddata'] === "開") {$table = "私人";$tableid = $userId;require_once('../../record.php');}
 				}
 			
 			
