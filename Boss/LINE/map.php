@@ -804,6 +804,7 @@ foreach ($client->parseEvents() as $event) {
 
 $g = new Graph($graph);
 $g->leastHops($code[1], $code[2]);
+$maphop = $GLOBALS["maphop"];
 
 class Graph
 {
