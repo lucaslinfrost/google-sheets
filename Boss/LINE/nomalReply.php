@@ -207,7 +207,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	//更新json檔案
 	if(stristr($inputStr, '上傳') != false) {
 		$rplyArr = explode('#',$inputStr);
-		if (count($rplyArr) == 1) {return buildTextMessage('請用[#]區隔。');}
+		$updatelog = "請用[#做為區隔]，\n目前沒有可以更新的資料。\n\n--------  建議輸入  --------\n怪物\n生產\n裝備\n石頭\n星能\n地圖\n栽培\n採礦";
+		if (count($rplyArr) == 1) {return buildTextMessage($updatelog);}
 		require_once('./authorization.php');
 		if($userId === $owner){ 
 		require_once('./renewfile.php');
