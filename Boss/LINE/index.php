@@ -27,6 +27,7 @@ $manualUrl = getenv('MANUAL_URL');
 $textReplyUrl = getenv('TEXT_REPLY_URL');
 $imgsReplyUrl = getenv('IMGS_REPLY_URL');
 $yababangUrl = getenv('YABABANG_URL');
+global $recorddata;
 
 $bot = new LINEBotTiny($channelAccessToken, $channelSecret);
 $userName = '你';
