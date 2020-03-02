@@ -566,4 +566,3 @@ function SendImg($inputStr,$imgsReplyUrl) {
 	
 	return null;
 }
-require_once('../../record.php');
