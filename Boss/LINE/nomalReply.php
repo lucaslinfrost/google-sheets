@@ -213,7 +213,9 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		if($userId === $owner){ 
 		require_once('./renewfile.php');
 		return buildTextMessage($updatelog);
-		unset($$update, $file, $updatelog);}else{return buildTextMessage('你並沒有權限使用這個指令。');}
+		unset($update, $file, $updatelog, $countno);
+		}else{return buildTextMessage('你並沒有權限使用這個指令。');
+		unset($update, $file, $updatelog, $countno);}
 	}
 	
 	//查怪
