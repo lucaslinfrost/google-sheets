@@ -9,8 +9,9 @@ foreach ($bot->parseEvents() as $event) {
         case 'message':
 $source = $event['source'];
 $userId = $source['userId'];
-$roomId = $source['roomId'];
-$groupId = $source['groupId'];
+if($source['type'] == "group"){$groupId = $source['groupId'];}
+if($source['type'] == "room"){$roomId = $source['roomId'];}
+
 break;
 default:
 break;
