@@ -20,7 +20,7 @@ if ($countno === 4) {$getfileaddress = getenv('star');$update = file_get_content
 if ($countno === 5) {$getfileaddress = getenv('map');$update = file_get_contents($getfileaddress);$file = fopen("./data/map.json", "w+");fwrite($file, $update);$countno = $countno+1;}	
 if ($countno === 6) {$getfileaddress = getenv('seed');$update = file_get_contents($getfileaddress);$file = fopen("./data/seed.json", "w+");fwrite($file, $update);$countno = $countno+1;}	
 if ($countno === 7) {$getfileaddress = getenv('drill');$update = file_get_contents($getfileaddress);$file = fopen("./data/drill.json", "w+");fwrite($file, $update);$countno = $countno+1;}	
-$updatelog = "全部資料已更新。";
+$updatelog = "全部資料已更新。\n此功能會造成回應延遲，\n請慎用。";
 }
 		
 if (strcmp($code[1], "怪物") === 0) {
