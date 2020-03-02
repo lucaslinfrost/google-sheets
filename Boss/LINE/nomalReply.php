@@ -204,6 +204,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	
 	//紀錄開關功能
 	if(stristr($inputStr, '紀錄') != false) {
+	$rplyArr = explode('#',$inputStr);
+	if (count($rplyArr) == 1) {return buildTextMessage('請使用[#]來分隔。');}
 	require_once('./authorization.php');
 	if($userId === $owner){ 
 	if(stristr($inputStr, '開') != false) {
