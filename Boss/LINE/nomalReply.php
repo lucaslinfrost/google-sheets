@@ -1,4 +1,9 @@
 <?php
+
+$channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
+$channelSecret = getenv('LINE_CHANNEL_SECRET');
+$owner = getenv('Owner');
+$bot = new LINEBotTiny($channelAccessToken, $channelSecret);
 require_once('./blacklist.php');
 
 function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) { 
@@ -151,10 +156,6 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	       stristr($inputStr, 'Bye') != false||
 	       stristr($inputStr, '再见') != false) {
 		
-	$channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
-	$channelSecret = getenv('LINE_CHANNEL_SECRET');
-	$owner = getenv('Owner');
-	$bot = new LINEBotTiny($channelAccessToken, $channelSecret);
 	foreach ($bot->parseEvents() as $event) {
    	switch ($event['type']) {
  	case 'message':
@@ -434,7 +435,6 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	 }
 	//裝備公式
 	if(stristr($inputStr, '公式') != false) {
-		$owner = getenv('Owner');
 		$rplyArr = explode('#',$inputStr);
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，中間是#喔。');}
 		require_once('./equipformula.php');
@@ -566,3 +566,35 @@ function SendImg($inputStr,$imgsReplyUrl) {
 	
 	return null;
 }
+
+foreach ($bot->parseEvents() as $event) {
+switch ($event['type']) {
+case 'message':
+$message = $event['message'];			
+$source = $event['source'];
+$userName = "不明";
+if($source['type'] == "group"){	
+$groupId = $source['groupId'];
+$userId = $source['userId'];
+$userName = $bot->getGroupProfile($groupId,$userId)['displayName'];
+$table = "群組";
+$tableid = $groupId;
+}
+if($source['type'] == "room"){
+$roomId = $source['roomId'];
+$userId = $source['userId'];
+$userName = $bot->getRoomProfile($roomId,$userId)['displayName'];
+$table = "房間";
+$tableid = $roomId;
+}
+if($source['type'] == "user"){
+$userName = $bot->getProfile($source['userId'])['displayName'];
+$userId = $source['userId'];
+$table = "私人";
+$tableid = $userId;
+}
+require_once('../../record.php');		
+break;
+default:
+break;
+}};
