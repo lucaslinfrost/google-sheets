@@ -813,6 +813,7 @@ class Graph
         $this->graph = $graph;
     }
 public function leastHops($origin, $destination) {
+        global $maphop;
         // mark all nodes as unvisited
         foreach ($this->graph as $key => $vertex) {
             $this->visited[$key] = false;
@@ -875,27 +876,6 @@ $maphop = "沒有找到從【".$origin."】
         $maphop = substr($maphop, 0, -3);
         $maphop = $title."".$maphop;
         error_log("".$maphop."");
-  
-  
-require_once('./LINEBotTiny.php');
-$channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
-$channelSecret = getenv('LINE_CHANNEL_SECRET');
-$client = new LINEBotTiny($channelAccessToken, $channelSecret);
-foreach ($client->parseEvents() as $event) {
-    switch ($event['type']) {
-    case 'message':
-    $client->replyMessage(array(
-        'replyToken' => $event['replyToken'],
-        'messages' => array(
-            array(
-                'type' => 'text',
-                'text' => $maphop
-            )
-        )
-    ));
-}
-}
-  
-  
+    
     }
 }
