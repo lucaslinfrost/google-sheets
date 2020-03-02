@@ -23,6 +23,6 @@ $message_data = doType($type,$message->{"text"});
 $post_data = doPostData($reply_token,$message_data);
 //***將post_data(BOT發送訊息)存到文字黨做紀錄***
 fwrite($file, "系統回復資訊\n");
-fwrite($file, json_encode($post_data)."\n");
+fwrite($file, json_encode($post_data)."\n\n");
 //***將訊息發出去然後關閉寫入***
 doBotPost($post_data,$access_token,$file);
