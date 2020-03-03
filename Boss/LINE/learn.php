@@ -4,18 +4,18 @@ $access_token = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $secret = getenv('LINE_CHANNEL_SECRET');
 $bot = new LINEBotTiny($access_token, $secret);
 
+foreach ($bot->parseEvents() as $event) {
+switch ($event['type']) {
+case 'message':
+    
 function trim_value($value){
 $value = trim($value);
 $value = preg_replace('/\s(?=)/', "", $value);
 }
 
-foreach ($bot->parseEvents() as $event) {
-switch ($event['type']) {
-case 'message':
-
 $message = $event['message'];
-$message['text'] = trim_value($message['text']);
-$code = explode('#', $message['text']);
+$messagetransfer = trim_value($message['text']);
+$code = explode('#', $messagetransfer);
 $forbid = array("老大", "幹", "機掰", "雞掰", "");
   
 if (in_array($code[1], $forbid)) {
