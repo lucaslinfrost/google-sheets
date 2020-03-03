@@ -11,10 +11,11 @@ $message = $event['message'];
 $message = trim($message);
 $message = preg_replace('/\s(?=)/', '', $message);
 $code = explode('#', $message['text']);
-$forbid = 
+$forbid = array("老大", "幹", "機掰", "雞掰");
                 
 foreach ($forbid as $item) {
 if (strcmp($code[1], $item) === 0) {
+$talkreply = "你輸入的內容包含禁止使用文字。";
 }else{
 $json = file_get_contents('./exampleJson/textReply.json');
 $file = fopen("./exampleJson/textReply.json", "w+");
