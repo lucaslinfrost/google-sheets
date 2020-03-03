@@ -42,7 +42,6 @@ function buildTextMessage($inputStr){
             'text' => $inputStr
             )
         );
-	error_log("★★★★★該死的值 : ".$inputStr);
 	return $message;
 }
 
