@@ -518,7 +518,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	foreach($content as $txtChack){
 		foreach($txtChack['chack'] as $chack){
 			
-			if(stristr($inputStr, $chack) != false){
+			if(strcmp($inputStr, $chack) === 0){
 			return buildTextMessage($txtChack['text'][Dice(count($txtChack['text']))-1]);
 			break;
 			}
