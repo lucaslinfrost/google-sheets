@@ -517,9 +517,12 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		
 	foreach($content as $txtChack){
 		foreach($txtChack['chack'] as $chack){
-			
-			//if(strcmp($inputStr, $chack) === 0){
-			if(stristr($inputStr, $chack) != false){
+			//if(strcmp($inputStr, $chack) === 0){ 精準
+			//if(stristr($inputStr, $chack) != false){ 模糊
+			$wordcontent = str_replace("老大", "", $inputStr);
+			$wordcontent = trim($wordcontent);
+			$wordcontent = preg_replace("/\s(?=)/", "", $wordcontent);
+			if(strcmp($wordcontent, $chack) === 0){
 			return buildTextMessage($txtChack['text'][Dice(count($txtChack['text']))-1]);
 			break;
 			}
