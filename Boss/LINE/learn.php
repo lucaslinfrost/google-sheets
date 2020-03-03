@@ -12,8 +12,9 @@ $message = $event['message'];
 $value = trim($message['text']);
 $value = preg_replace("/\s(?=)/", "", $value);
 $code = explode("#", $value);
-$forbidcode2= array("老大", "幹", "機掰", "雞掰", "洨", "姦", "中出", "內射", "奶子", "三小", "尛", "雞雞", "老二", "陰莖", "吹屌", "口交", "顏射");
-$forbidcode1= array("老大");
+$forbidcode2 = array("幹", "機掰", "雞掰", "洨", "姦", "中出", "內射", "奶子", "三小", "尛", "雞雞", "老二", "陰莖", "吹屌", "口交", "顏射");
+$forbidcode1 = array("老大");
+$forbidcode1 = array_push($forbidcode1, $forbidcode2);
 
 if($code[1] === ""){
 $talkreply = "不能輸入空值。\n格式 :\n老大學#關鍵字#回答句";
