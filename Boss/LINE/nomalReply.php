@@ -561,3 +561,17 @@ function SendImg($inputStr,$imgsReplyUrl) {
 	
 	return null;
 }
+
+function Replyfromlearn($inputStr) {
+$json = file_get_contents('./exampleJson/learn.json');
+$data = json_decode($json, true);
+$talkreply = "";
+
+foreach($data as $DataChack){
+foreach($DataChack['learn'] as $learn){
+if(stristr($inputStr, $learn) != false){
+$talkreply = $DataChack['reply'][Dice(count($DataChack['reply']))-1];
+break;
+}}} 
+
+}
