@@ -10,8 +10,8 @@ case 'message':
 $message = $event['message'];
 $code = explode('#', $message['text']);
 
-$json = file_get_contents('./exampleJson/test.json');
-$file = fopen("./exampleJson/test.json", "w+");
+$json = file_get_contents('./exampleJson/learn.json');
+$file = fopen("./exampleJson/learn.json", "w+");
 $upfile = json_decode($json, true);
 $update = array ('learn' => array ($code[1]),'reply' => array ($code[2]),);
 array_push($upfile, $update);
