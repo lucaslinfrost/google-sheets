@@ -11,14 +11,15 @@ $message = $event['message'];
 $code = explode('#', $message['text']);
 $json = file_get_contents('./exampleJson/test.json');
 $data = json_decode($json, true);
-foreach ($data['feed']['entry'] as $item) {
-  $keywords = explode(',', $item['gsx$learn']['$t']);
-  foreach ($keywords as $keyword) {
-    if (strcmp($code[1], $keyword) === 0) {
-      $talkreply = $item['gsx$reply']['$t'];
-    }
-  }
-}
+    
+foreach($data as $DataChack){
+		foreach($DataChack['learn'] as $learn){
+			if (strcmp($code[1], $learn) != false) {	
+			$talkreply = $DataChack['reply'][Dice(count($DataChack['reply']))-1];
+			break;
+			}
+		}
+	} 
 
   break;
         default:
