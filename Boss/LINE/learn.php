@@ -47,8 +47,6 @@ $talkreply = "不能輸入空值。\n格式 :\n老大學#關鍵字#回答句\n�
                $talkreply = "我已經學會了看到[".$code[1]."]\n就要回答[".$code[2]."]。";
             }
             break;
-            default:
-            error_log("Unsupporeted event type: " . $event['type']);
             break;
             }}
            fclose($file);
