@@ -29,10 +29,10 @@ $talkreply = "不能輸入空值。\n格式 :\n老大學#關鍵字#回答句";
          }else{
             $learnword = $code[1];
             $replyfromlearn = $code[2];
-            if (strpos($learnword, ",") !== false) { $learnword = explode(",", $code[1]);
-            }else if (strpos($learnword, "，") !== false) { $learnword = explode("，", $code[1]);
-            }else if (strpos($replyfromlearn, ",") !== false) { $replyfromlearn = explode(",", $code[2]);
-            }else if (strpos($replyfromlearn, "，") !== false) { $replyfromlearn = explode("，", $code[2]);}
+            if (strpos($learnword, ",") !== false) { $learnword = explode(",", $code[1]);}
+            if (strpos($learnword, "，") !== false) { $learnword = explode("，", $code[1]);}
+            if (strpos($replyfromlearn, ",") !== false) { $replyfromlearn = explode(",", $code[2]);}
+            if (strpos($replyfromlearn, "，") !== false) { $replyfromlearn = explode("，", $code[2]);}
                      
          $json = file_get_contents('./exampleJson/textReply.json');
          $file = fopen("./exampleJson/textReply.json", "w+");
