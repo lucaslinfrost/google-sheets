@@ -160,7 +160,6 @@ foreach ($bot->parseEvents() as $event) {
     switch ($event['type']) {
 		//收到訊息的動作
         case 'message':
-		        $messagetypecheck = "text";
 			$message = $event['message'];			
 			$source = $event['source'];
 			if($source['type'] == "group"){		
@@ -247,7 +246,6 @@ foreach ($bot->parseEvents() as $event) {
                     break;
                 
 				case 'image':
-			        $messagetypecheck = "picture";
 				error_log("傳送了圖片。");
 				break;
 				
@@ -321,10 +319,12 @@ function parseInput ($inputStr){
 	}else if(stristr($inputStr,$keyWord) != false){ //$keyWord
 		return KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName);
 				
-	}else if(stristr($inputStr,$keyWord) === false || $messagetypecheck === "text"){
-		return Replyfromlearn($inputStr);
-	}else{
+	}else if(stristr($inputStr,$keyWord) === false || stristr($inputStr,"!p") != false){
 		return SendImg($inputStr,$imgsReplyUrl);
+
+	}	
+	
+	else {
 	return null;
 	}
 }
