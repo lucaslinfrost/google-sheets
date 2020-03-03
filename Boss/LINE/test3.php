@@ -11,7 +11,11 @@ $message = $event['message'];
 $code = explode('#', $message['text']);
 $json = file_get_contents('./exampleJson/test.json');
 $data = json_decode($json, true);
-    
+ 
+function Dice($diceSided){
+	return rand(1,$diceSided);
+}
+
 foreach($data as $DataChack){
 		foreach($DataChack['learn'] as $learn){
 			if (strcmp($code[1], $learn) != false) {	
