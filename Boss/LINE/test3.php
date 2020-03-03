@@ -9,7 +9,7 @@ switch ($event['type']) {
 case 'message':
 $message = $event['message'];
 $code = explode('#', $message['text']);
-$json = file_get_contents('./exampleJson/test.json');
+$json = file_get_contents('./exampleJson/learn.json');
 $data = json_decode($json, true);
 
 foreach($data as $DataChack){
