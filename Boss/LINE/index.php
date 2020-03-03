@@ -321,13 +321,10 @@ function parseInput ($inputStr){
 	}else if(stristr($inputStr,$keyWord) != false){ //$keyWord
 		return KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName);
 				
-	}else if(stristr($inputStr,$keyWord) === false || stristr($inputStr,"!p") != false){
-		if ($messagetypecheck === "text"){
+	}else if(stristr($inputStr,$keyWord) === false || $messagetypecheck === "text"){
 		return Replyfromlearn($inputStr);
-		}else{
+	}else{
 		return SendImg($inputStr,$imgsReplyUrl);
-		}
-
 	}	
 	
 	else {
