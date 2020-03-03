@@ -15,7 +15,7 @@ $file = fopen("./exampleJson/test.json", "w+");
 $upfile = json_decode($json, true);
 $update = array ('learn' => array ($code[1]),'reply' => array ($code[2]),);
 array_push($upfile, $update);
-$upfile = urldecode(json_encode($upfile));
+$upfile = json_encode($upfile, JSON_UNESCAPED_UNICODE);
 fwrite($file, $upfile);
 $talkreply = "我學會了!~";
 fclose($file); 
