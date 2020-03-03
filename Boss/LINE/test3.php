@@ -11,10 +11,6 @@ $message = $event['message'];
 $code = explode('#', $message['text']);
 $json = file_get_contents('./exampleJson/test.json');
 $data = json_decode($json, true);
- 
-function Dice($diceSided){
-	return rand(1,$diceSided);
-}
 
 foreach($data as $DataChack){
 		foreach($DataChack['learn'] as $learn){
@@ -24,7 +20,9 @@ foreach($data as $DataChack){
 			}
 		}
 	} 
-
+function Dice($diceSided){
+	return rand(1,$diceSided);
+}
   break;
         default:
             error_log("Unsupporeted event type: " . $event['type']);
