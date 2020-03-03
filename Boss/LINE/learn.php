@@ -21,10 +21,10 @@ $talkreply = "不能輸入空值。\n格式 :\n老大學#關鍵字#回答句";
    if($code[2] === ""){
    $talkreply = "不能輸入空值。\n格式 :\n老大學#關鍵字#回答句";
    }else{
-      if (sensitive($code[1], $forbidcode1, 1)) {
+      if (sensitive($code[1], $forbidcode1)) {
       $talkreply = "你輸入的內容包含禁止使用文字。";
       }else{
-         if (sensitive($code[2], $forbidcode2, 1)) {
+         if (sensitive($code[2], $forbidcode2)) {
          $talkreply = "你輸入的內容包含禁止使用文字。";
          }else{
          $json = file_get_contents('./exampleJson/textReply.json');
@@ -47,10 +47,10 @@ $talkreply = "不能輸入空值。\n格式 :\n老大學#關鍵字#回答句";
     }
 };
 
-function sensitive($haystack, $needle, $offset=0) {
+function sensitive($haystack, $needle) {
 if(!is_array($needle)) $needle = array($needle);
 foreach($needle as $query) {
-if(strpos($haystack, $query, $offset) !== false) return true;
+if(strpos($haystack, $query) !== false) return true;
 }
 return false;
 }
