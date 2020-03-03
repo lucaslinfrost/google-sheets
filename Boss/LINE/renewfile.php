@@ -29,6 +29,7 @@ $update = file_get_contents($getfileaddress);
 $file = fopen("./data/m&d.json", "w+");
 fwrite($file, $update);
 $updatelog = "怪物資料已更新。";
+fclose($file); 
 }
     
 if (strcmp($code[1], "生產") === 0) {
