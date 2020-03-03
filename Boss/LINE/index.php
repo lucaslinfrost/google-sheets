@@ -326,7 +326,7 @@ function parseInput ($inputStr){
 	}else{
 		return SendImg($inputStr,$imgsReplyUrl);
 	}	
-	
+}
 	else {
 	return null;
 	}
