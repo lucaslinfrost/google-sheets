@@ -325,9 +325,6 @@ function parseInput ($inputStr){
 		return Replyfromlearn($inputStr);
 	}else{
 		return SendImg($inputStr,$imgsReplyUrl);
-	}	
-}
-	else {
 	return null;
 	}
 }
