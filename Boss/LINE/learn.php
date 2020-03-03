@@ -27,10 +27,17 @@ $talkreply = "不能輸入空值。\n格式 :\n老大學#關鍵字#回答句";
          if (sensitive($code[2], $forbidcode2)) {
          $talkreply = "你輸入的內容包含禁止使用文字。";
          }else{
+            $learnword = $code[1];
+            $replyfromlearn = $code[2];
+            if (strpos($learnword, ",") !== false) { $learnword = explode(",", $code[1]);
+            }else if{(strpos($learnword, "，") !== false) { $learnword = explode("，", $code[1]);
+            }else if{(strpos($replyfromlearn, ",") !== false) { $replyfromlearn = explode(",", $code[2]);
+            }else if{(strpos($replyfromlearn, "，") !== false) { $replyfromlearn = explode("，", $code[2]);}
+                     
          $json = file_get_contents('./exampleJson/textReply.json');
          $file = fopen("./exampleJson/textReply.json", "w+");
          $upfile = json_decode($json, true);
-         $update = array ('chack' => array ($code[1]),'text' => array ($code[2]),);
+         $update = array ('chack' => array ($learnword),'text' => array ($replyfromlearn),);
          array_push($upfile, $update);
          $upfile = json_encode($upfile, JSON_UNESCAPED_UNICODE);
          fwrite($file, $upfile);
