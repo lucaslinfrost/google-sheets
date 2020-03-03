@@ -14,10 +14,10 @@ $value = preg_replace('/\s(?=)/', "", $value);
 }
 
 $message = $event['message'];
-$messagetransfer = trim_value($message['text']);
-$code = explode('#', $messagetransfer);
+
+$code = explode('#', $message['text']);
 $forbid = array("老大", "幹", "機掰", "雞掰", "");
-  
+
 if (in_array($code[1], $forbid)) {
 $talkreply = "你輸入的內容包含禁止使用文字。";
 }else{
