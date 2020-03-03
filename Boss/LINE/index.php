@@ -317,6 +317,7 @@ function parseInput ($inputStr){
 		return DvTest ($inputStr,$userName,$textReplyUrl,$imgsReplyUrl);
 		
 	}else if(stristr($inputStr,$keyWord) != false){ //$keyWord
+		error_log("★★★★★該死的值 : ".$inputStr);
 		return KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName);
 				
 	}else if(stristr($inputStr,$keyWord) === false || stristr($inputStr,"!p") != false){
