@@ -14,8 +14,8 @@ $data = json_decode($json, true);
 
 foreach($data as $DataChack){
 		foreach($DataChack['learn'] as $learn){
-			if (strcmp($code[1], $learn) != false) {	
-			$talkreply = $DataChack['reply'];
+			if(stristr($code[1], $learn) != false){
+			$talkreply = $DataChack['reply'][Dice(count($DataChack['reply']))-1];
 			break;
 			}
 		}
