@@ -7,15 +7,12 @@ $bot = new LINEBotTiny($access_token, $secret);
 foreach ($bot->parseEvents() as $event) {
 switch ($event['type']) {
 case 'message':
-                
-function trim_value ($value) {
-$value = trim ($value);
-}
 
 $message = $event['message'];
-$message = array_walk($message, "trim_value");
 $code = explode('#', $message);
 $forbid = array("老大", "幹", "機掰", "雞掰");
+$code[1] = trim($code[1]);
+$code[1] = preg_replace('/\s(?=)/', "", $code[1]);
 $firstcheck = in_array($code[1], $forbid);
   
 if ($firstcheck) {
