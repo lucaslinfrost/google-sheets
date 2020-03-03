@@ -29,15 +29,15 @@ $talkreply = "不能輸入空值。\n格式 :\n老大學#關鍵字#回答句";
          }else{
             $learnword = $code[1];
             $replyfromlearn = $code[2];
+            $update = array ('chack' => array ($learnword),'text' => array ($replyfromlearn),);
             if (strpos($learnword, "，") !== false) {$learnword = str_replace("，", ",", $learnword);}
             if (strpos($replyfromlearn, "，") !== false) {$replyfromlearn = str_replace("，", ",", $replyfromlearn);}
-            if (strpos($learnword, ",") !== false) {$learnword = explode(",", $code[1]);}
-            if (strpos($replyfromlearn, ",") !== false) {$replyfromlearn = explode(",", $code[2]);}
+            if (strpos($learnword, ",") !== false) {$learnword = explode(",", $code[1]);$update = array ('chack' => $learnword,'text' => $replyfromlearn,);}
+            if (strpos($replyfromlearn, ",") !== false) {$replyfromlearn = explode(",", $code[2]);$update = array ('chack' => $learnword,'text' => $replyfromlearn,);}
                     
          $json = file_get_contents('./exampleJson/textReply.json');
          $file = fopen("./exampleJson/textReply.json", "w+");
          $upfile = json_decode($json, true);
-         $update = array ('chack' => array ($learnword),'text' => array ($replyfromlearn),);
          array_push($upfile, $update);
          $upfile = json_encode($upfile, JSON_UNESCAPED_UNICODE);
          fwrite($file, $upfile);
