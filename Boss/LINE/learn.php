@@ -39,16 +39,18 @@ $talkreply = "不能輸入空值。\n格式 :\n老大學#關鍵字#回答句\n�
             foreach($txtChack['chack'] as $chack){
             if(stristr($code[1], $chack) != false){
             $talkreply = "這個我已經學過了喔。";
-            break;
             }else{
                $update = array ('chack' => array ($learnword),'text' => array ($replyfromlearn),);
                if (strpos($learnword, ";") !== false) {$learnword = explode(";", $code[1]);$update = array ('chack' => $learnword,'text' => $replyfromlearn,);$code[1] = str_replace(";", "或", $code[1]);}
                if (strpos($replyfromlearn, ";") !== false) {$replyfromlearn = explode(";", $code[2]);$update = array ('chack' => $learnword,'text' => $replyfromlearn,);$code[2] = str_replace(";", "或", $code[2]);}
                fwrite($file, $upfile);
                $talkreply = "我已經學會了看到[".$code[1]."]\n就要回答[".$code[2]."]。";
-               fclose($file);
-               break;
-            }}}
+            }
+            break;
+            default:
+            error_log("Unsupporeted event type: " . $event['type']);
+            break;
+            }}
            fclose($file);
          }
       }
