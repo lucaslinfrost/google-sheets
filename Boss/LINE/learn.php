@@ -31,7 +31,7 @@ $talkreply = "不能輸入空值。\n格式 :\n老大學#關鍵字#回答句";
         array_push($upfile, $update);
         $upfile = json_encode($upfile, JSON_UNESCAPED_UNICODE);
         fwrite($file, $upfile);
-        $talkreply = "我學會了!~";
+        $talkreply = "我已經學會了看到[".$code[1]."]\n就要回答[".$code[2]."]。";
         fclose($file); 
         }
    }
