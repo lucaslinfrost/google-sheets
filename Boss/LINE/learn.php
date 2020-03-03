@@ -14,7 +14,7 @@ $file = fopen("./exampleJson/test.json", "a+");
 $file = substr($file,0,strlen($file)-1);
 $update = "{\"learn\":[\"".$code[1]."\"],\"reply\":[\"".$code[2]."\"]}\n]";
 fwrite($file, $update);
-$updatelog = "採礦資料已更新。";
+$talkreply = "我學會了!~";
 
         
     break;
