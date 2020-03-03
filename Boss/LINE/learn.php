@@ -10,8 +10,8 @@ case 'message':
 
 $message = $event['message'];
 $value = trim($message['text']);
-$value = preg_replace('/\s(?=)/', "", $value);
-$code = explode('#', $value);
+$value = preg_replace("/\s(?=)/", "", $value);
+$code = explode("#", $value);
 $forbid = array("老大", "幹", "機掰", "雞掰", "");
 
 if (in_array($code[1], $forbid)) {
