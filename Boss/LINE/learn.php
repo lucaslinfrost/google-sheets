@@ -12,12 +12,15 @@ $message = $event['message'];
 $value = trim($message['text']);
 $value = preg_replace("/\s(?=)/", "", $value);
 $code = explode("#", $value);
-$forbidcode1 = array("老大", "幹", "機掰", "雞掰", "洨", "姦", "中出", "內射", "奶子", "");
-$forbidcode2 = array("幹", "機掰", "雞掰", "", "", "", "", "", "", "", "", "", "", "", "", "");
+$forbidcode1 = array("老大", "幹", "機掰", "雞掰", "洨", "姦", "中出", "內射", "奶子");
+$forbidcode2 = array("幹", "機掰", "雞掰");
 
 if($code[1] === ""){
-$talkreply = "不能輸入空值。";
+$talkreply = "不能輸入空值。\n格式 :\n老大學#關鍵字#回答句";
 }else{
+   if($code[2] === ""){
+   $talkreply = "不能輸入空值。\n格式 :\n老大學#關鍵字#回答句";
+   }else{
         if (sensitive($code[1], $forbidcode1, 1)) {
         $talkreply = "你輸入的內容包含禁止使用文字。";
         }else{
@@ -31,6 +34,7 @@ $talkreply = "不能輸入空值。";
         $talkreply = "我學會了!~";
         fclose($file); 
         }
+   }
 }
     break;
         default:
