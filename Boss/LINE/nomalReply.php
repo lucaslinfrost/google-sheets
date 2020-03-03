@@ -85,10 +85,10 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 
 	}
 	//測試
-	if(stristr($inputStr, '測試') != false) {
+	if(stristr($inputStr, '學') != false) {
 		$rplyArr = explode('#',$inputStr);
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
-		require_once('./test3.php');
+		require_once('./learn.php');
 		return buildTextMessage($talkreply);
 	}
 	//地圖
