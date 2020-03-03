@@ -8,7 +8,9 @@ foreach ($bot->parseEvents() as $event) {
 switch ($event['type']) {
 case 'message':
 $message = $event['message'];
-$code = explode('#', $message['text']);
+$message = trim($message);
+$message = preg_replace('/\s(?=)/', '', $message);
+$code = explode('#', $message);
 $forbid = array("老大", "幹", "機掰", "雞掰");
 $firstcheck = in_array($code[1], $forbid);
         
