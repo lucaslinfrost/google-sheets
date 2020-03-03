@@ -1,2 +1,4 @@
-[{"gsx$learn":{"$t":"111"},"gsx$reply":{"$t":"222"}}
-,{"gsx$learn":{"$t":"333"},"gsx$reply":{"$t":"444"}}]
+[
+{"learn":"111","reply":"222"},
+{"learn":"333","reply":"444"}
+]
