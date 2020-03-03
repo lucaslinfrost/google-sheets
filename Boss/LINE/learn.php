@@ -36,7 +36,8 @@ $talkreply = "不能輸入空值。\n格式 :\n老大學#關鍵字#回答句\n�
             foreach($txtChack['chack'] as $chack){
             if(stristr($code[1], $chack) != false){
             $learnstatus = "已學";
-            $talkreply = "我已經學過[".$txtChack['chack']."]了喔。";
+            $learnrecord = implode(",", $txtChack['chack']);
+            $talkreply = "我已經學過[".$learnrecord."]了喔。";
             break;break;}}}
             
             if($learnstatus === "已學"){
