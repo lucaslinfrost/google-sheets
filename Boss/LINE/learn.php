@@ -7,7 +7,7 @@ $bot = new LINEBotTiny($access_token, $secret);
 foreach ($bot->parseEvents() as $event) {
 switch ($event['type']) {
 case 'message':
-
+$talkreply = "";
 $message = $event['message'];
 $value = trim($message['text']);
 $value = preg_replace("/\s(?=)/", "", $value);
