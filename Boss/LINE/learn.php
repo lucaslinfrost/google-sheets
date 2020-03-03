@@ -17,9 +17,8 @@ $message = $event['message'];
 $message['text'] = trim_value($message['text']);
 $code = explode('#', $message['text']);
 $forbid = array("老大", "幹", "機掰", "雞掰", "");
-$firstcheck = in_array($code[1], $forbid);
   
-if ($firstcheck) {
+if (in_array($code[1], $forbid)) {
 $talkreply = "你輸入的內容包含禁止使用文字。";
 }else{
 $json = file_get_contents('./exampleJson/textReply.json');
