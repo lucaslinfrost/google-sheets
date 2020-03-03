@@ -37,7 +37,7 @@ $talkreply = "不能輸入空值。\n格式 :\n老大學#關鍵字#回答句\n�
             $file = fopen("./exampleJson/textReply.json", "w+");
             $upfile = json_decode($json, true);
 
-              foreach($content as $txtChack){
+              foreach($upfile as $txtChack){
               foreach($txtChack['chack'] as $chack){
                  if(stristr($code[1], $chack) != false){
                  $talkreply = "這個我已經學過了喔。";
