@@ -12,10 +12,9 @@ $message = trim($message);
 $message = preg_replace('/\s(?=)/', '', $message);
 $code = explode('#', $message['text']);
 $forbid = array("老大", "幹", "機掰", "雞掰");
-$forbid = explode(',', $forbid);
-
-foreach ($forbid as $item) {
-if (strcmp($code[1], $item) === 0) {
+$firstcheck = in_array($code[1], $forbid);
+        
+if ($firstcheck) {
 $talkreply = "你輸入的內容包含禁止使用文字。";
 }else{
 $json = file_get_contents('./exampleJson/textReply.json');
@@ -28,7 +27,7 @@ fwrite($file, $upfile);
 $talkreply = "我學會了!~";
 fclose($file); 
 }
-}
+
     break;
         default:
             error_log("Unsupporeted event type: " . $event['type']);
