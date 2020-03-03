@@ -11,7 +11,7 @@ $message = $event['message'];
 $code = explode('#', $message['text']);
 
 $file = fopen("./exampleJson/test.json", "a+");
-$delete_lastchar = substr($file,0,strlen($file)-1);
+$file = substr($file,0,-1);
 $update = "{\"learn\":[\"".$code[1]."\"],\"reply\":[\"".$code[2]."\"]}\n]";
 fwrite($file, $update);
 $talkreply = "我學會了!~";
