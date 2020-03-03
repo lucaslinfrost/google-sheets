@@ -15,7 +15,7 @@ $file[strrpos($file, ']')] = '';
 $update = "{\"learn\":[\"".$code[1]."\"],\"reply\":[\"".$code[2]."\"]}\n]";
 fwrite($file, $update);
 $talkreply = "我學會了!~";
-
+fclose($file); 
         
     break;
         default:
