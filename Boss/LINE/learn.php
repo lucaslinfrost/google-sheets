@@ -39,7 +39,10 @@ $talkreply = "不能輸入空值。\n格式 :\n老大學#關鍵字#回答句\n�
                $update = array ('chack' => array ($learnword),'text' => array ($replyfromlearn),);
                if (strpos($learnword, ";") !== false) {$learnword = explode(";", $code[1]);$update = array ('chack' => $learnword,'text' => $replyfromlearn,);$code[1] = str_replace(";", "或", $code[1]);}
                if (strpos($replyfromlearn, ";") !== false) {$replyfromlearn = explode(";", $code[2]);$update = array ('chack' => $learnword,'text' => $replyfromlearn,);$code[2] = str_replace(";", "或", $code[2]);}
+               
+               $json = file_get_contents('./exampleJson/textReply.json');
                $file = fopen("./exampleJson/textReply.json", "w+");
+               $upfile = json_decode($json, true);
                array_push($upfile, $update);
                $upfile = json_encode($upfile, JSON_UNESCAPED_UNICODE);
                fwrite($file, $upfile);
