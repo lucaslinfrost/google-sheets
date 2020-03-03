@@ -15,7 +15,7 @@ $code = explode("#", $value);
 $forbidcode1 = array("老大", "幹", "機掰", "雞掰", "洨", "姦", "中出", "內射", "奶子", "", "", "", "", "", "");
 $forbidcode2 = array("幹", "機掰", "雞掰", "", "", "", "", "", "", "", "", "", "", "", "", "");
         
-if(array_search($code[1], $forbidcode1)){
+if (sensitive($code[1], $forbidcode1, 1)) {
 $talkreply = "你輸入的內容包含禁止使用文字。";
 }else{
 $json = file_get_contents('./exampleJson/textReply.json');
@@ -35,3 +35,13 @@ fclose($file);
             break;
     }
 };
+
+function sensitive($haystack, $needles=array(), $offset=0) {
+$chr = array();
+foreach($needles as $needle) {
+$res = strpos($haystack, $needle, $offset);
+if ($res !== false) $chr[$needle] = $res;
+}
+if(empty($chr)) return false;
+return min($chr);
+}
