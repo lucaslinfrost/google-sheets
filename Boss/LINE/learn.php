@@ -12,7 +12,9 @@ $code = explode('#', $message['text']);
 
 $file = fopen("./exampleJson/test.json", "w+");
 $upfile = json_decode($file, true);
-$update = "{\"learn\":[\"".$code[1]."\"],\"reply\":[\"".$code[2]."\"]}\n]";
+$update = array ('learn' => array ($code[1]),'reply' => array ($code[2]),),
+array_push($upfile, $update);
+$upfile = json_encode($upfile);
 fwrite($file, $update);
 $talkreply = "我學會了!~";
 fclose($file); 
