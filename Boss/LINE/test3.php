@@ -9,6 +9,16 @@ switch ($event['type']) {
 case 'message':
 $message = $event['message'];
 $code = explode('#', $message['text']);
+$json = file_get_contents('./data/test.json');
+$data = json_decode($json, true);
+foreach ($data['feed']['entry'] as $item) {
+  $keywords = explode(',', $item['gsx$learn']['$t']);
+  foreach ($keywords as $keyword) {
+    if (strcmp($code[1], $keyword) === 0) {
+      $talkreply = $item['gsx$reply']['$t'];
+    }
+  }
+}
 
   break;
         default:
