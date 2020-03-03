@@ -12,7 +12,7 @@ $code = explode('#', $message['text']);
 
 $file = fopen("./exampleJson/test.json", "w+");
 $upfile = json_decode($file, true);
-$update = array ('learn' => array ($code[1]),'reply' => array ($code[2]),),;
+$update = array ('learn' => array ($code[1]),'reply' => array ($code[2]),);
 array_push($upfile, $update);
 $upfile = json_encode($upfile);
 fwrite($file, $update);
