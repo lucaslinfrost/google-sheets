@@ -7,13 +7,17 @@ $bot = new LINEBotTiny($access_token, $secret);
 foreach ($bot->parseEvents() as $event) {
 switch ($event['type']) {
 case 'message':
+                
+function trim_value ($value) {
+$value = trim ($value);
+}
+
 $message = $event['message'];
-$message = trim($message);
-$message = preg_replace('/\s(?=)/', '', $message);
+$message = array_walk($message, "trim_value");
 $code = explode('#', $message);
 $forbid = array("老大", "幹", "機掰", "雞掰");
 $firstcheck = in_array($code[1], $forbid);
-        
+  
 if ($firstcheck) {
 $talkreply = "你輸入的內容包含禁止使用文字。";
 }else{
