@@ -520,8 +520,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 			
 			//if(strcmp($inputStr, $chack) === 0){
 			if(stristr($inputStr, $chack) != false){
-			return buildTextMessage($txtChack['text'][Dice(count($txtChack['text']))-1]);
 			error_log("該死的值 : ".$inputStr);
+			return buildTextMessage($txtChack['text'][Dice(count($txtChack['text']))-1]);
 			break;
 			}
 		}
