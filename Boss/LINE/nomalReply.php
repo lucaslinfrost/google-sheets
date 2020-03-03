@@ -84,16 +84,12 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		}
 
 	}
-	//計算機
-	if(stristr($inputStr, 'count') != false) {
-		$rplyArr = explode(' ',$inputStr);
+	//測試
+	if(stristr($inputStr, '測試') != false) {
+		$rplyArr = explode('#',$inputStr);
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
-		require_once('./calculator.php');
-		if ($ans === "yes") {
-		return buildTextMessage('答案是 : '.$alltext.' 喔。');
-		}else{
-		return buildTextMessage('這樣我不會算啦，森77！');
-		}
+		require_once('./test3.php');
+		return buildTextMessage($talkreply);
 	}
 	//地圖
 	if(stristr($inputStr, '指路') != false||
