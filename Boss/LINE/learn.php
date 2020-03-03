@@ -16,7 +16,7 @@ case 'message':
 $message = $event['message'];
 $message = trim_value($message);
 $code = explode('#', $message);
-$forbid = array("老大", "幹", "機掰", "雞掰");
+$forbid = array("老大", "幹", "機掰", "雞掰", "");
 $firstcheck = in_array($code[1], $forbid);
   
 if ($firstcheck) {
