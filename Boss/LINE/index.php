@@ -213,6 +213,7 @@ foreach ($bot->parseEvents() as $event) {
 				error_log("發送人ID：".$userId);
 				$table = "私人";
 				$tableid = $userId;
+				error_log("該死的值 : ".$inputStr);
 				require_once('../../record.php');
 				}
 			
