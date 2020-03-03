@@ -527,10 +527,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	
   //沒有觸發關鍵字則是這個
 	require_once('./replyfromlearn.php');
-	if ($talkreply === "") {
-	$rplyArr = $content[0]['text'];
-	return buildTextMessage($rplyArr[Dice(count($rplyArr))-1]);
-	}else{return buildTextMessage($talkreply);}
+	return buildTextMessage($talkreply);
 }
 
 
