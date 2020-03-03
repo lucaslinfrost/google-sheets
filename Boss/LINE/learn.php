@@ -16,7 +16,7 @@ $forbidcode1 = array("老大", "幹", "機掰", "雞掰", "洨", "姦", "中出"
 $forbidcode2 = array("幹", "機掰", "雞掰", "", "", "", "", "", "", "", "", "", "", "", "", "");
         
 foreach($forbidcode1 as $key){
-if(strstr($code[1],$key)){
+if (strpos($code[1], $key) !== false) {
 $talkreply = "你輸入的內容包含禁止使用文字。";
 }else{
 $json = file_get_contents('./exampleJson/textReply.json');
