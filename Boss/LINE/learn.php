@@ -10,10 +10,12 @@ case 'message':
 $message = $event['message'];
 $code = explode('#', $message['text']);
 
-$file = fopen("./exampleJson/test.json", "a+");
-$file = substr($file,0,-1);
+$file = fopen("./exampleJson/test.json", "w+");
+$data = json_decode($file, true);  
+$data = substr($data,0,-1);
 $update = "{\"learn\":[\"".$code[1]."\"],\"reply\":[\"".$code[2]."\"]}\n]";
-fwrite($file, $update);
+$data = $data."\n".$update;
+fwrite($file, $data);
 $talkreply = "我學會了!~";
 
         
