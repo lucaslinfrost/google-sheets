@@ -4,7 +4,6 @@ require_once('./LINEBotTiny.php');
 $access_token = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $secret = getenv('LINE_CHANNEL_SECRET');
 $bot = new LINEBotTiny($access_token, $secret);
-$talkreply = "";
 foreach ($bot->parseEvents() as $event) {
 switch ($event['type']) {
 case 'message':
@@ -12,6 +11,7 @@ $message = $event['message'];
 $value = trim($message['text']);
 $value = preg_replace("/\s(?=)/", "", $value);
 $code = explode("#", $value);
+$talkreply = "我想".$code[1]."並不在我學會的資訊裡面。";
 $data = file_get_contents('./exampleJson/textReply.json');
 $json_arr = json_decode($data, true);
 // get array index to delete
@@ -21,14 +21,14 @@ $n = array ($code[1]);
 foreach ($json_arr as $key => $value) {
 if ($value['chack'] == $n) {
 $arr_index[] = $key;
-//break;
+break;
 }
 }
 // delete data
 foreach ($arr_index as $i) {
 unset($json_arr[$i]);
 $talkreply = "我已經將[".$code[1]."]忘記了。";
-//break;
+break;
 }
 // rebase array
 $json_arr = array_values($json_arr);
