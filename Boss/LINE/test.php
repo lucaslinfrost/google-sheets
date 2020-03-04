@@ -11,12 +11,16 @@ $client = new LINEBotTiny($channelAccessToken, $channelSecret);
         $data = json_decode($json, true);
         // get array index to delete
         $arr_index = array();
-        foreach ($data as $key => $value) {
-        if ($value == "11") {
+
+        foreach ($data as $value) {
+         foreach($value['chack'] as $key => $chack){       
+                
+        //if ($value == "11") {
+        if(strcmp("11", $chack) === 0){
         $arr_index[] = $key;
-        }
-        break;
-        }
+        break;break;}}}
+
+
         // delete data
         foreach ($arr_index as $i) {
         unset($data[$i]);
