@@ -17,10 +17,8 @@ $client = new LINEBotTiny($channelAccessToken, $channelSecret);
                 
         //if ($value == "11") {
         if(strcmp("11", $chack) === 0){
-        $arr_index[] = $key;
-        break;break;}}}
-
         unset($data[$key]);
+        break;break;}}}
 
         // rebase array
         $data = array_values($data);
