@@ -18,9 +18,9 @@ switch ($event['type']) {
         
         
         //get all your data on file
-        $data = file_get_contents('teste_data.json');
+        $json = file_get_contents('teste_data.json');
         // decode json to associative array
-        $json_arr = json_decode($data, true);
+        $json_arr = json_decode($json, true);
 
         // get array index to delete
         $arr_index = array();
