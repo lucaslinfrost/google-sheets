@@ -17,7 +17,7 @@ $json_arr = json_decode($data, true);
 // get array index to delete
 $arr_index = array();
 $wordcheck = "\"".$code[1]."\"";
-$n = array ($wordcheck);  
+$n = array ("技能大全");  
 foreach ($json_arr as $key => $value) {
 if ($value['chack'] == $n) {
 $arr_index[] = $key;
