@@ -16,8 +16,9 @@ $data = file_get_contents('./exampleJson/textReply.json');
 $json_arr = json_decode($data, true);
 // get array index to delete
 $arr_index = array();
+$wordcheck = "\"".$code[1]."\"";
+$n = array ($wordcheck);  
 foreach ($json_arr as $key => $value) {
-$n = array ("\"".$code[1]."\"");
 if ($value['chack'] == $n) {
 $arr_index[] = $key;
 break;
