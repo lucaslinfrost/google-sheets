@@ -21,14 +21,14 @@ $n = array ($wordcheck);
 foreach ($json_arr as $key => $value) {
 if ($value['chack'] == $n) {
 $arr_index[] = $key;
-break;
+//break;
 }
 }
 // delete data
 foreach ($arr_index as $i) {
 unset($json_arr[$i]);
 $talkreply = "我已經將[".$code[1]."]忘記了。";
-break;
+//break;
 }
 // rebase array
 $json_arr = array_values($json_arr);
