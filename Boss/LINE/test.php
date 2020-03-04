@@ -25,5 +25,5 @@ $client = new LINEBotTiny($channelAccessToken, $channelSecret);
         // rebase array
         $data = array_values($data);
         // encode array to json and save to file
-        file_put_contents('./exampleJson/textReply.json', json_encode($data));
+        file_put_contents('./exampleJson/textReply.json', json_encode($data, JSON_UNESCAPED_UNICODE));
   
