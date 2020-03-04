@@ -12,7 +12,7 @@ $client = new LINEBotTiny($channelAccessToken, $channelSecret);
         // get array index to delete
         $arr_index = array();
         foreach ($data as $key => $value) {
-        if ($value['chack'] == "11") {
+        if ($value == "11") {
         $arr_index[] = $key;
         }
         break;
