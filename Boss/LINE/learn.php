@@ -37,7 +37,7 @@ $talkreply = "不能輸入空值。\n格式 :\n老大學#關鍵字#回答句\n�
             if(strcmp($code[1], $chack) === 0){
             $learnstatus = "已學";
             $talkreply = "我已經學過[".$code[1]."]了喔。";
-            break;break;}}}
+            }}break;break;}
             
             if($learnstatus === "已學"){
             }else{
