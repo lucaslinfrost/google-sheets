@@ -520,7 +520,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 			//if(strcmp($inputStr, $chack) === 0){ 精準
 			//if(stristr($inputStr, $chack) != false){ 模糊
 			
-			if (stristr($inputStr, $chack)) {
+			if (stristr($inputStr, $chack) == false) {
+			}else{
 			return buildTextMessage($txtChack['text'][Dice(count($txtChack['text']))-1]);
 			break;
 			}
