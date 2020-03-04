@@ -10,9 +10,6 @@ foreach ($client->parseEvents() as $event) {
 switch ($event['type']) {       
     case 'message':
         $message = $event['message'];
-        $json = file_get_contents($googledataspi);
-        $data = json_decode($json, true);
-  
         $code = explode(' ', $message['text']);
         // 資料起始從feed.entry          
         
@@ -20,11 +17,11 @@ switch ($event['type']) {
         //get all your data on file
         $json = file_get_contents('teste_data.json');
         // decode json to associative array
-        $json_arr = json_decode($json, true);
+        $data = json_decode($json, true);
 
         // get array index to delete
         $arr_index = array();
-        foreach ($json_arr as $key => $value) {
+        foreach ($data as $key => $value) {
         if ($value['YOUR KEY'] == SOME VALUE TO COMPARE) {
         $arr_index[] = $key;
         }
@@ -36,7 +33,7 @@ switch ($event['type']) {
         }
 
         // rebase array
-        $json_arr = array_values($json_arr);
+        $json_arr = array_values($data);
 
         // encode array to json and save to file
         file_put_contents('teste_data.json', json_encode($json_arr));
