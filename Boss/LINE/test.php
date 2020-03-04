@@ -29,14 +29,14 @@ switch ($event['type']) {
 
         // delete data
         foreach ($arr_index as $i) {
-        unset($json_arr[$i]);
+        unset($data[$i]);
         }
 
         // rebase array
-        $json_arr = array_values($data);
+        $data = array_values($data);
 
         // encode array to json and save to file
-        file_put_contents('teste_data.json', json_encode($json_arr));
+        file_put_contents('teste_data.json', json_encode($data));
         
         
         
