@@ -36,13 +36,13 @@ $talkreply = "不能輸入空值。\n格式 :\n老大學#關鍵字#回答句\n�
             foreach($txtChack['chack'] as $chack){
             if(strcmp($code[1], $chack) === 0){
             $learnstatus = "已學";
-            $talkreply = "我已經學過[".$learnrecord."]了喔。";
+            $talkreply = "我已經學過[".$code[1]."]了喔。";
             break;break;}}}
             
             if($learnstatus === "已學"){
             }else{
-               $update = array ('chack' => array ($learnword),'text' => array ($replyfromlearn),);
-               if (strpos($replyfromlearn, ";") !== false) {$replyfromlearn = explode(";", $code[2]);$update = array ('chack' => $learnword,'text' => $replyfromlearn,);$code[2] = str_replace(";", "或", $code[2]);}
+               $update = array ('chack' => array ($code[1]),'text' => array ($replyfromlearn),);
+               if (strpos($replyfromlearn, ";") !== false) {$replyfromlearn = explode(";", $code[2]);$update = array ('chack' => array ($code[1]),'text' => $replyfromlearn,);$code[2] = str_replace(";", "或", $code[2]);}
                $file = fopen("./exampleJson/textReply.json", "w+");
                array_push($upfile, $update);
                $upfile = json_encode($upfile, JSON_UNESCAPED_UNICODE);
