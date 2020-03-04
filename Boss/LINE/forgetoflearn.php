@@ -27,7 +27,7 @@ $arr_index[] = $key;
 // delete data
 foreach ($arr_index as $i) {
 unset($json_arr[$i]);
-$talkreply = "我已經將[".$code[1]."]忘記了。".$wordcheck;
+$talkreply = "我已經將[".$code[1]."]忘記了。";
 //break;
 }
 // rebase array
