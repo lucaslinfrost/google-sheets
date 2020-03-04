@@ -3,15 +3,8 @@
 require_once('./LINEBotTiny.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
-$googledataspi = getenv('googledataspi4');
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 
-foreach ($client->parseEvents() as $event) {
-switch ($event['type']) {       
-    case 'message':
-        $message = $event['message'];
-        $code = explode(' ', $message['text']);          
-        
         //get all your data on file
         $json = file_get_contents('./exampleJson/textReply.json');
         // decode json to associative array
@@ -33,10 +26,4 @@ switch ($event['type']) {
         $data = array_values($data);
         // encode array to json and save to file
         file_put_contents('./exampleJson/textReply.json', json_encode($data));
-        
-        break;
-    default:
-        error_log("Unsupporeted event type: " . $event['type']);
-        break;
-}
-};
+  
