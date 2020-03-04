@@ -20,12 +20,8 @@ $client = new LINEBotTiny($channelAccessToken, $channelSecret);
         $arr_index[] = $key;
         break;break;}}}
 
+        unset($data[$key]);
 
-        // delete data
-        foreach ($arr_index as $i) {
-        unset($data[$i]);
-        break;
-        }
         // rebase array
         $data = array_values($data);
         // encode array to json and save to file
