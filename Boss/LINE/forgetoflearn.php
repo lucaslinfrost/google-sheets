@@ -4,15 +4,14 @@ require_once('./LINEBotTiny.php');
 $access_token = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $secret = getenv('LINE_CHANNEL_SECRET');
 $bot = new LINEBotTiny($access_token, $secret);
-$message = $event['message'];
-$value = trim($message['text']);
-$value = preg_replace("/\s(?=)/", "", $value);
-$code = explode("#", $value);
 
 foreach ($bot->parseEvents() as $event) {
 switch ($event['type']) {
 case 'message':
-
+$message = $event['message'];
+$value = trim($message['text']);
+$value = preg_replace("/\s(?=)/", "", $value);
+$code = explode("#", $value);
 $data = file_get_contents('./exampleJson/textReply.json');
 $json_arr = json_decode($data, true);
 // get array index to delete
