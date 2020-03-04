@@ -11,7 +11,7 @@ $message = $event['message'];
 $value = trim($message['text']);
 $value = preg_replace("/\s(?=)/", "", $value);
 $code = explode("#", $value);
-$talkreply = "我想".$code[1]."並不在我學會的資訊裡面。";
+$talkreply = "我想[".$code[1]."]並不在我學會的資訊裡面。";
 $data = file_get_contents('./exampleJson/textReply.json');
 $json_arr = json_decode($data, true);
 // get array index to delete
