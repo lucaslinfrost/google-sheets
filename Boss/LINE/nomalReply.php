@@ -66,22 +66,29 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		$productionspare = substr($productionspare, 0, -1);
 		if ($equipspare !== "") {
 		$equipspare = substr($equipspare, 0, -1);
-		return buildTextMessage($alltext1);
-		return buildTextMessage($productionspare);
-		return buildTextMessage($alltext2);
-		return buildTextMessage($equipspare);
+		$messages = new MutiMessage();
+			$replyArr = Array(
+				$messages->text($alltext1),
+				$messages->text($productionspare),
+				$messages->text($alltext2),
+				$messages->text($equipspare)
+			);	
 		}else{
 		$productionspare = substr($productionspare, 0, -1);
-		return buildTextMessage($alltext1);
-		return buildTextMessage($productionspare);
-		return buildTextMessage($alltext2);
+			$replyArr = Array(
+				$messages->text($alltext1),
+				$messages->text($productionspare),
+				$messages->text($alltext2)
+			);	
 		}
 		}else{	
 		if ($equipspare !== "") {
 		$equipspare = substr($equipspare, 0, -1);
-		return buildTextMessage($alltext1);
-		return buildTextMessage($alltext2);
-		return buildTextMessage($equipspare);
+			$replyArr = Array(
+				$messages->text($alltext1),
+				$messages->text($alltext2),
+				$messages->text($equipspare)
+			);	
 		}else{
 		$alltext = $alltext1."\n".$alltext2;
 		return buildTextMessage($alltext);
@@ -92,8 +99,10 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		$alltext = substr($alltext1, 0, -1);
 		if ($productionspare !== "") {
 		$productionspare = substr($productionspare, 0, -1);
-		return buildTextMessage($alltext1);
-		return buildTextMessage($productionspare);
+			$replyArr = Array(
+				$messages->text($alltext1),
+				$messages->text($productionspare)
+			);	
 		}else{
 		return buildTextMessage(''.$alltext.'');
 		}
@@ -104,8 +113,10 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		$alltext = substr($alltext2, 0, -1);	
 		if ($equipspare !== "") {
 		$equipspare = substr($equipspare, 0, -1);
-		return buildTextMessage($alltext2);
-		return buildTextMessage($equipspare);
+			$replyArr = Array(
+				$messages->text($alltext2),
+				$messages->text($equipspare)
+			);	
 		}else{
 		return buildTextMessage(''.$alltext.'');
 		}
