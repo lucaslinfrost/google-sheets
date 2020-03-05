@@ -64,14 +64,17 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		$alltext2 = substr($alltext2, 0, -1);
 		$alltext = $alltext1."\n".$alltext2;
 		return buildTextMessage(''.$alltext.'');
+		unset($json3, $data3, $keywords, $keyword, $json2, $data2);
 		}else{
 		$alltext = substr($alltext1, 0, -1);
 		return buildTextMessage(''.$alltext.'');
+		unset($json3, $data3, $keywords, $keyword, $json2, $data2);
 		}
 		}else{
 		if ($alltext2 !== "") {
 		$alltext = substr($alltext2, 0, -1);
 		return buildTextMessage(''.$alltext.'');
+		unset($json3, $data3, $keywords, $keyword, $json2, $data2);
 		}else{
        		return buildTextMessage(''.$userName.'，我查不到這個物品的用途。');
 		}
