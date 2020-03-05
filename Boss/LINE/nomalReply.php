@@ -97,8 +97,12 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 			);
 			return $messages->send($replyArr);
 		}else{
-		$alltext = $alltext1."\n".$alltext2;
-		return buildTextMessage($alltext);
+		$messages = new MutiMessage();
+			$replyArr = Array(
+				$messages->text($alltext1),
+				$messages->text($alltext2),
+			);
+			return $messages->send($replyArr);
 		}
 		}
 		unset($json3, $data3, $keywords, $keyword, $json2, $data2);
