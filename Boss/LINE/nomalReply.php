@@ -75,6 +75,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 			);	
 		}else{
 		$productionspare = substr($productionspare, 0, -1);
+		$messages = new MutiMessage();
 			$replyArr = Array(
 				$messages->text($alltext1),
 				$messages->text($productionspare),
@@ -84,6 +85,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		}else{	
 		if ($equipspare !== "") {
 		$equipspare = substr($equipspare, 0, -1);
+		$messages = new MutiMessage();
 			$replyArr = Array(
 				$messages->text($alltext1),
 				$messages->text($alltext2),
@@ -99,6 +101,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		$alltext = substr($alltext1, 0, -1);
 		if ($productionspare !== "") {
 		$productionspare = substr($productionspare, 0, -1);
+		$messages = new MutiMessage();
 			$replyArr = Array(
 				$messages->text($alltext1),
 				$messages->text($productionspare)
@@ -113,6 +116,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		$alltext = substr($alltext2, 0, -1);	
 		if ($equipspare !== "") {
 		$equipspare = substr($equipspare, 0, -1);
+		$messages = new MutiMessage();
 			$replyArr = Array(
 				$messages->text($alltext2),
 				$messages->text($equipspare)
