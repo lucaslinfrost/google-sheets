@@ -84,20 +84,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		}
 
 	}
-	//學說話
-	if(stristr($inputStr, '學') != false) {
-		$rplyArr = explode('#',$inputStr);
-		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
-		require_once('./learn.php');
-		return buildTextMessage($talkreply);
-	}
-	//忘記說話
-	if(stristr($inputStr, '忘') != false) {
-		$rplyArr = explode('#',$inputStr);
-		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
-		require_once('./forgetoflearn.php');
-		return buildTextMessage($talkreply);
-	}
+
 	//地圖
 	if(stristr($inputStr, '指路') != false||
 	       stristr($inputStr, '導航') != false) {
@@ -503,7 +490,21 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		$rplyArr=Array('超大吉','大吉','大吉','中吉','中吉','中吉','小吉','小吉','小吉','小吉','平','平','平','平','平','平','平','平','平','平','凶','凶','凶','大凶','超大凶','你還是，不要知道比較好','這應該不關我的事');
 		return buildTextMessage(''.$userName.'，你今日的運勢是【'.$rplyArr[Dice(count($rplyArr))-1].'】喔。');
 	} 
-
+	
+	//學說話
+	if(stristr($inputStr, '學') != false) {
+		$rplyArr = explode('#',$inputStr);
+		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
+		require_once('./learn.php');
+		return buildTextMessage($talkreply);
+	}
+	//忘記說話
+	if(stristr($inputStr, '忘') != false) {
+		$rplyArr = explode('#',$inputStr);
+		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
+		require_once('./forgetoflearn.php');
+		return buildTextMessage($talkreply);
+	}
 
     //以下是回應功能
 	//讀入文字回應變數
