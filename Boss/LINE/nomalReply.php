@@ -130,6 +130,17 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		}
 
 	}
+	
+	//測試
+	if(stristr($inputStr, '測試') != false) {
+	$messages = new MutiMessage();
+			$replyArr = Array(
+				$messages->text("蛇"),
+				$messages->text("蛇"),
+				$messages->text("好"),
+				$messages->text("棒")
+			);exit;
+	}
 
 	//地圖
 	if(stristr($inputStr, '指路') != false||
