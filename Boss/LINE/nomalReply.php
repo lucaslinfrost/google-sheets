@@ -77,6 +77,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 			return $messages->send($replyArr);
 		}else{
 		$productionspare = substr($productionspare, 0, -1);
+		$productionspare = $productionspare." ";
 		$messages = new MutiMessage();
 			$replyArr = Array(
 				$messages->text($alltext1),
