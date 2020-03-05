@@ -30,7 +30,7 @@ foreach ($data2['feed']['entry'] as $item) {
 $keywords = explode(',', $item['gsx$ppic']['$t']);
 foreach ($keywords as $keyword) {
 if (strcmp($code[1], $keyword) === 0) {
-if ($productiontime > 34) {
+if ($productiontime > 29) {
 $productionspare = $productionspare."".$item['gsx$pname']['$t']." → ".$item['gsx$newlv']['$t']."\n";
 }else{
 $alltext1 = $alltext1."".$item['gsx$pname']['$t']." → ".$item['gsx$newlv']['$t']."\n";
@@ -50,7 +50,7 @@ foreach ($data3['feed']['entry'] as $item) {
 $keywords = explode(',', $item['gsx$search']['$t']);
 foreach ($keywords as $keyword) {
 if (strcmp($code[1], $keyword) === 0) {
-if ($equiptime > 34) {
+if ($equiptime > 29) {
 $equipspare = $equipspare."".$item['gsx$name']['$t']." 【".$item['gsx$part']['$t']."】 → ".$item['gsx$smith']['$t']."[".$item['gsx$smithtype']['$t']."]\n";
 }else{
 $alltext2 = $alltext2."".$item['gsx$name']['$t']." 【".$item['gsx$part']['$t']."】 → ".$item['gsx$smith']['$t']."[".$item['gsx$smithtype']['$t']."]\n";
