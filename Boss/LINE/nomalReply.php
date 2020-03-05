@@ -85,7 +85,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		}
 		}else{	
 		if ($equipspare !== "") {
-		$equipspare = substr($equipspare, 0, -1);
+		//$equipspare = substr($equipspare, 0, -1);
 		$messages = new MutiMessage();
 			$replyArr = Array(
 				$messages->text($alltext1),
