@@ -139,7 +139,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 				$messages->text("蛇"),
 				$messages->text("好"),
 				$messages->text("棒")
-			);exit;
+			);
+	return $messages->send($replyArr);
 	}
 
 	//地圖
