@@ -366,8 +366,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
 		
 		require_once('./sign2.php');
-		return buildTextMessage(''.$dataall.'');
-		unset($data0, $data1, $data2, $data3, $data4, $data5, $data6, $data7, $data8, $data9, $data10, $data11, $data12, $data13, $data14, $datatime, $dataall, $ch, $url, $html, $dom, $xPath);
+		unset($data0, $data1, $data2, $data3, $data4, $data5, $data6, $data7, $data8, $data9, $data10, $data11, $data12, $data13, $data14, $datatime, $ch, $url, $html, $dom, $xPath);
+		return buildTextMessage($dataall);
 	}
   	  //匯率
 	if(stristr($inputStr, '匯率') != false||
@@ -390,8 +390,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		require_once('./rock.php');
 		if ($alltext !== "") {
 		$alltext = substr($alltext, 0, -34);
-		return buildTextMessage(''.$alltext.'');
 		unset($json, $data, $keywords, $keyword);
+		return buildTextMessage(''.$alltext.'');
 		}
 		if ($alltext === "") {
 		require_once('./item4.php');
@@ -401,7 +401,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		$alltext = "請用下方指令再試一次吧。\n\n--------  建議指令  --------\n".$alltext;
 		$alltext = substr($alltext, 0, -1);
 		return buildTextMessage(''.$alltext.'');
-		}else{return buildTextMessage('資料庫沒有你要找的資料
+		}else{
+		return buildTextMessage('資料庫沒有你要找的資料
 (๑•́ ₃ •̀๑)');}
 		unset($json1, $data1, $keywords, $keyword, $json2, $data2, $json3, $data3, $json4, $data5, $json5, $data5, $json6, $data6);
 		}
@@ -519,10 +520,12 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		require_once('./authorization.php');
 		if($userId === $owner){ 
 		require_once('./renewfile.php');
+		unset($update, $file, $countno);
 		return buildTextMessage($updatelog);
+		}else{
 		unset($update, $file, $updatelog, $countno);
-		}else{return buildTextMessage('你並沒有權限使用這個指令。');
-		unset($update, $file, $updatelog, $countno);}
+		return buildTextMessage('你並沒有權限使用這個指令。');
+		}
 	}
 	//裝備公式
 	if(stristr($inputStr, '公式') != false) {
@@ -533,16 +536,17 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		if($userId === $owner){ 
 		if ($alltext !== "") {
 		$alltext = substr($alltext, 0, -34);
-		return buildTextMessage(''.$alltext.'');
 		unset($json0, $data0, $keywords, $keyword, $json1, $data1, $keywords1, $keyword1, $a, $b);
+		return buildTextMessage(''.$alltext.'');
 		}
 		if ($alltext === "") {
+		unset($json0, $data0, $keywords, $keyword, $json1, $data1, $keywords1, $keyword1, $a, $b);
 		return buildTextMessage('資料庫沒有你要找的資料
 (๑•́ ₃ •̀๑)');
-		unset($json0, $data0, $keywords, $keyword, $json1, $data1, $keywords1, $keyword1, $a, $b);
 		}
-	}else{return buildTextMessage('你並沒有權限使用這個指令。');
-	     unset($json0, $data0, $keywords, $keyword, $json1, $data1, $keywords1, $keyword1, $a, $b);}
+	}else{
+	unset($json0, $data0, $keywords, $keyword, $json1, $data1, $keywords1, $keyword1, $a, $b);}
+	return buildTextMessage('你並沒有權限使用這個指令。');
 	}
 	//學說話
 	if(stristr($inputStr, '學') != false) {
