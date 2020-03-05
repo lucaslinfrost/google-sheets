@@ -61,10 +61,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		unset($json3, $data3, $keywords, $keyword, $json2, $data2);
 		if ($alltext1 !== "") {
 		$alltext1 = substr($alltext1, 0, -1);
-		$alltext1 = $alltext1."--------  生產用途  --------\n";
 		if ($alltext2 !== "") {
 		$alltext2 = substr($alltext2, 0, -1);
-		$alltext2 = $alltext2."--------  鐵匠用途  --------\n";
 		if ($productionspare !== "") {
 		//$productionspare = substr($productionspare, 0, -1);
 		if ($equipspare !== "") {
@@ -107,7 +105,6 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		}
 		}
 		}else{
-		$alltext1 = $alltext1."--------  生產用途  --------\n";
 		$alltext = substr($alltext1, 0, -1);
 		if ($productionspare !== "") {
 		//$productionspare = substr($productionspare, 0, -1);
@@ -123,7 +120,6 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		}
 		}else{
 		if ($alltext2 !== "") {
-		$alltext2 = $alltext2."--------  鐵匠用途  --------\n";
 		$alltext = substr($alltext2, 0, -1);	
 		if ($equipspare !== "") {
 		//$equipspare = substr($equipspare, 0, -1);
