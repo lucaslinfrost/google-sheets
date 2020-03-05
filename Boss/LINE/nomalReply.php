@@ -57,16 +57,15 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		$rplyArr = explode('#',$inputStr);
     
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
-		require_once('./item2.php');
-		require_once('./item3.php');
-		if ($alltext !== "") {
+		require_once('./usagecheck.php');
+		if ($alltext1 !== "") {
 		if ($alltext2 !== "") {
-		$alltext = substr($alltext, 0, -1);
+		$alltext1 = substr($alltext1, 0, -1);
 		$alltext2 = substr($alltext2, 0, -1);
-		$alltext = $alltext."\n".$alltext2;
+		$alltext = $alltext1."\n".$alltext2;
 		return buildTextMessage(''.$alltext.'');
 		}else{
-		$alltext = substr($alltext, 0, -1);
+		$alltext = substr($alltext1, 0, -1);
 		return buildTextMessage(''.$alltext.'');
 		}
 		}else{
@@ -74,12 +73,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		$alltext = substr($alltext2, 0, -1);
 		return buildTextMessage(''.$alltext.'');
 		}else{
-		$rplyArr = Array(
-                 '你眼睛業障重ಠ_ಠ所以看不到',
-                 '我找不到(๑•́ ₃ •̀๑)',
-                 '資料庫沒有你要找的資料ʅ（´◔౪◔）ʃ',
-                 '沒有喵(=ↀωↀ=)');
-       		return buildTextMessage(''.$userName.'，'.$rplyArr[Dice(count($rplyArr))-1].'');
+       		return buildTextMessage(''.$userName.'，我查不到這個物品的用途。');
 		}
 		}
 
@@ -193,21 +187,6 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		unset($data0, $data1, $data2, $data3, $data4, $data5, $data6, $data7, $data8, $html, $ch, $url, $result, $dom, $xPath);
 	}
 
-	
-	//更新json檔案
-	if(stristr($inputStr, '上傳') != false) {
-		$rplyArr = explode('#',$inputStr);
-		$updatelog = "請用[#做為區隔]，\n目前沒有可以更新的資料。\n\n--------  建議輸入  --------\n怪物\n生產\n裝備\n石頭\n星能\n地圖\n栽培\n採礦";
-		if (count($rplyArr) == 1) {return buildTextMessage($updatelog);}
-		require_once('./authorization.php');
-		if($userId === $owner){ 
-		require_once('./renewfile.php');
-		return buildTextMessage($updatelog);
-		unset($update, $file, $updatelog, $countno);
-		}else{return buildTextMessage('你並沒有權限使用這個指令。');
-		unset($update, $file, $updatelog, $countno);}
-	}
-	
 	//查怪
 	if(stristr($inputStr, 'm') != false||
 	       stristr($inputStr, 'M') != false) {
@@ -421,25 +400,6 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
        		return buildTextMessage(''.$main.'');
 		}
 	 }
-	//裝備公式
-	if(stristr($inputStr, '公式') != false) {
-		$owner = getenv('Owner');
-		$rplyArr = explode('#',$inputStr);
-		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，中間是#喔。');}
-		require_once('./equipformula.php');
-		if($userId === $owner){ 
-		if ($alltext !== "") {
-		$alltext = substr($alltext, 0, -34);
-		return buildTextMessage(''.$alltext.'');
-		unset($json0, $data0, $keywords, $keyword, $json1, $data1, $keywords1, $keyword1, $a, $b);
-		}
-		if ($alltext === "") {
-		return buildTextMessage('資料庫沒有你要找的資料
-(๑•́ ₃ •̀๑)');
-		unset($json0, $data0, $keywords, $keyword, $json1, $data1, $keywords1, $keyword1, $a, $b);
-		}
-	}else{return buildTextMessage('你並沒有權限使用這個指令。');
-	     unset($json0, $data0, $keywords, $keyword, $json1, $data1, $keywords1, $keyword1, $a, $b);}}
 	
         //幫我選～～
 	if(stristr($inputStr, '選') != false||
@@ -491,6 +451,39 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		return buildTextMessage(''.$userName.'，你今日的運勢是【'.$rplyArr[Dice(count($rplyArr))-1].'】喔。');
 	} 
 	
+	//更新json檔案
+	if(stristr($inputStr, '上傳') != false) {
+		$rplyArr = explode('#',$inputStr);
+		$updatelog = "請用[#做為區隔]，\n目前沒有可以更新的資料。\n\n--------  建議輸入  --------\n怪物\n生產\n裝備\n石頭\n星能\n地圖\n栽培\n採礦";
+		if (count($rplyArr) == 1) {return buildTextMessage($updatelog);}
+		require_once('./authorization.php');
+		if($userId === $owner){ 
+		require_once('./renewfile.php');
+		return buildTextMessage($updatelog);
+		unset($update, $file, $updatelog, $countno);
+		}else{return buildTextMessage('你並沒有權限使用這個指令。');
+		unset($update, $file, $updatelog, $countno);}
+	}
+	//裝備公式
+	if(stristr($inputStr, '公式') != false) {
+		$owner = getenv('Owner');
+		$rplyArr = explode('#',$inputStr);
+		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，中間是#喔。');}
+		require_once('./equipformula.php');
+		if($userId === $owner){ 
+		if ($alltext !== "") {
+		$alltext = substr($alltext, 0, -34);
+		return buildTextMessage(''.$alltext.'');
+		unset($json0, $data0, $keywords, $keyword, $json1, $data1, $keywords1, $keyword1, $a, $b);
+		}
+		if ($alltext === "") {
+		return buildTextMessage('資料庫沒有你要找的資料
+(๑•́ ₃ •̀๑)');
+		unset($json0, $data0, $keywords, $keyword, $json1, $data1, $keywords1, $keyword1, $a, $b);
+		}
+	}else{return buildTextMessage('你並沒有權限使用這個指令。');
+	     unset($json0, $data0, $keywords, $keyword, $json1, $data1, $keywords1, $keyword1, $a, $b);}
+	}
 	//學說話
 	if(stristr($inputStr, '學') != false) {
 		$rplyArr = explode('#',$inputStr);
