@@ -61,18 +61,42 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		if ($alltext1 !== "") {
 		if ($alltext2 !== "") {
 		$alltext1 = substr($alltext1, 0, -1);
-		$alltext2 = substr($alltext2, 0, -1);
+		$alltext2 = substr($alltext2, 0, -1);	
+		if ($productionspare !== "") {
+		$productionspare = substr($productionspare, 0, -1);
+		if ($equipspare !== "") {
+		$equipspare = substr($equipspare, 0, -1);
+		$alltext = $alltext1."\n".$productionspare."\n".$alltext2."\n".$equipspare;
+		}else{
+		$productionspare = substr($productionspare, 0, -1);
+		$alltext = $alltext1."\n".$productionspare."\n".$alltext2;
+		}
+		}else{	
+		if ($equipspare !== "") {
+		$equipspare = substr($equipspare, 0, -1);
+		$alltext = $alltext1."\n".$alltext2."\n".$equipspare;
+		}else{
 		$alltext = $alltext1."\n".$alltext2;
+		}
+		}
 		return buildTextMessage(''.$alltext.'');
 		unset($json3, $data3, $keywords, $keyword, $json2, $data2);
 		}else{
 		$alltext = substr($alltext1, 0, -1);
+		if ($productionspare !== "") {
+		$productionspare = substr($productionspare, 0, -1);
+		$alltext = $alltext1."\n".$productionspare;
+		}
 		return buildTextMessage(''.$alltext.'');
 		unset($json3, $data3, $keywords, $keyword, $json2, $data2);
 		}
 		}else{
 		if ($alltext2 !== "") {
-		$alltext = substr($alltext2, 0, -1);
+		$alltext = substr($alltext2, 0, -1);	
+		if ($equipspare !== "") {
+		$equipspare = substr($equipspare, 0, -1);
+		$alltext = $alltext2."\n".$equipspare;
+		}
 		return buildTextMessage(''.$alltext.'');
 		unset($json3, $data3, $keywords, $keyword, $json2, $data2);
 		}else{
