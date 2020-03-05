@@ -58,6 +58,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
     
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
 		require_once('./usagecheck.php');
+		unset($json3, $data3, $keywords, $keyword, $json2, $data2);
 		if ($alltext1 !== "") {
 		if ($alltext2 !== "") {
 		$alltext1 = substr($alltext1, 0, -1);
@@ -72,7 +73,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 				$messages->text($productionspare),
 				$messages->text($alltext2),
 				$messages->text($equipspare)
-			);	
+			);exit;
 		}else{
 		$productionspare = substr($productionspare, 0, -1);
 		$messages = new MutiMessage();
@@ -80,7 +81,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 				$messages->text($alltext1),
 				$messages->text($productionspare),
 				$messages->text($alltext2)
-			);	
+			);exit;
 		}
 		}else{	
 		if ($equipspare !== "") {
@@ -90,7 +91,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 				$messages->text($alltext1),
 				$messages->text($alltext2),
 				$messages->text($equipspare)
-			);	
+			);exit;
 		}else{
 		$alltext = $alltext1."\n".$alltext2;
 		return buildTextMessage($alltext);
@@ -105,11 +106,10 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 			$replyArr = Array(
 				$messages->text($alltext1),
 				$messages->text($productionspare)
-			);	
+			);exit;
 		}else{
 		return buildTextMessage(''.$alltext.'');
 		}
-		unset($json3, $data3, $keywords, $keyword, $json2, $data2);
 		}
 		}else{
 		if ($alltext2 !== "") {
@@ -120,11 +120,10 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 			$replyArr = Array(
 				$messages->text($alltext2),
 				$messages->text($equipspare)
-			);	
+			);exit;
 		}else{
 		return buildTextMessage(''.$alltext.'');
 		}
-		unset($json3, $data3, $keywords, $keyword, $json2, $data2);
 		}else{
        		return buildTextMessage(''.$userName.'，我查不到這個物品的用途。');
 		}
