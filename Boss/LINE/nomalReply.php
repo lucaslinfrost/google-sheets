@@ -66,28 +66,37 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		$productionspare = substr($productionspare, 0, -1);
 		if ($equipspare !== "") {
 		$equipspare = substr($equipspare, 0, -1);
-		$alltext = $alltext1."\n".$productionspare."\n".$alltext2."\n".$equipspare;
+		return buildTextMessage($alltext1);
+		return buildTextMessage($productionspare);
+		return buildTextMessage($alltext2);
+		return buildTextMessage($equipspare);
 		}else{
 		$productionspare = substr($productionspare, 0, -1);
-		$alltext = $alltext1."\n".$productionspare."\n".$alltext2;
+		return buildTextMessage($alltext1);
+		return buildTextMessage($productionspare);
+		return buildTextMessage($alltext2);
 		}
 		}else{	
 		if ($equipspare !== "") {
 		$equipspare = substr($equipspare, 0, -1);
-		$alltext = $alltext1."\n".$alltext2."\n".$equipspare;
+		return buildTextMessage($alltext1);
+		return buildTextMessage($alltext2);
+		return buildTextMessage($equipspare);
 		}else{
 		$alltext = $alltext1."\n".$alltext2;
+		return buildTextMessage($alltext);
 		}
 		}
-		return buildTextMessage(''.$alltext.'');
 		unset($json3, $data3, $keywords, $keyword, $json2, $data2);
 		}else{
 		$alltext = substr($alltext1, 0, -1);
 		if ($productionspare !== "") {
 		$productionspare = substr($productionspare, 0, -1);
-		$alltext = $alltext1."\n".$productionspare;
-		}
+		return buildTextMessage($alltext1);
+		return buildTextMessage($productionspare);
+		}else{
 		return buildTextMessage(''.$alltext.'');
+		}
 		unset($json3, $data3, $keywords, $keyword, $json2, $data2);
 		}
 		}else{
@@ -95,9 +104,11 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		$alltext = substr($alltext2, 0, -1);	
 		if ($equipspare !== "") {
 		$equipspare = substr($equipspare, 0, -1);
-		$alltext = $alltext2."\n".$equipspare;
-		}
+		return buildTextMessage($alltext2);
+		return buildTextMessage($equipspare);
+		}else{
 		return buildTextMessage(''.$alltext.'');
+		}
 		unset($json3, $data3, $keywords, $keyword, $json2, $data2);
 		}else{
        		return buildTextMessage(''.$userName.'，我查不到這個物品的用途。');
