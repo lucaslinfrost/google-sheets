@@ -108,7 +108,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		}else{
 		$alltext = substr($alltext1, 0, -1);
 		if ($productionspare !== "") {
-		$productionspare = substr($productionspare, 0, -1);
+		//$productionspare = substr($productionspare, 0, -1);
 		$messages = new MutiMessage();
 			$replyArr = Array(
 				$messages->text($alltext1),
@@ -123,7 +123,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		if ($alltext2 !== "") {
 		$alltext = substr($alltext2, 0, -1);	
 		if ($equipspare !== "") {
-		$equipspare = substr($equipspare, 0, -1);
+		//$equipspare = substr($equipspare, 0, -1);
 		$messages = new MutiMessage();
 			$replyArr = Array(
 				$messages->text($alltext2),
