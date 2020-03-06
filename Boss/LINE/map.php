@@ -857,7 +857,7 @@ public function leastHops($origin, $destination) {
         
         if (isset($path[$destination])) {
             $mapno = count($path[$destination]) - 1;
-                " 個地圖\n";
+
 $title = "從【".$origin."】
 到【".$destination."】
 會通過".$mapno."個傳點。
