@@ -58,7 +58,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
     
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
 		require_once('./usagecheck.php');
-		unset($json3, $data3, $keywords, $keyword, $json2, $data2);
+		//unset($json3, $data3, $keywords, $keyword, $json2, $data2);
 		if ($alltext1 !== "") {
 		$alltext1 = substr($alltext1, 0, -1);
 		if ($alltext2 !== "") {
