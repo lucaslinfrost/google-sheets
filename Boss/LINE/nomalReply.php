@@ -115,7 +115,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 			);
 			return $messages->send($replyArr);
 		}else{
-		return buildTextMessage(''.$alltext.'');
+		return buildTextMessage($alltext1);
 		}
 		}
 		}else{
@@ -130,7 +130,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 			);
 			return $messages->send($replyArr);
 		}else{
-		return buildTextMessage(''.$alltext.'');
+		return buildTextMessage($alltext2);
 		}
 		}else{
        		return buildTextMessage(''.$userName.'，我查不到這個物品的用途。');
