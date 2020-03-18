@@ -68,6 +68,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		if ($equipspare !== "") {
 		$equipspare = substr($equipspare, 0, -1);
 		$messages = new MutiMessage();
+		$alltext1 = "--------  生產用途  --------\n".$alltext1;
+		$alltext2 = "--------  鐵匠用途  --------\n".$alltext2;
 			$replyArr = Array(
 				$messages->text($alltext1),
 				$messages->text($productionspare),
@@ -78,6 +80,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		}else{
 		//$productionspare = substr($productionspare, 0, -1);錯的
 		$messages = new MutiMessage();
+		$alltext1 = "--------  生產用途  --------\n".$alltext1;
+		$alltext2 = "--------  鐵匠用途  --------\n".$alltext2;
 			$replyArr = Array(
 				$messages->text($alltext1),
 				$messages->text($productionspare),
@@ -89,6 +93,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		if ($equipspare !== "") {
 		$equipspare = substr($equipspare, 0, -1);
 		$messages = new MutiMessage();
+		$alltext1 = "--------  生產用途  --------\n".$alltext1;
+		$alltext2 = "--------  鐵匠用途  --------\n".$alltext2;
 			$replyArr = Array(
 				$messages->text($alltext1),
 				$messages->text($alltext2),
@@ -97,6 +103,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 			return $messages->send($replyArr);
 		}else{
 		$messages = new MutiMessage();
+		$alltext1 = "--------  生產用途  --------\n".$alltext1;
+		$alltext2 = "--------  鐵匠用途  --------\n".$alltext2;
 			$replyArr = Array(
 				$messages->text($alltext1),
 				$messages->text($alltext2),
@@ -109,12 +117,14 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		if ($productionspare !== "") {
 		$productionspare = substr($productionspare, 0, -1);
 		$messages = new MutiMessage();
+		$alltext1 = "--------  生產用途  --------\n".$alltext1;
 			$replyArr = Array(
 				$messages->text($alltext1),
 				$messages->text($productionspare)
 			);
 			return $messages->send($replyArr);
 		}else{
+		$alltext1 = "--------  生產用途  --------\n".$alltext1;
 		return buildTextMessage($alltext1);
 		}
 		}
@@ -124,12 +134,14 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		if ($equipspare !== "") {
 		$equipspare = substr($equipspare, 0, -1);
 		$messages = new MutiMessage();
+		$alltext2 = "--------  鐵匠用途  --------\n".$alltext2;
 			$replyArr = Array(
 				$messages->text($alltext2),
 				$messages->text($equipspare)
 			);
 			return $messages->send($replyArr);
 		}else{
+		$alltext2 = "--------  鐵匠用途  --------\n".$alltext2;
 		return buildTextMessage($alltext2);
 		}
 		}else{
