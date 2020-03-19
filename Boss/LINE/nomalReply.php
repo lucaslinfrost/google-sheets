@@ -499,17 +499,10 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	else  
     //星能
 	if(stristr($inputStr, '星能') != false) {
-		$starall = "《星能力一覽》\n\n請輸入 :\n老大星能 [部位] [星能力]\n\n--------  部位列表  --------\n劍\n杖\n弓\n爪\n投\n體\n附\n特\n\n--------  能力列表  --------\n生命力\n精神力\n攻撃力\n物理防禦\n魔法防禦\n魔法力\n命中\n迴避\n亂舞\n速唱\n力士\n魔導\n體力\n神速\n巧技\n必殺\n高速使用\n高速冷卻\n自癒\n節能\n挑釁\n緩和\n治療\n藥學\n技術\n自動\n比例減輕\n癒受\n火的加護\n水的加護\n風的加護\n地的加護\n光的加護\n暗的加護\n物理貫通\n固定物理\n魔法狂化\n固定魔法\n魔法貫通\n範圍減輕\n反射\n夥伴\n收集家\n努力家\n致命(未實裝)\n毒知識(未實裝)\n麻痺知識(未實裝)\n暗闇知識(未實裝)\n凍結知識(未實裝)\n発火知識(未實裝)\n脱力知識(未實裝)";
+		$starall = "《星能力一覽》\n\n請輸入 :\n老大星能 [部位] [星能力]\n\n--------  部位列表  --------\n劍\n杖\n弓\n爪\n投\n體\n附\n特\n\n--------  能力列表  --------\n生命力\n精神力\n攻撃力\n物理防禦\n魔法防禦\n魔法力\n命中\n迴避\n亂舞\n速唱\n力士\n魔導\n體力\n神速\n巧技\n必殺\n高速使用\n高速冷卻\n自癒\n節能\n挑釁\n緩和\n治療\n藥學\n技術\n自動\n比例減輕\n癒受\n火的加護\n水的加護\n風的加護\n地的加護\n光的加護\n暗的加護\n物理貫通\n固定物理\n魔法狂化\n固定魔法\n魔法貫通\n範圍減輕\n反射\n夥伴\n收集家\n努力家\n致命(未實裝)\n毒知識(未實裝)\n麻痺知識(未實裝)\n暗闇知識(未實裝)\n凍結知識(未實裝)\n発火知識(未實裝)\n脱力知識(未實裝)\n\nhttps://irunamuscelboss.herokuapp.com/Boss/LINE/upload/starallstatus.html";
 		$rplyArr = explode(' ',$inputStr);
     
-		if (count($rplyArr) == 1) {
-		$messages = new MutiMessage();
-		$url = "https://irunamuscelboss.herokuapp.com/Boss/LINE/upload/starallstatus.html";
-		$replyArr = Array(
-				$messages->text($starall),
-				$messages->text($url)
-			);
-		}
+		if (count($rplyArr) == 1) {return buildTextMessage($starall);}
 		
 		require_once('./star.php');
 		if ($startype === 1) {
