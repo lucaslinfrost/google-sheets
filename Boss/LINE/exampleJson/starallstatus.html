@@ -1,0 +1,1865 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <link href="http://jqmdesigner.appspot.com/gk/lib/jquery.mobile/1.4.5/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css" />
+  <!-- Export CSS  -->
+  <style>
+    html,body{
+      height:100%;
+    }
+  .auto-style1 {
+	  text-align: center;
+  }
+  .auto-style3 {
+	  padding: 8px 10px;
+  }
+  </style>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>
+    $(document).on("mobileinit", function () {
+      $.mobile.autoInitializePage = false;
+      $.mobile.hashListeningEnabled = false;
+    });
+
+    function mobileInitPage() {
+      $.mobile.hashListeningEnabled = true;
+      $.mobile.initializePage();
+    };
+  </script>
+  <script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <!-- Uncomment the following to include cordova in your android project -->
+  <!--<script src="http://jqmdesigner.appspot.com/platforms/android/cordova.js"></script>-->
+  <!-- GK Loader use RequireJS to load module -->
+  <script src="http://requirejs.org/docs/release/2.1.11/minified/require.js"></script>
+  <!--Plug in GK-->
+  <script src="http://jqmdesigner.appspot.com/components/jquery.gk/jquery.gk.min.js"></script>
+  <!-- Load GK components -->
+  <script components="http://jqmdesigner.appspot.com/components/gk-jquerymobile/content.html,http://jqmdesigner.appspot.com/components/gk-jquerymobile/page.html,http://jqmdesigner.appspot.com/components/gk-jquerymobile/button.html,http://jqmdesigner.appspot.com/components/gk-jquerymobile/header.html"
+  callback="mobileInitPage" src="http://jqmdesigner.appspot.com/components/gk-loader/gk-loader.js"></script>
+  <title>EZo App</title>
+</head>
+
+<body gk-app>
+  <!-- Page: home  -->
+  <div is="page" id="home" data-role="page" stlye="height:100%;">
+    <div is="header" data-role="header" data-position="fixed" data-theme="b">
+      <h3>星能力效果一覽</h3>
+      <a is="button" class="ui-btn ui-btn-icon-left ui-icon-bars" href="#left-menu" style="padding:18px; background:none;"></a>
+    </div>
+    <div is="dragable" id="left-menu" data-role="panel" data-position="left" data-theme="b">
+      <li>
+        <a href="#☆生命力">☆生命力</a>
+      </li>
+      <li>
+        <a href="#☆精神力">☆精神力</a>
+      </li>
+      <li>
+        <a href="#☆攻撃力">☆攻撃力</a>
+      </li>
+      <li>
+        <a href="#☆物理防禦">☆物理防禦</a>
+      </li>
+      <li>
+        <a href="#☆魔法防禦">☆魔法防禦</a>
+      </li>
+      <li>
+        <a href="#☆魔法力">☆魔法力</a>
+      </li>
+      <li>
+        <a href="#☆命中">☆命中</a>
+      </li>
+      <li>
+        <a href="#☆迴避">☆迴避</a>
+      </li>
+      <li>
+        <a href="#☆亂舞">☆亂舞</a>
+      </li>
+      <li>
+        <a href="#☆速唱">☆速唱</a>
+      </li>
+      <li>
+        <a href="#☆力士">☆力士</a>
+      </li>
+      <li>
+        <a href="#☆魔導">☆魔導</a>
+      </li>
+      <li>
+        <a href="#☆體力">☆體力</a>
+      </li>
+      <li>
+        <a href="#☆神速">☆神速</a>
+      </li>
+      <li>
+        <a href="#☆巧技">☆巧技</a>
+      </li>
+      <li>
+        <a href="#☆必殺">☆必殺</a>
+      </li>
+      <li>
+        <a href="#☆高速使用">☆高速使用</a>
+      </li>
+      <li>
+        <a href="#☆高速冷卻">☆高速冷卻</a>
+      </li>
+      <li>
+        <a href="#☆自癒">☆自癒</a>
+      </li>
+      <li>
+        <a href="#☆節能">☆節能</a>
+      </li>
+      <li>
+        <a href="#☆挑釁">☆挑釁</a>
+      </li>
+      <li>
+        <a href="#☆緩和">☆緩和</a>
+      </li>
+      <li>
+        <a href="#☆治療">☆治療</a>
+      </li>
+      <li>
+        <a href="#☆藥學">☆藥學</a>
+      </li>
+      <li>
+        <a href="#☆技術">☆技術</a>
+      </li>
+      <li>
+        <a href="#☆自動">☆自動</a>
+      </li>
+      <li>
+        <a href="#☆比例減輕">☆比例減輕</a>
+      </li>
+      <li>
+        <a href="#☆癒受">☆癒受</a>
+      </li>
+      <li>
+        <a href="#☆火的加護">☆火的加護</a>
+      </li>
+      <li>
+        <a href="#☆水的加護">☆水的加護</a>
+      </li>
+      <li>
+        <a href="#☆風的加護">☆風的加護</a>
+      </li>
+      <li>
+        <a href="#☆地的加護">☆地的加護</a>
+      </li>
+      <li>
+        <a href="#☆光的加護">☆光的加護</a>
+      </li>
+      <li>
+        <a href="#☆暗的加護">☆暗的加護</a>
+      </li>
+      <li>
+        <a href="#☆物理貫通">☆物理貫通</a>
+      </li>
+      <li>
+        <a href="#☆固定物理">☆固定物理</a>
+      </li>
+      <li>
+        <a href="#☆魔法狂化">☆魔法狂化</a>
+      </li>
+      <li>
+        <a href="#☆固定魔法">☆固定魔法</a>
+      </li>
+      <li>
+        <a href="#☆魔法貫通">☆魔法貫通</a>
+      </li>
+      <li>
+        <a href="#☆範圍減輕">☆範圍減輕</a>
+      </li>
+      <li>
+        <a href="#☆反射">☆反射</a>
+      </li>
+      <li>
+        <a href="#☆夥伴">☆夥伴</a>
+      </li>
+      <li>
+        <a href="#☆收集家">☆收集家</a>
+      </li>
+      <li>
+        <a href="#☆努力家">☆努力家</a>
+      </li>
+      <li>
+        <a href="#☆致命">☆致命</a>
+      </li>
+      <li>
+        <a href="#☆毒知識">☆毒知識</a>
+      </li>
+      <li>
+        <a href="#☆麻痺知識">☆麻痺知識</a>
+      </li>
+      <li>
+        <a href="#☆暗闇知識">☆暗闇知識</a>
+      </li>
+      <li>
+        <a href="#☆凍結知識">☆凍結知識</a>
+      </li>
+      <li>
+        <a href="#☆発火知識">☆発火知識</a>
+      </li>
+      <li>
+        <a href="#☆脱力知識">☆脱力知識</a>
+      </li>
+    </div>
+    <div is="dragable" id="right-menu" data-role="panel" data-position="right" data-position-fixed="false" data-display="overlay" data-theme="b">
+    </div>
+    <div is="content" role="main" class="ui-content">
+    
+        <table align="center" style="width: 30%">
+			<tr>
+				<td class="auto-style1">
+		<table align="center" style="width: 30%">
+			<tr>
+					<table border="0" cellspacing="0">
+					<colgroup width="353">
+					</colgroup>
+					<tr>
+						<td id="☆生命力" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆生命力</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：MaxHP+280</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：MaxHP+440</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：MaxHP+600</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：MaxHP+760</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：MaxHP+920</td>
+					</tr>
+					<tr>
+						<td align="left" bgcolor="#FFFFFF" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<br></td>
+					</tr>
+					<tr>
+						<td align="left" bgcolor="#FFFFFF" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<br></td>
+					</tr>
+					<tr>
+						<td id="☆精神力" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆精神力</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：MaxMP+40</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：MaxMP+70</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：MaxMP+100</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：MaxMP+130</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：MaxMP+160</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆攻撃力" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆攻撃力</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：ATK+3　MaxHP-1%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：ATK+5　MaxHP-2%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：ATK+9　MaxHP-3%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：ATK+15　MaxHP-4%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：ATK+23　MaxHP-5%</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆物理防禦" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆物理防禦</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：DEF+10</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：DEF+20</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：DEF+30</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：DEF+40</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：DEF+50</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆魔法防禦" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆魔法防禦</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：MDEF+30</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：MDEF+60</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：MDEF+90</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：MDEF+120</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：MDEF+150</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆魔法力" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆魔法力</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：MATK+10　MaxMP-1%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：MATK+12　MaxMP-2%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：MATK+16　MaxMP-3%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：MATK+22　MaxMP-4%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：MATK+30　MaxMP-5%</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆命中" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆命中</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：HIT+10</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：HIT+15</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：HIT+20</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：HIT+25</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：HIT+30</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆迴避" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆迴避</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：AVD+10</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：AVD+15</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：AVD+20</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：AVD+25</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：AVD+30</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆亂舞" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆亂舞</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：ASPD+10%　爆擊率-10</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：ASPD+10%　爆擊率-8</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：ASPD+10%　爆擊率-6</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：ASPD+10%　爆擊率-4</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：ASPD+10%　爆擊率-2</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆速唱" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆速唱</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：詠唱時間-10%　MP消耗量+8%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：詠唱時間-10%　MP消耗量+4%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：詠唱時間-10%　MP消耗量+2%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：詠唱時間-10%　MP消耗量+1%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：詠唱時間-10%</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆力士" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆力士</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：STR+1</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：STR+2</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：STR+3</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：STR+4</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：STR+5</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆魔導" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆魔導</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：INT+1</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：INT+2</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：INT+3</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：INT+4</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：INT+5</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆體力" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆體力</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：VIT+1</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：VIT+2</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：VIT+3</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：VIT+4</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：VIT+5</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆神速" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆神速</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：AGI+1</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：AGI+2</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：AGI+3</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：AGI+4</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：AGI+5</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆巧技" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆巧技</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：DEX+1</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：DEX+2</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：DEX+3</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：DEX+4</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：DEX+5</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆必殺" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆必殺</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：CRT+1</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：CRT+2</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：CRT+3</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：CRT+4</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：CRT+5</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆高速使用" align="center" class="auto-style8" height="19" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆高速使用</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：物品冷卻時間-0.6秒　物品回復量-5%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：物品冷卻時間-0.6秒　物品回復量-4%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：物品冷卻時間-0.6秒　物品回復量-3%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4:：品冷卻時間-0.6秒　物品回復量-2%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：物品冷卻時間-0.6秒　物品回復量-1%</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆高速冷卻" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆高速冷卻</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：技能冷卻時間-0.6秒　ATK·MATK-5%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：技能冷卻時間-0.6秒　ATK·MATK-5%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：技能冷卻時間-0.6秒　ATK·MATK-5%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：技能冷卻時間-0.6秒　ATK·MATK-5%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：技能冷卻時間-0.6秒　ATK·MATK-5%</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆自癒" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆自癒</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：HP自然回覆+3　MP自然回覆+2</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：HP自然回覆+6　MP自然回覆+4</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：HP自然回覆+9　MP自然回覆+6</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：HP自然回覆+12　MP自然回覆+8</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：HP自然回覆+15　MP自然回覆+10</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆節能" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆節能</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：MP消耗量-2%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：MP消耗量-4%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：MP消耗量-6%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：MP消耗量-8%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：MP消耗量-10%</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆挑釁" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆挑釁</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：仇恨増加率+3%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：仇恨増加率+6%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：仇恨増加率+9%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：仇恨増加率+12%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：仇恨増加率+15%</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆緩和" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆緩和</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：仇恨増加率-3%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：仇恨増加率-6%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：仇恨増加率-9%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：仇恨増加率-12%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：仇恨増加率-15%</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆治療" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆治療</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：治療回復效果+1%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：治療回復效果+2%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：治療回復效果+3%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：治療回復效果+4%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：治療回復效果+5%</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; height: 17px;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆藥學" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆藥學</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：物品回復效果+2%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：物品回復效果+4%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：物品回復效果+6%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：物品回復效果+8%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：物品回復效果+10%</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆技術" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆技術</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：爆擊率+5</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：爆擊率+10</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：爆擊率+15</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：爆擊率+20</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：爆擊率+25</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆自動" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆自動</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：自動技能發生機率+1%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：自動技能發生機率+2%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：自動技能發生機率+3%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：自動技能發生機率+4%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：自動技能發生機率+5%</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆比例減輕" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆比例減輕</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：比例減輕 +4%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：比例減輕 +8%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：比例減輕 +12%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：比例減輕 +16%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：比例減輕 +20%</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆癒受" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆癒受</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：被治療效果+100</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：被治療效果+150</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：被治療效果+?</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：被治療效果+?</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：被治療效果+?</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆火的加護" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆火的加護</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：火耐性+1%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：火耐性+2%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：火耐性+3%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：火耐性+4%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：火耐性+5%</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆水的加護" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆水的加護</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：水耐性+1%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：水耐性+2%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：水耐性+3%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：水耐性+4%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：水耐性+5%</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆風的加護" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆風的加護</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：風耐性+1%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：風耐性+2%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：風耐性+3%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：風耐性+4%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：風耐性+5%</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆地的加護" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆地的加護</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：地耐性+1%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：地耐性+2%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：地耐性+3%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：地耐性+4%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：地耐性+5%</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆光的加護" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆光的加護</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：光耐性+1%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：光耐性+2%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：光耐性+3%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：光耐性+4%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：光耐性+5%</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆暗的加護" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆暗的加護</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：闇耐性+1%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：闇耐性+2%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：闇耐性+3%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：闇耐性+4%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：闇耐性+5%</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆物理貫通" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆物理貫通</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：物理貫通+?%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：物理貫通+?%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：物理貫通+?%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：物理貫通+?%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：物理貫通+?%</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆固定物理" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆固定物理</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：固定物理傷害+25</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：固定物理傷害+50</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：固定物理傷害+100</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：固定物理傷害+200</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：固定物理傷害+400</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆魔法狂化" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆魔法狂化</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：魔法爆發率+1%　消費MP+1%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：魔法爆發率+2%　消費MP+2%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：魔法爆發率+3%　消費MP+3%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：魔法爆發率+4%　消費MP+4%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：魔法爆發率+5%　消費MP+5%</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆固定魔法" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆固定魔法</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：固定魔法傷害+25</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：固定魔法傷害+50</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：固定魔法傷害+100</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：固定魔法傷害+200</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：固定魔法傷害+400</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆魔法貫通" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆魔法貫通</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：魔法貫通+?%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：魔法貫通+?%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：魔法貫通+?%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：魔法貫通+?%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：魔法貫通+?%</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆範圍減輕" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆範圍減輕</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：範圍減輕+2%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：範圍減輕+4%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：範圍減輕+6%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：範圍減輕+8%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：範圍減輕+10%</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆反射" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆反射</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：傷害反射+2%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：傷害反射+?%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：傷害反射+?%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：傷害反射+?%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：傷害反射+?%</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆夥伴" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆夥伴</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：寵物狀態+2</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：寵物狀態+4</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：寵物狀態+6</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：寵物狀態+?</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：寵物狀態+?</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆收集家" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆收集家</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：掉寶率+?%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：掉寶率+?%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：掉寶率+?%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：掉寶率+?%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：掉寶率+?%</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆努力家" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆努力家</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：取得経験値+2%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：取得経験値+4%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：取得経験値+6%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：取得経験値+8%</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：取得経験値+10%</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆致命" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆致命</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆毒知識" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆毒知識</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆麻痺知識" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆麻痺知識</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆暗闇知識" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆暗闇知識</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆凍結知識" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆凍結知識</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆発火知識" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆発火知識</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						</td>
+					</tr>
+					<tr>
+						<td id="☆脱力知識" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						☆脱力知識</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv1：</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv2：</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv3：</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv4：</td>
+					</tr>
+					<tr>
+						<td align="left" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
+						Lv5：</td>
+					</tr>
+				</table>
+				<meta content="Sheets" name="generator">
+				<style type="text/css">
+<!--td {border: 1px solid #ccc;}br {mso-data-placement:same-cell;}
+				.auto-style8 {
+					border: 1px solid #000000;
+					padding: 8px 10px;
+					background-color: #D7DCF3;
+				}
+--></style>
+				</td>
+			</tr>
+		</table>
+				</td>
+			</tr>
+		</table>
+    
+      <br>
+    </div>
+  </div>
+</body>
+
+</html>
