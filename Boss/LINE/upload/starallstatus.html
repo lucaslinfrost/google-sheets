@@ -10,12 +10,35 @@
     html,body{
       height:100%;
     }
-  .auto-style1 {
-	  text-align: center;
-  }
-  .auto-style3 {
-	  padding: 8px 10px;
-  }
+  
+table,
+table th,
+table td {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+table {
+  width: 100%;
+  margin: 0 auto;
+  clear: both;
+  border-collapse: separate;
+  border-spacing: 0;
+  /*
+   * Header and footer styles
+   */
+  /*
+   * Body styles
+   */
+}
+table tbody tr {
+  background-color: #fff;
+}
+table tbody th,
+table tbody td {
+  padding: 8px 10px;
+}
   </style>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>
@@ -50,174 +73,30 @@
       <a is="button" class="ui-btn ui-btn-icon-left ui-icon-bars" href="#left-menu" style="padding:18px; background:none;"></a>
     </div>
     <div is="dragable" id="left-menu" data-role="panel" data-position="left" data-theme="b">
-      <li>
-        <a href="#☆生命力">☆生命力</a>
-      </li>
-      <li>
-        <a href="#☆精神力">☆精神力</a>
-      </li>
-      <li>
-        <a href="#☆攻撃力">☆攻撃力</a>
-      </li>
-      <li>
-        <a href="#☆物理防禦">☆物理防禦</a>
-      </li>
-      <li>
-        <a href="#☆魔法防禦">☆魔法防禦</a>
-      </li>
-      <li>
-        <a href="#☆魔法力">☆魔法力</a>
-      </li>
-      <li>
-        <a href="#☆命中">☆命中</a>
-      </li>
-      <li>
-        <a href="#☆迴避">☆迴避</a>
-      </li>
-      <li>
-        <a href="#☆亂舞">☆亂舞</a>
-      </li>
-      <li>
-        <a href="#☆速唱">☆速唱</a>
-      </li>
-      <li>
-        <a href="#☆力士">☆力士</a>
-      </li>
-      <li>
-        <a href="#☆魔導">☆魔導</a>
-      </li>
-      <li>
-        <a href="#☆體力">☆體力</a>
-      </li>
-      <li>
-        <a href="#☆神速">☆神速</a>
-      </li>
-      <li>
-        <a href="#☆巧技">☆巧技</a>
-      </li>
-      <li>
-        <a href="#☆必殺">☆必殺</a>
-      </li>
-      <li>
-        <a href="#☆高速使用">☆高速使用</a>
-      </li>
-      <li>
-        <a href="#☆高速冷卻">☆高速冷卻</a>
-      </li>
-      <li>
-        <a href="#☆自癒">☆自癒</a>
-      </li>
-      <li>
-        <a href="#☆節能">☆節能</a>
-      </li>
-      <li>
-        <a href="#☆挑釁">☆挑釁</a>
-      </li>
-      <li>
-        <a href="#☆緩和">☆緩和</a>
-      </li>
-      <li>
-        <a href="#☆治療">☆治療</a>
-      </li>
-      <li>
-        <a href="#☆藥學">☆藥學</a>
-      </li>
-      <li>
-        <a href="#☆技術">☆技術</a>
-      </li>
-      <li>
-        <a href="#☆自動">☆自動</a>
-      </li>
-      <li>
-        <a href="#☆比例減輕">☆比例減輕</a>
-      </li>
-      <li>
-        <a href="#☆癒受">☆癒受</a>
-      </li>
-      <li>
-        <a href="#☆火的加護">☆火的加護</a>
-      </li>
-      <li>
-        <a href="#☆水的加護">☆水的加護</a>
-      </li>
-      <li>
-        <a href="#☆風的加護">☆風的加護</a>
-      </li>
-      <li>
-        <a href="#☆地的加護">☆地的加護</a>
-      </li>
-      <li>
-        <a href="#☆光的加護">☆光的加護</a>
-      </li>
-      <li>
-        <a href="#☆暗的加護">☆暗的加護</a>
-      </li>
-      <li>
-        <a href="#☆物理貫通">☆物理貫通</a>
-      </li>
-      <li>
-        <a href="#☆固定物理">☆固定物理</a>
-      </li>
-      <li>
-        <a href="#☆魔法狂化">☆魔法狂化</a>
-      </li>
-      <li>
-        <a href="#☆固定魔法">☆固定魔法</a>
-      </li>
-      <li>
-        <a href="#☆魔法貫通">☆魔法貫通</a>
-      </li>
-      <li>
-        <a href="#☆範圍減輕">☆範圍減輕</a>
-      </li>
-      <li>
-        <a href="#☆反射">☆反射</a>
-      </li>
-      <li>
-        <a href="#☆夥伴">☆夥伴</a>
-      </li>
-      <li>
-        <a href="#☆收集家">☆收集家</a>
-      </li>
-      <li>
-        <a href="#☆努力家">☆努力家</a>
-      </li>
-      <li>
-        <a href="#☆致命">☆致命</a>
-      </li>
-      <li>
-        <a href="#☆毒知識">☆毒知識</a>
-      </li>
-      <li>
-        <a href="#☆麻痺知識">☆麻痺知識</a>
-      </li>
-      <li>
-        <a href="#☆暗闇知識">☆暗闇知識</a>
-      </li>
-      <li>
-        <a href="#☆凍結知識">☆凍結知識</a>
-      </li>
-      <li>
-        <a href="#☆発火知識">☆発火知識</a>
-      </li>
-      <li>
-        <a href="#☆脱力知識">☆脱力知識</a>
-      </li>
+      
+      <li><a href="#☆生命力">☆生命力</a></li>
+      <li><a href="#☆精神力">☆精神力</a></li><li>
+      <a href="#☆攻撃力">☆攻撃力</a></li>
+      <li><a href="#☆物理防禦">☆物理防禦</a></li>
+      <li><a href="#☆魔法防禦">☆魔法防禦</a></li>
+      <li><a href="#☆魔法力">☆魔法力</a></li>
+      
     </div>
     <div is="dragable" id="right-menu" data-role="panel" data-position="right" data-position-fixed="false" data-display="overlay" data-theme="b">
+      <div is="dragable"></div>
     </div>
     <div is="content" role="main" class="ui-content">
-    
-        <table align="center" style="width: 30%">
-			<tr>
-				<td class="auto-style1">
+      <br>
+    </div>
+  </div>
 		<table align="center" style="width: 30%">
 			<tr>
-					<table border="0" cellspacing="0">
+				<td>
+				<table border="0" cellspacing="0">
 					<colgroup width="353">
 					</colgroup>
 					<tr>
-						<td id="☆生命力" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆生命力" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆生命力</td>
 					</tr>
 					<tr>
@@ -241,15 +120,15 @@
 						Lv5：MaxHP+920</td>
 					</tr>
 					<tr>
-						<td align="left" bgcolor="#FFFFFF" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td align="left" bgcolor="#FFFFFF" class="auto-style5" height="17">
 						<br></td>
 					</tr>
 					<tr>
-						<td align="left" bgcolor="#FFFFFF" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td align="left" bgcolor="#FFFFFF" class="auto-style5" height="17">
 						<br></td>
 					</tr>
 					<tr>
-						<td id="☆精神力" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆精神力" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆精神力</td>
 					</tr>
 					<tr>
@@ -273,15 +152,15 @@
 						Lv5：MaxMP+160</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆攻撃力" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆攻撃力" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆攻撃力</td>
 					</tr>
 					<tr>
@@ -305,15 +184,15 @@
 						Lv5：ATK+23　MaxHP-5%</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆物理防禦" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆物理防禦" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆物理防禦</td>
 					</tr>
 					<tr>
@@ -337,15 +216,15 @@
 						Lv5：DEF+50</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆魔法防禦" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆魔法防禦" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆魔法防禦</td>
 					</tr>
 					<tr>
@@ -369,15 +248,15 @@
 						Lv5：MDEF+150</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆魔法力" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆魔法力" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆魔法力</td>
 					</tr>
 					<tr>
@@ -401,15 +280,15 @@
 						Lv5：MATK+30　MaxMP-5%</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆命中" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆命中" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆命中</td>
 					</tr>
 					<tr>
@@ -433,15 +312,15 @@
 						Lv5：HIT+30</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆迴避" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆迴避" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆迴避</td>
 					</tr>
 					<tr>
@@ -465,15 +344,15 @@
 						Lv5：AVD+30</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆亂舞" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆亂舞" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆亂舞</td>
 					</tr>
 					<tr>
@@ -497,15 +376,15 @@
 						Lv5：ASPD+10%　爆擊率-2</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆速唱" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆速唱" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆速唱</td>
 					</tr>
 					<tr>
@@ -529,15 +408,15 @@
 						Lv5：詠唱時間-10%</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆力士" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆力士" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆力士</td>
 					</tr>
 					<tr>
@@ -561,15 +440,15 @@
 						Lv5：STR+5</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆魔導" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆魔導" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆魔導</td>
 					</tr>
 					<tr>
@@ -593,15 +472,15 @@
 						Lv5：INT+5</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆體力" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆體力" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆體力</td>
 					</tr>
 					<tr>
@@ -625,15 +504,15 @@
 						Lv5：VIT+5</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆神速" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆神速" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆神速</td>
 					</tr>
 					<tr>
@@ -657,15 +536,15 @@
 						Lv5：AGI+5</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆巧技" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆巧技" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆巧技</td>
 					</tr>
 					<tr>
@@ -689,15 +568,15 @@
 						Lv5：DEX+5</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆必殺" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆必殺" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆必殺</td>
 					</tr>
 					<tr>
@@ -721,15 +600,15 @@
 						Lv5：CRT+5</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆高速使用" align="center" class="auto-style8" height="19" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆高速使用" align="center" class="auto-style7" height="19" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆高速使用</td>
 					</tr>
 					<tr>
@@ -753,15 +632,15 @@
 						Lv5：物品冷卻時間-0.6秒　物品回復量-1%</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆高速冷卻" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆高速冷卻" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆高速冷卻</td>
 					</tr>
 					<tr>
@@ -785,15 +664,15 @@
 						Lv5：技能冷卻時間-0.6秒　ATK·MATK-5%</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆自癒" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆自癒" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆自癒</td>
 					</tr>
 					<tr>
@@ -817,15 +696,15 @@
 						Lv5：HP自然回覆+15　MP自然回覆+10</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆節能" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆節能" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆節能</td>
 					</tr>
 					<tr>
@@ -849,15 +728,15 @@
 						Lv5：MP消耗量-10%</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆挑釁" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆挑釁" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆挑釁</td>
 					</tr>
 					<tr>
@@ -881,15 +760,15 @@
 						Lv5：仇恨増加率+15%</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆緩和" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆緩和" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆緩和</td>
 					</tr>
 					<tr>
@@ -913,15 +792,15 @@
 						Lv5：仇恨増加率-15%</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆治療" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆治療" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆治療</td>
 					</tr>
 					<tr>
@@ -945,15 +824,15 @@
 						Lv5：治療回復效果+5%</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; height: 17px;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆藥學" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆藥學" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆藥學</td>
 					</tr>
 					<tr>
@@ -977,15 +856,15 @@
 						Lv5：物品回復效果+10%</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆技術" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆技術" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆技術</td>
 					</tr>
 					<tr>
@@ -1009,15 +888,15 @@
 						Lv5：爆擊率+25</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆自動" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆自動" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆自動</td>
 					</tr>
 					<tr>
@@ -1041,15 +920,15 @@
 						Lv5：自動技能發生機率+5%</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆比例減輕" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆比例減輕" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆比例減輕</td>
 					</tr>
 					<tr>
@@ -1073,15 +952,15 @@
 						Lv5：比例減輕 +20%</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆癒受" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆癒受" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆癒受</td>
 					</tr>
 					<tr>
@@ -1105,15 +984,15 @@
 						Lv5：被治療效果+?</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆火的加護" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆火的加護" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆火的加護</td>
 					</tr>
 					<tr>
@@ -1137,15 +1016,15 @@
 						Lv5：火耐性+5%</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆水的加護" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆水的加護" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆水的加護</td>
 					</tr>
 					<tr>
@@ -1169,15 +1048,15 @@
 						Lv5：水耐性+5%</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆風的加護" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆風的加護" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆風的加護</td>
 					</tr>
 					<tr>
@@ -1201,15 +1080,15 @@
 						Lv5：風耐性+5%</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆地的加護" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆地的加護" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆地的加護</td>
 					</tr>
 					<tr>
@@ -1233,15 +1112,15 @@
 						Lv5：地耐性+5%</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆光的加護" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆光的加護" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆光的加護</td>
 					</tr>
 					<tr>
@@ -1265,15 +1144,15 @@
 						Lv5：光耐性+5%</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆暗的加護" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆暗的加護" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆暗的加護</td>
 					</tr>
 					<tr>
@@ -1297,15 +1176,15 @@
 						Lv5：闇耐性+5%</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆物理貫通" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆物理貫通" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆物理貫通</td>
 					</tr>
 					<tr>
@@ -1329,15 +1208,15 @@
 						Lv5：物理貫通+?%</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆固定物理" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆固定物理" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆固定物理</td>
 					</tr>
 					<tr>
@@ -1361,15 +1240,15 @@
 						Lv5：固定物理傷害+400</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆魔法狂化" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆魔法狂化" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆魔法狂化</td>
 					</tr>
 					<tr>
@@ -1393,15 +1272,15 @@
 						Lv5：魔法爆發率+5%　消費MP+5%</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆固定魔法" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆固定魔法" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆固定魔法</td>
 					</tr>
 					<tr>
@@ -1425,15 +1304,15 @@
 						Lv5：固定魔法傷害+400</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆魔法貫通" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆魔法貫通" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆魔法貫通</td>
 					</tr>
 					<tr>
@@ -1457,15 +1336,15 @@
 						Lv5：魔法貫通+?%</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆範圍減輕" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆範圍減輕" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆範圍減輕</td>
 					</tr>
 					<tr>
@@ -1489,15 +1368,15 @@
 						Lv5：範圍減輕+10%</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆反射" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆反射" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆反射</td>
 					</tr>
 					<tr>
@@ -1521,15 +1400,15 @@
 						Lv5：傷害反射+?%</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆夥伴" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆夥伴" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆夥伴</td>
 					</tr>
 					<tr>
@@ -1553,15 +1432,15 @@
 						Lv5：寵物狀態+?</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆收集家" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆收集家" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆收集家</td>
 					</tr>
 					<tr>
@@ -1585,15 +1464,15 @@
 						Lv5：掉寶率+?%</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆努力家" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆努力家" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆努力家</td>
 					</tr>
 					<tr>
@@ -1617,15 +1496,15 @@
 						Lv5：取得経験値+10%</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆致命" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆致命" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆致命</td>
 					</tr>
 					<tr>
@@ -1649,15 +1528,15 @@
 						Lv5：</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆毒知識" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆毒知識" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆毒知識</td>
 					</tr>
 					<tr>
@@ -1681,15 +1560,15 @@
 						Lv5：</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆麻痺知識" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆麻痺知識" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆麻痺知識</td>
 					</tr>
 					<tr>
@@ -1713,15 +1592,15 @@
 						Lv5：</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆暗闇知識" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆暗闇知識" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆暗闇知識</td>
 					</tr>
 					<tr>
@@ -1745,15 +1624,15 @@
 						Lv5：</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆凍結知識" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆凍結知識" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆凍結知識</td>
 					</tr>
 					<tr>
@@ -1777,15 +1656,15 @@
 						Lv5：</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆発火知識" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆発火知識" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆発火知識</td>
 					</tr>
 					<tr>
@@ -1809,15 +1688,15 @@
 						Lv5：</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="auto-style3" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;"><br>
+						<td align="left" class="auto-style5" height="17"><br>
 						</td>
 					</tr>
 					<tr>
-						<td id="☆脱力知識" align="center" class="auto-style8" height="17" style="-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;">
+						<td id="☆脱力知識" align="center" class="auto-style7" height="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000">
 						☆脱力知識</td>
 					</tr>
 					<tr>
@@ -1844,22 +1723,17 @@
 				<meta content="Sheets" name="generator">
 				<style type="text/css">
 <!--td {border: 1px solid #ccc;}br {mso-data-placement:same-cell;}
-				.auto-style8 {
-					border: 1px solid #000000;
-					padding: 8px 10px;
+				.auto-style5 {
+					border-color: #FFFFFF;
+					border-width: 0;
+				}
+				.auto-style7 {
 					background-color: #D7DCF3;
 				}
 --></style>
 				</td>
 			</tr>
 		</table>
-				</td>
-			</tr>
-		</table>
-    
-      <br>
-    </div>
-  </div>
 </body>
 
 </html>
