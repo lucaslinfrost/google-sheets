@@ -504,9 +504,10 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
     
 		if (count($rplyArr) == 1) {
 		$messages = new MutiMessage();
+		$url = "https://irunamuscelboss.herokuapp.com/Boss/LINE/upload/starallstatus.html";
 		$replyArr = Array(
 				$messages->text($starall),
-				$messages->text('https://irunamuscelboss.herokuapp.com/Boss/LINE/upload/starallstatus.html')
+				$messages->text($url)
 			);
 		}
 		
