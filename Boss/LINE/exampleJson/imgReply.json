@@ -146,6 +146,10 @@
   {
     "chack": ["毒追玩","毒追怎"],
     "img": ["https://i.imgur.com/Ij0szn1.jpg"]
+  },
+  {
+    "chack": ["企鵝","penguin","Penguin"],
+    "img": ["https://i.imgur.com/GuW3gRU.jpg","https://i.imgur.com/ACk6d1Y.jpg","https://i.imgur.com/GWl19lC.jpg","https://i.imgur.com/VVV0IA1.jpg","https://i.imgur.com/d28zIj5.jpg"]
   }
 
   ]
