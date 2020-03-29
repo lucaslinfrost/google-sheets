@@ -330,7 +330,7 @@ function parseInput ($inputStr){
 }
 
 function Recordswitch($switch){
-$content = file_get_contents($textReplyUrl);	
+$content = file_get_contents('./exampleJson/imgReply.json');
 $content = json_decode($content, true);
 foreach($content as $txtChack){
 		foreach($txtChack['chack'] as $chack){
