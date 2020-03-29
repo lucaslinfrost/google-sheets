@@ -174,13 +174,13 @@ foreach ($bot->parseEvents() as $event) {
 					error_log("發送人ID：".$userId);
 					$table = "群組";
 					$tableid = $groupId;
-					return Recordswitch;
+					return Recordswitch("紀錄");
 					}
 				else{
 					error_log("訊息發送人：不明");
 					$table = "群組";
 					$tableid = $groupId;
-					return Recordswitch;
+					return Recordswitch("紀錄");
 				}
 				}
 		    
@@ -196,13 +196,13 @@ foreach ($bot->parseEvents() as $event) {
 					error_log("發送人ID：".$userId);
 					$table = "房間";
 					$tableid = $roomId;
-					return Recordswitch;
+					return Recordswitch("紀錄");
 					}
 				else{
 					error_log("訊息發送人：不明");
 					$table = "房間";
 					$tableid = $roomId;
-					return Recordswitch;
+					return Recordswitch("紀錄");
 				}
 				}
 		    
@@ -213,7 +213,7 @@ foreach ($bot->parseEvents() as $event) {
 				error_log("發送人ID：".$userId);
 				$table = "私人";
 				$tableid = $userId;
-				return Recordswitch;
+				return Recordswitch("紀錄");
 				}
 			
 			
@@ -329,12 +329,12 @@ function parseInput ($inputStr){
 	}
 }
 
-function Recordswitch{
+function Recordswitch($switch){
 $content = file_get_contents($textReplyUrl);	
 $content = json_decode($content, true);
 foreach($content as $txtChack){
 		foreach($txtChack['chack'] as $chack){
-			if(strcmp("紀錄", $chack) === 0){
+			if(strcmp($switch, $chack) === 0){
 				if(strcmp("開", $txtChack['text']) === 0){
 				require_once('../../record.php');
 				break;
