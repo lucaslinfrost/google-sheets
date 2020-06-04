@@ -19,6 +19,7 @@ switch ($event['type']) {
         $json = file_get_contents($googledataspi);
         $data = json_decode($json, true);
         $code = explode(' ', $message['text']);
+        $snum = 999;
         $datatime = date("Y-m-d");
         // 資料起始從feed.entry          
         foreach ($data['feed']['entry'] as $item) {
@@ -28,6 +29,10 @@ switch ($event['type']) {
             foreach ($keywords as $keyword) {
                 if (strpos($code[1], $keyword) !== false) {
                 $dataall = $item['gsx$data1']['$t']." (".$datatime.")\n\n".$item['gsx$data2']['$t']."\n".$item['gsx$data3']['$t']."\n\n".$item['gsx$data4']['$t']."\n".$item['gsx$data5']['$t']."\n\n".$item['gsx$data6']['$t']."\n".$item['gsx$data7']['$t']."\n\n".$item['gsx$data8']['$t']."\n".$item['gsx$data9']['$t'];
+                $snum = 0;
+                }
+                if ($snum === "999"){
+                $dataall = "沒有這個星座的運勢資訊。";
                 }
             }
         }       
