@@ -28,7 +28,7 @@ switch ($event['type']) {
             // 以關鍵字比對文字內容
             foreach ($keywords as $keyword) {
                 if (strpos($code[1], $keyword) !== false) {
-                $dataall = $item['gsx$data1']['$t']." (".$datatime.")\n\n".$item['gsx$data2']['$t']."\n".$item['gsx$data3']['$t']."\n\n".$item['gsx$data4']['$t']."\n".$item['gsx$data5']['$t']."\n\n".$item['gsx$data6']['$t']."\n".$item['gsx$data7']['$t']."\n\n".$item['gsx$data8']['$t']."\n".$item['gsx$data9']['$t'];
+                $dataall = $item['gsx$data1']['$t']." (".$datatime.")\n\n".$item['gsx$data2']['$t']."\n".$item['gsx$data3']['$t']."\n\n".$item['gsx$data4']['$t']."\n".$item['gsx$data5']['$t']."\n\n".$item['gsx$data6']['$t']."\n".$item['gsx$data7']['$t']."\n\n".$item['gsx$data8']['$t']."\n".$item['gsx$data9']['$t']."\n\n今日短評：\n".$item['gsx$data10']['$t']."\n\n幸運數字：".$item['gsx$data11']['$t']."\n\n幸運顏色：".$item['gsx$data12']['$t']."\n\n開運方位：".$item['gsx$data13']['$t']."\n\n今日吉時：".$item['gsx$data14']['$t']."\n\n幸運星座：".$item['gsx$data15']['$t'];
                 }
             }
         }
