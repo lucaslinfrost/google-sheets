@@ -376,8 +376,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		$rplyArr = explode(' ',$inputStr);
     
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
-		require_once('./sign.php');
-		//require_once('./sign2.php');
+		//require_once('./sign.php');
+		require_once('./sign2.php');
 		unset($data0, $data1, $data2, $data3, $data4, $data5, $data6, $data7, $data8, $data9, $data10, $data11, $data12, $data13, $data14, $datatime, $ch, $url, $html, $dom, $xPath);
 		return buildTextMessage($dataall);
 	}
