@@ -3,7 +3,6 @@
 //星座功能介面 (文字版)
 
 require_once('./LINEBotTiny.php');
-require_once('./utf8_chinese.class.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
 $googledataspi = getenv('googledataspi4');
@@ -20,7 +19,6 @@ switch ($event['type']) {
         $json = file_get_contents($googledataspi);
         $data = json_decode($json, true);
         $c = new utf8_chinese;
-        $message['text'] = $c->gb2312_big5($message['text']);
         $code = explode(' ', $message['text']);
         $datatime = date("Y-m-d");
         // 資料起始從feed.entry          
