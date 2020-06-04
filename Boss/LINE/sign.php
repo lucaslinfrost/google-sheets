@@ -31,11 +31,11 @@ switch ($event['type']) {
                 $dataall = $item['gsx$data1']['$t']." (".$datatime.")\n\n".$item['gsx$data2']['$t']."\n".$item['gsx$data3']['$t']."\n\n".$item['gsx$data4']['$t']."\n".$item['gsx$data5']['$t']."\n\n".$item['gsx$data6']['$t']."\n".$item['gsx$data7']['$t']."\n\n".$item['gsx$data8']['$t']."\n".$item['gsx$data9']['$t'];
                 $snum = 0;
                 }
-                if ($snum === "999"){
-                $dataall = "沒有這個星座的運勢資訊。";
-                }
             }
-        }       
+        }
+        if ($snum === "999"){
+                $dataall = "沒有這個星座的運勢資訊。";
+        }
         break;
     default:
         error_log("Unsupporeted event type: " . $event['type']);
