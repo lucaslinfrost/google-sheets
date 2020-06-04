@@ -30,7 +30,7 @@ switch ($event['type']) {
 
             // 以關鍵字比對文字內容
             foreach ($keywords as $keyword) {
-                if (strpos($code[1], $keyword) !== false) {
+                if (strpos($code[1], $keyword) === 0) {
                 $dataall = $item['gsx$data1']['$t']." (".$datatime.")\n\n".$item['gsx$data2']['$t']."\n".$item['gsx$data3']['$t']."\n\n".$item['gsx$data4']['$t']."\n".$item['gsx$data5']['$t']."\n\n".$item['gsx$data6']['$t']."\n".$item['gsx$data7']['$t']."\n\n".$item['gsx$data8']['$t']."\n".$item['gsx$data9']['$t'];
                 }else{
                 $dataall = "沒有這個星座的運勢資訊。";
