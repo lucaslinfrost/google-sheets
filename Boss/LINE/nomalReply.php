@@ -207,8 +207,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	       stristr($inputStr, 'bye') != false||
 	       stristr($inputStr, 'Bye') != false||
 	       stristr($inputStr, '再见') != false) {
-	//require_once('./authorization.php');
-	//if($userId === $owner){ 		
+	require_once('./authorization.php');
+	if($userId === $owner){ 		
         if($source['type'] == "room"){  
         $roomId = $source['roomId'];
 	$bot->replyMessage(array(
@@ -229,8 +229,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
                 'text' => '｡ﾟヽ(ﾟ´Д`)ﾉﾟ｡有緣再見。'))));
             return $bot->leaveGroup($groupId);
         }
-	//}else{return buildTextMessage('你並沒有權限使用這個指令。');}
-		
+	}else{return buildTextMessage('你並沒有權限使用這個指令。');}	
 	}
 
 	//公告
