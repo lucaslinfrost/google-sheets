@@ -186,6 +186,27 @@
 						},
 						{
 						"type": "message",
+						"label": "【活動公告範例】",
+						"text": "老大公告 情人節"
+						}
+					]
+				},
+				{
+				"title": "《其他技能》",
+				"text": "其他技能",
+				"actions": [
+						{
+						"type": "message",
+						"label": "【資料庫數據統計】",
+						"text": "老大數據"
+						},
+						{
+						"type": "message",
+						"label": "【Iruna歷史紀錄】",
+						"text": "老大公告 歷史紀錄"
+						},
+						{
+						"type": "message",
 						"label": "【聯繫製作者】",
 						"text": "Line ID : lucaslinfrost"
 						}
