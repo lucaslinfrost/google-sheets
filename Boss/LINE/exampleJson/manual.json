@@ -67,6 +67,27 @@
 				},
 				{
 				"title": "《查詢遊戲資料》",
+				"text": "裝備以及石頭",
+				"actions": [
+						{
+						"type": "message",
+						"label": "【查詢裝備資料範例】",
+						"text": "老大e 共生弓"
+						},
+						{
+						"type": "message",
+						"label": "【查詢石頭資料範例】",
+						"text": "老大r 岸英"
+						},
+						{
+						"type": "message",
+						"label": "【Iruna TW Info】",
+						"text": "老大查#英特菲克"
+						}
+					]
+				},
+				{
+				"title": "《查詢遊戲資料》",
 				"text": "掉落以及星能",
 				"actions": [
 						{
@@ -92,17 +113,17 @@
 				"actions": [
 						{
 						"type": "message",
-						"label": "【地圖導航】",
+						"label": "【地圖導航範例】",
 						"text": "老大導航#洛庫#上宮"
 						},
 						{
 						"type": "message",
-						"label": "【栽培範例】",
+						"label": "【栽培範例範例】",
 						"text": "老大栽培 哈蜜瓜"
 						},
 						{
 						"type": "message",
-						"label": "【採礦範例】",
+						"label": "【採礦範例範例】",
 						"text": "老大挖 白金礦"
 						}
 					]
@@ -160,7 +181,7 @@
 						},
 						{
 						"type": "message",
-						"label": "【公會群組公告】",
+						"label": "【群組公告】",
 						"text": "老大公告"
 						},
 						{
