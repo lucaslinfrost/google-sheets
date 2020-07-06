@@ -783,7 +783,13 @@ foreach ($client->parseEvents() as $event) {
             $message = $event['message'];
             $json = file_get_contents('./data/map.json');
             $data = json_decode($json, true);
+        
+            if(strpos($message['text'],'#') !== false){ 
             $code = explode('#', $message['text']);
+            }else{
+            $code = explode('＃', $message['text']);
+            }
+
             foreach ($data['feed']['entry'] as $item) {
                 $keywords = explode(',', $item['gsx$key']['$t']);
                 foreach ($keywords as $keyword) {
