@@ -56,7 +56,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		
 		$rplyArr = explode('#',$inputStr);
     
-		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
+		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，指令格式錯誤。');}
 		require_once('./usagecheck.php');
 		unset($json3, $data3, $keywords, $keyword, $json2, $data2);
 		if ($alltext1 !== "") {
@@ -154,15 +154,22 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	//地圖
 	if(stristr($inputStr, '指路') != false||
 	       stristr($inputStr, '導航') != false) {
-	$rplyArr = explode('#',$inputStr);
-	if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
+		
+	if(strpos($inputStr,'#') !== false){ 
+        $rplyArr = explode('#',$inputStr);
+	if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，指令格式錯誤。');}
+        }else{
+	$rplyArr = explode('＃',$inputStr);
+	if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，指令格式錯誤。');}
+        }
+	
 	require_once('./map.php');
 	return buildTextMessage(''.$maphop.'');
 	}
 	//基本查詢
 	if(stristr($inputStr, '查') != false) {
 	$rplyArr = explode('#',$inputStr);
-	if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
+	if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，指令格式錯誤。');}
         return buildTextMessage('http://tw.iruna-online.info/search?search='.$rplyArr[1]);
 	}
 	//推送
@@ -184,7 +191,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		
 		$rplyArr = explode(' ',$inputStr);
     
-		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
+		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，指令格式錯誤。');}
 		
 		require_once('./weather.php');
 		return buildTextMessage(''.$content.'');
@@ -247,7 +254,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	//更新筆記
 	if(stristr($inputStr, 'note') != false) {
 		$rplyArr = explode(' ',$inputStr);
-		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
+		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，指令格式錯誤。');}
 		require_once('../../notice.php');
 		return buildTextMessage(''.$userName.'，筆記已為您更新。');
 	}
@@ -265,7 +272,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		
 		$rplyArr = explode(' ',$inputStr);
     
-		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
+		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，指令格式錯誤。');}
 		require_once('./monster.php');
 		if ($store_text1 !== "") {
 		return buildTextMessage(''.$store_text1.'');
@@ -290,7 +297,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		
 		$rplyArr = explode(' ',$inputStr);
     
-		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
+		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，指令格式錯誤。');}
 		require_once('./produce.php');
 		if ($alltext !== "") {
 		$alltext = substr($alltext, 0, -34);
@@ -314,7 +321,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	if(stristr($inputStr, 'e') != false||
 	       stristr($inputStr, 'E') != false) {
 		$rplyArr = explode(' ',$inputStr);
-		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
+		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，指令格式錯誤。');}
 		require_once('./equip.php');
 		if ($alltext !== "") {
 		$alltext = substr($alltext, 0, -34);
@@ -350,7 +357,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		
 		$rplyArr = explode(' ',$inputStr);
     
-		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
+		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，指令格式錯誤。');}
 		require_once('./item1.php');
 		if ($alltext !== "") {
 		$alltext = substr($alltext, 0, -34);
@@ -375,7 +382,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		
 		$rplyArr = explode(' ',$inputStr);
     
-		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
+		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，指令格式錯誤。');}
 		//require_once('./sign.php');
 		require_once('./sign2.php');
 		unset($data0, $data1, $data2, $data3, $data4, $data5, $data6, $data7, $data8, $data9, $data10, $data11, $data12, $data13, $data14, $datatime, $ch, $url, $html, $dom, $xPath);
@@ -387,7 +394,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		
 		$rplyArr = explode(' ',$inputStr);
     
-		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
+		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，指令格式錯誤。');}
 		
 		require_once('./currency.php');
 		return buildTextMessage(''.$dataall.'');
@@ -398,7 +405,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		
 		$rplyArr = explode(' ',$inputStr);
     
-		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
+		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，指令格式錯誤。');}
 		require_once('./rock.php');
 		if ($alltext !== "") {
 		$alltext = substr($alltext, 0, -34);
@@ -482,7 +489,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		
 		$rplyArr = explode(' ',$inputStr);
     
-		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
+		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，指令格式錯誤。');}
     
 		$Answer = $rplyArr[Dice(count($rplyArr)-1)];
 				
@@ -563,14 +570,14 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	//學說話
 	if(stristr($inputStr, '學') != false) {
 		$rplyArr = explode('#',$inputStr);
-		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
+		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，指令格式錯誤。');}
 		require_once('./learn.php');
 		return buildTextMessage($talkreply);
 	}
 	//忘記說話
 	if(stristr($inputStr, '忘') != false) {
 		$rplyArr = explode('#',$inputStr);
-		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，你到底想讓我做啥?');}
+		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，指令格式錯誤。');}
 		require_once('./forgetoflearn.php');
 		return buildTextMessage($talkreply);
 	}
