@@ -168,8 +168,9 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	}
 	//基本查詢
 	if(stristr($inputStr, '查') != false) {
-	$rplyArr = explode('#',$inputStr);
-	if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，指令格式錯誤。');}
+	$inputStr = preg_replace('/\xa3([\xa1-\xfe])/e', 'chr(ord(\1)-0x80)', $inputStr);  
+	//$rplyArr = explode('#',$inputStr);
+	//if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，指令格式錯誤。');}
         return buildTextMessage('http://tw.iruna-online.info/search?search='.$rplyArr[1]);
 	}
 	//推送
