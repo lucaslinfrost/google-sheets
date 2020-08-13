@@ -18,9 +18,12 @@ switch ($event['type']) {
 
         // 將Google表單轉成JSON資料
         $json = file_get_contents('./data/m&d.json');
-        $data = json_decode($json, true);   
+        $json2 = file_get_contents('./data/star.json');
+        $data = json_decode($json, true);
+        $data2 = json_decode($json2, true);
         $store_text1 = ""; 
         $code = explode(' ', $message['text']);
+        $h = "";
         // 資料起始從feed.entry          
         foreach ($data['feed']['entry'] as $item) {
             // 將keywords欄位依,切成陣列
@@ -76,7 +79,21 @@ $g = "";
 $g = "
 ".$item['gsx$drop4']['$t'];
 }   
-                                        
+
+foreach ($data2['feed']['entry'] as $item2) {
+$keywords2 = explode(',', $item2['gsx$name']['$t']);
+foreach ($keywords2 as $keyword2) {
+if (strpos($item['gsx$name']['$t'], $keyword2) !== false) {
+if (strcmp($item['gsx$level']['$t'], $item2['gsx$mlv']['$t']) === 0) {
+$h = "
+--------  裝備星能  --------
+".$item2['gsx$type']['$t'];
+unset($json2, $data2, $keywords2, $keyword2);
+}
+}
+}
+}     
+                    
                     
 $store_text1 = "怪物名稱 : ".$item['gsx$name']['$t']."
 等級 : ".$item['gsx$level']['$t']."
