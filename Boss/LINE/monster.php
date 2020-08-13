@@ -81,9 +81,9 @@ $g = "
 }   
 
 foreach ($data2['feed']['entry'] as $item2) {
-$keywords2 = explode(',', $item2['gsx$name']['$t']);
+$keywords2 = explode(',', $item2['gsx$equip']['$t']);
 foreach ($keywords2 as $keyword2) {
-if (strpos($item['gsx$name']['$t'], $keyword2) !== false) {
+if (strpos($item['gsx$key']['$t'], $keyword2) !== false) {
 if (strcmp($item['gsx$level']['$t'], $item2['gsx$mlv']['$t']) === 0) {
 $h = $h."
 ☆".$item2['gsx$type']['$t'];
