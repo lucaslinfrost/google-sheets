@@ -85,20 +85,24 @@ $keywords2 = explode(',', $item2['gsx$name']['$t']);
 foreach ($keywords2 as $keyword2) {
 if (strpos($item['gsx$name']['$t'], $keyword2) !== false) {
 if (strcmp($item['gsx$level']['$t'], $item2['gsx$mlv']['$t']) === 0) {
-$h = "
---------  裝備星能  --------
+$h = $h."
 ".$item2['gsx$type']['$t'];
 unset($json2, $data2, $keywords2, $keyword2);
 }
 }
 }
-}     
-                    
+} 
+if($h === ""){
+$i = "";
+}else{
+$i = "
+--------  裝備星能  --------";
+}                   
                     
 $store_text1 = "怪物名稱 : ".$item['gsx$name']['$t']."
 等級 : ".$item['gsx$level']['$t']."
 屬性 : ".$item['gsx$attribute']['$t']."
-弱點 : ".$item['gsx$week']['$t']."".$b."".$a."".$c."".$d."".$e."".$f."".$g."".$h;
+弱點 : ".$item['gsx$week']['$t']."".$b."".$a."".$c."".$d."".$e."".$f."".$g."".$i."".$h;
                 }
             }
         }    
