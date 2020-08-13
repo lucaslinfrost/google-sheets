@@ -86,7 +86,7 @@ foreach ($keywords2 as $keyword2) {
 if (strpos($item['gsx$name']['$t'], $keyword2) !== false) {
 if (strcmp($item['gsx$level']['$t'], $item2['gsx$mlv']['$t']) === 0) {
 $h = $h."
-".$item2['gsx$type']['$t'];
+☆".$item2['gsx$type']['$t'];
 unset($json2, $data2, $keywords2, $keyword2);
 }
 }
