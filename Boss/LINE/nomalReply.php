@@ -166,12 +166,6 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	require_once('./map.php');
 	return buildTextMessage(''.$maphop.'');
 	}
-	//基本查詢
-	if(stristr($inputStr, '查') != false) { 
-	$rplyArr = explode('#',$inputStr);
-	if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，指令格式錯誤。');}
-        return buildTextMessage('http://tw.iruna-online.info/search?search='.$rplyArr[1]);
-	}
 	//推送
 	if(stristr($inputStr, '龘') != false||
 	       stristr($inputStr, '淼') != false) {
@@ -426,6 +420,12 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		unset($json1, $data1, $keywords, $keyword, $json2, $data2, $json3, $data3, $json4, $data5, $json5, $data5, $json6, $data6);
 		}
 	 }
+	//基本查詢
+	if(stristr($inputStr, '查') != false) { 
+	$rplyArr = explode('#',$inputStr);
+	if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，指令格式錯誤。');}
+        return buildTextMessage('http://tw.iruna-online.info/search?search='.$rplyArr[1]);
+	}
 	//栽培(文字)
 	if(stristr($inputStr, '種') != false||
 	       stristr($inputStr, '栽培') != false) {
