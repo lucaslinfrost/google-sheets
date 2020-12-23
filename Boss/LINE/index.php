@@ -310,11 +310,11 @@ foreach ($bot->parseEvents() as $event) {
 					$userName = $bot->getGroupProfile($groupId,$userId)['displayName'];
 					error_log("訊息發送人：".$userName);
 					error_log("發送人ID：".$userId);
-					return buildTextMessage("熱烈歡迎【".$userName."】的加入!!!");
+					return buildTextMessage('熱烈歡迎【'.$userName.'】的加入!!!');
 					}
 				else{
 					error_log("訊息發送人：不明");
-					return buildTextMessage("熱烈歡迎【無名氏】的加入!!!");
+					return buildTextMessage('熱烈歡迎您的加入!!!');
 				}
 				}
 		    
@@ -329,11 +329,11 @@ foreach ($bot->parseEvents() as $event) {
 					$userName = $bot->getRoomProfile($roomId,$userId)['displayName'];
 					error_log("訊息發送人：".$userName);
 					error_log("發送人ID：".$userId);
-					return buildTextMessage("熱烈歡迎【".$userName."】的加入!!!");
+					return buildTextMessage('熱烈歡迎【'.$userName.'】的加入!!!');
 					}
 				else{
 					error_log("訊息發送人：不明");
-					return buildTextMessage("熱烈歡迎【無名氏】的加入!!!");
+					return buildTextMessage('熱烈歡迎您的加入!!!');
 				}}
 			break;
 			
