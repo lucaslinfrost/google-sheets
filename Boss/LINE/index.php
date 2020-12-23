@@ -302,6 +302,7 @@ foreach ($bot->parseEvents() as $event) {
 				$groupId = $source['groupId'];
 				$userId = $source['userId'];
 				error_log("群組ID：".$groupId);
+				error_log("成員ID：".$userId);
 				if($userId != null){
 								
 					$userName = $bot->getGroupProfile($groupId,$userId)['displayName'];
@@ -320,6 +321,7 @@ foreach ($bot->parseEvents() as $event) {
 				$roomId = $source['roomId'];
 				$userId = $source['userId'];
 				error_log("房間ID：".$roomId);
+				error_log("成員ID：".$userId);
 				if($userId != null){
 								
 					$userName = $bot->getRoomProfile($roomId,$userId)['displayName'];
