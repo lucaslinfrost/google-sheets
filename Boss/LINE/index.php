@@ -297,10 +297,12 @@ foreach ($bot->parseEvents() as $event) {
 		case 'memberJoined':
 			error_log("成員加入");
 			$source = $event['source'];
+		        $join = $event['join'];
+		        $members = $join['members[0]'];
 			if($source['type'] == "group"){		
 				
 				$groupId = $source['groupId'];
-				$userId = $source['userId'];
+				$userId = $members['userId'];
 				error_log("群組ID：".$groupId);
 				error_log("成員ID：".$userId);
 				if($userId != null){
@@ -319,7 +321,7 @@ foreach ($bot->parseEvents() as $event) {
 		        if($source['type'] == "room"){		
 				
 				$roomId = $source['roomId'];
-				$userId = $source['userId'];
+				$userId = $members['userId'];
 				error_log("房間ID：".$roomId);
 				error_log("成員ID：".$userId);
 				if($userId != null){
