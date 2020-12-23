@@ -292,6 +292,46 @@ foreach ($bot->parseEvents() as $event) {
 				)
 			);		
 			break;
+		    
+				//成員加入的動作
+		case 'member join':
+			error_log("成員加入");
+			$source = $event['source'];
+			if($source['type'] == "group"){		
+				
+				$groupId = $source['groupId'];
+				$userId = $source['userId'];
+				error_log("群組ID：".$groupId);
+				if($userId != null){
+								
+					$userName = $bot->getGroupProfile($groupId,$userId)['displayName'];
+					error_log("訊息發送人：".$userName);
+					error_log("發送人ID：".$userId);
+					return buildTextMessage("熱烈歡迎【".$userName."】的加入!!!");
+					}
+				else{
+					error_log("訊息發送人：不明");
+					return buildTextMessage("熱烈歡迎【無名氏】的加入!!!");
+				}
+				}
+		    
+		        if($source['type'] == "room"){		
+				
+				$roomId = $source['roomId'];
+				$userId = $source['userId'];
+				error_log("房間ID：".$roomId);
+				if($userId != null){
+								
+					$userName = $bot->getRoomProfile($roomId,$userId)['displayName'];
+					error_log("訊息發送人：".$userName);
+					error_log("發送人ID：".$userId);
+					return buildTextMessage("熱烈歡迎【".$userName."】的加入!!!");
+					}
+				else{
+					error_log("訊息發送人：不明");
+					return buildTextMessage("熱烈歡迎【無名氏】的加入!!!");
+				}}
+			break;
 			
         default:
             error_log("不支援的訊息: " . $event['type']);
