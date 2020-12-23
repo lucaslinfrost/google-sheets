@@ -292,6 +292,50 @@ foreach ($bot->parseEvents() as $event) {
 				)
 			);		
 			break;  
+		    
+		//成員加入的動作
+		case 'memberJoined':
+			error_log("成員加入");
+			$source = $event['source'];
+		        $join = $event['join'];
+		        $members = $join['members[0]'];
+			if($source['type'] == "group"){		
+				
+				$groupId = $source['groupId'];
+				$userId = $members['userId'];
+				error_log("群組ID：".$groupId);
+				error_log("成員ID：".$userId);
+				if($userId != null){
+								
+					$userName = $bot->getGroupProfile($groupId,$userId)['displayName'];
+					error_log("訊息發送人：".$userName);
+					error_log("發送人ID：".$userId);
+					return buildTextMessage("熱烈歡迎【".$userName."】的加入!!!");
+					}
+				else{
+					error_log("訊息發送人：不明");
+					return buildTextMessage("熱烈歡迎【無名氏】的加入!!!");
+				}
+				}
+		    
+		        if($source['type'] == "room"){		
+				
+				$roomId = $source['roomId'];
+				$userId = $members['userId'];
+				error_log("房間ID：".$roomId);
+				error_log("成員ID：".$userId);
+				if($userId != null){
+								
+					$userName = $bot->getRoomProfile($roomId,$userId)['displayName'];
+					error_log("訊息發送人：".$userName);
+					error_log("發送人ID：".$userId);
+					return buildTextMessage("熱烈歡迎【".$userName."】的加入!!!");
+					}
+				else{
+					error_log("訊息發送人：不明");
+					return buildTextMessage("熱烈歡迎【無名氏】的加入!!!");
+				}}
+			break;
 			
         default:
             error_log("不支援的訊息: " . $event['type']);
