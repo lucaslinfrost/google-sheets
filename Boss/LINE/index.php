@@ -275,8 +275,25 @@ foreach ($bot->parseEvents() as $event) {
 				)
 			);		
 			break;
+		    	
+		//被加入好友的動作
+		case 'follow':
+			error_log("被加入好友");
+			$messages = new MutiMessage();
+			$replyArr = Array(
+				$messages->text("機體編號 : @svf5367e\n隸屬Iruna公會【★夢想家★】。\n工作是公會顧問和吉祥物，\n您可以輸入[老大說明]\n來了解我的所有功能。\n我的製作協力者有\n[我靴子裡有蛇]、[賢者懿雅]、[風:))]、[夜影]\n\n在遊戲裡看到他們記得表示感謝喔!!\n\n(C) ASOBIMO INC. All rights reserved."),
+				$messages->sticker(4,294),
+			);
+			
+			$bot->replyMessage(
+				array(
+				'replyToken' => $event['replyToken'],
+				'messages' => $replyArr
+				)
+			);		
+			break;
 		    
-	        //成員加入的動作
+		//成員加入的動作
 		case 'member join':
 			error_log("成員加入");
 			$source = $event['source'];
@@ -315,23 +332,7 @@ foreach ($bot->parseEvents() as $event) {
 					return buildTextMessage("熱烈歡迎【無名氏】的加入!!!");
 				}
 			break;
-			
-			//被加入好友的動作
-		case 'follow':
-			error_log("被加入好友");
-			$messages = new MutiMessage();
-			$replyArr = Array(
-				$messages->text("機體編號 : @svf5367e\n隸屬Iruna公會【★夢想家★】。\n工作是公會顧問和吉祥物，\n您可以輸入[老大說明]\n來了解我的所有功能。\n我的製作協力者有\n[我靴子裡有蛇]、[賢者懿雅]、[風:))]、[夜影]\n\n在遊戲裡看到他們記得表示感謝喔!!\n\n(C) ASOBIMO INC. All rights reserved."),
-				$messages->sticker(4,294),
-			);
-			
-			$bot->replyMessage(
-				array(
-				'replyToken' => $event['replyToken'],
-				'messages' => $replyArr
-				)
-			);		
-			break;
+				
 			
         default:
             error_log("不支援的訊息: " . $event['type']);
