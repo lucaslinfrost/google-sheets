@@ -293,8 +293,8 @@ foreach ($bot->parseEvents() as $event) {
 			);		
 			break;
 		    
-				//成員加入的動作
-		case 'member join':
+		//成員加入的動作
+		case 'memberJoined':
 			error_log("成員加入");
 			$source = $event['source'];
 			if($source['type'] == "group"){		
