@@ -388,12 +388,7 @@ foreach ($bot->parseEvents() as $event) {
 					);
 				}
 				}
-		        $bot->replyMessage(
-			array(
-			'replyToken' => $event['replyToken'],
-			'messages' => $replyArr
-				)
-			);	
+		        $bot->replyMessage(array('replyToken' => $event['replyToken'],'messages' => $replyArr));	
 			break;
 			
         default:
