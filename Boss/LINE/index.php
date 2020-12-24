@@ -369,7 +369,8 @@ foreach ($bot->parseEvents() as $event) {
 				error_log("群組名：".$groupName);
 				error_log("成員ID：".$userId);
 				if($userId != null){
-								
+					break;
+					default:			
 					$userName = $bot->getProfile($userId)['displayName'];
 					error_log("訊息發送人：".$userName);
 					error_log("發送人ID：".$userId);
@@ -379,9 +380,10 @@ foreach ($bot->parseEvents() as $event) {
 					$messages->text('つ´Д`)つ我們會想念您~'),
 					);
 					return $messages->send($replyArr);
-					break;
 					}
 				else{
+					break;
+					default:
 					error_log("訊息發送人：不明");
 					$userName = "您";
 					$messages = new MutiMessage();
@@ -390,7 +392,6 @@ foreach ($bot->parseEvents() as $event) {
 					$messages->text('つ´Д`)つ我們會想念您~'),
 					);
 					return $messages->send($replyArr);
-					break;
 				}
 				}
 		    
