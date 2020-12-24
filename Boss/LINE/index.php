@@ -297,12 +297,11 @@ foreach ($bot->parseEvents() as $event) {
 		case 'memberJoined':
 			error_log("成員加入");
 			$source = $event['source'];
-		        $join = $event['join'];
-		        $members = $join['members[0]'];
+		        $members = $event['join.members[0]'];
 			if($source['type'] == "group"){		
 				
 				$groupId = $source['groupId'];
-				$groupName = $source['groupName'];
+				$groupName = $bot->getGroupSummary($groupId)['groupName'];
 				$userId = $members['userId'];
 				error_log("群組ID：".$groupId);
 				error_log("成員ID：".$userId);
