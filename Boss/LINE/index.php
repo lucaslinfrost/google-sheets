@@ -373,24 +373,24 @@ foreach ($bot->parseEvents() as $event) {
 					$userName = $bot->getProfile($userId)['displayName'];
 					error_log("訊息發送人：".$userName);
 					error_log("發送人ID：".$userId);
-					return leftmember($userName,$groupName);
-					/**$messages = new MutiMessage();
+					$messages = new MutiMessage();
 					$replyArr = Array(
 					$messages->text('很遺憾【'.$userName.'】退出了'.$groupName.'!!!'),
 					$messages->text('つ´Д`)つ我們會想念您~'),
 					);
-					return $messages->send($replyArr);*/
+					return $messages->send($replyArr);
+					break;
 					}
 				else{
 					error_log("訊息發送人：不明");
 					$userName = "您";
-					return leftmember($userName,$groupName);
-					/**$messages = new MutiMessage();
+					$messages = new MutiMessage();
 					$replyArr = Array(
 					$messages->text('很遺憾您退出了'.$groupName.'!!!'),
 					$messages->text('つ´Д`)つ我們會想念您~'),
 					);
-					return $messages->send($replyArr);*/
+					return $messages->send($replyArr);
+					break;
 				}
 				}
 		    
@@ -453,7 +453,7 @@ function Dice($diceSided){
 	return rand(1,$diceSided);
 }
 
-function joinmember($userName,$groupName){
+/**function joinmember($userName,$groupName){
 	$messages = new MutiMessage();
 	$replyArr = Array(
 	$messages->text('熱烈歡迎【'.$userName.'】加入'.$groupName.'!!!'),
@@ -470,7 +470,7 @@ function leftmember($userName,$groupName){
 	$messages->text('つ´Д`)つ我們會想念您~'),
 	);
 	return $messages->send($replyArr);
-}
+}*/
 
 //創造角色
 function create($inputStr,$userName){
