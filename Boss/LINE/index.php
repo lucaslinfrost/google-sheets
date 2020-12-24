@@ -299,7 +299,7 @@ foreach ($bot->parseEvents() as $event) {
 			$source = $event['source'];
 			$joined = $event['joined']['members'];
 			$members = $joined[0];
-			if($source['type'] == "group"){		
+	
 				
 				$groupId = $source['groupId'];
 				$groupName = $bot->getGroupSummary($groupId)['groupName'];
@@ -308,50 +308,20 @@ foreach ($bot->parseEvents() as $event) {
 				error_log("群組名：".$groupName);
 				error_log("成員ID：".$userId);
 				if($userId != null){
-								
-					$userName = $bot->getProfile($userId)['displayName'];
-					error_log("訊息發送人：".$userName);
-					error_log("發送人ID：".$userId);
-					return joinmember($userName,$groupName);
-					/**$messages = new MutiMessage();
-					$replyArr = Array(
-					$messages->text('熱烈歡迎【'.$userName.'】加入'.$groupName.'!!!'),
-					$messages->text('(ノ・ω・)ノ歡迎ヾ(・ω・ヾ)'),
-					$messages->text('請認真閱讀以下群組規章~!!'),
-					);
-					return $messages->send($replyArr);*/
-					}
-				else{
-					error_log("訊息發送人：不明");
-					$userName = "您";
-					return joinmember($userName,$groupName);
-					/**$messages = new MutiMessage();
-					$replyArr = Array(
-					$messages->text('熱烈歡迎您加入'.$groupName.'!!!'),
-					$messages->text('(ノ・ω・)ノ歡迎ヾ(・ω・ヾ)'),
-					$messages->text('請認真閱讀以下群組規章~!!'),
-					);
-					return $messages->send($replyArr);*/
+				$userName = $bot->getProfile($userId)['displayName'];
+				error_log("訊息發送人：".$userName);
+				error_log("發送人ID：".$userId);
+				}else{
+				error_log("訊息發送人：不明");
+				$userName = "您";
 				}
-				}
-		    
-		        if($source['type'] == "room"){		
-				
-				$roomId = $source['roomId'];
-				$userId = $members['userId'];
-				error_log("房間ID：".$roomId);
-				error_log("成員ID：".$userId);
-				if($userId != null){
-								
-					$userName = $bot->getRoomProfile($roomId,$userId)['displayName'];
-					error_log("訊息發送人：".$userName);
-					error_log("發送人ID：".$userId);
-					return buildTextMessage('熱烈歡迎【'.$userName.'】的加入!!!');
-					}
-				else{
-					error_log("訊息發送人：不明");
-					return buildTextMessage('熱烈歡迎您的加入!!!');
-				}}
+			$messages = new MutiMessage();
+			$replyArr = Array(
+			$messages->text('熱烈歡迎【'.$userName.'】加入'.$groupName.'!!!'),
+			$messages->text('(ノ・ω・)ノ歡迎ヾ(・ω・ヾ)'),
+			$messages->text('請認真閱讀以下群組規章~!!'),
+			);
+		        return $messages->send($replyArr);
 			break;
 		    
 		//成員退出的動作
@@ -360,7 +330,7 @@ foreach ($bot->parseEvents() as $event) {
 			$source = $event['source'];
 			$left = $event['left']['members'];
 			$members = $left[0];
-			if($source['type'] == "group"){		
+	
 				
 				$groupId = $source['groupId'];
 				$groupName = $bot->getGroupSummary($groupId)['groupName'];
@@ -368,27 +338,20 @@ foreach ($bot->parseEvents() as $event) {
 				error_log("群組ID：".$groupId);
 				error_log("群組名：".$groupName);
 				error_log("成員ID：".$userId);
-				if($userId != null){			
-					$userName = $bot->getProfile($userId)['displayName'];
-					error_log("訊息發送人：".$userName);
-					error_log("發送人ID：".$userId);
-					$messages = new MutiMessage();
-					$replyArr = Array(
-					$messages->text('很遺憾【'.$userName.'】退出了'.$groupName.'!!!'),
-					$messages->text('つ´Д`)つ我們會想念您~'),
-					);
-					}
-				else{
-					error_log("訊息發送人：不明");
-					$userName = "您";
-					$messages = new MutiMessage();
-					$replyArr = Array(
-					$messages->text('很遺憾您退出了'.$groupName.'!!!'),
-					$messages->text('つ´Д`)つ我們會想念您~'),
-					);
+				if($userId != null){
+				$userName = $bot->getProfile($userId)['displayName'];
+				error_log("訊息發送人：".$userName);
+				error_log("發送人ID：".$userId);
+				}else{
+				error_log("訊息發送人：不明");
+				$userName = "您";
 				}
-				}
-		   	return $messages->send($replyArr);
+			$messages = new MutiMessage();
+			$replyArr = Array(
+			$messages->text('很遺憾【'.$userName.'】退出了'.$groupName.'!!!'),
+			$messages->text('つ´Д`)つ我們會想念您~'),
+			);
+		        return $messages->send($replyArr);
 			break;
 			
         default:
