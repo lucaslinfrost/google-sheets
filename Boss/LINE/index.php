@@ -297,8 +297,7 @@ foreach ($bot->parseEvents() as $event) {
 		case 'memberJoined':
 			error_log("成員加入");
 			$source = $event['source'];
-		    	$joined = $event['joined'];
-		        $members = $joined['members'];
+		    	$members = $event['joined.members'][0];
 			if($source['type'] == "group"){		
 				
 				$groupId = $source['groupId'];
@@ -312,11 +311,18 @@ foreach ($bot->parseEvents() as $event) {
 					$userName = $bot->getGroupProfile($groupId,$userId)['displayName'];
 					error_log("訊息發送人：".$userName);
 					error_log("發送人ID：".$userId);
-					return buildTextMessage('熱烈歡迎【'.$userName.'】加入'.$groupName.'!!!');
+					$replyArr = Array(
+					$messages->text('熱烈歡迎【'.$userName.'】加入'.$groupName.'!!!'),
+					$messages->text('請認真閱讀以下群組規章~!!'),
+					);
 					}
 				else{
 					error_log("訊息發送人：不明");
 					return buildTextMessage('熱烈歡迎您加入'.$groupName.'!!!');
+					$replyArr = Array(
+					$messages->text('熱烈歡迎您加入'.$groupName.'!!!'),
+					$messages->text('請認真閱讀以下群組規章~!!'),
+					);
 				}
 				}
 		    
