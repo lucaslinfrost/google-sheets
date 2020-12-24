@@ -377,6 +377,7 @@ foreach ($bot->parseEvents() as $event) {
 					$messages->text('很遺憾【'.$userName.'】退出了'.$groupName.'!!!'),
 					$messages->text('つ´Д`)つ我們會想念您~'),
 					);
+					$bot->replyMessage(array('replyToken' => $event['replyToken'],'messages' => $replyArr));
 					}
 				else{
 					error_log("訊息發送人：不明");
@@ -386,9 +387,9 @@ foreach ($bot->parseEvents() as $event) {
 					$messages->text('很遺憾您退出了'.$groupName.'!!!'),
 					$messages->text('つ´Д`)つ我們會想念您~'),
 					);
+					$bot->replyMessage(array('replyToken' => $event['replyToken'],'messages' => $replyArr));	
 				}
 				}
-		        $bot->replyMessage(array('replyToken' => $event['replyToken'],'messages' => $replyArr));	
 			break;
 			
         default:
