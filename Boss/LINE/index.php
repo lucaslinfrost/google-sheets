@@ -453,7 +453,7 @@ function Dice($diceSided){
 	return rand(1,$diceSided);
 }
 
-public function joinmember($userName,$groupName){
+function joinmember($userName,$groupName){
 	$messages = new MutiMessage();
 	$replyArr = Array(
 	$messages->text('熱烈歡迎【'.$userName.'】加入'.$groupName.'!!!'),
@@ -463,7 +463,7 @@ public function joinmember($userName,$groupName){
 	return $messages->send($replyArr);
 }
 
-public function leftmember($userName,$groupName){
+function leftmember($userName,$groupName){
 	$messages = new MutiMessage();
 	$replyArr = Array(
 	$messages->text('很遺憾【'.$userName.'】退出了'.$groupName.'!!!'),
