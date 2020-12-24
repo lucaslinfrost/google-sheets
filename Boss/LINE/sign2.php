@@ -12,7 +12,6 @@ switch ($event['type']) {
         // 讀入訊息
         $message = $event['message'];
         $code = explode(' ', $message['text']);
-        $code[1]='雙子';
         $snum = '999';
         if (strpos($code[1], '白羊') !== false||strpos($code[1], '牡羊') !== false||strpos($code[1], '牧羊') !== false||strpos($code[1], '♈') !== false){$snum = '0';}
         if (strpos($code[1], '金牛') !== false||strpos($code[1], '牡牛') !== false||strpos($code[1], '牧牛') !== false||strpos($code[1], '♉') !== false){$snum = '1';}
