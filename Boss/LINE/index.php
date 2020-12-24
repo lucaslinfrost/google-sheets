@@ -309,7 +309,7 @@ foreach ($bot->parseEvents() as $event) {
 				error_log("成員ID：".$userId);
 				if($userId != null){
 								
-					$userName = $bot->getGroupProfile($groupId,$userId)['displayName'];
+					$userName = $bot->getProfile($userId)['displayName'];
 					error_log("訊息發送人：".$userName);
 					error_log("發送人ID：".$userId);
 					$messages = new MutiMessage();
@@ -367,7 +367,7 @@ foreach ($bot->parseEvents() as $event) {
 				error_log("成員ID：".$userId);
 				if($userId != null){
 								
-					$userName = $bot->getGroupProfile($groupId,$userId)['displayName'];
+					$userName = $bot->getProfile($userId)['displayName'];
 					error_log("訊息發送人：".$userName);
 					error_log("發送人ID：".$userId);
 					$messages = new MutiMessage();
