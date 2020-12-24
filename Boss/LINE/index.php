@@ -296,53 +296,9 @@ foreach ($bot->parseEvents() as $event) {
 		//成員加入的動作
 		case 'memberJoined':
 			error_log("成員加入");
-			return newmember($event);
-			break;
-			
-        default:
-            error_log("不支援的訊息: " . $event['type']);
-            break;
-    }
-};
-
-//這是基本判斷式
-function parseInput ($inputStr){
-	global $userName;
-	global $keyWord;
-	global $manualUrl;
-	global $textReplyUrl;
-	global $imgsReplyUrl;
-	global $yababangUrl;
-	
-
-	//error_log("訊息【".$inputStr."】進入parseInput");
-	$inputStr = strtolower($inputStr);
-
-	//preg_match ( "/A/" , B)。A是要比對的關鍵字（正則），B是被比對的字串
-	if (preg_match ("/database/i", $inputStr)){
-		return DvTest ($inputStr,$userName,$textReplyUrl,$imgsReplyUrl);
-		
-	}else if(stristr($inputStr,$keyWord) != false){ //$keyWord
-		return KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName);
-				
-	}else if(stristr($inputStr,$keyWord) === false || stristr($inputStr,"!p") != false){
-		return SendImg($inputStr,$imgsReplyUrl);
-
-	}	
-	
-	else {
-	return null;
-	}
-}
-
-function Dice($diceSided){
-	return rand(1,$diceSided);
-}
-
-function newmember($event){
-	$source = $event['source'];
-	$joined = $event['joined']['members'];
-	$members = $joined[0];
+			$source = $event['source'];
+			$joined = $event['joined']['members'];
+			$members = $joined[0];
 			if($source['type'] == "group"){		
 				
 				$groupId = $source['groupId'];
@@ -387,7 +343,51 @@ function newmember($event){
 				else{
 					error_log("訊息發送人：不明");
 					return buildTextMessage('熱烈歡迎您的加入!!!');
-				}}}
+				}}
+			break;
+			
+        default:
+            error_log("不支援的訊息: " . $event['type']);
+            break;
+    }
+};
+
+//這是基本判斷式
+function parseInput ($inputStr){
+	global $userName;
+	global $keyWord;
+	global $manualUrl;
+	global $textReplyUrl;
+	global $imgsReplyUrl;
+	global $yababangUrl;
+	
+
+	//error_log("訊息【".$inputStr."】進入parseInput");
+	$inputStr = strtolower($inputStr);
+
+	//preg_match ( "/A/" , B)。A是要比對的關鍵字（正則），B是被比對的字串
+	if (preg_match ("/database/i", $inputStr)){
+		return DvTest ($inputStr,$userName,$textReplyUrl,$imgsReplyUrl);
+		
+	}else if(stristr($inputStr,$keyWord) != false){ //$keyWord
+		return KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName);
+				
+	}else if(stristr($inputStr,$keyWord) === false || stristr($inputStr,"!p") != false){
+		return SendImg($inputStr,$imgsReplyUrl);
+
+	}	
+	
+	else {
+	return null;
+	}
+}
+
+function Dice($diceSided){
+	return rand(1,$diceSided);
+}
+
+function newmember($event){
+}
 
 //創造角色
 function create($inputStr,$userName){
