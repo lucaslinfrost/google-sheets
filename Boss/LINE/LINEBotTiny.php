@@ -279,7 +279,7 @@ public function getGroupSummary($groupId)
         ),
     ));
 
-    $response = file_get_contents('https://api.line.me/v2/bot/group/'.urlencode($groupId).'/summary', false, $context);
+    $response = file_get_contents('https://api.line.me/v2/bot/group/'.urlencode($groupId).'/members/count', false, $context);
     if (strpos($http_response_header[0], '200') === false) {
         http_response_code(500);
         error_log("Request failed: " . $response);
