@@ -62,7 +62,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
             $message = $event['message'];
 	    $source = $event['source'];
             $groupId = $source['groupId'];
-            $groupName = $bot->getGroupSummary($groupId)['groupName'];
+            //$groupName = $bot->getGroupSummary($groupId)['groupName'];
+            $groupName = $source['groupName'];
 	    return buildTextMessage('群組名 : '.$groupName);
             break;
         default:
