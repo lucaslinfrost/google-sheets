@@ -390,8 +390,8 @@ foreach ($bot->parseEvents() as $event) {
 				$bot->replyMessage(array('replyToken' => $event['replyToken'],'messages' => $replyArr));
 				break;
 				}
-		        $bot->replyMessage(array('replyToken' => $event['replyToken'],'messages' => $replyArr));
-			break;
+		        //$bot->replyMessage(array('replyToken' => $event['replyToken'],'messages' => $replyArr));
+			//break;
 			
         default:
             error_log("不支援的訊息: " . $event['type']);
@@ -432,25 +432,6 @@ function parseInput ($inputStr){
 function Dice($diceSided){
 	return rand(1,$diceSided);
 }
-
-/**function joinmember($userName,$groupName){
-	$messages = new MutiMessage();
-	$replyArr = Array(
-	$messages->text('熱烈歡迎【'.$userName.'】加入'.$groupName.'!!!'),
-	$messages->text('(ノ・ω・)ノ歡迎ヾ(・ω・ヾ)'),
-	$messages->text('請認真閱讀以下群組規章~!!'),
-	);
-	return $messages->send($replyArr);
-}
-
-function leftmember($userName,$groupName){
-	$messages = new MutiMessage();
-	$replyArr = Array(
-	$messages->text('很遺憾【'.$userName.'】退出了'.$groupName.'!!!'),
-	$messages->text('つ´Д`)つ我們會想念您~'),
-	);
-	return $messages->send($replyArr);
-}*/
 
 //創造角色
 function create($inputStr,$userName){
