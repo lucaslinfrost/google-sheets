@@ -357,13 +357,7 @@ foreach ($bot->parseEvents() as $event) {
 			$messages->text('很遺憾【'.$userName.'】退出了'.$groupName.'!!!'),
 			$messages->text('つ´Д`)つ我們會想念您~'),
 			);
-		        //return $messages->send($replyArr);
-		    $bot->replyMessage(
-				array(
-				'replyToken' => $event['replyToken'],
-				'messages' => $replyArr
-				)
-			);		
+		        return $messages->send($replyArr);		
 			break;
 			
         default:
