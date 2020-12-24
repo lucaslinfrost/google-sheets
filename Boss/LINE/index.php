@@ -321,7 +321,13 @@ foreach ($bot->parseEvents() as $event) {
 			$messages->text('(ノ・ω・)ノ歡迎ヾ(・ω・ヾ)'),
 			$messages->text('請認真閱讀以下群組規章~!!'),
 			);
-		        return $messages->send($replyArr);
+		        //return $messages->send($replyArr);
+			$bot->replyMessage(
+				array(
+				'replyToken' => $event['replyToken'],
+				'messages' => $replyArr
+				)
+			);		
 			break;
 		    
 		//成員退出的動作
@@ -351,7 +357,13 @@ foreach ($bot->parseEvents() as $event) {
 			$messages->text('很遺憾【'.$userName.'】退出了'.$groupName.'!!!'),
 			$messages->text('つ´Д`)つ我們會想念您~'),
 			);
-		        return $messages->send($replyArr);
+		        //return $messages->send($replyArr);
+		    $bot->replyMessage(
+				array(
+				'replyToken' => $event['replyToken'],
+				'messages' => $replyArr
+				)
+			);		
 			break;
 			
         default:
