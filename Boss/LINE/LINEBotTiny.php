@@ -266,25 +266,21 @@ public function leaveGroup($groupId)
 }
 
 public function getGroupSummary($groupId)
-{
-    $header = array(
-        'Authorization: Bearer ' . $this->channelAccessToken,
-    );
+{	$header = array(
+            'Authorization: Bearer ' . $this->channelAccessToken ."\r\n",
+        );
 
-    $context = stream_context_create(array(
-        "http" => array(
-            "method" => "POST",
-            "header" => implode("\r\n", $header),
-            "content" => "[]",
-        ),
-    ));
-
-    $response = file_get_contents('https://api.line.me/v2/bot/group/'.urlencode($groupId).'/members/count', false, $context);
-    if (strpos($http_response_header[0], '200') === false) {
-        http_response_code(500);
-        error_log("Request failed: " . $response);
+        $context = stream_context_create(array(
+            "http" => array(
+                "method" => "GET",
+                "header" => $header,               
+            ),
+        ));		
+		$url='https://api.line.me/v2/bot/group/'.$groupId.'/summary';
+        $response = file_get_contents($url, false, $context);
+		$response = json_decode($response,true);
+        return $response;
     }
-}
 
 	
 }
