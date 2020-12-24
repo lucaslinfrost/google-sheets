@@ -387,11 +387,14 @@ foreach ($bot->parseEvents() as $event) {
 					$messages->text('つ´Д`)つ我們會想念您~'),
 					);
 				}
-				$bot->replyMessage(array('replyToken' => $event['replyToken'],'messages' => $replyArr));
-				break;
 				}
-		        //$bot->replyMessage(array('replyToken' => $event['replyToken'],'messages' => $replyArr));
-			//break;
+		        $bot->replyMessage(
+			array(
+			'replyToken' => $event['replyToken'],
+			'messages' => $replyArr
+				)
+			);	
+			break;
 			
         default:
             error_log("不支援的訊息: " . $event['type']);
