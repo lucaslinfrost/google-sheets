@@ -59,11 +59,9 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	foreach ($bot->parseEvents() as $event) {
     	switch ($event['type']) {
         case 'message':
-            $message = $event['message'];
 	    $source = $event['source'];
             $groupId = $source['groupId'];
-            //$groupName = $bot->getGroupSummary($groupId)['groupName'];
-            $groupName = $source['groupName'];
+            $groupName = $bot->getGroupSummary($groupId);
 	    return buildTextMessage('群組名 : '.$groupName);
             break;
         default:
