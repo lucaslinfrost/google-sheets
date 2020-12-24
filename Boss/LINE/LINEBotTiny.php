@@ -264,5 +264,27 @@ public function leaveGroup($groupId)
         error_log("Request failed: " . $response);
     }
 }
+
+public function getGroupSummary($groupId)
+{
+    $header = array(
+        'Authorization: Bearer ' . $this->channelAccessToken,
+    );
+
+    $context = stream_context_create(array(
+        "http" => array(
+            "method" => "POST",
+            "header" => implode("\r\n", $header),
+            "content" => "[]",
+        ),
+    ));
+
+    $response = file_get_contents('https://api.line.me/v2/bot/group/'.urlencode($groupId).'/summary', false, $context);
+    if (strpos($http_response_header[0], '200') === false) {
+        http_response_code(500);
+        error_log("Request failed: " . $response);
+    }
+}
+
 	
 }
