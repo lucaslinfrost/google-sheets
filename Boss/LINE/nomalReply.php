@@ -51,26 +51,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	}	
 	}
 	
-	//測試
-	if(stristr($inputStr, '測試') != false) {
-	$channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
-	$channelSecret = getenv('LINE_CHANNEL_SECRET');
-	$bot = new LINEBotTiny($channelAccessToken, $channelSecret);
-	foreach ($bot->parseEvents() as $event) {
-    	switch ($event['type']) {
-        case 'message':
-	    $source = $event['source'];
-            $groupId = $source['groupId'];
-            $groupName = $bot->getGroupSummary($groupId)['groupName'];
-	    return buildTextMessage('群組名 : '.$groupName);
-            break;
-        default:
-            error_log("Unsupporeted event type: " . $event['type']);
-            break;
-    }
-};
-	}
-	
+
 	//查材料用途
 	if(stristr($inputStr, 'look') != false) {
 		
