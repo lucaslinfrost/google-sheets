@@ -302,7 +302,7 @@ foreach ($bot->parseEvents() as $event) {
 			if($source['type'] == "group"){		
 				
 				$groupId = $source['groupId'];
-				$groupName = $bot->getGroupSummary($source['groupId'])['groupName'];
+				$groupName = $bot->getGroupSummary($groupId)['groupName'];
 				$userId = $members['userId'];
 				error_log("群組ID：".$groupId);
 				error_log("群組名：".$groupName);
