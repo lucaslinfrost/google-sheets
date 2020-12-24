@@ -316,6 +316,7 @@ foreach ($bot->parseEvents() as $event) {
 					$messages->text('熱烈歡迎【'.$userName.'】加入'.$groupName.'!!!'),
 					$messages->text('請認真閱讀以下群組規章~!!'),
 					);
+					return $messages->send($replyArr);
 					}
 				else{
 					error_log("訊息發送人：不明");
@@ -324,6 +325,7 @@ foreach ($bot->parseEvents() as $event) {
 					$messages->text('熱烈歡迎您加入'.$groupName.'!!!'),
 					$messages->text('請認真閱讀以下群組規章~!!'),
 					);
+					return $messages->send($replyArr);
 				}
 				}
 		    
