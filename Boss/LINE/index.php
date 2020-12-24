@@ -292,7 +292,7 @@ foreach ($bot->parseEvents() as $event) {
 				)
 			);		
 			break;  
-		    
+/**	    
 		//成員加入的動作
 		case 'memberJoined':
 			error_log("成員加入");
@@ -337,6 +337,7 @@ foreach ($bot->parseEvents() as $event) {
 					return buildTextMessage('熱烈歡迎您的加入!!!');
 				}}
 			break;
+*/
 			
         default:
             error_log("不支援的訊息: " . $event['type']);
