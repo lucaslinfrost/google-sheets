@@ -342,7 +342,7 @@ function Dice($diceSided){
 function newmember($event){
 	$source = $event['source'];
 	$joined = $event['joined']['members'];
-	$members = $joined['members'][0];
+	$members = $joined[0];
 			if($source['type'] == "group"){		
 				
 				$groupId = $source['groupId'];
