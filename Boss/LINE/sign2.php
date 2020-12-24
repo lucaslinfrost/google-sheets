@@ -26,7 +26,7 @@ switch ($event['type']) {
         if (strpos($code[1], '水瓶') !== false||strpos($code[1], '寶瓶') !== false||strpos($code[1], '♒') !== false){$snum = '10';}
         if (strpos($code[1], '雙魚') !== false||strpos($code[1], '♓') !== false){$snum = '11';}
         
-        $url = 'https://astro.click108.com.tw/daily_0.php?iAstro='.$snum;
+        $url = 'https://astro.click108.com.tw/daily_'.$snum.'.php?iAstro='.$snum;
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_FILE, fopen('php://stdout', 'w'));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
