@@ -312,6 +312,7 @@ foreach ($bot->parseEvents() as $event) {
 					$userName = $bot->getGroupProfile($groupId,$userId)['displayName'];
 					error_log("訊息發送人：".$userName);
 					error_log("發送人ID：".$userId);
+					$messages = new MutiMessage();
 					$replyArr = Array(
 					$messages->text('熱烈歡迎【'.$userName.'】加入'.$groupName.'!!!'),
 					$messages->text('(ノ・ω・)ノ歡迎ヾ(・ω・ヾ)'),
@@ -321,7 +322,7 @@ foreach ($bot->parseEvents() as $event) {
 					}
 				else{
 					error_log("訊息發送人：不明");
-					return buildTextMessage('熱烈歡迎您加入'.$groupName.'!!!');
+					$messages = new MutiMessage();
 					$replyArr = Array(
 					$messages->text('熱烈歡迎您加入'.$groupName.'!!!'),
 					$messages->text('(ノ・ω・)ノ歡迎ヾ(・ω・ヾ)'),
@@ -369,6 +370,7 @@ foreach ($bot->parseEvents() as $event) {
 					$userName = $bot->getGroupProfile($groupId,$userId)['displayName'];
 					error_log("訊息發送人：".$userName);
 					error_log("發送人ID：".$userId);
+					$messages = new MutiMessage();
 					$replyArr = Array(
 					$messages->text('很遺憾【'.$userName.'】退出了'.$groupName.'!!!'),
 					$messages->text('つ´Д`)つ我們會想念您~'),
@@ -377,7 +379,7 @@ foreach ($bot->parseEvents() as $event) {
 					}
 				else{
 					error_log("訊息發送人：不明");
-					return buildTextMessage('熱烈歡迎您加入'.$groupName.'!!!');
+					$messages = new MutiMessage();
 					$replyArr = Array(
 					$messages->text('很遺憾您退出了'.$groupName.'!!!'),
 					$messages->text('つ´Д`)つ我們會想念您~'),
