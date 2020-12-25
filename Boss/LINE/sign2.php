@@ -36,8 +36,7 @@ switch ($event['type']) {
         // create document object model
         $dom = new DOMDocument();
         // load html into document object model
-        //@$dom->loadHTML('<?xml encoding="UTF-8">' . $html);
-        $dom->loadHTML('<?xml encoding="UTF-8">' . $html);
+        @$dom->loadHTML('<?xml encoding="UTF-8">' . $html);
         // create domxpath instance
         $xPath = new DOMXPath($dom);
         // get all elements with a particular id and then loop through and print the href attribute
@@ -57,6 +56,7 @@ switch ($event['type']) {
         $data12 = $xPath->evaluate('string(//*[@class="LUCKY"][3]/h4/text())');
         $data13 = $xPath->evaluate('string(//*[@class="LUCKY"][4]/h4/text())');
         $data14 = $xPath->evaluate('string(//*[@class="LUCKY"][5]/h4/text())');
+        
         /**$data0 = iconv("UTF-8", "ISO-8859-1//IGNORE", $data0);
         $data1 = iconv("UTF-8", "ISO-8859-1//IGNORE", $data1);
         $data2 = iconv("UTF-8", "ISO-8859-1//IGNORE", $data2);
@@ -78,8 +78,6 @@ $dataall = "沒有這個星座的運勢資訊。";
 }else{
 $dataall = $data0." (".$datatime.")\n\n".$data1."\n".$data2."\n\n".$data3."\n".$data4."\n\n".$data5."\n".$data6."\n\n".$data7."\n".$data8."\n\n今日短評：\n".$data9."\n\n幸運數字：".$data10."\n\n幸運顏色：".$data11."\n\n開運方位：".$data12."\n\n今日吉時：".$data13."\n\n幸運星座：".$data14;
 }
-//$dataall = iconv("UTF-8", "ISO-8859-1//IGNORE", $dataall);
-$dataall = iconv("ISO-8859-1//IGNORE", "UTF-8", $dataall);
         break;
     default:
         error_log("Unsupporeted event type: " . $event['type']);
