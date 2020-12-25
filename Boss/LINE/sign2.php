@@ -37,7 +37,7 @@ switch ($event['type']) {
         $dom = new DOMDocument();
         // load html into document object model
         //@$dom->loadHTML('<?xml encoding="UTF-8">' . $html);
-        @$dom->loadHTML('<?xml encoding="utf-8" ?>' . $html);
+        $dom->loadHTML(mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8'));
         // create domxpath instance
         $xPath = new DOMXPath($dom);
         // get all elements with a particular id and then loop through and print the href attribute
