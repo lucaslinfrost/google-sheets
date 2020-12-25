@@ -57,7 +57,7 @@ switch ($event['type']) {
         $data13 = $xPath->evaluate('string(//*[@class="LUCKY"][4]/h4/text())');
         $data14 = $xPath->evaluate('string(//*[@class="LUCKY"][5]/h4/text())');
         
-        $data0 = iconv("UTF-8", "ISO-8859-1//IGNORE", $data0);
+        /**$data0 = iconv("UTF-8", "ISO-8859-1//IGNORE", $data0);
         $data1 = iconv("UTF-8", "ISO-8859-1//IGNORE", $data1);
         $data2 = iconv("UTF-8", "ISO-8859-1//IGNORE", $data2);
         $data3 = iconv("UTF-8", "ISO-8859-1//IGNORE", $data3);
@@ -71,13 +71,14 @@ switch ($event['type']) {
         $data11 = iconv("UTF-8", "ISO-8859-1//IGNORE", $data11);
         $data12 = iconv("UTF-8", "ISO-8859-1//IGNORE", $data12);
         $data13 = iconv("UTF-8", "ISO-8859-1//IGNORE", $data13);
-        $data14 = iconv("UTF-8", "ISO-8859-1//IGNORE", $data14);
+        $data14 = iconv("UTF-8", "ISO-8859-1//IGNORE", $data14);*/
         
 if ($snum === "999"){
 $dataall = "沒有這個星座的運勢資訊。";
 }else{
 $dataall = $data0." (".$datatime.")\n\n".$data1."\n".$data2."\n\n".$data3."\n".$data4."\n\n".$data5."\n".$data6."\n\n".$data7."\n".$data8."\n\n今日短評：\n".$data9."\n\n幸運數字：".$data10."\n\n幸運顏色：".$data11."\n\n開運方位：".$data12."\n\n今日吉時：".$data13."\n\n幸運星座：".$data14;
 }
+$dataall = iconv("UTF-8", "ISO-8859-1//IGNORE", $dataall);
         break;
     default:
         error_log("Unsupporeted event type: " . $event['type']);
