@@ -36,7 +36,8 @@ switch ($event['type']) {
         // create document object model
         $dom = new DOMDocument();
         // load html into document object model
-        @$dom->loadHTML('<?xml encoding="UTF-8">' . $html);
+        //@$dom->loadHTML('<?xml encoding="UTF-8">' . $html);
+        @$dom->loadHTML('<?xml encoding="utf-8" ?>' . $html);
         // create domxpath instance
         $xPath = new DOMXPath($dom);
         // get all elements with a particular id and then loop through and print the href attribute
@@ -56,7 +57,6 @@ switch ($event['type']) {
         $data12 = $xPath->evaluate('string(//*[@class="LUCKY"][3]/h4/text())');
         $data13 = $xPath->evaluate('string(//*[@class="LUCKY"][4]/h4/text())');
         $data14 = $xPath->evaluate('string(//*[@class="LUCKY"][5]/h4/text())');
-        error_log("測試 : ".$data14);
         /**$data0 = iconv("UTF-8", "ISO-8859-1//IGNORE", $data0);
         $data1 = iconv("UTF-8", "ISO-8859-1//IGNORE", $data1);
         $data2 = iconv("UTF-8", "ISO-8859-1//IGNORE", $data2);
