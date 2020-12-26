@@ -248,10 +248,11 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	
 	//更新筆記
 	if(stristr($inputStr, 'note') != false) {
-		$rplyArr = explode(' ',$inputStr);
+		$rplyArr = explode('#',$inputStr);
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，指令格式錯誤。');}
+		require_once('./authorization.php');
 		require_once('../../notice.php');
-		return buildTextMessage(''.$userName.'，筆記已為您更新。');
+		return buildTextMessage(''.$userName.'，群組公告已為您更新。');
 	}
 	
 	//更新爬蟲
