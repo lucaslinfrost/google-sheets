@@ -378,10 +378,15 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		$rplyArr = explode(' ',$inputStr);
     
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，指令格式錯誤。');}
-		//require_once('./sign.php');
-		require_once('./sign2.php');
-		unset($data0, $data1, $data2, $data3, $data4, $data5, $data6, $data7, $data8, $data9, $data10, $data11, $data12, $data13, $data14, $datatime, $ch, $url, $html, $dom, $xPath);
-		return buildTextMessage($dataall);
+		require_once('./sign.php');
+		//require_once('./sign2.php');
+		unset($data0, $data1, $data2, $data3, $ch, $url, $html, $dom, $xPath);
+		$messages = new MutiMessage();
+			$replyArr = Array(
+			$messages->img($showpic),
+			$messages->text($dataall),
+			);
+		        return $messages->send($replyArr);
 	}
   	  //匯率
 	if(stristr($inputStr, '匯率') != false||
