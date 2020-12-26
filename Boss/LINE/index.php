@@ -307,13 +307,13 @@ foreach ($bot->parseEvents() as $event) {
 				error_log("群組ID：".$groupId);
 				error_log("群組名：".$groupName);
 				error_log("成員ID：".$userId);
+		    		$userName = "您";
 				if($userId != null){
 				$userName = $bot->getProfile($userId)['displayName'];
 				error_log("訊息發送人：".$userName);
 				error_log("發送人ID：".$userId);
 				}else{
 				error_log("訊息發送人：不明");
-				$userName = "您";
 				}
 			$messages = new MutiMessage();
 			$replyArr = Array(
