@@ -11,7 +11,7 @@ foreach ($client->parseEvents() as $event) {
 switch ($event['type']) {       
     case 'message':
 	$message = $event['message'];
-	$keywords = explode(' ', $message['text']);
+	$keywords = explode('#', $message['text']);
 	$key = array_slice($keywords, 1);
 	$key1 = implode(" ",$key);
 }
