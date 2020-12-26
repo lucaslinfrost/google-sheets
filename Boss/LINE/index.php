@@ -316,6 +316,7 @@ foreach ($bot->parseEvents() as $event) {
 				error_log("訊息發送人：不明");
 				}
 		    
+		    	$googledataspi = getenv('googledataspi5');
 			$json = file_get_contents($googledataspi);
         		$data = json_decode($json, true);
 		    	$data999 = "";
