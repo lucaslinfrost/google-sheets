@@ -44,6 +44,8 @@ $data999 = "您所在的群組還沒有公告，
 
 }else{
 
+if($item['gsx$groupid']['$t'] === ""){
+    
 if($item['gsx$history']['$t'] === ""){
 $a = "";
 }else{
@@ -52,6 +54,10 @@ $a = "
 ".$item['gsx$history']['$t'];
 }
 $data999 = "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║\n☆╰╘∞╛╘∞╛╘∞╛\n\n".$item['gsx$message']['$t']."".$a."\n\n---------發佈者---------\n".$item['gsx$name']['$t']."\n--------發佈時間--------\n".$item['gsx$date']['$t'];
+
+}else{
+
+}
 
 }
                }
