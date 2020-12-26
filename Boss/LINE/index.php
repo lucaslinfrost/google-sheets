@@ -330,7 +330,7 @@ foreach ($bot->parseEvents() as $event) {
 			);		
 			break;
 		    
-		//成員退出的動作
+		/**成員退出的動作
 		case 'memberLeft':
 			error_log("成員退出");
 			$source = $event['source'];
@@ -358,7 +358,7 @@ foreach ($bot->parseEvents() as $event) {
 			$messages->text('つ´Д`)つ我們會想念您~'),
 			);
 		        return $messages->send($replyArr);		
-			break;
+			break;*/
 			
         default:
             error_log("不支援的訊息: " . $event['type']);
