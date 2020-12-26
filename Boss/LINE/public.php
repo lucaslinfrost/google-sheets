@@ -32,14 +32,32 @@ switch ($event['type']) {
                 if($code[1] === Null) {$code[1] = "公告";}
                 if (strcmp($code[1], $keyword) === 0) {
                     
+if($source['type'] == "group"){    
+    
 if (strcmp($groupId, $item['gsx$groupid']['$t']) === 0) {
 
-if($source['type'] == "group"){
 $data999 = "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║\n☆╰╘∞╛╘∞╛╘∞╛\n\n".$item['gsx$message']['$t']."\n\n---------發佈者---------\n".$item['gsx$name']['$t']."\n--------發佈時間--------\n".$item['gsx$date']['$t'];
 }else{
+ 
+if($item['gsx$message']['$t'] === ""){
+    
 $data999 = "您所在的群組還沒有公告，
 可以使用[老大note#公告內容]
 這個指令來添加公告。";
+    
+}else{
+
+if($item['gsx$history']['$t'] === ""){
+$a = "";
+}else{
+$a = "
+--------活動歷史--------
+".$item['gsx$history']['$t'];
+}
+$data999 = "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║\n☆╰╘∞╛╘∞╛╘∞╛\n\n".$item['gsx$message']['$t']."".$a."\n\n---------發佈者---------\n".$item['gsx$name']['$t']."\n--------發佈時間--------\n".$item['gsx$date']['$t'];
+    
+}
+    
 }
 
 }else{
