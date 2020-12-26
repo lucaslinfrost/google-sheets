@@ -381,12 +381,12 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		require_once('./sign.php');
 		//require_once('./sign2.php');
 		unset($data0, $data1, $data2, $data3, $ch, $url, $html, $dom, $xPath);
-		$messages = new MutiMessage();
-			$replyArr = Array(
-			$messages->img($showpic),
-			//$messages->text($dataall),
-			);
-		        return $messages->send($replyArr);
+		$testMessage = new MutiMessage();
+		$replyArr = Array(
+		$testMessage->text($dataall),
+		$testMessage->img($showpic),
+		);
+		return $testMessage->send($replyArr);
 	}
   	  //匯率
 	if(stristr($inputStr, '匯率') != false||
