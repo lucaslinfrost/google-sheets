@@ -315,11 +315,13 @@ foreach ($bot->parseEvents() as $event) {
 				}else{
 				error_log("訊息發送人：不明");
 				}
+		    	require_once('./public.php');
 			$messages = new MutiMessage();
 			$replyArr = Array(
 			$messages->text('熱烈歡迎【'.$userName.'】加入'.$groupName.'!!!'),
 			$messages->text('(ノ・ω・)ノ歡迎ヾ(・ω・ヾ)'),
 			$messages->text('請認真閱讀以下群組規章~!!'),
+			$messages->text($data999),
 			);
 		        //return $messages->send($replyArr);
 			$bot->replyMessage(
