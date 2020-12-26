@@ -320,7 +320,6 @@ foreach ($bot->parseEvents() as $event) {
 			$json = file_get_contents($googledataspi);
         		$data = json_decode($json, true);
 		    	$data999 = "";
-		    	$data888 = "";
 		    	foreach ($data['feed']['entry'] as $item) {
 			$keywords = explode(',', $item['gsx$title']['$t']);
 			foreach ($keywords as $keyword) {
@@ -330,7 +329,6 @@ $data999 = "您所在的群組還沒有公告，
 可以使用[老大note#公告內容]
 這個指令來添加公告。";
     			if (strcmp($groupId, $item['gsx$groupid']['$t']) === 0) {
-			$data888 = "請認真閱讀以下群組規章~!!";
 			$data999 = "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║\n☆╰╘∞╛╘∞╛╘∞╛\n\n".$item['gsx$message']['$t']."\n\n---------發佈者---------\n".$item['gsx$name']['$t']."\n--------發佈時間--------\n".$item['gsx$date']['$t'];
 			}
 			}
@@ -342,7 +340,6 @@ $data999 = "您所在的群組還沒有公告，
 			$replyArr = Array(
 			$messages->text('熱烈歡迎【'.$userName.'】加入'.$groupName.'!!!'),
 			$messages->text('(ノ・ω・)ノ歡迎ヾ(・ω・ヾ)'),
-			$messages->text($data888),
 			$messages->text($data999),
 			);
 		        //return $messages->send($replyArr);
