@@ -39,7 +39,8 @@ if (strcmp($groupId, $item['gsx$groupid']['$t']) === 0) {
 $data999 = "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║\n☆╰╘∞╛╘∞╛╘∞╛\n\n".$item['gsx$message']['$t']."\n\n---------發佈者---------\n".$item['gsx$name']['$t']."\n--------發佈時間--------\n".$item['gsx$date']['$t'];
 }else{
  
-if($item['gsx$message']['$t'] === ""){
+//if($item['gsx$message']['$t'] === ""){
+if($code[1] === "公告"){
     
 $data999 = "您所在的群組還沒有公告，
 可以使用[老大note#公告內容]
