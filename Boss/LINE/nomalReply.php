@@ -383,8 +383,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		unset($data0, $data1, $data2, $data3, $ch, $url, $html, $dom, $xPath);
 		$testMessage = new MutiMessage();
 		$replyArr = Array(
-		$testMessage->text($dataall),
 		$testMessage->img($showpic),
+		$testMessage->text($dataall),
 		);
 		return $testMessage->send($replyArr);
 	}
