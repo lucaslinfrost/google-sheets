@@ -15,7 +15,8 @@ switch ($event['type']) {
     case 'message':
         // 讀入訊息
         $message = $event['message'];
-
+        $source = $event['source'];
+        $groupId = $source['groupId'];
         // 將Google表單轉成JSON資料
         $json = file_get_contents($googledataspi);
         $data = json_decode($json, true); 
