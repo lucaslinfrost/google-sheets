@@ -315,6 +315,7 @@ foreach ($bot->parseEvents() as $event) {
 				}else{
 				error_log("訊息發送人：不明");
 				}
+		    	$event['message'] = "老大公告"
 		    	require_once('./public.php');
 			$messages = new MutiMessage();
 			$replyArr = Array(
