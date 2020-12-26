@@ -32,7 +32,7 @@ switch ($event['type']) {
                 if($code[1] === Null) {$code[1] = "公告";}
                 if (strcmp($code[1], $keyword) === 0) {
                     
-if($item['gsx$groupid']['$t'] === ""){
+if($item['gsx$groupid']['$t'] === "-"){
 
 if($item['gsx$history']['$t'] === ""){
 $a = "";
