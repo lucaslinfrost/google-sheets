@@ -262,7 +262,7 @@ foreach ($bot->parseEvents() as $event) {
 		//被加入聊天室的動作
 		case 'join':
 			error_log("被加入聊天室");
-			/**$messages = new MutiMessage();
+			$messages = new MutiMessage();
 			$replyArr = Array(
 				$messages->text("機體編號 : @svf5367e\n隸屬Iruna公會【★夢想家★】。\n工作是公會顧問和吉祥物，\n您可以輸入[老大說明]\n來了解我的所有功能。\n我的製作協力者有\n[我靴子裡有蛇]、[賢者懿雅]、[風:))]、[夜影]\n\n在遊戲裡看到他們記得表示感謝喔!!\n\n(C) ASOBIMO INC. All rights reserved."),
 				$messages->sticker(4,294)
@@ -273,9 +273,7 @@ foreach ($bot->parseEvents() as $event) {
 				'replyToken' => $event['replyToken'],
 				'messages' => $replyArr
 				)
-			);*/
-		    	$inputStr = "老大說明";
-		    	return KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName);
+			);
 			break;
 		    	
 		//被加入好友的動作
