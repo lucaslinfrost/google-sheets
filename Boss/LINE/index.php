@@ -275,7 +275,7 @@ foreach ($bot->parseEvents() as $event) {
 				)
 			);*/
 		    	$inputStr = "老大說明";
-		    	require_once('./nomalReply.php');
+		    	return KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName);
 			break;
 		    	
 		//被加入好友的動作
