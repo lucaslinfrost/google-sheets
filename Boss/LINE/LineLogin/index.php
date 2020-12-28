@@ -30,7 +30,7 @@ $url= $Line->lineLogin($state);//產生LINE登入連結
 <div class="container" style="margin: 10px 0;">
     <div class="panel panel-default">
         <div class="panel-heading">
-        LINE登錄v2.1測試 台灣碼農版本
+        肌肉老大授權登入
         </div>
         <div class="panel-body">
             <p>請登錄。</p>
