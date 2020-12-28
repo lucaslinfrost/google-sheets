@@ -197,27 +197,6 @@
 				"actions": [
 						{
 						"type": "message",
-						"label": "【資料授權】",
-						"uri": "https://liff.line.me/1655532339-AmKmzwND"
-						},
-						{
-						"type": "message",
-						"label": "【群組公告】",
-						"text": "老大公告"
-						},
-						{
-						"type": "message",
-						"label": "【活動公告範例】",
-						"text": "老大公告 情人節"
-						}
-					]
-				},
-				{
-				"title": "《其他技能》",
-				"text": "其他技能",
-				"actions": [
-						{
-						"type": "message",
 						"label": "【資料庫數據統計】",
 						"text": "老大數據"
 						},
@@ -227,7 +206,7 @@
 						"text": "老大公告 歷史紀錄"
 						},
 						{
-						"type": "message",
+						"type": "uri",
 						"label": "【有任何疑問】",
 						"uri": "https://timeline.line.me/post/_dc92S4Q60GzD_q30Q-r3NZyWLty1hcer9mX4hBo/1159145094902032271"
 						}
