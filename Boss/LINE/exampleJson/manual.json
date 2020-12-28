@@ -196,14 +196,35 @@
 				"text": "其他技能",
 				"actions": [
 						{
+						"type": "uri",
+						"label": "【資料授權】",
+						"uri": "https://liff.line.me/1655532339-AmKmzwND"
+						},
+						{
+						"type": "uri",
+						"label": "【圖片上傳】",
+						"uri": "https://irunamuscelboss.herokuapp.com/Boss/LINE/upload/index.html"
+						},
+						{
+						"type": "message",
+						"label": "【鐵匠配方一覽】",
+						"text": "老大鐵匠#斯帕加斯港"
+						}
+					]
+				},
+				{
+				"title": "《其他技能》",
+				"text": "其他技能",
+				"actions": [
+						{
 						"type": "message",
 						"label": "【資料庫數據統計】",
 						"text": "老大數據"
 						},
 						{
-						"type": "message",
+						"type": "uri",
 						"label": "【Iruna歷史紀錄】",
-						"text": "老大公告 歷史紀錄"
+						"uri": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTlcT52C7YOIE5k0Y9_h8PuFIrQSUDHc1T9N82MuzRcyh_7jaf1X8jmXPq1JkDZ7lQTg7qc6f0BC8AD/pubhtml?gid=1751156979&single=true"
 						},
 						{
 						"type": "uri",
