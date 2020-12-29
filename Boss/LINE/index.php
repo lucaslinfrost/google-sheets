@@ -108,6 +108,20 @@ function buildflex($result){
 	return $message;
 }
 
+//建立聲音訊息的函數
+function buildAudioMessage($link, $second){	
+	error_log("準備回傳聲音訊息。");
+	$message = array
+		(
+		array(
+            'type' => 'audio',
+            'originalContentUrl' => $link,
+            'duration' => $second
+            )
+        );
+	return $message;
+}
+
 
 //建立複數訊息，的物件
 class MutiMessage{
