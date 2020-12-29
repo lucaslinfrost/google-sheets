@@ -91,6 +91,23 @@ function buildcarousel($altText, $result){
 	return $message;
 }
 
+//建立Flex面板的函數
+function buildflex($result){	
+		error_log("準備回傳Flex面板訊息。");
+		$message = array
+		( 
+		array(
+			'type'=> "flex",
+			'altText'=> "flexmessage",
+			'contents'=> array(
+				'type'=> "carousel",
+				'contents'=> $result
+            		)
+		      ),
+		);
+	return $message;
+}
+
 
 //建立複數訊息，的物件
 class MutiMessage{
