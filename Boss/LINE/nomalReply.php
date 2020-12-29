@@ -261,6 +261,13 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		return buildcarousel($altText,$result);
 		unset($data0, $data1, $data2, $data3, $data4, $data5, $data6, $data7, $data8, $html, $ch, $url, $result, $dom, $xPath);
 	}
+	
+	//登入音樂
+	if(stristr($inputStr, '登入') != false) {
+		$link = "https://irunamuscelboss.herokuapp.com/Boss/LINE/0.m4a";
+		$second = "125000";
+		return buildAudioMessage($link, $second);
+	}
 
 	//查怪
 	if(stristr($inputStr, 'm') != false||
