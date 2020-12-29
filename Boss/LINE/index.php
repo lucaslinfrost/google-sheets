@@ -92,13 +92,13 @@ function buildcarousel($altText, $result){
 }
 
 //建立Flex面板的函數
-function buildflex($result){	
+function buildflex($altText, $result){	
 		error_log("準備回傳Flex面板訊息。");
 		$message = array
 		( 
 		array(
 			'type'=> "flex",
-			'altText'=> "flexmessage",
+			'altText'=> $altText,
 			'contents'=> array(
 				'type'=> "carousel",
 				'contents'=> $result
