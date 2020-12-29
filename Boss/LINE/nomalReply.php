@@ -518,14 +518,16 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
     
 		if (count($rplyArr) == 1) {return buildTextMessage($starall);}
 		
-		require_once('./star.php');
+		//require_once('./star.php');
+		require_once('./star2.php');
 		if ($startype === 1) {
 		return buildTextMessage(''.$starall.'');
 		}else{
 		if (empty($result)) {
 		return buildTextMessage('資料庫找不到喔。');
 		}else{
-		return buildcarousel($altText,$result);
+		//return buildcarousel($altText,$result);
+		return buildflex($result);
 		}
 		}
 	}
