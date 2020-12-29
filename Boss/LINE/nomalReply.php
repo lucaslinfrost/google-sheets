@@ -534,7 +534,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		return buildTextMessage('資料庫找不到喔。');
 		}else{
 		//return buildcarousel($altText,$result);
-		return buildflex($result);
+		return buildflex($altText,$result);
 		}
 		}
 	}
