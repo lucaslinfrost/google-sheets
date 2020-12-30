@@ -14,8 +14,8 @@ switch ($event['type']) {
         // 將Google表單轉成JSON資料
         $json = file_get_contents('./data/drill.json');
         $data = json_decode($json, true); 
-        $c = new utf8_chinese;
-        $message['text'] = $c->gb2312_big5($message['text']);
+        //$c = new utf8_chinese;
+        //$message['text'] = $c->gb2312_big5($message['text']);
         $code = explode(' ', $message['text']);
         $alltext = "";
         $mline = "\n--------  分°Д°行  --------\n";
