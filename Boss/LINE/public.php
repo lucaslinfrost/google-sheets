@@ -45,7 +45,7 @@ $data999 = "您所在的群組還沒有公告，
 
 	}
 	break;
-
+	default:
 }else{
 
 	if($item['gsx$groupid']['$t'] === ""){
