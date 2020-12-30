@@ -262,7 +262,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	       stristr($inputStr, '活動') != false) {
 	require_once('./public.php');
 	if ($data999 !== "") {
-	return buildTextMessage($data999);
+	//return buildTextMessage($data999);
 	return buildflex($altText, $result);
 	}
 	if ($data999 === "") {
