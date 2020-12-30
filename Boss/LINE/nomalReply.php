@@ -234,6 +234,15 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	//}else{return buildTextMessage('你並沒有權限使用這個指令。');}	
 	}
 
+	//更新筆記
+	if(stristr($inputStr, 'note') != false) {
+		$rplyArr = explode('#',$inputStr);
+		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，指令格式錯誤。');}
+		require_once('./authorization.php');
+		require_once('../../notice.php');
+		return buildTextMessage(''.$userName.'，群組公告已為您更新。');
+	}
+	
 	//公告
 	if(stristr($inputStr, '公告') != false||
 	       stristr($inputStr, '活動') != false) {
@@ -256,15 +265,6 @@ $data999 = "您所在的群組還沒有公告，
 		return buildTextMessage('找不到你所指定的公告喔。');
 		}
 	}
-	}
-	
-	//更新筆記
-	if(stristr($inputStr, 'note') != false) {
-		$rplyArr = explode('#',$inputStr);
-		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，指令格式錯誤。');}
-		require_once('./authorization.php');
-		require_once('../../notice.php');
-		return buildTextMessage(''.$userName.'，群組公告已為您更新。');
 	}
 	
 	//更新爬蟲
