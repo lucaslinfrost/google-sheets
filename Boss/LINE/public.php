@@ -15,6 +15,7 @@ switch ($event['type']) {
         // 讀入訊息
         $message = $event['message'];
         $source = $event['source'];
+	$groupId = $source['groupId'];
         // 將Google表單轉成JSON資料
         $json = file_get_contents($googledataspi);
         $data = json_decode($json, true); 
@@ -33,7 +34,6 @@ switch ($event['type']) {
                 
 		if($code[1] === Null) {
 			if($source['type'] == "group"){
-			$groupId = $source['groupId'];
 				foreach ($grouplist as $groupcheck) {
 					if (strcmp($groupId, $groupcheck) === 0) {
 					//$data999 = "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║\n☆╰╘∞╛╘∞╛╘∞╛\n\n".$item['gsx$message']['$t']."\n\n---------發佈者---------\n".$item['gsx$name']['$t']."\n--------發佈時間--------\n".$item['gsx$date']['$t'];
