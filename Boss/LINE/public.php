@@ -19,7 +19,7 @@ switch ($event['type']) {
         // 將Google表單轉成JSON資料
         $json = file_get_contents($googledataspi);
         $data = json_decode($json, true); 
-        $data999 = "";
+        //$data999 = "";
 	$a = "";
 	$altText = "關於 ".$message['text']." 的資料";
 	$result = array();
