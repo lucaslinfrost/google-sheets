@@ -154,9 +154,9 @@
 				"text": "其他技能",
 				"actions": [
 						{
-						"type": "message",
+						"type": "uri",
 						"label": "【交易板】",
-						"text": "老大交易板"
+						"uri": "老大交易板"
 						},
 						{
 						"type": "message",
