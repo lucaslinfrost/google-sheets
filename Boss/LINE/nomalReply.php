@@ -239,8 +239,22 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		$rplyArr = explode('#',$inputStr);
 		if (count($rplyArr) == 1) {return buildTextMessage(''.$userName.'，指令格式錯誤。');}
 		require_once('./authorization.php');
-		require_once('../../notice.php');
-		return buildTextMessage(''.$userName.'，群組公告已為您更新。');
+		if($userId === $owner){ 
+			if($source['type'] == "group"){
+				require_once('../../notice.php');
+				return buildTextMessage('管理員【'.$userName.'】，全域公告已為您更新。');
+			}else{
+				require_once('../../notice.php');
+				return buildTextMessage('管理員【'.$userName.'】，已為您將《'.$groupName.'》的群組公告更新。');
+			}
+		}else{
+			if($source['type'] == "group"){
+				require_once('../../notice.php');
+				return buildTextMessage($userName.'，已為您將《'.$groupName.'》的群組公告更新。');
+			}else{
+			return buildTextMessage('非群組外之全域公告權限僅有管理員能修改。');
+			}
+		}
 	}
 	
 	//公告
