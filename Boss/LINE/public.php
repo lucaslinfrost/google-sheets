@@ -31,7 +31,7 @@ switch ($event['type']) {
                 if (strcmp($code[1], $keyword) === 0) {
                     
 if($source['type'] == "group"){    
-   foreach ($grouplist as $groupcheck) {
+
 if (strcmp($groupId, $groupcheck) === 0) {
 
 $data999 = "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║\n☆╰╘∞╛╘∞╛╘∞╛\n\n".$item['gsx$message']['$t']."\n\n---------發佈者---------\n".$item['gsx$name']['$t']."\n--------發佈時間--------\n".$item['gsx$date']['$t'];
@@ -58,7 +58,7 @@ $data999 = "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║
 }
     
 }
-   }break;
+
 }else{
 
 if($item['gsx$groupid']['$t'] === ""){
