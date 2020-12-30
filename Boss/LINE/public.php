@@ -28,56 +28,36 @@ switch ($event['type']) {
             $grouplist = explode(',', $item['gsx$groupid']['$t']);
             // 以關鍵字比對文字內容
             foreach ($keywords as $keyword) {
-                if($code[1] === Null) {$code[1] = "公告";}
-                if (strcmp($code[1], $keyword) === 0) {
-                    
-if($source['type'] == "group"){
-
-	foreach ($grouplist as $groupcheck) {
-		error_log("Check : ".$groupcheck);
-		if (strcmp($groupId, $groupcheck) === 0) {
-		$data999 = "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║\n☆╰╘∞╛╘∞╛╘∞╛\n\n".$item['gsx$message']['$t']."\n\n---------發佈者---------\n".$item['gsx$name']['$t']."\n--------發佈時間--------\n".$item['gsx$date']['$t'];
-		}else{
-			if($code[1] === "公告"){
-$data999 = "您所在的群組還沒有公告，
-可以使用[老大note#公告內容]
-這個指令來添加公告。";
+                
+		if($code[1] === Null) {
+			if($source['type'] == "group"){
+				foreach ($grouplist as $groupcheck) {
+					if (strcmp($groupId, $groupcheck) === 0) {
+					$data999 = "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║\n☆╰╘∞╛╘∞╛╘∞╛\n\n".$item['gsx$message']['$t']."\n\n---------發佈者---------\n".$item['gsx$name']['$t']."\n--------發佈時間--------\n".$item['gsx$date']['$t'];
+					}else{
+					break;
+					}
+				}
 			}else{
-				if($item['gsx$history']['$t'] === ""){
+				if($item['gsx$groupid']['$t'] === ""){
+				$data999 = "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║\n☆╰╘∞╛╘∞╛╘∞╛\n\n".$item['gsx$message']['$t']."".$a."\n\n---------發佈者---------\n".$item['gsx$name']['$t']."\n--------發佈時間--------\n".$item['gsx$date']['$t'];
+                		}
+			}
+		}
+		    
+                if (strcmp($code[1], $keyword) === 0) {
+			
+			if($item['gsx$groupid']['$t'] === ""){
+    				if($item['gsx$history']['$t'] === ""){
 				$a = "";
 				}else{
 $a = "
 --------活動歷史--------
 ".$item['gsx$history']['$t'];
 				}
-				$data999 = "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║\n☆╰╘∞╛╘∞╛╘∞╛\n\n".$item['gsx$message']['$t']."".$a."\n\n---------發佈者---------\n".$item['gsx$name']['$t']."\n--------發佈時間--------\n".$item['gsx$date']['$t'];
-    
-			}
-	break;
-		}
-
-	}
-
-}else{
-
-	if($item['gsx$groupid']['$t'] === ""){
-		
-		if($item['gsx$history']['$t'] === ""){
-		$a = "";
-		}else{
-$a = "
---------活動歷史--------
-".$item['gsx$history']['$t'];
-		}
-
-	$data999 = "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║\n☆╰╘∞╛╘∞╛╘∞╛\n\n".$item['gsx$message']['$t']."".$a."\n\n---------發佈者---------\n".$item['gsx$name']['$t']."\n--------發佈時間--------\n".$item['gsx$date']['$t'];
-
-	}
-
-
-}
-        
-               }
+			$data999 = "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║\n☆╰╘∞╛╘∞╛╘∞╛\n\n".$item['gsx$message']['$t']."".$a."\n\n---------發佈者---------\n".$item['gsx$name']['$t']."\n--------發佈時間--------\n".$item['gsx$date']['$t'];
+                }
+		    
             }
         }    
         break;
