@@ -34,10 +34,8 @@ switch ($event['type']) {
                     
 if($source['type'] == "group"{
 
-$data999 = "您所在的群組還沒有公告，
-可以使用[老大note#公告內容]
-這個指令來添加公告。";
-
+    $data999 = "您所在的群組還沒有公告，可以使用[老大note#公告內容]這個指令來添加公告。";
+    
 foreach ($grouplist as $groupcheck) {
 
 if (strcmp($groupId, $groupcheck) === 0) { 
@@ -48,7 +46,9 @@ $data999 = "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║
 break;
     
 }else{
+
 if($item['gsx$groupid']['$t'] === ""){
+    
 if($item['gsx$history']['$t'] === ""){
 $a = "";
 }else{
@@ -56,8 +56,8 @@ $a = "
 --------活動歷史--------
 ".$item['gsx$history']['$t'];
 }
-
 $data999 = "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║\n☆╰╘∞╛╘∞╛╘∞╛\n\n".$item['gsx$message']['$t']."".$a."\n\n---------發佈者---------\n".$item['gsx$name']['$t']."\n--------發佈時間--------\n".$item['gsx$date']['$t'];
+
 }
 }
                }
