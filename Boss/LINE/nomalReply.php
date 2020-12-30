@@ -237,12 +237,24 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	//公告
 	if(stristr($inputStr, '公告') != false||
 	       stristr($inputStr, '活動') != false) {
-		require_once('./public.php');
+	require_once('./public.php');
 	if ($data999 !== "") {
-	return buildTextMessage(''.$data999.'');
+	return buildTextMessage($data999);
 	}
 	if ($data999 === "") {
-	return buildTextMessage('找不到你所指定的公告喔。');
+		if($source['type'] == "group"){
+			if($code[1] === Null) {
+
+$data999 = "您所在的群組還沒有公告，
+可以使用[老大note#公告內容]
+這個指令來添加公告。";
+			return buildTextMessage($data999);	
+			}else{
+			return buildTextMessage('找不到你所指定的公告喔。');
+			}
+		}else{
+		return buildTextMessage('找不到你所指定的公告喔。');
+		}
 	}
 	}
 	
