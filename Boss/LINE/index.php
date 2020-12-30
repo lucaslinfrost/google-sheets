@@ -347,6 +347,13 @@ foreach ($bot->parseEvents() as $event) {
 				$userName = "您";
 				}
 		    
+		    		$owner = getenv('Owner');
+		    		if($userId === $owner){
+				$welcomemsg = '系統管理員【'.$userName.'】已加入《'.$groupName.'》!!!';
+				}else{
+				$welcomemsg = '熱烈歡迎'.$userName.'加入《'.$groupName.'》!!!';
+				}
+		    
 		    	$googledataspi = getenv('googledataspi5');
 			$json = file_get_contents($googledataspi);
         		$data = json_decode($json, true);
@@ -369,10 +376,10 @@ $data999 = "您所在的群組還沒有公告，
 					}
 				}
 			}
-		    
+		    	
 			$messages = new MutiMessage();
 			$replyArr = Array(
-			$messages->text('熱烈歡迎【'.$userName.'】加入'.$groupName.'!!!'),
+			$messages->text($welcomemsg),
 			$messages->text('(ノ・ω・)ノ歡迎ヾ(・ω・ヾ)'),
 			$messages->text($data999),
 			);
