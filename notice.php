@@ -45,7 +45,7 @@ putenv('GOOGLE_APPLICATION_CREDENTIALS=' . __DIR__ . '/My Project-aeb1d8a3a4ed.j
 					'title' => "'". '公告',
 					'groupid' => "'". $groupId,
 					'groupname' => "'". $groupName,
-					'history' => "'". ' - ',
+					'history' => "'". '-',
 					'date' => date_create('now')->format('Y年m月d日 D')
 				]);
 			}catch(Exception $e){
