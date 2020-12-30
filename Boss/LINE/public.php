@@ -32,7 +32,11 @@ switch ($event['type']) {
                 if (strcmp($code[1], $keyword) === 0) {
                     
 if($source['type'] == "group"){
-
+	
+$data999 = "您所在的群組還沒有公告，
+可以使用[老大note#公告內容]
+這個指令來添加公告。";
+	
 	foreach ($grouplist as $groupcheck) {
 
 		if (strcmp($groupId, $groupcheck) === 0) {
@@ -40,12 +44,6 @@ if($source['type'] == "group"){
 		{
 
 	}
-	default:
-
-$data999 = "您所在的群組還沒有公告，
-可以使用[老大note#公告內容]
-這個指令來添加公告。";
-
 	break;
 
 }else{
