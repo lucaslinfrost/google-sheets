@@ -26,20 +26,20 @@ switch ($event['type']) {
         foreach ($data['feed']['entry'] as $item) {
             // 將keywords欄位依,切成陣列
             $keywords = explode(',', $item['gsx$title']['$t']);
-
+            $grouplist = explode(',', $item['gsx$groupid']['$t']);
             // 以關鍵字比對文字內容
             foreach ($keywords as $keyword) {
                 if($code[1] === Null) {$code[1] = "公告";}
                 if (strcmp($code[1], $keyword) === 0) {
                     
 if($source['type'] == "group"){    
-    
-if (strcmp($groupId, $item['gsx$groupid']['$t']) === 0) {
+   foreach ($grouplist as $groupcheck) {
+if (strcmp($groupId, $groupcheck) === 0) {
 
 $data999 = "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║\n☆╰╘∞╛╘∞╛╘∞╛\n\n".$item['gsx$message']['$t']."\n\n---------發佈者---------\n".$item['gsx$name']['$t']."\n--------發佈時間--------\n".$item['gsx$date']['$t'];
 }else{
  
-//if($item['gsx$message']['$t'] === ""){
+
 if($code[1] === "公告"){
     
 $data999 = "您所在的群組還沒有公告，
@@ -60,7 +60,7 @@ $data999 = "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║
 }
     
 }
-
+   }break;
 }else{
 
 if($item['gsx$groupid']['$t'] === ""){
