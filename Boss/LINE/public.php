@@ -20,6 +20,7 @@ switch ($event['type']) {
         $json = file_get_contents($googledataspi);
         $data = json_decode($json, true); 
         $data999 = "";
+	$candidate = array("type" => "bubble","header" => array("type" => "box","layout" => "vertical","contents" => array()),"hero" => array("type" => "image","url" => "https://i.imgur.com/jOBeMP0.jpg","size" => "full","aspectRatio" => "50:13","aspectMode" => "fit"),"body" => array("type" => "box","layout" => "vertical","spacing" => "md","contents" => array(array("type" => "text","text" => "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║\n☆╰╘∞╛╘∞╛╘∞╛\n\n","wrap" => true,"weight" => "bold","gravity" => "center","size" => "md","align" => "center"),array("type" => "box","layout" => "vertical","margin" => "lg","spacing" => "sm","contents" => array(array("type" => "box","layout" => "baseline","spacing" => "sm","contents" => array(array("type" => "text","text" => $item['gsx$message']['$t'].''.$a,"wrap" => true,"color" => "#666666","size" => "xs"))))),array("type" => "box","layout" => "vertical","contents" => array(array("type" => "box","layout" => "baseline","spacing" => "sm","contents" => array(array("type" => "text","text" => "\n\n---------發佈者---------\n".$item['gsx$name']['$t']."\n--------發佈時間--------\n".$item['gsx$date']['$t'],"wrap" => true,"size" => "md","align" => "center")))),"spacing" => "sm","margin" => "lg"))));array_push($result, $candidate);
 	$a = "";
         $code = explode(' ', $message['text']);
         // 資料起始從feed.entry          
@@ -34,15 +35,17 @@ switch ($event['type']) {
 			if($source['type'] == "group"){
 				foreach ($grouplist as $groupcheck) {
 					if (strcmp($groupId, $groupcheck) === 0) {
-					$data999 = "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║\n☆╰╘∞╛╘∞╛╘∞╛\n\n".$item['gsx$message']['$t']."\n\n---------發佈者---------\n".$item['gsx$name']['$t']."\n--------發佈時間--------\n".$item['gsx$date']['$t'];
+					//$data999 = "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║\n☆╰╘∞╛╘∞╛╘∞╛\n\n".$item['gsx$message']['$t']."\n\n---------發佈者---------\n".$item['gsx$name']['$t']."\n--------發佈時間--------\n".$item['gsx$date']['$t'];
+					$data999 = $candidate;
 					}else{
 					break;
 					}
 				}
 			}else{
 				if($item['gsx$groupid']['$t'] === ""){
-				$data999 = "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║\n☆╰╘∞╛╘∞╛╘∞╛\n\n".$item['gsx$message']['$t']."".$a."\n\n---------發佈者---------\n".$item['gsx$name']['$t']."\n--------發佈時間--------\n".$item['gsx$date']['$t'];
-                		}
+				//$data999 = "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║\n☆╰╘∞╛╘∞╛╘∞╛\n\n".$item['gsx$message']['$t']."".$a."\n\n---------發佈者---------\n".$item['gsx$name']['$t']."\n--------發佈時間--------\n".$item['gsx$date']['$t'];
+                		$data999 = $candidate;
+				}
 			}
 		}
 		    
@@ -56,8 +59,8 @@ $a = "
 --------活動歷史--------
 ".$item['gsx$history']['$t'];
 				}
-			$data999 = "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║\n☆╰╘∞╛╘∞╛╘∞╛\n\n".$item['gsx$message']['$t']."".$a."\n\n---------發佈者---------\n".$item['gsx$name']['$t']."\n--------發佈時間--------\n".$item['gsx$date']['$t'];
-                
+			//$data999 = "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║\n☆╰╘∞╛╘∞╛╘∞╛\n\n".$item['gsx$message']['$t']."".$a."\n\n---------發佈者---------\n".$item['gsx$name']['$t']."\n--------發佈時間--------\n".$item['gsx$date']['$t'];
+                	$data999 = $candidate;
 			}
 		}
 		    
