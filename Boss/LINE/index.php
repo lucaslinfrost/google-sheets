@@ -338,33 +338,36 @@ foreach ($bot->parseEvents() as $event) {
 				error_log("群組ID：".$groupId);
 				error_log("群組名：".$groupName);
 				error_log("成員ID：".$userId);
-		    		$userName = "您";
 				if($userId != null){
 				$userName = $bot->getProfile($userId)['displayName'];
 				error_log("訊息發送人：".$userName);
 				error_log("發送人ID：".$userId);
 				}else{
 				error_log("訊息發送人：不明");
+				$userName = "您";
 				}
 		    
 		    	$googledataspi = getenv('googledataspi5');
 			$json = file_get_contents($googledataspi);
         		$data = json_decode($json, true);
-		    	$data999 = "";
-		    	foreach ($data['feed']['entry'] as $item) {
-			$keywords = explode(',', $item['gsx$title']['$t']);
-			foreach ($keywords as $keyword) {
-			if (strcmp("公告", $keyword) === 0) {
-			if($source['type'] == "group"){
+		    
+		    	if($source['type'] == "group"){
 $data999 = "您所在的群組還沒有公告，
 可以使用[老大note#公告內容]
 這個指令來添加公告。";
-    			if (strcmp($groupId, $item['gsx$groupid']['$t']) === 0) {
-			$data999 = "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║\n☆╰╘∞╛╘∞╛╘∞╛\n\n".$item['gsx$message']['$t']."\n\n---------發佈者---------\n".$item['gsx$name']['$t']."\n--------發佈時間--------\n".$item['gsx$date']['$t'];
+			}else{
+			$data999 = "(ง •̀ω•́)ง✧ (`･ω･´)9";
 			}
-			}
-			}
-			}
+		    
+		    	foreach ($data['feed']['entry'] as $item) {
+			$grouplist = explode(',', $item['gsx$groupid']['$t']);
+				foreach ($grouplist as $groupcheck) {
+					if (strcmp($groupId, $groupcheck) === 0) {
+					$data999 = "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║\n☆╰╘∞╛╘∞╛╘∞╛\n\n".$item['gsx$message']['$t']."\n\n---------發佈者---------\n".$item['gsx$name']['$t']."\n--------發佈時間--------\n".$item['gsx$date']['$t'];
+					}else{
+					break;
+					}
+				}
 			}
 		    
 			$messages = new MutiMessage();
@@ -373,7 +376,7 @@ $data999 = "您所在的群組還沒有公告，
 			$messages->text('(ノ・ω・)ノ歡迎ヾ(・ω・ヾ)'),
 			$messages->text($data999),
 			);
-		        //return $messages->send($replyArr);
+
 			$bot->replyMessage(
 				array(
 				'replyToken' => $event['replyToken'],
