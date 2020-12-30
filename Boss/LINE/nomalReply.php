@@ -263,7 +263,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	require_once('./public.php');
 	if ($data999 !== "") {
 	//return buildTextMessage($data999);
-	return buildflex($altText, $data999);
+	array_push($result, $data999);
+	return buildflex($altText, $result);
 	}
 	if ($data999 === "") {
 		if($source['type'] == "group"){
