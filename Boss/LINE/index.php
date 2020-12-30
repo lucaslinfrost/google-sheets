@@ -372,6 +372,9 @@ foreach ($bot->parseEvents() as $event) {
 			$json = file_get_contents($googledataspi);
         		$data = json_decode($json, true);
 		    
+		    	$altText = "關於 ".$message['text']." 的資料";
+			$result = array();
+		    
 		    	if($source['type'] == "group"){
 $data999 = "您所在的群組還沒有公告，
 可以使用[老大note#公告內容]
@@ -384,18 +387,22 @@ $data999 = "您所在的群組還沒有公告，
 			$grouplist = explode(',', $item['gsx$groupid']['$t']);
 				foreach ($grouplist as $groupcheck) {
 					if (strcmp($groupId, $groupcheck) === 0) {
-					$data999 = "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║\n☆╰╘∞╛╘∞╛╘∞╛\n\n".$item['gsx$message']['$t']."\n\n---------發佈者---------\n".$item['gsx$name']['$t']."\n--------發佈時間--------\n".$item['gsx$date']['$t'];
+					//$data999 = "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║\n☆╰╘∞╛╘∞╛╘∞╛\n\n".$item['gsx$message']['$t']."\n\n---------發佈者---------\n".$item['gsx$name']['$t']."\n--------發佈時間--------\n".$item['gsx$date']['$t'];
+					$data999 = array("type" => "bubble","header" => array("type" => "box","layout" => "vertical","contents" => array()),"hero" => array("type" => "image","url" => "https://i.imgur.com/jOBeMP0.jpg","size" => "full","aspectRatio" => "50:13","aspectMode" => "fit"),"body" => array("type" => "box","layout" => "vertical","spacing" => "md","contents" => array(array("type" => "text","text" => "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║\n☆╰╘∞╛╘∞╛╘∞╛\n\n","wrap" => true,"weight" => "bold","gravity" => "center","size" => "md","align" => "center"),array("type" => "box","layout" => "vertical","margin" => "lg","spacing" => "sm","contents" => array(array("type" => "box","layout" => "baseline","spacing" => "sm","contents" => array(array("type" => "text","text" => $item['gsx$message']['$t'].''.$a,"wrap" => true,"color" => "#666666","size" => "xs"))))),array("type" => "box","layout" => "vertical","contents" => array(array("type" => "box","layout" => "baseline","spacing" => "sm","contents" => array(array("type" => "text","text" => "\n\n---------發佈者---------\n".$item['gsx$name']['$t']."\n--------發佈時間--------\n".$item['gsx$date']['$t'],"wrap" => true,"size" => "md","align" => "center")))),"spacing" => "sm","margin" => "lg"))));
 					}else{
 					break;
 					}
 				}
 			}
 		    	
+		    	array_push($result, $data999);
+		    
 			$messages = new MutiMessage();
 			$replyArr = Array(
 			$messages->text($welcomemsg),
 			$messages->text('(ノ・ω・)ノ歡迎ヾ(・ω・ヾ)'),
-			$messages->text($data999),
+			//$messages->text($data999),
+			$messages->flexmsg($altText, $result),	
 			);
 
 			$bot->replyMessage(
