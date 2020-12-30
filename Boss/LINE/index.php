@@ -181,6 +181,20 @@ class MutiMessage{
 	return $message;
 	}
 	
+	//建立Flex面板的函數
+	public function flexmsg($altText, $result){	
+		error_log("準備回傳Flex面板訊息。");
+		$message = array(
+			'type'=> "flex",
+			'altText'=> $altText,
+			'contents'=> array(
+				'type'=> "carousel",
+				'contents'=> $result
+            )
+		);
+	return $message;
+	}
+	
 }
 
 
