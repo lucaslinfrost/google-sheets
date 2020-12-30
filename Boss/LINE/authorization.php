@@ -9,7 +9,7 @@ foreach ($bot->parseEvents() as $event) {
         case 'message':
 $source = $event['source'];
 $userId = $source['userId'];
-if($source['type'] == "group"){$groupId = $source['groupId'];}
+if($source['type'] == "group"){$groupId = $source['groupId']; $groupName = $bot->getGroupSummary($groupId)['groupName'];}
 if($source['type'] == "room"){$roomId = $source['roomId'];}
 
 break;
