@@ -21,8 +21,6 @@ switch ($event['type']) {
         $data = json_decode($json, true); 
         $data999 = "";
 	$a = "";
-	$code = array();
-	$code[1] = Null;
         $code = explode(' ', $message['text']);
         // 資料起始從feed.entry          
         foreach ($data['feed']['entry'] as $item) {
