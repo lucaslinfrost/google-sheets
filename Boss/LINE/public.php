@@ -1,3 +1,4 @@
+<?php
 //其他功能介面 (文字版)
 
 require_once('./LINEBotTiny.php');
