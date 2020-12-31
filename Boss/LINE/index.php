@@ -374,7 +374,7 @@ foreach ($bot->parseEvents() as $event) {
 		    	$googledataspi = getenv('googledataspi5');
 			$json = file_get_contents($googledataspi);
         		$data = json_decode($json, true);
-		    
+		        $data999 = "";
 		    	$altText = "歡迎👏👏👏";
 			$result = array();
 		    
