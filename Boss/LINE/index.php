@@ -96,14 +96,14 @@ function buildflex($altText, $result){
 		error_log("準備回傳Flex面板訊息。");
 		$message = array
 		( 
-		array(
+		//array(
 			'type'=> "flex",
 			'altText'=> $altText,
 			'contents'=> array(
 				'type'=> "carousel",
 				'contents'=> $result
             		)
-		      ),
+		      //),
 		);
 	return $message;
 }
