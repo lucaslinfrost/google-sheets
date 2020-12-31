@@ -366,9 +366,9 @@ foreach ($bot->parseEvents() as $event) {
 		    
 		    		$owner = getenv('Owner');
 		    		if($userId === $owner){
-				$welcomemsg = '系統管理員【'.$userName.'】已加入《'.$groupName.'》!!!';
+				$welcomemsg = '(ノ・ω・)ノ歡迎ヾ(・ω・ヾ)\n【系統管理員】'.$userName.'加入《'.$groupName.'》!!!';
 				}else{
-				$welcomemsg = '熱烈歡迎'.$userName.'加入《'.$groupName.'》!!!';
+				$welcomemsg = '(ノ・ω・)ノ歡迎ヾ(・ω・ヾ)\n'.$userName.'加入《'.$groupName.'》!!!';
 				}
 		    
 		    	$googledataspi = getenv('googledataspi5');
@@ -403,7 +403,6 @@ $data999 = "您所在的群組還沒有公告，
 			$messages = new MutiMessage();
 			$replyArr = Array(
 			$messages->text($welcomemsg),
-			$messages->text('(ノ・ω・)ノ歡迎ヾ(・ω・ヾ)'),
 			$messages->flexmsg($altText, $result),	
 			);
 
