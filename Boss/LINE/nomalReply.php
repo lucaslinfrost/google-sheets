@@ -267,7 +267,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	//return buildflex($altText, $result);
 	
 	$messages = new MutiMessage();$replyArr = Array($messages->text('測試'),$messages->flexmsg($altText, $result),);
-	$bot->replyMessage(array('replyToken' => $event['replyToken'],'messages' => $replyArr));		
+	return $messages->send($replyArr);		
 		
 	}
 	if ($data999 === "") {
