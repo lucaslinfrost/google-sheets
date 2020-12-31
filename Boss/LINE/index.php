@@ -325,6 +325,7 @@ foreach ($bot->parseEvents() as $event) {
 		    
 		    
 		    	$source = $event['source'];
+		    	$groupId = $source['groupId'];
 		    	$googledataspi = getenv('googledataspi5');
 			$json = file_get_contents($googledataspi);
         		$data = json_decode($json, true);
