@@ -371,8 +371,6 @@ foreach ($bot->parseEvents() as $event) {
 				$welcomemsg = '熱烈歡迎'.$userName.'加入《'.$groupName.'》!!!';
 				}
 		    
-		    	$source = $event['source'];
-		    	$groupId = $source['groupId'];
 		    	$googledataspi = getenv('googledataspi5');
 			$json = file_get_contents($googledataspi);
         		$data = json_decode($json, true);
