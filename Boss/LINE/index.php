@@ -372,7 +372,7 @@ foreach ($bot->parseEvents() as $event) {
 			$json = file_get_contents($googledataspi);
         		$data = json_decode($json, true);
 		    
-		    	$altText = "關於 ".$message['text']." 的資料";
+		    	$altText = "歡迎👏👏👏";
 			$result = array();
 		    
 		    	if($source['type'] == "group"){
