@@ -264,7 +264,11 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	if ($data999 !== "") {
 	//return buildTextMessage($data999);
 	array_push($result, $data999);
-	return buildflex($altText, $result);
+	//return buildflex($altText, $result);
+	
+	$messages = new MutiMessage();$replyArr = Array($messages->text('測試'),$messages->flexmsg($altText, $result),);
+	$bot->replyMessage(array('replyToken' => $event['replyToken'],'messages' => $replyArr));		
+		
 	}
 	if ($data999 === "") {
 		if($source['type'] == "group"){
