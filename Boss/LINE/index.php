@@ -401,8 +401,8 @@ $data999 = "您所在的群組還沒有公告，
 			array_push($result, $data999);
 			$messages = new MutiMessage();
 			$replyArr = Array(
-			$messages->text($welcomemsg),
-			$messages->text('(ノ・ω・)ノ歡迎ヾ(・ω・ヾ)'),
+			//$messages->text($welcomemsg),
+			//$messages->text('(ノ・ω・)ノ歡迎ヾ(・ω・ヾ)'),
 			//$messages->text($data999),
 			$messages->flexmsg($altText, $result),	
 			);
