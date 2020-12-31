@@ -330,6 +330,7 @@ foreach ($bot->parseEvents() as $event) {
 			$json = file_get_contents($googledataspi);
         		$data = json_decode($json, true);
 		        $data999 = "";
+		    	$a = "";
 		    	$altText = "歡迎!!!";
 			$result = array();
 		    
