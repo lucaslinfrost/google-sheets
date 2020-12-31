@@ -407,8 +407,8 @@ $data999 = "您所在的群組還沒有公告，
 			$messages->flexmsg($altText, $result),	
 			);
 
-			//$bot->replyMessage(array('replyToken' => $event['replyToken'],'messages' => $replyArr));
-		    	return $messages->send($replyArr);
+			$bot->replyMessage(array('replyToken' => $event['replyToken'],'messages' => $replyArr));
+		    	//return $messages->send($replyArr);
 		    
 			break;
 		    
