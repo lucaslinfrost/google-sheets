@@ -375,7 +375,7 @@ foreach ($bot->parseEvents() as $event) {
 			$json = file_get_contents($googledataspi);
         		$data = json_decode($json, true);
 		        $data999 = "";
-		    	$altText = "歡迎👏👏👏";
+		    	$altText = "歡迎!!!";
 			$result = array();
 		    
 		    	if($source['type'] == "group"){
