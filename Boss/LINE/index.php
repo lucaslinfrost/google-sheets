@@ -310,7 +310,7 @@ foreach ($bot->parseEvents() as $event) {
 		//被加入聊天室的動作
 		case 'join':
 			error_log("被加入聊天室");
-			$messages = new MutiMessage();
+			/**$messages = new MutiMessage();
 			$replyArr = Array(
 				$messages->text("機體編號 : @svf5367e\n隸屬Iruna公會【★夢想家★】。\n工作是公會顧問和吉祥物，\n您可以輸入[老大說明]\n來了解我的所有功能。\n我的製作協力者有\n[我靴子裡有蛇]、[賢者懿雅]、[風:))]、[夜影]\n\n在遊戲裡看到他們記得表示感謝喔!!\n\n(C) ASOBIMO INC. All rights reserved."),
 				$messages->sticker(4,294)
@@ -321,7 +321,49 @@ foreach ($bot->parseEvents() as $event) {
 				'replyToken' => $event['replyToken'],
 				'messages' => $replyArr
 				)
+			);*/
+		    
+		    
+		    	$source = $event['source'];
+		    	$googledataspi = getenv('googledataspi5');
+			$json = file_get_contents($googledataspi);
+        		$data = json_decode($json, true);
+		        $data999 = "";
+		    	$altText = "歡迎!!!";
+			$result = array();
+		    
+		    	if($source['type'] == "group"){
+$data999 = "您所在的群組還沒有公告，
+可以使用[老大note#公告內容]
+這個指令來添加公告。";
+			}else{
+			$data999 = "(ง •̀ω•́)ง✧ (`･ω･´)9";
+			}
+		    
+		    	foreach ($data['feed']['entry'] as $item) {
+			$grouplist = explode(',', $item['gsx$groupid']['$t']);
+				foreach ($grouplist as $groupcheck) {
+					if (strcmp($groupId, $groupcheck) === 0) {
+					$data999 = array("type" => "bubble","header" => array("type" => "box","layout" => "vertical","contents" => array()),"hero" => array("type" => "image","url" => "https://i.imgur.com/jOBeMP0.jpg","size" => "full","aspectRatio" => "50:13","aspectMode" => "fit"),"body" => array("type" => "box","layout" => "vertical","spacing" => "md","contents" => array(array("type" => "text","text" => "╭☆╭╧╮╭╧╮╭╧╮\n╰╮║公║║告║║欄║\n☆╰╘∞╛╘∞╛╘∞╛\n\n","wrap" => true,"weight" => "bold","gravity" => "center","size" => "md","align" => "center"),array("type" => "box","layout" => "vertical","margin" => "lg","spacing" => "sm","contents" => array(array("type" => "box","layout" => "baseline","spacing" => "sm","contents" => array(array("type" => "text","text" => $item['gsx$message']['$t'].''.$a,"wrap" => true,"color" => "#666666","size" => "xs"))))),array("type" => "box","layout" => "vertical","contents" => array(array("type" => "box","layout" => "baseline","spacing" => "sm","contents" => array(array("type" => "text","text" => "\n\n---------發佈者---------\n".$item['gsx$name']['$t']."\n--------發佈時間--------\n".$item['gsx$date']['$t'],"wrap" => true,"size" => "md","align" => "center")))),"spacing" => "sm","margin" => "lg"))));
+					}else{
+					break;
+					}
+				}
+			}
+		    	break;
+			array_push($result, $data999);
+			$messages = new MutiMessage();
+			$replyArr = Array(
+			$messages->text('(ノ・ω・)ノ歡迎ヾ(・ω・ヾ)'),
+			$messages->flexmsg($altText, $result),	
 			);
+
+			$bot->replyMessage(array('replyToken' => $event['replyToken'],'messages' => $replyArr));
+		    	//return $messages->send($replyArr);
+		    
+		    
+		    
+		    
 			break;
 		    	
 		//被加入好友的動作
