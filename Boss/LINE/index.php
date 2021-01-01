@@ -214,14 +214,16 @@ foreach ($bot->parseEvents() as $event) {
 				
 				$groupId = $source['groupId'];
 				$userId = $source['userId'];
+				$groupName = $bot->getGroupSummary($groupId)['groupName'];
 				error_log("群組ID：".$groupId);
+				error_log("群組名：".$groupName);
 				if($userId != null){
 								
 					$userName = $bot->getGroupProfile($groupId,$userId)['displayName'];
 					error_log("訊息發送人：".$userName);
 					error_log("發送人ID：".$userId);
-					$table = "群組";
-					$tableid = $groupId;
+					//$table = "群組";
+					//$tableid = $groupId;
 					//require_once('../../record.php');
 					}
 				else{
@@ -242,14 +244,14 @@ foreach ($bot->parseEvents() as $event) {
 					$userName = $bot->getRoomProfile($roomId,$userId)['displayName'];
 					error_log("訊息發送人：".$userName);
 					error_log("發送人ID：".$userId);
-					$table = "房間";
-					$tableid = $roomId;
+					//$table = "房間";
+					//$tableid = $roomId;
 					//require_once('../../record.php');
 					}
 				else{
 					error_log("訊息發送人：不明");
-					$table = "房間";
-					$tableid = $roomId;
+					//$table = "房間";
+					//$tableid = $roomId;
 					//require_once('../../record.php');
 				}
 				}
