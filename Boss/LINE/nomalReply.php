@@ -167,7 +167,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	require_once('./map.php');
 	return buildTextMessage(''.$maphop.'');
 	}
-	//推送
+	/**推送
 	if(stristr($inputStr, '龘') != false||
 	       stristr($inputStr, '淼') != false) {
 		require_once('./push.php');
@@ -176,7 +176,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		}else{
 		return buildTextMessage('推送失敗啦@3@');
 		}
-	}
+	}*/
 	//創角
 	if(stristr($inputStr, '創角') != false) {
 		return create($inputStr,$userName);
@@ -242,10 +242,10 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		if($userId === $owner){ 
 			if($source['type'] == "group"){
 				require_once('../../notice.php');
-				return buildTextMessage('系統管理員【'.$userName.'】，已為您將《'.$groupName.'》的群組公告更新。');
+				return buildTextMessage('꧁系統管理員꧂【'.$userName.'】，已為您將《'.$groupName.'》的群組公告更新。');
 			}else{
 				require_once('../../notice.php');
-				return buildTextMessage('系統管理員【'.$userName.'】，全域公告已為您更新。');
+				return buildTextMessage('꧁系統管理員꧂【'.$userName.'】，全域公告已為您更新。');
 			}
 		}else{
 			if($source['type'] == "group"){
@@ -276,10 +276,10 @@ $data999 = "您所在的群組還沒有公告，
 這個指令來添加公告。";
 			return buildTextMessage($data999);	
 			}else{
-			return buildTextMessage('找不到你所指定的公告喔。');
+			return buildTextMessage(''.$userName.'找不到你所指定的公告喔。');
 			}
 		}else{
-		return buildTextMessage('找不到你所指定的公告喔。');
+		return buildTextMessage(''.$userName.'找不到你所指定的公告喔。');
 		}
 	}
 	}
@@ -317,8 +317,9 @@ $data999 = "您所在的群組還沒有公告，
 		if ($alltext !== "") {
 		$alltext = "請用下方指令再試一次吧。\n\n--------  建議指令  --------\n".$alltext;
 		$alltext = substr($alltext, 0, -1);
-		return buildTextMessage(''.$alltext.'');
-		}else{return buildTextMessage('資料庫沒有你要找的資料
+		return buildTextMessage(''.$userName.'
+'.$alltext.'');
+		}else{return buildTextMessage(''.$userName.'資料庫沒有你要找的資料
 (๑•́ ₃ •̀๑)');}
 		unset($json1, $data1, $keywords, $keyword, $json2, $data2, $json3, $data3, $json4, $data5, $json5, $data5, $json6, $data6);
 		}	
@@ -343,8 +344,9 @@ $data999 = "您所在的群組還沒有公告，
 		if ($alltext !== "") {
 		$alltext = "請用下方指令再試一次吧。\n\n--------  建議指令  --------\n".$alltext;
 		$alltext = substr($alltext, 0, -1);
-		return buildTextMessage(''.$alltext.'');
-		}else{return buildTextMessage('資料庫沒有你要找的資料
+		return buildTextMessage(''.$userName.'
+'.$alltext.'');
+		}else{return buildTextMessage(''.$userName.'資料庫沒有你要找的資料
 (๑•́ ₃ •̀๑)');}
 		unset($json1, $data1, $keywords, $keyword, $json2, $data2, $json3, $data3, $json4, $data5, $json5, $data5, $json6, $data6);
 		}
@@ -376,9 +378,10 @@ $data999 = "您所在的群組還沒有公告，
 		}else{
 		$alltext = "請用下方指令再試一次吧。\n\n--------  建議指令  --------\n".$alltext;
 		$alltext = substr($alltext, 0, -1);
-		return buildTextMessage(''.$alltext.'');
+		return buildTextMessage(''.$userName.'
+'.$alltext.'');
 		}
-		}else{return buildTextMessage('資料庫沒有你要找的資料
+		}else{return buildTextMessage(''.$userName.'資料庫沒有你要找的資料
 (๑•́ ₃ •̀๑)');}
 		unset($json1, $data1, $keywords, $keyword, $json2, $data2, $json3, $data3, $json4, $data5, $json5, $data5, $json6, $data6);
 		}
@@ -404,7 +407,7 @@ $data999 = "您所在的群組還沒有公告，
 		$alltext = "請用下方指令再試一次吧。\n\n--------  建議指令  --------\n".$alltext;
 		$alltext = substr($alltext, 0, -1);
 		return buildTextMessage(''.$alltext.'');
-		}else{return buildTextMessage('資料庫沒有你要找的資料
+		}else{return buildTextMessage(''.$userName.'資料庫沒有你要找的資料
 (๑•́ ₃ •̀๑)');}
 		unset($json1, $data1, $keywords, $keyword, $json2, $data2, $json3, $data3, $json4, $data5, $json5, $data5, $json6, $data6);
 		}
@@ -458,7 +461,7 @@ $data999 = "您所在的群組還沒有公告，
 		$alltext = substr($alltext, 0, -1);
 		return buildTextMessage(''.$alltext.'');
 		}else{
-		return buildTextMessage('資料庫沒有你要找的資料
+		return buildTextMessage(''.$userName.'資料庫沒有你要找的資料
 (๑•́ ₃ •̀๑)');}
 		unset($json1, $data1, $keywords, $keyword, $json2, $data2, $json3, $data3, $json4, $data5, $json5, $data5, $json6, $data6);
 		}
@@ -560,7 +563,7 @@ $data999 = "您所在的群組還沒有公告，
 		return buildTextMessage(''.$starall.'');
 		}else{
 		if (empty($result)) {
-		return buildTextMessage('資料庫找不到喔。');
+		return buildTextMessage(''.$userName.'資料庫找不到喔。');
 		}else{
 		//return buildcarousel($altText,$result);
 		return buildflex($altText,$result);
@@ -585,10 +588,11 @@ $data999 = "您所在的群組還沒有公告，
 		if($userId === $owner){ 
 		require_once('./renewfile.php');
 		unset($update, $file, $countno);
+		$updatelog = '꧁系統管理員꧂【'.$userName.'】'.$updatelog;
 		return buildTextMessage($updatelog);
 		}else{
 		unset($update, $file, $updatelog, $countno);
-		return buildTextMessage('你並沒有權限使用這個指令。');
+		return buildTextMessage(''.$userName.'您並沒有權限使用這個指令。');
 		}
 	}
 	//裝備公式
@@ -605,12 +609,12 @@ $data999 = "您所在的群組還沒有公告，
 		}
 		if ($alltext === "") {
 		unset($json0, $data0, $keywords, $keyword, $json1, $data1, $keywords1, $keyword1, $a, $b);
-		return buildTextMessage('資料庫沒有你要找的資料
+		return buildTextMessage(''.$userName.'資料庫沒有你要找的資料
 (๑•́ ₃ •̀๑)');
 		}
 	}else{
 	unset($json0, $data0, $keywords, $keyword, $json1, $data1, $keywords1, $keyword1, $a, $b);}
-	return buildTextMessage('你並沒有權限使用這個指令。');
+	return buildTextMessage(''.$userName.'您並沒有權限使用這個指令。');
 	}
 	//學說話
 	if(stristr($inputStr, '學') != false) {
