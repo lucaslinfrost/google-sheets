@@ -242,13 +242,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		if($userId === $owner){ 
 			if($source['type'] == "group"){
 				require_once('../../notice.php');
-				
-				
-$welcomemsg = '(ノ・ω・)ノ歡迎ヾ(・ω・ヾ)
-꧁系統管理員꧂【'.$userName.'】
-加入《'.$groupName.'》!!!';
-				return buildTextMessage($welcomemsg);
-				
+				return buildTextMessage('꧁系統管理員꧂【'.$userName.'】，
+已為您將《'.$groupName.'》的群組公告更新。');				
 			}else{
 				require_once('../../notice.php');
 				return buildTextMessage('꧁系統管理員꧂【'.$userName.'】，
