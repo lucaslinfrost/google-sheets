@@ -244,7 +244,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 				require_once('../../notice.php');
 				
 				
-$welcomemsg = '(ノ・ω・)ノ熱烈歡迎ヾ(・ω・ヾ)
+$welcomemsg = '(ノ・ω・)ノ歡迎ヾ(・ω・ヾ)
 ꧁系統管理員꧂【'.$userName.'】
 加入《'.$groupName.'》!!!';
 				return buildTextMessage($welcomemsg);
