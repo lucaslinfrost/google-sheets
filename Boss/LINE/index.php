@@ -368,9 +368,9 @@ foreach ($bot->parseEvents() as $event) {
 		    
 		    		$owner = getenv('Owner');
 		    		if($userId === $owner){
-				$welcomemsg = '(ノ・ω・)ノ歡迎ヾ(・ω・ヾ)【系統管理員】'.$userName.'加入《'.$groupName.'》!!!';
+				$welcomemsg = '(ノ・ω・)ノ熱烈歡迎ヾ(・ω・ヾ)꧁系統管理員꧂【'.$userName.'】加入《'.$groupName.'》!!!';
 				}else{
-				$welcomemsg = '(ノ・ω・)ノ歡迎ヾ(・ω・ヾ)'.$userName.'加入《'.$groupName.'》!!!';
+				$welcomemsg = '(ノ・ω・)ノ熱烈歡迎ヾ(・ω・ヾ)【'.$userName.'】加入《'.$groupName.'》!!!';
 				}
 		    
 		    	$googledataspi = getenv('googledataspi5');
