@@ -242,15 +242,18 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		if($userId === $owner){ 
 			if($source['type'] == "group"){
 				require_once('../../notice.php');
-				return buildTextMessage('꧁系統管理員꧂【'.$userName.'】，已為您將《'.$groupName.'》的群組公告更新。');
+				return buildTextMessage('꧁系統管理員꧂【'.$userName.'】，
+已為您將《'.$groupName.'》的群組公告更新。');
 			}else{
 				require_once('../../notice.php');
-				return buildTextMessage('꧁系統管理員꧂【'.$userName.'】，全域公告已為您更新。');
+				return buildTextMessage('꧁系統管理員꧂【'.$userName.'】，
+全域公告已為您更新。');
 			}
 		}else{
 			if($source['type'] == "group"){
 				require_once('../../notice.php');
-				return buildTextMessage($userName.'，已為您將《'.$groupName.'》的群組公告更新。');
+				return buildTextMessage($userName.'，已為您將
+《'.$groupName.'》的群組公告更新。');
 			}else{
 			return buildTextMessage('非群組外之全域公告權限僅有管理員能修改。');
 			}
