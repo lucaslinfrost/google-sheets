@@ -22,6 +22,7 @@ foreach ($client->parseEvents() as $event) {
             $countno = 0;
             $result = array();
             $altText = "關於 ".$message['text']." 的資料";
+            $candidate = array('type' => 'bubble','size' => 'micro','hero' => array('type' => 'image','url' => 'https://imgur.com/KQsuipD.png','size' => 'full','aspectMode' => 'fit','aspectRatio' => '320:213'),'body' => array('type' => 'box','layout' => 'vertical','contents' => array(array('type' => 'text','text' => $TitleName,'weight' => 'bold','size' => 'sm','wrap' => true,'align' => 'center'),array('type' => 'box','layout' => 'baseline','contents' => array(array('type' => 'text','text' => '--------------------','size' => 'xs','color' => '#8c8c8c','margin' => 'md','align' => 'center'))),array('type' => 'box','layout' => 'vertical','contents' => array(array('type' => 'box','layout' => 'baseline','spacing' => 'sm','contents' => array(array('type' => 'text','text' => $RealName,'wrap' => true,'color' => '#252dba','size' => 'sm','align' => 'center','action' => array('type' => 'message','label' => 'action','text' => $TextCode,))))))),'spacing' => 'sm','paddingAll' => '13px','backgroundColor' => '#edece8','justifyContent' => 'space-evenly'));
             
 //怪物關鍵字
 if ($countno === 0) {
@@ -31,7 +32,11 @@ foreach ($data0['feed']['entry'] as $item) {
 $keywords = explode(',', $item['gsx$keywords']['$t']);
 foreach ($keywords as $keyword) {
 if (strcmp($code[1], $keyword) === 0) {
-$a = "[搜尋怪物] m指令\n";
+$TitleName = "怪物資訊";
+$RealName = $item['gsx$name']['$t'];
+$TextCode = "老大M ".$RealName;
+$candidate = $candidate;
+array_push($result, $candidate);
 unset($json0, $data0, $keywords, $keyword);
 }
 }
