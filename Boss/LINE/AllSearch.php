@@ -37,7 +37,7 @@ foreach ($keywords as $keyword) {
 if (strcmp($code[1], $keyword) === 0) {
 $titlename = "怪物資訊";
 $realname = $item['gsx$name']['$t'];
-$textcode = "老大M ".$RealName;
+$textcode = "老大M ".$realname;
 array_push($result, $candidate);
 unset($json0, $data0, $keywords, $keyword);
 }
@@ -56,7 +56,7 @@ foreach ($keywords as $keyword) {
 if (strcmp($code[1], $keyword) === 0) {
 $titlename = "掉落資訊";
 $realname = $code[1];
-$textcode = "老大D ".$RealName;
+$textcode = "老大D ".$realname;
 array_push($result, $candidate);
 unset($json1, $data1, $keywords, $keyword);
 }
