@@ -52,6 +52,12 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	}
 	
 
+	//測試新功能
+	if(substr($inputStr, 0, 7) === "老大-") {
+		return buildTextMessage('測試成功。');
+	}
+	
+	
 	//查材料用途
 	if(stristr($inputStr, 'look') != false) {
 		
