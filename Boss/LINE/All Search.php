@@ -20,6 +20,8 @@ foreach ($client->parseEvents() as $event) {
             $f = "";
             $g = "";
             $countno = 0;
+            $result = array();
+            $altText = "關於 ".$message['text']." 的資料";
             
 //怪物關鍵字
 if ($countno === 0) {
