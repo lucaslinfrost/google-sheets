@@ -9,7 +9,7 @@ foreach ($client->parseEvents() as $event) {
     switch ($event['type']) {
         case 'message':
             $message = $event['message'];
-            $code = explode(' ', $message['text']);
+            $code = explode('-', $message['text']);
             $wordsave = $code[1];
             $alltext = "";
             $a = "";
