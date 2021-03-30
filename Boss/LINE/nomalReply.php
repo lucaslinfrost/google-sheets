@@ -54,7 +54,12 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 
 	//測試新功能
 	if(substr($inputStr, 0, 7) === "老大-") {
-		return buildTextMessage('測試成功。');
+		require_once('./AllSearch.php');
+		if (empty($result)) {
+		return buildTextMessage(''.$userName.'，資料庫找不到喔。');
+		}else{
+		return buildflex($altText,$result);
+		}
 	}
 	
 	
