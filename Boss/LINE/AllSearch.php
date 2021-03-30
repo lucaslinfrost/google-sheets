@@ -36,7 +36,7 @@ foreach ($keywords as $keyword) {
 if (strcmp($code[1], $keyword) === 0) { 
 $titlename = "怪物資訊";
 $realname = $item['gsx$name']['$t'];
-$textcode = "老大M ".$realname;
+$textcode = "老大M ".$code[1];
 $candidate = array('type' => 'bubble','size' => 'micro','hero' => array('type' => 'image','url' => 'https://i.imgur.com/TnwYgP6.png','size' => 'full','aspectMode' => 'fit','aspectRatio' => '320:213'),'body' => array('type' => 'box','layout' => 'vertical','contents' => array(array('type' => 'text','text' => $titlename,'weight' => 'bold','size' => 'sm','wrap' => true,'align' => 'center'),array('type' => 'box','layout' => 'baseline','contents' => array(array('type' => 'text','text' => "---------------",'size' => 'xs','color' => '#8c8c8c','margin' => 'md','align' => 'center'))),array('type' => 'box','layout' => 'vertical','contents' => array(array('type' => 'box','layout' => 'baseline','spacing' => 'sm','contents' => array(array('type' => 'text','text' => $realname,'wrap' => true,'color' => '#252dba','size' => 'sm','align' => 'center','action' => array('type' => 'message','label' => 'action','text' => $textcode,))))))),'spacing' => 'sm','paddingAll' => '13px','backgroundColor' => '#edece8','justifyContent' => 'space-evenly'));
 array_push($result, $candidate);
 unset($json0, $data0, $keywords, $keyword);
@@ -57,7 +57,7 @@ if (strcmp($code[1], $keyword) === 0) {
 if (strcmp($dropswitch, "off") === 0) {
 $titlename = "掉落資訊";
 $realname = $code[1];
-$textcode = "老大D ".$realname;
+$textcode = "老大D ".$code[1];
 $candidate = array('type' => 'bubble','size' => 'micro','hero' => array('type' => 'image','url' => 'https://imgur.com/KQsuipD.png','size' => 'full','aspectMode' => 'fit','aspectRatio' => '320:213'),'body' => array('type' => 'box','layout' => 'vertical','contents' => array(array('type' => 'text','text' => $titlename,'weight' => 'bold','size' => 'sm','wrap' => true,'align' => 'center'),array('type' => 'box','layout' => 'baseline','contents' => array(array('type' => 'text','text' => "---------------",'size' => 'xs','color' => '#8c8c8c','margin' => 'md','align' => 'center'))),array('type' => 'box','layout' => 'vertical','contents' => array(array('type' => 'box','layout' => 'baseline','spacing' => 'sm','contents' => array(array('type' => 'text','text' => $realname,'wrap' => true,'color' => '#252dba','size' => 'sm','align' => 'center','action' => array('type' => 'message','label' => 'action','text' => $textcode,))))))),'spacing' => 'sm','paddingAll' => '13px','backgroundColor' => '#edece8','justifyContent' => 'space-evenly'));
 array_push($result, $candidate);
 $dropswitch = "on";
@@ -103,7 +103,7 @@ if (strcmp($code[1], $keyword) === 0) {
 if (strcmp($equipswitch, "off") === 0) {
 $titlename = "裝備資訊";
 $realname = $item['gsx$name']['$t'];
-$textcode = "老大E ".$realname;
+$textcode = "老大E ".$code[1];
 $candidate = array('type' => 'bubble','size' => 'micro','hero' => array('type' => 'image','url' => 'https://imgur.com/KQsuipD.png','size' => 'full','aspectMode' => 'fit','aspectRatio' => '320:213'),'body' => array('type' => 'box','layout' => 'vertical','contents' => array(array('type' => 'text','text' => $titlename,'weight' => 'bold','size' => 'sm','wrap' => true,'align' => 'center'),array('type' => 'box','layout' => 'baseline','contents' => array(array('type' => 'text','text' => "---------------",'size' => 'xs','color' => '#8c8c8c','margin' => 'md','align' => 'center'))),array('type' => 'box','layout' => 'vertical','contents' => array(array('type' => 'box','layout' => 'baseline','spacing' => 'sm','contents' => array(array('type' => 'text','text' => $realname,'wrap' => true,'color' => '#252dba','size' => 'sm','align' => 'center','action' => array('type' => 'message','label' => 'action','text' => $textcode,))))))),'spacing' => 'sm','paddingAll' => '13px','backgroundColor' => '#edece8','justifyContent' => 'space-evenly'));
 array_push($result, $candidate);
 $equipswitch = "on";
@@ -126,7 +126,7 @@ if (strcmp($code[1], $keyword) === 0) {
 if (strcmp($rockswitch, "off") === 0) {
 $titlename = "石頭資訊";
 $realname = $item['gsx$name']['$t'];
-$textcode = "老大R ".$realname;
+$textcode = "老大R ".$code[1];
 $candidate = array('type' => 'bubble','size' => 'micro','hero' => array('type' => 'image','url' => 'https://imgur.com/KQsuipD.png','size' => 'full','aspectMode' => 'fit','aspectRatio' => '320:213'),'body' => array('type' => 'box','layout' => 'vertical','contents' => array(array('type' => 'text','text' => $titlename,'weight' => 'bold','size' => 'sm','wrap' => true,'align' => 'center'),array('type' => 'box','layout' => 'baseline','contents' => array(array('type' => 'text','text' => "---------------",'size' => 'xs','color' => '#8c8c8c','margin' => 'md','align' => 'center'))),array('type' => 'box','layout' => 'vertical','contents' => array(array('type' => 'box','layout' => 'baseline','spacing' => 'sm','contents' => array(array('type' => 'text','text' => $realname,'wrap' => true,'color' => '#252dba','size' => 'sm','align' => 'center','action' => array('type' => 'message','label' => 'action','text' => $textcode,))))))),'spacing' => 'sm','paddingAll' => '13px','backgroundColor' => '#edece8','justifyContent' => 'space-evenly'));
 array_push($result, $candidate);
 $rockswitch = "on";
@@ -149,7 +149,7 @@ if (strcmp($code[1], $keyword) === 0) {
 if (strcmp($seedswitch, "off") === 0) {
 $titlename = "栽培資訊";
 $realname = $item['gsx$name']['$t'];
-$textcode = "老大栽培 ".$realname;
+$textcode = "老大栽培 ".$code[1];
 $candidate = array('type' => 'bubble','size' => 'micro','hero' => array('type' => 'image','url' => 'https://imgur.com/KQsuipD.png','size' => 'full','aspectMode' => 'fit','aspectRatio' => '320:213'),'body' => array('type' => 'box','layout' => 'vertical','contents' => array(array('type' => 'text','text' => $titlename,'weight' => 'bold','size' => 'sm','wrap' => true,'align' => 'center'),array('type' => 'box','layout' => 'baseline','contents' => array(array('type' => 'text','text' => "---------------",'size' => 'xs','color' => '#8c8c8c','margin' => 'md','align' => 'center'))),array('type' => 'box','layout' => 'vertical','contents' => array(array('type' => 'box','layout' => 'baseline','spacing' => 'sm','contents' => array(array('type' => 'text','text' => $realname,'wrap' => true,'color' => '#252dba','size' => 'sm','align' => 'center','action' => array('type' => 'message','label' => 'action','text' => $textcode,))))))),'spacing' => 'sm','paddingAll' => '13px','backgroundColor' => '#edece8','justifyContent' => 'space-evenly'));
 array_push($result, $candidate);
 $seedswitch = "on";
@@ -172,7 +172,7 @@ if (strcmp($code[1], $keyword) === 0) {
 if (strcmp($drillswitch, "off") === 0) {
 $titlename = "挖礦資訊";
 $realname = $item['gsx$name']['$t'];
-$textcode = "老大挖 ".code[1];
+$textcode = "老大挖 ".$code[1];
 $candidate = array('type' => 'bubble','size' => 'micro','hero' => array('type' => 'image','url' => 'https://imgur.com/KQsuipD.png','size' => 'full','aspectMode' => 'fit','aspectRatio' => '320:213'),'body' => array('type' => 'box','layout' => 'vertical','contents' => array(array('type' => 'text','text' => $titlename,'weight' => 'bold','size' => 'sm','wrap' => true,'align' => 'center'),array('type' => 'box','layout' => 'baseline','contents' => array(array('type' => 'text','text' => "---------------",'size' => 'xs','color' => '#8c8c8c','margin' => 'md','align' => 'center'))),array('type' => 'box','layout' => 'vertical','contents' => array(array('type' => 'box','layout' => 'baseline','spacing' => 'sm','contents' => array(array('type' => 'text','text' => $realname,'wrap' => true,'color' => '#252dba','size' => 'sm','align' => 'center','action' => array('type' => 'message','label' => 'action','text' => $textcode,))))))),'spacing' => 'sm','paddingAll' => '13px','backgroundColor' => '#edece8','justifyContent' => 'space-evenly'));
 array_push($result, $candidate);
 $drillwitch = "on";
