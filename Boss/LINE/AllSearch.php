@@ -12,7 +12,7 @@ foreach ($client->parseEvents() as $event) {
             $code = explode('-', $message['text']);
             $wordsave = $code[1];
             $alltext = "";
-            $a = "";
+            $dropswitch = "off";
             $b = "";
             $c = "";
             $d = "";
@@ -34,7 +34,7 @@ $data0 = json_decode($json0, true);
 foreach ($data0['feed']['entry'] as $item) {
 $keywords = explode(',', $item['gsx$keywords']['$t']);
 foreach ($keywords as $keyword) {
-if (strcmp($code[1], $keyword) === 0) {
+if (strcmp($code[1], $keyword) === 0) { 
 $titlename = "怪物資訊";
 $realname = $item['gsx$name']['$t'];
 $textcode = "老大M ".$realname;
@@ -55,11 +55,13 @@ foreach ($data1['feed']['entry'] as $item) {
 $keywords = explode('、', $item['gsx$key']['$t']);
 foreach ($keywords as $keyword) {
 if (strcmp($code[1], $keyword) === 0) {
+if $dropswitch === "off" {
 $titlename = "掉落資訊";
 $realname = $code[1];
 $textcode = "老大D ".$realname;
 $candidate = array('type' => 'bubble','size' => 'micro','hero' => array('type' => 'image','url' => 'https://imgur.com/KQsuipD.png','size' => 'full','aspectMode' => 'fit','aspectRatio' => '320:213'),'body' => array('type' => 'box','layout' => 'vertical','contents' => array(array('type' => 'text','text' => $titlename,'weight' => 'bold','size' => 'sm','wrap' => true,'align' => 'center'),array('type' => 'box','layout' => 'baseline','contents' => array(array('type' => 'text','text' => "---------------",'size' => 'xs','color' => '#8c8c8c','margin' => 'md','align' => 'center'))),array('type' => 'box','layout' => 'vertical','contents' => array(array('type' => 'box','layout' => 'baseline','spacing' => 'sm','contents' => array(array('type' => 'text','text' => $realname,'wrap' => true,'color' => '#252dba','size' => 'sm','align' => 'center','action' => array('type' => 'message','label' => 'action','text' => $textcode,))))))),'spacing' => 'sm','paddingAll' => '13px','backgroundColor' => '#edece8','justifyContent' => 'space-evenly'));
 array_push($result, $candidate);
+$dropswitch = "on";}
 unset($json1, $data1, $keywords, $keyword);
 }
 }
