@@ -3,7 +3,6 @@
 //數據統計介面 (文字版)
 
 require_once('./LINEBotTiny.php');
-require_once('./utf8_chinese.class.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
 $googledataspi = getenv('googledataspi4');
