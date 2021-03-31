@@ -182,7 +182,8 @@ unset($json6, $data6, $keywords, $keyword);
 }
 }   
 $countno = $countno+1;   
-}
+}        
+            
             break;
         default:
             error_log("Unsupporeted event type: " . $event['type']);
