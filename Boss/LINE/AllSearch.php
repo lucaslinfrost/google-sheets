@@ -18,6 +18,7 @@ foreach ($client->parseEvents() as $event) {
             $rockswitch = "off";
             $seedswitch = "off";
             $drillswitch = "off";
+            $checkswitch = "off";
             $countno = 0;
             $titlename = "";
             $realname = "";
@@ -183,6 +184,55 @@ unset($json6, $data6, $keywords, $keyword);
 }   
 $countno = $countno+1;   
 }        
+
+
+//物品用途(生產)
+if ($countno === 7) {
+$json2 = file_get_contents('./data/production.json');
+$data2 = json_decode($json2, true);
+foreach ($data2['feed']['entry'] as $item) {
+$keywords = explode(',', $item['gsx$ppic']['$t']);
+foreach ($keywords as $keyword) {
+if (strcmp($code[1], $keyword) === 0) {
+if (strcmp($checkswitch, "off") === 0) {
+$titlename = "素材用途";
+$realname = $code[1];
+$textcode = "老大look#".$code[1];
+$candidate = array('type' => 'bubble','size' => 'micro','hero' => array('type' => 'image','url' => 'https://i.imgur.com/HIJxaIz.png','size' => 'full','aspectMode' => 'fit','aspectRatio' => '320:213'),'body' => array('type' => 'box','layout' => 'vertical','contents' => array(array('type' => 'text','text' => $titlename,'weight' => 'bold','size' => 'sm','wrap' => true,'align' => 'center'),array('type' => 'box','layout' => 'baseline','contents' => array(array('type' => 'text','text' => "---------------",'size' => 'xs','color' => '#8c8c8c','margin' => 'md','align' => 'center'))),array('type' => 'box','layout' => 'vertical','contents' => array(array('type' => 'box','layout' => 'baseline','spacing' => 'sm','contents' => array(array('type' => 'text','text' => $realname,'wrap' => true,'color' => '#252dba','size' => 'sm','align' => 'center','action' => array('type' => 'message','label' => 'action','text' => $textcode,))))))),'spacing' => 'sm','paddingAll' => '13px','backgroundColor' => '#edece8','justifyContent' => 'space-evenly'));
+array_push($result, $candidate);
+$checkswitch = "on";
+}
+unset($json2, $data2, $keywords, $keyword);
+}
+}
+}
+$countno = $countno+1;   
+} 
+            
+//物品用途(裝備)
+if ($countno === 8) {
+$json3 = file_get_contents('./data/equip.json');
+$data3 = json_decode($json3, true);
+foreach ($data3['feed']['entry'] as $item) {
+$keywords = explode(',', $item['gsx$search']['$t']);
+foreach ($keywords as $keyword) {
+if (strcmp($code[1], $keyword) === 0) {
+if (strcmp($checkswitch, "off") === 0) {
+$titlename = "素材用途";
+$realname = $code[1];
+$textcode = "老大look#".$code[1];
+$candidate = array('type' => 'bubble','size' => 'micro','hero' => array('type' => 'image','url' => 'https://i.imgur.com/0tVlNCZ.png','size' => 'full','aspectMode' => 'fit','aspectRatio' => '320:213'),'body' => array('type' => 'box','layout' => 'vertical','contents' => array(array('type' => 'text','text' => $titlename,'weight' => 'bold','size' => 'sm','wrap' => true,'align' => 'center'),array('type' => 'box','layout' => 'baseline','contents' => array(array('type' => 'text','text' => "---------------",'size' => 'xs','color' => '#8c8c8c','margin' => 'md','align' => 'center'))),array('type' => 'box','layout' => 'vertical','contents' => array(array('type' => 'box','layout' => 'baseline','spacing' => 'sm','contents' => array(array('type' => 'text','text' => $realname,'wrap' => true,'color' => '#252dba','size' => 'sm','align' => 'center','action' => array('type' => 'message','label' => 'action','text' => $textcode,))))))),'spacing' => 'sm','paddingAll' => '13px','backgroundColor' => '#edece8','justifyContent' => 'space-evenly'));
+array_push($result, $candidate);
+$checkswitch = "on";
+}
+unset($json3, $data3, $keywords, $keyword);
+}
+}
+}
+$countno = $countno+1;   
+}
+
+
             
             break;
         default:
