@@ -175,7 +175,7 @@ $realname = $code[1];
 $textcode = "老大挖 ".$code[1];
 $candidate = array('type' => 'bubble','size' => 'micro','hero' => array('type' => 'image','url' => 'https://i.imgur.com/ZBbr9Q0.png','size' => 'full','aspectMode' => 'fit','aspectRatio' => '320:213'),'body' => array('type' => 'box','layout' => 'vertical','contents' => array(array('type' => 'text','text' => $titlename,'weight' => 'bold','size' => 'sm','wrap' => true,'align' => 'center'),array('type' => 'box','layout' => 'baseline','contents' => array(array('type' => 'text','text' => "---------------",'size' => 'xs','color' => '#8c8c8c','margin' => 'md','align' => 'center'))),array('type' => 'box','layout' => 'vertical','contents' => array(array('type' => 'box','layout' => 'baseline','spacing' => 'sm','contents' => array(array('type' => 'text','text' => $realname,'wrap' => true,'color' => '#252dba','size' => 'sm','align' => 'center','action' => array('type' => 'message','label' => 'action','text' => $textcode,))))))),'spacing' => 'sm','paddingAll' => '13px','backgroundColor' => '#edece8','justifyContent' => 'space-evenly'));
 array_push($result, $candidate);
-$drillwitch = "on";
+$drillswitch = "on";
 }
 unset($json6, $data6, $keywords, $keyword);
 }
