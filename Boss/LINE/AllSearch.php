@@ -46,9 +46,51 @@ unset($json0, $data0, $keywords, $keyword);
 }
 $countno = $countno+1;   
 }
+            
+//怪物關鍵字2
+if ($countno === 1) {
+$json0 = file_get_contents('./data/m&d.json');
+$data0 = json_decode($json0, true);
+$replacename = $code[1]."2";
+foreach ($data0['feed']['entry'] as $item) {
+$keywords = explode(',', $item['gsx$keywords']['$t']);
+foreach ($keywords as $keyword) {
+if (strcmp($replacename, $keyword) === 0) { 
+$titlename = "怪物資訊";
+$realname = $item['gsx$name']['$t'];
+$textcode = "老大M ".$replacename;
+$candidate = array('type' => 'bubble','size' => 'micro','hero' => array('type' => 'image','url' => 'https://i.imgur.com/TnwYgP6.png','size' => 'full','aspectMode' => 'fit','aspectRatio' => '320:213'),'body' => array('type' => 'box','layout' => 'vertical','contents' => array(array('type' => 'text','text' => $titlename,'weight' => 'bold','size' => 'sm','wrap' => true,'align' => 'center'),array('type' => 'box','layout' => 'baseline','contents' => array(array('type' => 'text','text' => "---------------",'size' => 'xs','color' => '#8c8c8c','margin' => 'md','align' => 'center'))),array('type' => 'box','layout' => 'vertical','contents' => array(array('type' => 'box','layout' => 'baseline','spacing' => 'sm','contents' => array(array('type' => 'text','text' => $realname,'wrap' => true,'color' => '#252dba','size' => 'sm','align' => 'center','action' => array('type' => 'message','label' => 'action','text' => $textcode,))))))),'spacing' => 'sm','paddingAll' => '13px','backgroundColor' => '#edece8','justifyContent' => 'space-evenly'));
+array_push($result, $candidate);
+unset($json0, $data0, $keywords, $keyword);
+}
+}
+}
+$countno = $countno+1;   
+}
+            
+//怪物關鍵字3
+if ($countno === 2) {
+$json0 = file_get_contents('./data/m&d.json');
+$data0 = json_decode($json0, true);
+$replacename = $code[1]."3";
+foreach ($data0['feed']['entry'] as $item) {
+$keywords = explode(',', $item['gsx$keywords']['$t']);
+foreach ($keywords as $keyword) {
+if (strcmp($replacename, $keyword) === 0) { 
+$titlename = "怪物資訊";
+$realname = $item['gsx$name']['$t'];
+$textcode = "老大M ".$replacename;
+$candidate = array('type' => 'bubble','size' => 'micro','hero' => array('type' => 'image','url' => 'https://i.imgur.com/TnwYgP6.png','size' => 'full','aspectMode' => 'fit','aspectRatio' => '320:213'),'body' => array('type' => 'box','layout' => 'vertical','contents' => array(array('type' => 'text','text' => $titlename,'weight' => 'bold','size' => 'sm','wrap' => true,'align' => 'center'),array('type' => 'box','layout' => 'baseline','contents' => array(array('type' => 'text','text' => "---------------",'size' => 'xs','color' => '#8c8c8c','margin' => 'md','align' => 'center'))),array('type' => 'box','layout' => 'vertical','contents' => array(array('type' => 'box','layout' => 'baseline','spacing' => 'sm','contents' => array(array('type' => 'text','text' => $realname,'wrap' => true,'color' => '#252dba','size' => 'sm','align' => 'center','action' => array('type' => 'message','label' => 'action','text' => $textcode,))))))),'spacing' => 'sm','paddingAll' => '13px','backgroundColor' => '#edece8','justifyContent' => 'space-evenly'));
+array_push($result, $candidate);
+unset($json0, $data0, $keywords, $keyword);
+}
+}
+}
+$countno = $countno+1;   
+}
 
 //掉落物關鍵字
-if ($countno === 1) {
+if ($countno === 3) {
 $json1 = file_get_contents('./data/m&d.json');
 $data1 = json_decode($json1, true);
 foreach ($data1['feed']['entry'] as $item) {
@@ -71,7 +113,7 @@ $countno = $countno+1;
 }
             
 //生產關鍵字
-if ($countno === 2) {
+if ($countno === 4) {
 $json2 = file_get_contents('./data/production.json');
 $data2 = json_decode($json2, true);
 foreach ($data2['feed']['entry'] as $item) {
@@ -94,7 +136,7 @@ $countno = $countno+1;
 } 
             
 //裝備關鍵字
-if ($countno === 3) {
+if ($countno === 5) {
 $json3 = file_get_contents('./data/equip.json');
 $data3 = json_decode($json3, true);
 foreach ($data3['feed']['entry'] as $item) {
@@ -117,7 +159,7 @@ $countno = $countno+1;
 }
             
 //石頭關鍵字  
-if ($countno === 4) {
+if ($countno === 6) {
 $json4 = file_get_contents('./data/rock.json');
 $data4 = json_decode($json4, true);            
 foreach ($data4['feed']['entry'] as $item) {
@@ -140,7 +182,7 @@ $countno = $countno+1;
 }
             
 //栽培關鍵字
-if ($countno === 5) {
+if ($countno === 7) {
 $json5 = file_get_contents('./data/seed.json');
 $data5 = json_decode($json5, true);
 foreach ($data5['feed']['entry'] as $item) {
@@ -163,7 +205,7 @@ $countno = $countno+1;
 }
             
 //採礦關鍵字   
-if ($countno === 6) {
+if ($countno === 8) {
 $json6 = file_get_contents('./data/drill.json');
 $data6 = json_decode($json6, true);
 foreach ($data6['feed']['entry'] as $item) {
@@ -187,7 +229,7 @@ $countno = $countno+1;
 
 
 //物品用途(生產)
-if ($countno === 7) {
+if ($countno === 9) {
 $json2 = file_get_contents('./data/production.json');
 $data2 = json_decode($json2, true);
 foreach ($data2['feed']['entry'] as $item) {
@@ -210,7 +252,7 @@ $countno = $countno+1;
 } 
             
 //物品用途(裝備)
-if ($countno === 8) {
+if ($countno === 10) {
 $json3 = file_get_contents('./data/equip.json');
 $data3 = json_decode($json3, true);
 foreach ($data3['feed']['entry'] as $item) {
