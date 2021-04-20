@@ -88,7 +88,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
                             'label' => '颱風資訊',
                             'uri' => 'http://typhoon.zjwater.gov.cn/default.aspx'
                         )
-                    );
+                    )
 		return buildbuttons($altText, $thumbnailImageUrl, $title, $text, $result);
 	}
 	
