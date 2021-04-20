@@ -22,9 +22,9 @@ switch ($event['type']) {
         // 資料起始從feed.entry          
         foreach ($data['feed']['entry'] as $item) {
 
-                //if (strpos('遊戲', $item['gsx$屬性']['$t']) !== false) {                      
-                    $datall = $item['gsx$屬性']['$t'];
-              //}
+                   
+                    $datall = $data[A][50];
+
 
         }       
         break;
