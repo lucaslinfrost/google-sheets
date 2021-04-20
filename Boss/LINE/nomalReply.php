@@ -69,8 +69,6 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	   substr($inputStr, 0, 12) === "老大颱風"||
 	   substr($inputStr, 0, 12) === "老大新冠") {
 		$altText = "緊急資訊";
-		$thumbnailImageUrl = "";
-		$title = "";
 		$text = "緊急資訊";
 		$result = array(
                         array(
@@ -88,8 +86,8 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
                             'label' => '颱風資訊',
                             'uri' => 'http://typhoon.zjwater.gov.cn/default.aspx'
                         )
-                    )
-		return buildbuttons($altText, $thumbnailImageUrl, $title, $text, $result);
+                    );
+		return buildbuttons($altText, $text, $result);
 	}
 	
 	//查材料用途
