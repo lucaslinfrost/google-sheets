@@ -62,6 +62,35 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 		}
 	}
 	
+	//幫助
+	if(substr($inputStr, 0, 12) === "老大緊急"||
+	   substr($inputStr, 0, 12) === "老大地震"||
+	   substr($inputStr, 0, 12) === "老大台風"||
+	   substr($inputStr, 0, 12) === "老大颱風"||
+	   substr($inputStr, 0, 12) === "老大新冠") {
+		$altText = "緊急資訊";
+		$thumbnailImageUrl = "";
+		$title = "";
+		$text = "緊急資訊";
+		$result = array(
+                        array(
+                            'type' => 'uri',
+                            'label' => '新冠疫情',
+                            'uri' => 'https://feiyan.wecity.qq.com/wuhan/dist/index.html#/'
+                        ),
+                        array(
+                            'type' => 'uri',
+                            'label' => '地震資訊',
+                            'uri' => 'https://www.cwb.gov.tw/V8/C/E/index.html'
+                        ),
+                        array(
+                            'type' => 'uri',
+                            'label' => '颱風資訊',
+                            'uri' => 'http://typhoon.zjwater.gov.cn/default.aspx'
+                        )
+                    );
+		return buildbuttons($altText, $thumbnailImageUrl, $title, $text, $result);
+	}
 	
 	//查材料用途
 	if(stristr($inputStr, 'look') != false) {
