@@ -23,7 +23,15 @@ switch ($event['type']) {
 	$a = "";
 	$altText = "關於 ".$message['text']." 的資料";
 	$result = array();
-	$code = explode(' ', $message['text']);
+	//$code = explode(' ', $message['text']);
+		
+	if(substr($message['text'], 0, 13) === "老大公告 ") {
+		$code = explode(' ', $message['text']);
+	}else{
+		$code = Null;
+		$code[1] = Null;
+	}
+		
         // 資料起始從feed.entry          
         foreach ($data['feed']['entry'] as $item) {
             // 將keywords欄位依,切成陣列
