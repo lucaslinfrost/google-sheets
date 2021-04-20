@@ -92,7 +92,7 @@ function buildcarousel($altText, $result){
 }
 
 //建立按鈕的函數
-function buildbuttons($altText, $result){	
+function buildbuttons($altText, $thumbnailImageUrl, $title, $text, $result){	
 		error_log("準備回傳按鈕訊息。");
 		$message = array
 		( 
@@ -101,7 +101,10 @@ function buildbuttons($altText, $result){
 			'altText'=> $altText,
 			'template'=> array(
 				'type'=> "buttons",
-				'columns'=> $result
+				'thumbnailImageUrl' => $thumbnailImageUrl, //不一定需要
+                  	        'title' => $title, //不一定需要
+                     		'text' => $text, //文字(必要)
+				'actions'=> $result
             		)
 		      ),
 		);
