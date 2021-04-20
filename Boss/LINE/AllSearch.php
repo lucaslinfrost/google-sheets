@@ -124,7 +124,7 @@ foreach ($keywords as $keyword) {
 if (strcmp($code[1], $keyword) === 0) {
 if (strcmp($productionswitch, "off") === 0) {
 $titlename = "生產資訊";
-$realname = $item['gsx$pname']['$t'];
+$realname = $code[1];
 $textcode = "老大P ".$code[1];
 $candidate = array('type' => 'bubble','size' => 'micro','hero' => array('type' => 'image','url' => 'https://i.imgur.com/HIJxaIz.png','size' => 'full','aspectMode' => 'fit','aspectRatio' => '320:213'),'body' => array('type' => 'box','layout' => 'vertical','contents' => array(array('type' => 'text','text' => $titlename,'weight' => 'bold','size' => 'sm','wrap' => true,'align' => 'center'),array('type' => 'box','layout' => 'baseline','contents' => array(array('type' => 'text','text' => "---------------",'size' => 'xs','color' => '#8c8c8c','margin' => 'md','align' => 'center'))),array('type' => 'box','layout' => 'vertical','contents' => array(array('type' => 'box','layout' => 'baseline','spacing' => 'sm','contents' => array(array('type' => 'text','text' => $realname,'wrap' => true,'color' => '#252dba','size' => 'sm','align' => 'center','action' => array('type' => 'message','label' => 'action','text' => $textcode,))))))),'spacing' => 'sm','paddingAll' => '13px','backgroundColor' => '#edece8','justifyContent' => 'space-evenly'));
 array_push($result, $candidate);
@@ -163,7 +163,8 @@ $countno = $countno+1;
 //石頭關鍵字  
 if ($countno === 6) {
 $json4 = file_get_contents('./data/rock.json');
-$data4 = json_decode($json4, true);            
+$data4 = json_decode($json4, true);   
+$code[1] = str_replace(array("◇","▲","◆","□"),"",$code[1]);
 foreach ($data4['feed']['entry'] as $item) {
 $keywords = explode(',', $item['gsx$key']['$t']);
 foreach ($keywords as $keyword) {
