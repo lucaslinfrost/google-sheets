@@ -23,7 +23,7 @@ switch ($event['type']) {
         foreach ($data['feed']['entry'] as $item) {
 
                    
-                    $datall = $item['gsx$屬性']['$t'][];
+                    $datall = $item['gsx$屬性']['$t'][50];
 
 
         }       
