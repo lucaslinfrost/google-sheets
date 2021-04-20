@@ -68,13 +68,18 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	   substr($inputStr, 0, 12) === "老大台風"||
 	   substr($inputStr, 0, 12) === "老大颱風"||
 	   substr($inputStr, 0, 12) === "老大新冠") {
-		$altText = "緊急資訊";
-		$text = "緊急資訊";
+		$altText = "幫助資訊";
+		$text = "幫助資訊";
 		$result = array(
                         array(
                             'type' => 'uri',
                             'label' => '新冠疫情',
                             'uri' => 'https://feiyan.wecity.qq.com/wuhan/dist/index.html#/'
+                        ),
+			array(
+                            'type' => 'uri',
+                            'label' => '出入境政策',
+                            'uri' => 'https://f.m.taobao.com/wow/z/pcraft/act/wupr?wh_biz=tm&wh_pid=act%2Fquanqiuchurujingzhengce&chInfo=ch_homepage__chsub_yiqing__traceId_lm000036%240b24665416189530041911698e2719&contentId=820000&contentType=yiqing_city_code&contentSource=epidemic'
                         ),
                         array(
                             'type' => 'uri',
