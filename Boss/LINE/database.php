@@ -6,7 +6,7 @@ require_once('./LINEBotTiny.php');
 //require_once('./utf8_chinese.class.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
-$googledataspi = getenv('googledataspi4');
+$url = "https://spreadsheets.google.com/feeds/list/1DF1BBZUPVGWHLN6V4W_2G2ZzfIo3iU67Mr1Fu85ZMMg/on92vnb/public/values?alt=json";
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 
 // 取得事件(只接受文字訊息)
@@ -17,20 +17,18 @@ switch ($event['type']) {
         $message = $event['message'];
 
         // 將Google表單轉成JSON資料
-        $json = file_get_contents($googledataspi);
+        $json = file_get_contents($url);
         $data = json_decode($json, true);
-        //$c = new utf8_chinese;
-        //$message['text'] = $c->gb2312_big5($message['text']);
 
         // 資料起始從feed.entry          
         foreach ($data['feed']['entry'] as $item) {
             // 將keywords欄位依,切成陣列
-            $keywords = explode(',', $item['gsx$key3']['$t']);
+            $keywords = explode(',', $item['gsx$屬性']['$t']);
 
             // 以關鍵字比對文字內容
             foreach ($keywords as $keyword) {
-                if (strpos($message['text'], $keyword) !== false) {                      
-                    $dataall = $item['gsx$data17']['$t'];
+                if (strpos('遊戲', $keyword) !== false) {                      
+                    $dataall = $item['gsx$屬性']['$t'];
               }
             }
         }       
