@@ -93,6 +93,7 @@ $countno = $countno+1;
 if ($countno === 3) {
 $json1 = file_get_contents('./data/m&d.json');
 $data1 = json_decode($json1, true);
+$code[1] = preg_replace("/[()（）]/", "", $code[1]);
 foreach ($data1['feed']['entry'] as $item) {
 $keywords = explode('、', $item['gsx$key']['$t']);
 foreach ($keywords as $keyword) {
@@ -116,6 +117,7 @@ $countno = $countno+1;
 if ($countno === 4) {
 $json2 = file_get_contents('./data/production.json');
 $data2 = json_decode($json2, true);
+$code[1] = preg_replace("/[()（）]/", "", $code[1]);
 foreach ($data2['feed']['entry'] as $item) {
 $keywords = explode(',', $item['gsx$keyword']['$t']);
 foreach ($keywords as $keyword) {
@@ -232,6 +234,7 @@ $countno = $countno+1;
 if ($countno === 9) {
 $json2 = file_get_contents('./data/production.json');
 $data2 = json_decode($json2, true);
+$code[1] = preg_replace("/[()（）]/", "", $code[1]);
 foreach ($data2['feed']['entry'] as $item) {
 $keywords = explode(',', $item['gsx$ppic']['$t']);
 foreach ($keywords as $keyword) {
@@ -255,6 +258,7 @@ $countno = $countno+1;
 if ($countno === 10) {
 $json3 = file_get_contents('./data/equip.json');
 $data3 = json_decode($json3, true);
+$code[1] = preg_replace("/[()（）]/", "", $code[1]);
 foreach ($data3['feed']['entry'] as $item) {
 $keywords = explode(',', $item['gsx$search']['$t']);
 foreach ($keywords as $keyword) {
