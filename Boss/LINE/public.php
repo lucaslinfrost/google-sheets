@@ -28,8 +28,7 @@ switch ($event['type']) {
 	if(substr($message['text'], 0, 13) === "老大公告 ") {
 		$code = explode(' ', $message['text']);
 	}else{
-		$code = "";
-		$code[1] = "";
+		$code[1] = NULL;
 	}
 		
         // 資料起始從feed.entry          
@@ -40,7 +39,7 @@ switch ($event['type']) {
             // 以關鍵字比對文字內容
             foreach ($keywords as $keyword) {
                 
-		if($code[1] === "") {
+		if($code[1] === NULL) {
 			if($source['type'] == "group"){
 				foreach ($grouplist as $groupcheck) {
 					if (strcmp($groupId, $groupcheck) === 0) {
