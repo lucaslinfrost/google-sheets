@@ -385,13 +385,15 @@ $welcomemsg = '(ノ・ω・)ノ歡迎ヾ(・ω・ヾ)
 		    	$altText = "歡迎!!!";
 			$result = array();
 		    
-		    	if($source['type'] == "group"){
+		    	/**
+			if($source['type'] == "group"){
 $data999 = "您所在的群組還沒有公告，
 可以使用[老大note#公告內容]
 這個指令來添加公告。";
 			}else{
 			$data999 = "(ง •̀ω•́)ง✧ (`･ω･´)9";
 			}
+			*/
 		    
 		    	foreach ($data['feed']['entry'] as $item) {
 			$grouplist = explode(',', $item['gsx$groupid']['$t']);
@@ -405,12 +407,37 @@ $data999 = "您所在的群組還沒有公告，
 				}
 			}
 		    	
+		    	/**
 			array_push($result, $data999);
 			$messages = new MutiMessage();
 			$replyArr = Array(
 			$messages->text($welcomemsg),
 			$messages->flexmsg($altText, $result),	
 			);
+			*/
+		    
+		    	if($data999 === ""){
+				if($source['type'] == "group"){
+$data777 = "您所在的群組還沒有公告，
+可以使用[老大note#公告內容]
+這個指令來添加公告。";
+				}else{
+				$data777 = "(ง •̀ω•́)ง✧ (`･ω･´)9";
+				}
+				
+			$messages = new MutiMessage();
+			$replyArr = Array(
+			$messages->text($welcomemsg),
+			$messages->text($data777),	
+			);
+			}else{
+			array_push($result, $data999);
+			$messages = new MutiMessage();
+			$replyArr = Array(
+			$messages->text($welcomemsg),
+			$messages->flexmsg($altText, $result),	
+			);
+			}
 
 			$bot->replyMessage(array('replyToken' => $event['replyToken'],'messages' => $replyArr));
 		    	//return $messages->send($replyArr);
