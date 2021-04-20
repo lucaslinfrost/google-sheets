@@ -212,10 +212,10 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	//數據統計
 	if(substr($inputStr, 0, 12) === "老大數據") {
 		require_once('./database.php');
-		if ($datall !== "") {
-		return buildTextMessage($datall);
-		}else{
+		if ($datall === "") {
 		return buildTextMessage('功能故障的樣子。');
+		}else{
+		return buildTextMessage($datall);
 		}	
 		unset($url, $json, $data);
 	}
