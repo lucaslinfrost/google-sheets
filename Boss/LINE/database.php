@@ -21,12 +21,10 @@ switch ($event['type']) {
 
         // 資料起始從feed.entry          
         foreach ($data['feed']['entry'] as $item) {
-            // 將keywords欄位依,切成陣列
-            $keywords = explode(',', $item['gsx$屬性']['$t']);
 
-                if (strpos('遊戲', $item['gsx$屬性']['$t']) !== false) {                      
+                //if (strpos('遊戲', $item['gsx$屬性']['$t']) !== false) {                      
                     $datall = $item['gsx$屬性']['$t'];
-              }
+              //}
 
         }       
         break;
