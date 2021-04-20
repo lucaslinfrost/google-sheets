@@ -21,9 +21,14 @@ switch ($event['type']) {
 
         // 資料起始從feed.entry          
         foreach ($data['feed']['entry'] as $item) {
+        $keywords = explode(',', $item['gsx$屬性']['$t']);
 
-                   
-                    $datall = $item['gsx$屬性']['$t'][50];
+            // 以關鍵字比對文字內容
+            foreach ($keywords as $keyword) {
+                if (strcmp('database', $keyword) === 0) {                       
+                    $datall = $item['gsx$弱點']['$t'];
+              }
+            }
 
 
         }       
