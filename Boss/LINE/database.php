@@ -5,7 +5,7 @@
 require_once('./LINEBotTiny.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
-$url = "https://spreadsheets.google.com/feeds/list/1DF1BBZUPVGWHLN6V4W_2G2ZzfIo3iU67Mr1Fu85ZMMg/on92vnb/public/values?alt=json";
+$url = getenv('database');
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 
 // 取得事件(只接受文字訊息)
