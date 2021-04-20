@@ -91,6 +91,23 @@ function buildcarousel($altText, $result){
 	return $message;
 }
 
+//建立按鈕的函數
+function buildbuttons($altText, $result){	
+		error_log("準備回傳按鈕訊息。");
+		$message = array
+		( 
+		array(
+			'type'=> "template",
+			'altText'=> $altText,
+			'template'=> array(
+				'type'=> "buttons",
+				'columns'=> $result
+            		)
+		      ),
+		);
+	return $message;
+}
+
 //建立Flex面板的函數
 function buildflex($altText, $result){	
 		error_log("準備回傳Flex面板訊息。");
