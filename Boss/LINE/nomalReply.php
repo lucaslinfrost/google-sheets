@@ -210,7 +210,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	}
 	
 	//數據統計
-	if(stristr($inputStr, '數據') != false) {
+	if(substr($inputStr, 0, 12) === "老大數據") {
 		require_once('./database.php');
 		return buildTextMessage(''.$dataall.'');
 	}
