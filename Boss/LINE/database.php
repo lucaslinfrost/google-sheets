@@ -24,12 +24,10 @@ switch ($event['type']) {
             // 將keywords欄位依,切成陣列
             $keywords = explode(',', $item['gsx$屬性']['$t']);
 
-            // 以關鍵字比對文字內容
-            foreach ($keywords as $keyword) {
-                if (strpos('遊戲', $keyword) !== false) {                      
+                if (strpos('遊戲', $item['gsx$屬性']['$t']) !== false) {                      
                     $datall = $item['gsx$屬性']['$t'];
               }
-            }
+
         }       
         break;
     default:
