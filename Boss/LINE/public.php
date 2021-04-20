@@ -25,7 +25,8 @@ switch ($event['type']) {
 	$result = array();
 	//$code = explode(' ', $message['text']);
 		
-	if(substr($message['text'], 0, 13) === "老大公告 ") {
+	if(substr($message['text'], 0, 13) === "老大公告 ") ||
+	       substr($message['text'], 0, 13) === "老大活動 ") {
 		$code = explode(' ', $message['text']);
 	}else{
 		$code[1] = NULL;
