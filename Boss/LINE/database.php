@@ -3,7 +3,6 @@
 //數據統計介面 (文字版)
 
 require_once('./LINEBotTiny.php');
-//require_once('./utf8_chinese.class.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
 $url = "https://spreadsheets.google.com/feeds/list/1DF1BBZUPVGWHLN6V4W_2G2ZzfIo3iU67Mr1Fu85ZMMg/on92vnb/public/values?alt=json";
@@ -28,7 +27,7 @@ switch ($event['type']) {
             // 以關鍵字比對文字內容
             foreach ($keywords as $keyword) {
                 if (strpos('遊戲', $keyword) !== false) {                      
-                    $dataall = $item['gsx$屬性']['$t'];
+                    $datall = $item['gsx$屬性']['$t'];
               }
             }
         }       
