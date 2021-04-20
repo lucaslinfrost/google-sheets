@@ -52,7 +52,7 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	}
 	
 
-	//測試新功能
+	//整合搜索
 	if(substr($inputStr, 0, 7) === "老大-") {
 		require_once('./AllSearch.php');
 		if (empty($result)) {
@@ -212,7 +212,12 @@ function KeyWordReply($inputStr,$keyWord,$manualUrl,$textReplyUrl,$userName) {
 	//數據統計
 	if(substr($inputStr, 0, 12) === "老大數據") {
 		require_once('./database.php');
-		return buildTextMessage(''.$dataall.'');
+		if ($datall !== "") {
+		return buildTextMessage($datall);
+		}else{
+		return buildTextMessage('功能故障的樣子。');
+		}	
+		unset($url, $json, $data);
 	}
 
 	//離開
