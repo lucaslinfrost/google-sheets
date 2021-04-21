@@ -117,7 +117,7 @@ $countno = $countno+1;
 if ($countno === 4) {
 $json2 = file_get_contents('./data/production.json');
 $data2 = json_decode($json2, true);
-$code[1] = str_replace(array("(",")","（","）"),"",$code[1]);
+$code[1] = str_replace(array("(",")","（","）","等"),"",$code[1]);
 foreach ($data2['feed']['entry'] as $item) {
 $keywords = explode(',', $item['gsx$keyword']['$t']);
 foreach ($keywords as $keyword) {
