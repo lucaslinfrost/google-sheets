@@ -855,7 +855,7 @@ foreach ($client->parseEvents() as $event) {
                 foreach ($keywords as $keyword) {
 
                   
-                if ($code[2] === NULL) {
+                if (sizeof($code) === '1') {
 			if (strcmp($code[1], $keyword) === 0) {
                   	$code[1] = $item['gsx$mapn']['$t']; 
                 	}
@@ -894,7 +894,7 @@ $hindword = '由於沒有給起使點，
 
 $g = new Graph($graph);
 
-if ($code[2] === NULL) {
+if (sizeof($code) === '1') {
 $g->leastHops($defaultword, $code[1]);
 }else{
 $g->leastHops($code[1], $code[2]);
