@@ -886,15 +886,9 @@ foreach ($client->parseEvents() as $event) {
 };
 
 $g = new Graph($graph);
-$hindword = "";
+
 if (count($code) !== '2') {
 $g->leastHops($defaultword, $code[1]);
-
-$hindword = "由於沒有給起使點，
-幫您從「洛庫庫街」開始導航。
-
-";
-	
 }else{
 $g->leastHops($code[1], $code[2]);
 }	
@@ -953,7 +947,7 @@ public function leastHops($origin, $destination) {
         if (isset($path[$destination])) {
             $mapno = count($path[$destination]) - 1;
 
-$title = $hindword."從【".$origin."】
+$title = "從【".$origin."】
 到【".$destination."】
 會通過".$mapno."個傳點。
 
