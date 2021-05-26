@@ -843,6 +843,8 @@ foreach ($client->parseEvents() as $event) {
             $json = file_get_contents('./data/map.json');
             $data = json_decode($json, true);
             $hindword = '';
+	    $code = array(); 
+	    $code[2] = ""
         
             if(strpos($message['text'],'#') !== false){ 
             $code = explode('#', $message['text']);
@@ -855,7 +857,7 @@ foreach ($client->parseEvents() as $event) {
                 foreach ($keywords as $keyword) {
 
                   
-                if (sizeof($code) === '1') {
+                if ($code[2] === NULL) {
 			if (strcmp($code[1], $keyword) === 0) {
                   	$code[1] = $item['gsx$mapn']['$t']; 
                 	}
@@ -894,7 +896,7 @@ $hindword = '由於沒有給起使點，
 
 $g = new Graph($graph);
 
-if (sizeof($code) === '1') {
+if ($code[2] === NULL) {
 $g->leastHops($defaultword, $code[1]);
 }else{
 $g->leastHops($code[1], $code[2]);
