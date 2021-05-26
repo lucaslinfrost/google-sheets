@@ -853,7 +853,7 @@ foreach ($client->parseEvents() as $event) {
                 $keywords = explode(',', $item['gsx$key']['$t']);
                 foreach ($keywords as $keyword) {
 
-		if (count($code) !== '2') {
+		if (count($code) !== 2) {
 			if (strcmp($code[1], $keyword) === 0) {
                   	$code[1] = $item['gsx$mapn']['$t']; 
                 	}
@@ -887,7 +887,7 @@ foreach ($client->parseEvents() as $event) {
 
 $g = new Graph($graph);
 
-if (count($code) !== '2') {
+if (count($code) !== 2) {
 $g->leastHops($defaultword, $code[1]);
 }else{
 $g->leastHops($code[1], $code[2]);
