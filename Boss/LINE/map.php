@@ -843,6 +843,7 @@ foreach ($client->parseEvents() as $event) {
             $json = file_get_contents('./data/map.json');
             $data = json_decode($json, true);
             $hindword = '';
+	    $code[2] = '';
         
             if(strpos($message['text'],'#') !== false){ 
             $code = explode('#', $message['text']);
@@ -857,7 +858,7 @@ foreach ($client->parseEvents() as $event) {
                   
                 if ($code[2] === "") {
 	                if (strcmp($code[1], $keyword) === 0) {
-                  $code[2] = $item['gsx$mapn']['$t']; 
+                  	$code[2] = $item['gsx$mapn']['$t']; 
 	                $code[1] = '洛庫';
 $hindword = '由於沒有給起使點，
 幫您從「洛庫庫街」開始導航。
