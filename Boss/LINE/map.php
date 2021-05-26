@@ -842,6 +842,7 @@ foreach ($client->parseEvents() as $event) {
             $message = $event['message'];
             $json = file_get_contents('./data/map.json');
             $data = json_decode($json, true);
+            $hindword = '';
         
             if(strpos($message['text'],'#') !== false){ 
             $code = explode('#', $message['text']);
@@ -852,12 +853,31 @@ foreach ($client->parseEvents() as $event) {
             foreach ($data['feed']['entry'] as $item) {
                 $keywords = explode(',', $item['gsx$key']['$t']);
                 foreach ($keywords as $keyword) {
-                    if (strcmp($code[1], $keyword) === 0) {
-                    $code[1] = $item['gsx$mapn']['$t']; 
-                    }
-                    if (strcmp($code[2], $keyword) === 0) {
-                    $code[2] = $item['gsx$mapn']['$t']; 
-                    }
+
+                  
+                if ($code[2] === "") {
+	                if (strcmp($code[1], $keyword) === 0) {
+                  $code[2] = $item['gsx$mapn']['$t']; 
+	                $code[1] = '洛庫';
+$hindword = '由於沒有給起使點，
+幫您從「洛庫庫街」開始導航。
+
+';
+                  }
+                }else{
+
+	                if (strcmp($code[1], $keyword) === 0) {
+                  $code[1] = $item['gsx$mapn']['$t']; 
+                  }
+
+                  if (strcmp($code[2], $keyword) === 0) {
+                  $code[2] = $item['gsx$mapn']['$t']; 
+                  }
+
+                }
+                  
+                  
+                  
                 }
             }
             break;
@@ -923,7 +943,7 @@ public function leastHops($origin, $destination) {
         if (isset($path[$destination])) {
             $mapno = count($path[$destination]) - 1;
 
-$title = "從【".$origin."】
+$title = $hindword."從【".$origin."】
 到【".$destination."】
 會通過".$mapno."個傳點。
 
