@@ -843,8 +843,6 @@ foreach ($client->parseEvents() as $event) {
             $json = file_get_contents('./data/map.json');
             $data = json_decode($json, true);
             $hindword = '';
-	    $code = array();
-	    $code[2] = "";
         
             if(strpos($message['text'],'#') !== false){ 
             $code = explode('#', $message['text']);
@@ -866,10 +864,12 @@ foreach ($client->parseEvents() as $event) {
                   	$defaultword = $item['gsx$mapn']['$t']; 
                 	}
 			
-$hindword = '由於沒有給起使點，
+$hindword = "
+
+由於沒有給起使點，
 幫您從「洛庫庫街」開始導航。
 
-';
+";
 
                	}else{
 
@@ -956,9 +956,9 @@ public function leastHops($origin, $destination) {
         if (isset($path[$destination])) {
             $mapno = count($path[$destination]) - 1;
 
-$title = $hindword."從【".$origin."】
+$title = "從【".$origin."】
 到【".$destination."】
-會通過".$mapno."個傳點。
+會通過".$mapno."個傳點。".$hindword."
 
 --------  開始導航  --------
 ";
