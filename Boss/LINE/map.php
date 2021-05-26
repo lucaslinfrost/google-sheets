@@ -856,7 +856,7 @@ foreach ($client->parseEvents() as $event) {
 
                   
                 //if ($code[2] === NULL) {
-		if (count($code) === '1') {
+		if (count($code) !== '2') {
 			if (strcmp($code[1], $keyword) === 0) {
                   	$code[1] = $item['gsx$mapn']['$t']; 
                 	}
@@ -898,7 +898,7 @@ $hindword = "
 $g = new Graph($graph);
 
 //if ($code[2] === NULL) {
-if (count($code) === '1') {
+if (count($code) !== '2') {
 $g->leastHops($defaultword, $code[1]);
 }else{
 $g->leastHops($code[1], $code[2]);
