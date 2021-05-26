@@ -843,8 +843,8 @@ foreach ($client->parseEvents() as $event) {
             $json = file_get_contents('./data/map.json');
             $data = json_decode($json, true);
             $hindword = '';
-	    $code = array(); 
-	    $code[2] = ""
+	    $code = array();
+	    $code[2] = "";
         
             if(strpos($message['text'],'#') !== false){ 
             $code = explode('#', $message['text']);
